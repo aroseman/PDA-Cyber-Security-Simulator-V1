@@ -1,0 +1,10 @@
+C:\Users\whois\source\repos\PDA Cyber Security Simulator V1\PDA Cyber Security Simulator V1\bin\Debug\PDA Cyber Security Simulator V1.exe.config
+C:\Users\whois\source\repos\PDA Cyber Security Simulator V1\PDA Cyber Security Simulator V1\bin\Debug\PDA Cyber Security Simulator V1.exe
+C:\Users\whois\source\repos\PDA Cyber Security Simulator V1\PDA Cyber Security Simulator V1\bin\Debug\PDA Cyber Security Simulator V1.pdb
+C:\Users\whois\source\repos\PDA Cyber Security Simulator V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.csprojResolveAssemblyReference.cache
+C:\Users\whois\source\repos\PDA Cyber Security Simulator V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.Form1.resources
+C:\Users\whois\source\repos\PDA Cyber Security Simulator V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.Properties.Resources.resources
+C:\Users\whois\source\repos\PDA Cyber Security Simulator V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.csproj.GenerateResource.Cache
+C:\Users\whois\source\repos\PDA Cyber Security Simulator V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.csproj.CoreCompileInputs.cache
+C:\Users\whois\source\repos\PDA Cyber Security Simulator V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.exe
+C:\Users\whois\source\repos\PDA Cyber Security Simulator V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.pdb
