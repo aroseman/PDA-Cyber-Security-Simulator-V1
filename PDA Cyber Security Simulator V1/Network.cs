@@ -10,7 +10,7 @@ namespace PDA_Cyber_Security_Simulator_V1
     {
         //string name;
 
-        Device[][] adjacenyList;
+        
 
         public Network(string name)
         {
@@ -20,62 +20,50 @@ namespace PDA_Cyber_Security_Simulator_V1
         public Network(string name, Device[][] adjacenyList)
         {
             Name = name;
-            this.adjacenyList = adjacenyList;
+            
         }
 
-        //public void SetName(string name)
-        //{
-        //    this.name = name;
-        //}
+        public List<Device> Devices { get; set; }
+        public string Name { get; set; }    
 
-        //public string GetName()
-        //{
-        //    return this.name;
-        //}
-        public string Name { get; set; }    // Auto property.
-        /*
-         * Description: This will add a device to a network
-         * Input: A Device
-         * Output: N/A
-         * */
-
-            /// <summary>
-            /// 
-            /// </summary>
-            /// <param name="dev"></param>
+        /// <summary>
+        /// This will add a device to a network
+        /// </summary>
+        /// <param name="dev"></param>
         public void AddDevice(Device dev)
         {
-            // This will add a device to the adjaceny list(matrix) list[x][0].
-            // Append value to first index of a new row in the list(matrix)
+            Devices.Add(dev);
         }
 
-        /*
-         * Description: Adds two devices to each of their adjacency lists.
-         * Input: Two Devices
-         * Output:
-         * */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
         public void AddLink(Device a, Device b)
         {
             
         }
 
-
-        /*
-         * Description: Removes a device from the network.
-         * Input: A single device.
-         * Output:
-         * */
+        /// <summary>
+        /// Removes a device from the network.
+        /// </summary>
+        /// <param name="dev"></param>
         public void RemoveDevice(Device dev)
         {
             // Search Matrix for all instances of the device (Rows and Columns).
         }
 
+        /// <summary>
+        ///  Removes a link from two Devices.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
         public void RemoveLink(Device a, Device b)
         {
-            // Search a for b and remove it.
-            // Search b for a and remove it.
+           
         }
 
-        // Build network
+        
     }
 }

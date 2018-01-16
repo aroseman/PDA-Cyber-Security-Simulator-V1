@@ -14,8 +14,9 @@ namespace PDA_Cyber_Security_Simulator_V1
         private string status;
         private List<Device> neighbors;
         private string notes;
-        
-        
+
+        public string Status { get; set; }
+        public string IP { get; set; }
         public Device(string name, string ipAddress, string macAddress, string notes)
         {
             this.name = name;
