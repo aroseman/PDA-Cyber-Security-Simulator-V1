@@ -13,27 +13,31 @@ namespace PDA_Cyber_Security_Simulator_V1
         {
             bool isAvailable = false;
             Ping pinger = new Ping();
-            PingReply reply = pinger.Send(dev.IP);
+            PingReply reply = pinger.Send(dev.IpAddress);
             if (reply.Status == IPStatus.Success)
             {
-                dev.Status = "Available";
+                dev.Status = true;
                 isAvailable = true;
             }
             return isAvailable;
         }
 
-        public bool TestDevice(Network network)
+        public void TestDevice(Network network)
         {
-            bool isAvailable = false;
+            
             Ping pinger = new Ping();
             foreach (Device dev in network.Devices)
             {
-                PingReply reply = pinger.Send(dev.IP);
-                dev.Status = "Available";
-                isAvailable = true;
+                PingReply reply = pinger.Send(dev.IpAddress);
+                if(reply.Status == IPStatus.Success)
+                {
+                    dev.Status = true;
+                }
+                
+                
             }
 
-            return isAvailable;
+           
         }
     }
 }

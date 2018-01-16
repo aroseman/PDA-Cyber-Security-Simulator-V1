@@ -8,19 +8,16 @@ namespace PDA_Cyber_Security_Simulator_V1
 {
     class Network
     {
-        //string name;
-
-        
 
         public Network(string name)
         {
                 Name = name;
         }
 
-        public Network(string name, Device[][] adjacenyList)
+        public Network(string name, List<Device> devices)
         {
             Name = name;
-            
+            Devices = devices;
         }
 
         public List<Device> Devices { get; set; }
@@ -36,13 +33,14 @@ namespace PDA_Cyber_Security_Simulator_V1
         }
 
         /// <summary>
-        /// 
+        ///  Adds a virtual link between two devices.
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
         public void AddLink(Device a, Device b)
         {
-            
+            a.Neighbors.Add(b);
+            b.Neighbors.Add(a);
         }
 
         /// <summary>
@@ -51,7 +49,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         /// <param name="dev"></param>
         public void RemoveDevice(Device dev)
         {
-            // Search Matrix for all instances of the device (Rows and Columns).
+            Devices.Remove(dev);
         }
 
         /// <summary>
@@ -61,7 +59,8 @@ namespace PDA_Cyber_Security_Simulator_V1
         /// <param name="b"></param>
         public void RemoveLink(Device a, Device b)
         {
-           
+            a.Neighbors.Remove(b);
+            b.Neighbors.Remove(a);
         }
 
         
