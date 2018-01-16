@@ -48,13 +48,13 @@
             this.viewNetworkLabel = new System.Windows.Forms.Label();
             this.testNetwork = new System.Windows.Forms.Panel();
             this.testNetworkLabel = new System.Windows.Forms.Label();
-            this.breadCrumbPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.breadCrumbFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.imagePanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.breadCrumbs = new System.Windows.Forms.Panel();
+            this.breadCrumbsPanel = new System.Windows.Forms.Panel();
             this.rootCrumb = new System.Windows.Forms.Label();
             this.networkConfigurationPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.networkConfigurationTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.configurationPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.configComboBox = new System.Windows.Forms.ComboBox();
@@ -62,10 +62,10 @@
             this.configLabel = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.addNew = new System.Windows.Forms.Button();
-            this.deviceFormtableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.deviceFormTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.deviceFormFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.saveConfiguration = new System.Windows.Forms.Button();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.deviceFormFlowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -74,39 +74,46 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.testNetworkPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.testNetworkTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.testNetworkFlowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.testNetworkTableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.testNetworkFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.testNetworkFlowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pingResultTextBox = new System.Windows.Forms.TextBox();
+            this.simulateAttackTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.simulateAttackTextBox = new System.Windows.Forms.TextBox();
+            this.simulateAttackTableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.simulateAttackComboBox = new System.Windows.Forms.ComboBox();
+            this.simulateAttackButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.homeScreen.SuspendLayout();
             this.configureNetwork.SuspendLayout();
             this.simulateAttack.SuspendLayout();
             this.viewNetwork.SuspendLayout();
             this.testNetwork.SuspendLayout();
-            this.breadCrumbPanel.SuspendLayout();
+            this.breadCrumbFlowLayoutPanel.SuspendLayout();
             this.imagePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.breadCrumbs.SuspendLayout();
+            this.breadCrumbsPanel.SuspendLayout();
             this.networkConfigurationPanel.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.networkConfigurationTableLayoutPanel.SuspendLayout();
             this.configurationPanel.SuspendLayout();
             this.configFlowLayoutPanel2.SuspendLayout();
-            this.deviceFormtableLayoutPanel.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.testNetworkPanel.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel4.SuspendLayout();
-            this.flowLayoutPanel5.SuspendLayout();
+            this.deviceFormTableLayoutPanel.SuspendLayout();
+            this.deviceFormFlowLayoutPanel.SuspendLayout();
+            this.deviceFormFlowLayoutPanel2.SuspendLayout();
+            this.testNetworkTableLayoutPanel.SuspendLayout();
+            this.testNetworkFlowLayoutPanel3.SuspendLayout();
+            this.testNetworkTableLayoutPanel2.SuspendLayout();
+            this.testNetworkFlowLayoutPanel.SuspendLayout();
+            this.testNetworkFlowLayoutPanel2.SuspendLayout();
+            this.simulateAttackTableLayoutPanel.SuspendLayout();
+            this.simulateAttackTableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -307,15 +314,15 @@
             this.testNetworkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.testNetworkLabel.Click += new System.EventHandler(this.testNetworkOnClick);
             // 
-            // breadCrumbPanel
+            // breadCrumbFlowLayoutPanel
             // 
-            this.breadCrumbPanel.BackColor = System.Drawing.SystemColors.Control;
-            this.breadCrumbPanel.Controls.Add(this.imagePanel);
-            this.breadCrumbPanel.Controls.Add(this.breadCrumbs);
-            this.breadCrumbPanel.Location = new System.Drawing.Point(0, 27);
-            this.breadCrumbPanel.Name = "breadCrumbPanel";
-            this.breadCrumbPanel.Size = new System.Drawing.Size(882, 100);
-            this.breadCrumbPanel.TabIndex = 2;
+            this.breadCrumbFlowLayoutPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.breadCrumbFlowLayoutPanel.Controls.Add(this.imagePanel);
+            this.breadCrumbFlowLayoutPanel.Controls.Add(this.breadCrumbsPanel);
+            this.breadCrumbFlowLayoutPanel.Location = new System.Drawing.Point(0, 27);
+            this.breadCrumbFlowLayoutPanel.Name = "breadCrumbFlowLayoutPanel";
+            this.breadCrumbFlowLayoutPanel.Size = new System.Drawing.Size(882, 100);
+            this.breadCrumbFlowLayoutPanel.TabIndex = 2;
             // 
             // imagePanel
             // 
@@ -336,13 +343,13 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // breadCrumbs
+            // breadCrumbsPanel
             // 
-            this.breadCrumbs.Controls.Add(this.rootCrumb);
-            this.breadCrumbs.Location = new System.Drawing.Point(271, 3);
-            this.breadCrumbs.Name = "breadCrumbs";
-            this.breadCrumbs.Size = new System.Drawing.Size(200, 87);
-            this.breadCrumbs.TabIndex = 4;
+            this.breadCrumbsPanel.Controls.Add(this.rootCrumb);
+            this.breadCrumbsPanel.Location = new System.Drawing.Point(271, 3);
+            this.breadCrumbsPanel.Name = "breadCrumbsPanel";
+            this.breadCrumbsPanel.Size = new System.Drawing.Size(200, 87);
+            this.breadCrumbsPanel.TabIndex = 4;
             // 
             // rootCrumb
             // 
@@ -360,8 +367,8 @@
             this.networkConfigurationPanel.ColumnCount = 2;
             this.networkConfigurationPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.61111F));
             this.networkConfigurationPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.38889F));
-            this.networkConfigurationPanel.Controls.Add(this.tableLayoutPanel1, 0, 0);
-            this.networkConfigurationPanel.Controls.Add(this.deviceFormtableLayoutPanel, 1, 0);
+            this.networkConfigurationPanel.Controls.Add(this.networkConfigurationTableLayoutPanel, 0, 0);
+            this.networkConfigurationPanel.Controls.Add(this.deviceFormTableLayoutPanel, 1, 0);
             this.networkConfigurationPanel.Location = new System.Drawing.Point(44, 133);
             this.networkConfigurationPanel.Name = "networkConfigurationPanel";
             this.networkConfigurationPanel.RowCount = 1;
@@ -370,20 +377,20 @@
             this.networkConfigurationPanel.TabIndex = 3;
             this.networkConfigurationPanel.Visible = false;
             // 
-            // tableLayoutPanel1
+            // networkConfigurationTableLayoutPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.configurationPanel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.configFlowLayoutPanel2, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.23077F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.76923F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(180, 338);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.networkConfigurationTableLayoutPanel.ColumnCount = 1;
+            this.networkConfigurationTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.networkConfigurationTableLayoutPanel.Controls.Add(this.configurationPanel, 0, 0);
+            this.networkConfigurationTableLayoutPanel.Controls.Add(this.configFlowLayoutPanel2, 0, 1);
+            this.networkConfigurationTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.networkConfigurationTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            this.networkConfigurationTableLayoutPanel.Name = "networkConfigurationTableLayoutPanel";
+            this.networkConfigurationTableLayoutPanel.RowCount = 2;
+            this.networkConfigurationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.23077F));
+            this.networkConfigurationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.76923F));
+            this.networkConfigurationTableLayoutPanel.Size = new System.Drawing.Size(180, 338);
+            this.networkConfigurationTableLayoutPanel.TabIndex = 0;
             // 
             // configurationPanel
             // 
@@ -458,32 +465,32 @@
             this.addNew.UseVisualStyleBackColor = true;
             this.addNew.Click += new System.EventHandler(this.AddNewOnClick);
             // 
-            // deviceFormtableLayoutPanel
+            // deviceFormTableLayoutPanel
             // 
-            this.deviceFormtableLayoutPanel.ColumnCount = 1;
-            this.deviceFormtableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.deviceFormtableLayoutPanel.Controls.Add(this.flowLayoutPanel1, 0, 1);
-            this.deviceFormtableLayoutPanel.Controls.Add(this.flowLayoutPanel2, 0, 0);
-            this.deviceFormtableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.deviceFormtableLayoutPanel.Location = new System.Drawing.Point(189, 3);
-            this.deviceFormtableLayoutPanel.Name = "deviceFormtableLayoutPanel";
-            this.deviceFormtableLayoutPanel.RowCount = 2;
-            this.deviceFormtableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.13609F));
-            this.deviceFormtableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.8639F));
-            this.deviceFormtableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.deviceFormtableLayoutPanel.Size = new System.Drawing.Size(600, 338);
-            this.deviceFormtableLayoutPanel.TabIndex = 1;
-            this.deviceFormtableLayoutPanel.Visible = false;
+            this.deviceFormTableLayoutPanel.ColumnCount = 1;
+            this.deviceFormTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.deviceFormTableLayoutPanel.Controls.Add(this.deviceFormFlowLayoutPanel, 0, 1);
+            this.deviceFormTableLayoutPanel.Controls.Add(this.deviceFormFlowLayoutPanel2, 0, 0);
+            this.deviceFormTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.deviceFormTableLayoutPanel.Location = new System.Drawing.Point(189, 3);
+            this.deviceFormTableLayoutPanel.Name = "deviceFormTableLayoutPanel";
+            this.deviceFormTableLayoutPanel.RowCount = 2;
+            this.deviceFormTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.13609F));
+            this.deviceFormTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.8639F));
+            this.deviceFormTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.deviceFormTableLayoutPanel.Size = new System.Drawing.Size(600, 338);
+            this.deviceFormTableLayoutPanel.TabIndex = 1;
+            this.deviceFormTableLayoutPanel.Visible = false;
             // 
-            // flowLayoutPanel1
+            // deviceFormFlowLayoutPanel
             // 
-            this.flowLayoutPanel1.Controls.Add(this.saveConfiguration);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 284);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(594, 51);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.deviceFormFlowLayoutPanel.Controls.Add(this.saveConfiguration);
+            this.deviceFormFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.deviceFormFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.deviceFormFlowLayoutPanel.Location = new System.Drawing.Point(3, 284);
+            this.deviceFormFlowLayoutPanel.Name = "deviceFormFlowLayoutPanel";
+            this.deviceFormFlowLayoutPanel.Size = new System.Drawing.Size(594, 51);
+            this.deviceFormFlowLayoutPanel.TabIndex = 0;
             // 
             // saveConfiguration
             // 
@@ -494,21 +501,21 @@
             this.saveConfiguration.Text = "Save";
             this.saveConfiguration.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel2
+            // deviceFormFlowLayoutPanel2
             // 
-            this.flowLayoutPanel2.Controls.Add(this.label2);
-            this.flowLayoutPanel2.Controls.Add(this.textBox1);
-            this.flowLayoutPanel2.Controls.Add(this.label3);
-            this.flowLayoutPanel2.Controls.Add(this.textBox2);
-            this.flowLayoutPanel2.Controls.Add(this.label4);
-            this.flowLayoutPanel2.Controls.Add(this.textBox3);
-            this.flowLayoutPanel2.Controls.Add(this.label5);
-            this.flowLayoutPanel2.Controls.Add(this.textBox4);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(594, 275);
-            this.flowLayoutPanel2.TabIndex = 1;
+            this.deviceFormFlowLayoutPanel2.Controls.Add(this.label2);
+            this.deviceFormFlowLayoutPanel2.Controls.Add(this.textBox1);
+            this.deviceFormFlowLayoutPanel2.Controls.Add(this.label3);
+            this.deviceFormFlowLayoutPanel2.Controls.Add(this.textBox2);
+            this.deviceFormFlowLayoutPanel2.Controls.Add(this.label4);
+            this.deviceFormFlowLayoutPanel2.Controls.Add(this.textBox3);
+            this.deviceFormFlowLayoutPanel2.Controls.Add(this.label5);
+            this.deviceFormFlowLayoutPanel2.Controls.Add(this.textBox4);
+            this.deviceFormFlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.deviceFormFlowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.deviceFormFlowLayoutPanel2.Name = "deviceFormFlowLayoutPanel2";
+            this.deviceFormFlowLayoutPanel2.Size = new System.Drawing.Size(594, 275);
+            this.deviceFormFlowLayoutPanel2.TabIndex = 1;
             // 
             // label2
             // 
@@ -581,53 +588,53 @@
             this.textBox4.Size = new System.Drawing.Size(200, 20);
             this.textBox4.TabIndex = 3;
             // 
-            // testNetworkPanel
+            // testNetworkTableLayoutPanel
             // 
-            this.testNetworkPanel.ColumnCount = 2;
-            this.testNetworkPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.16162F));
-            this.testNetworkPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.83838F));
-            this.testNetworkPanel.Controls.Add(this.flowLayoutPanel3, 0, 0);
-            this.testNetworkPanel.Controls.Add(this.pingResultTextBox, 1, 0);
-            this.testNetworkPanel.Location = new System.Drawing.Point(44, 133);
-            this.testNetworkPanel.Name = "testNetworkPanel";
-            this.testNetworkPanel.RowCount = 1;
-            this.testNetworkPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.testNetworkPanel.Size = new System.Drawing.Size(792, 344);
-            this.testNetworkPanel.TabIndex = 4;
-            this.testNetworkPanel.Visible = false;
+            this.testNetworkTableLayoutPanel.ColumnCount = 2;
+            this.testNetworkTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.16162F));
+            this.testNetworkTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.83838F));
+            this.testNetworkTableLayoutPanel.Controls.Add(this.testNetworkFlowLayoutPanel3, 0, 0);
+            this.testNetworkTableLayoutPanel.Controls.Add(this.pingResultTextBox, 1, 0);
+            this.testNetworkTableLayoutPanel.Location = new System.Drawing.Point(44, 133);
+            this.testNetworkTableLayoutPanel.Name = "testNetworkTableLayoutPanel";
+            this.testNetworkTableLayoutPanel.RowCount = 1;
+            this.testNetworkTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.testNetworkTableLayoutPanel.Size = new System.Drawing.Size(792, 344);
+            this.testNetworkTableLayoutPanel.TabIndex = 4;
+            this.testNetworkTableLayoutPanel.Visible = false;
             // 
-            // flowLayoutPanel3
+            // testNetworkFlowLayoutPanel3
             // 
-            this.flowLayoutPanel3.Controls.Add(this.tableLayoutPanel2);
-            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(320, 338);
-            this.flowLayoutPanel3.TabIndex = 0;
+            this.testNetworkFlowLayoutPanel3.Controls.Add(this.testNetworkTableLayoutPanel2);
+            this.testNetworkFlowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.testNetworkFlowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.testNetworkFlowLayoutPanel3.Name = "testNetworkFlowLayoutPanel3";
+            this.testNetworkFlowLayoutPanel3.Size = new System.Drawing.Size(320, 338);
+            this.testNetworkFlowLayoutPanel3.TabIndex = 0;
             // 
-            // tableLayoutPanel2
+            // testNetworkTableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel4, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel5, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.93811F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.06189F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(306, 307);
-            this.tableLayoutPanel2.TabIndex = 0;
+            this.testNetworkTableLayoutPanel2.ColumnCount = 1;
+            this.testNetworkTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.testNetworkTableLayoutPanel2.Controls.Add(this.testNetworkFlowLayoutPanel, 0, 0);
+            this.testNetworkTableLayoutPanel2.Controls.Add(this.testNetworkFlowLayoutPanel2, 0, 1);
+            this.testNetworkTableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.testNetworkTableLayoutPanel2.Name = "testNetworkTableLayoutPanel2";
+            this.testNetworkTableLayoutPanel2.RowCount = 2;
+            this.testNetworkTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.93811F));
+            this.testNetworkTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.06189F));
+            this.testNetworkTableLayoutPanel2.Size = new System.Drawing.Size(306, 307);
+            this.testNetworkTableLayoutPanel2.TabIndex = 0;
             // 
-            // flowLayoutPanel4
+            // testNetworkFlowLayoutPanel
             // 
-            this.flowLayoutPanel4.Controls.Add(this.label6);
-            this.flowLayoutPanel4.Controls.Add(this.comboBox1);
-            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(300, 45);
-            this.flowLayoutPanel4.TabIndex = 0;
+            this.testNetworkFlowLayoutPanel.Controls.Add(this.label6);
+            this.testNetworkFlowLayoutPanel.Controls.Add(this.comboBox1);
+            this.testNetworkFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.testNetworkFlowLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            this.testNetworkFlowLayoutPanel.Name = "testNetworkFlowLayoutPanel";
+            this.testNetworkFlowLayoutPanel.Size = new System.Drawing.Size(300, 45);
+            this.testNetworkFlowLayoutPanel.TabIndex = 0;
             // 
             // label6
             // 
@@ -647,16 +654,16 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 1;
             // 
-            // flowLayoutPanel5
+            // testNetworkFlowLayoutPanel2
             // 
-            this.flowLayoutPanel5.Controls.Add(this.label7);
-            this.flowLayoutPanel5.Controls.Add(this.listBox2);
-            this.flowLayoutPanel5.Controls.Add(this.button1);
-            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 54);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(300, 250);
-            this.flowLayoutPanel5.TabIndex = 1;
+            this.testNetworkFlowLayoutPanel2.Controls.Add(this.label7);
+            this.testNetworkFlowLayoutPanel2.Controls.Add(this.listBox2);
+            this.testNetworkFlowLayoutPanel2.Controls.Add(this.button1);
+            this.testNetworkFlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.testNetworkFlowLayoutPanel2.Location = new System.Drawing.Point(3, 54);
+            this.testNetworkFlowLayoutPanel2.Name = "testNetworkFlowLayoutPanel2";
+            this.testNetworkFlowLayoutPanel2.Size = new System.Drawing.Size(300, 250);
+            this.testNetworkFlowLayoutPanel2.TabIndex = 1;
             // 
             // label7
             // 
@@ -699,14 +706,74 @@
             this.pingResultTextBox.Size = new System.Drawing.Size(460, 338);
             this.pingResultTextBox.TabIndex = 1;
             // 
+            // simulateAttackTableLayoutPanel
+            // 
+            this.simulateAttackTableLayoutPanel.ColumnCount = 2;
+            this.simulateAttackTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.simulateAttackTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.simulateAttackTableLayoutPanel.Controls.Add(this.simulateAttackTextBox, 1, 0);
+            this.simulateAttackTableLayoutPanel.Controls.Add(this.simulateAttackTableLayoutPanel2, 0, 0);
+            this.simulateAttackTableLayoutPanel.Location = new System.Drawing.Point(44, 133);
+            this.simulateAttackTableLayoutPanel.Name = "simulateAttackTableLayoutPanel";
+            this.simulateAttackTableLayoutPanel.RowCount = 1;
+            this.simulateAttackTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.simulateAttackTableLayoutPanel.Size = new System.Drawing.Size(792, 344);
+            this.simulateAttackTableLayoutPanel.TabIndex = 5;
+            this.simulateAttackTableLayoutPanel.Visible = false;
+            // 
+            // simulateAttackTextBox
+            // 
+            this.simulateAttackTextBox.Location = new System.Drawing.Point(399, 3);
+            this.simulateAttackTextBox.Multiline = true;
+            this.simulateAttackTextBox.Name = "simulateAttackTextBox";
+            this.simulateAttackTextBox.Size = new System.Drawing.Size(390, 338);
+            this.simulateAttackTextBox.TabIndex = 0;
+            // 
+            // simulateAttackTableLayoutPanel2
+            // 
+            this.simulateAttackTableLayoutPanel2.ColumnCount = 2;
+            this.simulateAttackTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.simulateAttackTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.simulateAttackTableLayoutPanel2.Controls.Add(this.simulateAttackComboBox, 0, 0);
+            this.simulateAttackTableLayoutPanel2.Controls.Add(this.simulateAttackButton, 0, 1);
+            this.simulateAttackTableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.simulateAttackTableLayoutPanel2.Name = "simulateAttackTableLayoutPanel2";
+            this.simulateAttackTableLayoutPanel2.RowCount = 4;
+            this.simulateAttackTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.simulateAttackTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.simulateAttackTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.simulateAttackTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.simulateAttackTableLayoutPanel2.Size = new System.Drawing.Size(390, 338);
+            this.simulateAttackTableLayoutPanel2.TabIndex = 1;
+            // 
+            // simulateAttackComboBox
+            // 
+            this.simulateAttackComboBox.FormattingEnabled = true;
+            this.simulateAttackComboBox.Location = new System.Drawing.Point(3, 3);
+            this.simulateAttackComboBox.Name = "simulateAttackComboBox";
+            this.simulateAttackComboBox.Size = new System.Drawing.Size(189, 21);
+            this.simulateAttackComboBox.TabIndex = 0;
+            this.simulateAttackComboBox.Text = "Select Attack";
+            // 
+            // simulateAttackButton
+            // 
+            this.simulateAttackButton.Location = new System.Drawing.Point(3, 87);
+            this.simulateAttackButton.Name = "simulateAttackButton";
+            this.simulateAttackButton.Size = new System.Drawing.Size(189, 23);
+            this.simulateAttackButton.TabIndex = 1;
+            this.simulateAttackButton.Text = "Simulate Attack";
+            this.simulateAttackButton.UseVisualStyleBackColor = true;
+            this.simulateAttackButton.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 532);
-            this.Controls.Add(this.testNetworkPanel);
+            this.Controls.Add(this.simulateAttackTableLayoutPanel);
+            this.Controls.Add(this.testNetworkTableLayoutPanel);
             this.Controls.Add(this.networkConfigurationPanel);
-            this.Controls.Add(this.breadCrumbPanel);
+            this.Controls.Add(this.breadCrumbFlowLayoutPanel);
             this.Controls.Add(this.homeScreen);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -724,29 +791,32 @@
             this.viewNetwork.PerformLayout();
             this.testNetwork.ResumeLayout(false);
             this.testNetwork.PerformLayout();
-            this.breadCrumbPanel.ResumeLayout(false);
+            this.breadCrumbFlowLayoutPanel.ResumeLayout(false);
             this.imagePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.breadCrumbs.ResumeLayout(false);
-            this.breadCrumbs.PerformLayout();
+            this.breadCrumbsPanel.ResumeLayout(false);
+            this.breadCrumbsPanel.PerformLayout();
             this.networkConfigurationPanel.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.networkConfigurationTableLayoutPanel.ResumeLayout(false);
             this.configurationPanel.ResumeLayout(false);
             this.configurationPanel.PerformLayout();
             this.configFlowLayoutPanel2.ResumeLayout(false);
             this.configFlowLayoutPanel2.PerformLayout();
-            this.deviceFormtableLayoutPanel.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
-            this.testNetworkPanel.ResumeLayout(false);
-            this.testNetworkPanel.PerformLayout();
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel4.ResumeLayout(false);
-            this.flowLayoutPanel4.PerformLayout();
-            this.flowLayoutPanel5.ResumeLayout(false);
-            this.flowLayoutPanel5.PerformLayout();
+            this.deviceFormTableLayoutPanel.ResumeLayout(false);
+            this.deviceFormFlowLayoutPanel.ResumeLayout(false);
+            this.deviceFormFlowLayoutPanel2.ResumeLayout(false);
+            this.deviceFormFlowLayoutPanel2.PerformLayout();
+            this.testNetworkTableLayoutPanel.ResumeLayout(false);
+            this.testNetworkTableLayoutPanel.PerformLayout();
+            this.testNetworkFlowLayoutPanel3.ResumeLayout(false);
+            this.testNetworkTableLayoutPanel2.ResumeLayout(false);
+            this.testNetworkFlowLayoutPanel.ResumeLayout(false);
+            this.testNetworkFlowLayoutPanel.PerformLayout();
+            this.testNetworkFlowLayoutPanel2.ResumeLayout(false);
+            this.testNetworkFlowLayoutPanel2.PerformLayout();
+            this.simulateAttackTableLayoutPanel.ResumeLayout(false);
+            this.simulateAttackTableLayoutPanel.PerformLayout();
+            this.simulateAttackTableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -760,6 +830,10 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newNetworkToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selectNetworkToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editNetworkToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewNetworkToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem labsToolStripMenuItem;
+
         private System.Windows.Forms.TableLayoutPanel homeScreen;
         private System.Windows.Forms.Panel configureNetwork;
         private System.Windows.Forms.Label configureNetworkLabel;
@@ -769,27 +843,41 @@
         private System.Windows.Forms.Label viewNetworkLabel;
         private System.Windows.Forms.Panel testNetwork;
         private System.Windows.Forms.Label testNetworkLabel;
-        private System.Windows.Forms.FlowLayoutPanel breadCrumbPanel;
-        private System.Windows.Forms.Panel imagePanel;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ToolStripMenuItem simulateAttackToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem testNetworkToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editNetworkToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewNetworkToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem labsToolStripMenuItem;
-        private System.Windows.Forms.Panel breadCrumbs;
-        private System.Windows.Forms.Label rootCrumb;
+
         private System.Windows.Forms.TableLayoutPanel networkConfigurationPanel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel networkConfigurationTableLayoutPanel;
         private System.Windows.Forms.FlowLayoutPanel configurationPanel;
-        private System.Windows.Forms.ComboBox configComboBox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel configFlowLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel deviceFormTableLayoutPanel;
+        private System.Windows.Forms.FlowLayoutPanel deviceFormFlowLayoutPanel;
+        private System.Windows.Forms.FlowLayoutPanel deviceFormFlowLayoutPanel2;
+        private System.Windows.Forms.Button saveConfiguration;
         private System.Windows.Forms.Label configLabel;
+        private System.Windows.Forms.ComboBox configComboBox;
+
+        private System.Windows.Forms.TableLayoutPanel simulateAttackTableLayoutPanel;
+        private System.Windows.Forms.TableLayoutPanel simulateAttackTableLayoutPanel2;
+        private System.Windows.Forms.ToolStripMenuItem simulateAttackToolStripMenuItem;
+        private System.Windows.Forms.TextBox simulateAttackTextBox;
+        private System.Windows.Forms.ComboBox simulateAttackComboBox;
+        private System.Windows.Forms.Button simulateAttackButton;
+        
+        private System.Windows.Forms.ToolStripMenuItem testNetworkToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel testNetworkTableLayoutPanel;
+        private System.Windows.Forms.TableLayoutPanel testNetworkTableLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel testNetworkFlowLayoutPanel;
+        private System.Windows.Forms.FlowLayoutPanel testNetworkFlowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel testNetworkFlowLayoutPanel3;
+        private System.Windows.Forms.TextBox pingResultTextBox;
+
+        private System.Windows.Forms.Panel breadCrumbsPanel;
+        private System.Windows.Forms.Panel imagePanel;
+        private System.Windows.Forms.FlowLayoutPanel breadCrumbFlowLayoutPanel;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label rootCrumb;
+
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TableLayoutPanel deviceFormtableLayoutPanel;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
@@ -798,19 +886,14 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button saveConfiguration;
         private System.Windows.Forms.Button addNew;
-        private System.Windows.Forms.TableLayoutPanel testNetworkPanel;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.TextBox pingResultTextBox;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Button button1;
+        
+
     }
 }
 

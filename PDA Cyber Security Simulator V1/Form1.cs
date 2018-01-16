@@ -37,7 +37,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         {
 
             homeScreen.Visible = false;
-            breadCrumbPanel.BackColor = Color.FromArgb(240,144,24);
+            breadCrumbFlowLayoutPanel.BackColor = Color.FromArgb(240,144,24);
             imagePanel.BackColor = Color.FromArgb(240, 144, 24);
             networkConfigurationPanel.Visible = true;
         }
@@ -50,13 +50,17 @@ namespace PDA_Cyber_Security_Simulator_V1
         private void testNetworkOnClick(object sender, EventArgs e)
         {
             homeScreen.Visible = false;
-            breadCrumbPanel.BackColor = Color.FromArgb(0, 144, 120);
+            breadCrumbFlowLayoutPanel.BackColor = Color.FromArgb(0, 144, 120);
             imagePanel.BackColor = Color.FromArgb(0, 144, 120);
-            testNetworkPanel.Visible = true;
+            testNetworkTableLayoutPanel.Visible = true;
         }
 
         private void simulateAttackPanelOnClick(object sender, EventArgs e)
         {
+            homeScreen.Visible = false;
+            breadCrumbFlowLayoutPanel.BackColor = Color.FromArgb(0, 120, 192);
+            imagePanel.BackColor = Color.FromArgb(0, 120, 192);
+            simulateAttackTableLayoutPanel.Visible = true;
             Console.WriteLine("Simulate Attack");
         }
 
@@ -68,9 +72,10 @@ namespace PDA_Cyber_Security_Simulator_V1
         private void Load_Home(object send, EventArgs e)
         {
             networkConfigurationPanel.Visible = false;
-            testNetworkPanel.Visible = false;
+            testNetworkTableLayoutPanel.Visible = false;
+            simulateAttackTableLayoutPanel.Visible = false;
             homeScreen.Visible = true;
-            breadCrumbPanel.BackColor = Color.FromName("Control");
+            breadCrumbFlowLayoutPanel.BackColor = Color.FromName("Control");
             imagePanel.BackColor = Color.FromName("Control");
         }
 
@@ -86,13 +91,13 @@ namespace PDA_Cyber_Security_Simulator_V1
              * */
             if (configComboBox.SelectedItem.Equals("Networks"))
             {
-                deviceFormtableLayoutPanel.Visible = false;
+                deviceFormTableLayoutPanel.Visible = false;
                 configLabel.Text = "Networks";
 
             }
             else
             {
-                deviceFormtableLayoutPanel.Visible = true;
+                deviceFormTableLayoutPanel.Visible = true;
                 configLabel.Text = "Devices";
             }
         }
@@ -115,7 +120,8 @@ namespace PDA_Cyber_Security_Simulator_V1
                 string macAddress = textBox3.Text;
                 string notes = textBox4.Text;
                 string[] lines = { name, ipAddress, macAddress, notes};
-                Device device = new Device(name, ipAddress, macAddress, notes);
+                // Device device = new Device(name, ipAddress, macAddress, notes);
+                Device device = new Device();
                 System.IO.File.WriteAllLines(@"C:\Users\Public\TestFolder\Devices.txt", lines);
             }
         }
@@ -132,6 +138,11 @@ namespace PDA_Cyber_Security_Simulator_V1
         {
             NetworkTester networkTester = new NetworkTester();
             networkTester.TestDevice("www.google.com", pingResultTextBox);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
 
         }
 
