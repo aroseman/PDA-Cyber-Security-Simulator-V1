@@ -16,7 +16,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             PingReply reply = pinger.Send(dev.IP);
             if (reply.Status == IPStatus.Success)
             {
-                dev.status = "Available";
+                dev.Status = "Available";
                 isAvailable = true;
             }
             return isAvailable;
