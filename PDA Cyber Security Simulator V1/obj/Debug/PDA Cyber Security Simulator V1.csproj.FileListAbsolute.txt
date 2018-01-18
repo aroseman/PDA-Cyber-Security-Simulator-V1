@@ -20,3 +20,6 @@ C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security S
 C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.csproj.GenerateResource.Cache
 C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\PDA Cyber Security Simulator V1.exe
 C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\PDA Cyber Security Simulator V1.pdb
+C:\Users\sqw5385\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\PDA Cyber Security Simulator V1.exe.config
+C:\Users\sqw5385\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.exe
+C:\Users\sqw5385\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.pdb
