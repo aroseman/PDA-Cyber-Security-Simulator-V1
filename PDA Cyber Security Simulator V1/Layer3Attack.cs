@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PDA_Cyber_Security_Simulator_V1
 {
-    public class Layer3Attack : Attack
+    public abstract class Layer3Attack : Attack
     {
-        public Network selectedNetwork { get; set; }
+        public Network selectedNetwork;
 
         public void startAttack()
         {
@@ -27,7 +27,12 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         public Layer3Attack()
         {
-            selectedNetwork = null;
+
+        }
+
+        public Layer3Attack(Network netname)
+        {
+
         }
 
     }

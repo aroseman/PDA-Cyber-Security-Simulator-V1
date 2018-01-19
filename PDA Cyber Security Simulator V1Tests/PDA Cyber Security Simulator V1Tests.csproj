@@ -52,6 +52,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Layer3AttackTest.cs" />
+    <Compile Include="Layer2AttackTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PDA Cyber Security Simulator V1\PDA Cyber Security Simulator V1.csproj">
