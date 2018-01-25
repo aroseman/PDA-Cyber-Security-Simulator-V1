@@ -40,6 +40,10 @@ namespace PDA_Cyber_Security_Simulator_V1
             breadCrumbFlowLayoutPanel.BackColor = Color.FromArgb(240,144,24);
             imagePanel.BackColor = Color.FromArgb(240, 144, 24);
             networkConfigurationPanel.Visible = true;
+
+            NetBuilder form = new NetBuilder();
+            this.Hide();
+            form.Show();
         }
 
         private void viewNetworkOnClick(object sender, EventArgs e)
