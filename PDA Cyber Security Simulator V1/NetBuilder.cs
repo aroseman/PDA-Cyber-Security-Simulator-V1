@@ -12,8 +12,12 @@ namespace PDA_Cyber_Security_Simulator_V1
 {
     public partial class NetBuilder : Form
     {
+        public bool Status { get; set; }
+        public Point StartPoint { get; set; }
+        public Point EndPoint { get; set; }
         public NetBuilder()
         {
+            Status = false;
             InitializeComponent();
         }
 
@@ -40,6 +44,12 @@ namespace PDA_Cyber_Security_Simulator_V1
         private void panel7_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void canvas_MouseDown(object sender, MouseEventArgs e)
+        {
+            Status = true;
+            pa
         }
     }
 }
