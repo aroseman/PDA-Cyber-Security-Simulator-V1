@@ -205,7 +205,9 @@
             this.canvas.Name = "canvas";
             this.canvas.Size = new System.Drawing.Size(782, 641);
             this.canvas.TabIndex = 4;
+            this.canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
             this.canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseDown);
+            this.canvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseUp);
             // 
             // NetBuilder
             // 
