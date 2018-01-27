@@ -55,12 +55,6 @@
     <Compile Include="Layer3AttackTest.cs" />
     <Compile Include="Layer2AttackTest.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PDA Cyber Security Simulator V1\PDA Cyber Security Simulator V1.csproj">
-      <Project>{5B4B7524-3EAD-4CBF-9BAE-107E918759A6}</Project>
-      <Name>PDA Cyber Security Simulator V1</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
