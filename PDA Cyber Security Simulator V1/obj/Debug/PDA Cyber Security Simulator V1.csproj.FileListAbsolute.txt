@@ -34,3 +34,14 @@ C:\Users\whois\source\repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security S
 C:\Users\whois\source\repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.exe
 C:\Users\whois\source\repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.pdb
 C:\Users\whois\source\repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.NetBuilder.resources
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.NetBuilder.resources
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.csproj.CoreCompileInputs.cache
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\EntityFramework.dll
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\System.Data.SQLite.dll
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\EntityFramework.xml
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\System.Data.SQLite.xml
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\System.Data.SQLite.dll.config
