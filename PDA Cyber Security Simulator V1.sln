@@ -1,11 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.10
+VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDA Cyber Security Simulator V1", "PDA Cyber Security Simulator V1\PDA Cyber Security Simulator V1.csproj", "{5B4B7524-3EAD-4CBF-9BAE-107E918759A6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDA Cyber Security Simulator V1Tests", "PDA Cyber Security Simulator V1Tests\PDA Cyber Security Simulator V1Tests.csproj", "{59C4CFA6-58BB-43B4-BC8F-8E056A547511}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5B4B7524-3EAD-4CBF-9BAE-107E918759A6} = {5B4B7524-3EAD-4CBF-9BAE-107E918759A6}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
