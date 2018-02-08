@@ -11,6 +11,9 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         [TestMethod]
         public void addDeviceTest()
         {
+            Device.dropDeviceTable();
+            Device.makeDeviceTable();
+
             Device testDevice = new Device();
             testDevice.Name = "CiscoRouter";
             testDevice.IpAddress = "192.168.1.5";
@@ -21,9 +24,12 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         [TestMethod]
         public void getDevicesTest()
         {
-            String devices = Device.getDevices();
+            String[] devices = Device.getDevices();
 
-            Debug.WriteLine(devices);
+            for (int i = 0; i < devices.Length; i++)
+            {
+                Debug.WriteLine(devices[i]);
+            }
         }
     }
 }
