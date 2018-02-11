@@ -35,11 +35,18 @@ namespace PDA_Cyber_Security_Simulator_V1
         // Points for the new line.
         private bool IsDrawing = false;
         private Point NewPt1, NewPt2;
+
+        //variable to enable line drawing
+        //DRAWING ALSO DISABLES DRAG AND DROP
+        private bool drawable = false;
+
         public NetBuilder()
         {
             
             InitializeComponent();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             InitializeDragDrop();
+            lblDrawEnabled.Visible = false;
         }
 
         // The mouse is up. See whether we're over an end point or segment.
@@ -64,51 +71,54 @@ namespace PDA_Cyber_Security_Simulator_V1
         // See what we're over and start doing whatever is appropriate.
         private void canvas_MouseDown(object sender, MouseEventArgs e)
         {
-            // See what we're over.
-            Point hit_point;
-            int segment_number;
-
-            if (MouseIsOverEndpoint(e.Location, out segment_number, out hit_point))
+            if (drawable)
             {
-                // Start moving this end point.
-                canvas.MouseMove -= canvas_MouseMove_NotDown;
-                canvas.MouseMove += canvas_MouseMove_MovingEndPoint;
-                canvas.MouseUp += canvas_MouseUp_MovingEndPoint;
+                // See what we're over.
+                Point hit_point;
+                int segment_number;
 
-                // Remember the segment number.
-                MovingSegment = segment_number;
+                if (MouseIsOverEndpoint(e.Location, out segment_number, out hit_point))
+                {
+                    // Start moving this end point.
+                    canvas.MouseMove -= canvas_MouseMove_NotDown;
+                    canvas.MouseMove += canvas_MouseMove_MovingEndPoint;
+                    canvas.MouseUp += canvas_MouseUp_MovingEndPoint;
 
-                // See if we're moving the start end point.
-                MovingStartEndPoint = (Pt1[segment_number].Equals(hit_point));
+                    // Remember the segment number.
+                    MovingSegment = segment_number;
 
-                // Remember the offset from the mouse to the point.
-                OffsetX = hit_point.X - e.X;
-                OffsetY = hit_point.Y - e.Y;
-            }
-            else if (MouseIsOverSegment(e.Location, out segment_number))
-            {
-                // Start moving this segment.
-                canvas.MouseMove -= canvas_MouseMove_NotDown;
-                canvas.MouseMove += canvas_MouseMove_MovingSegment;
-                canvas.MouseUp += canvas_MouseUp_MovingSegment;
+                    // See if we're moving the start end point.
+                    MovingStartEndPoint = (Pt1[segment_number].Equals(hit_point));
 
-                // Remember the segment number.
-                MovingSegment = segment_number;
+                    // Remember the offset from the mouse to the point.
+                    OffsetX = hit_point.X - e.X;
+                    OffsetY = hit_point.Y - e.Y;
+                }
+                else if (MouseIsOverSegment(e.Location, out segment_number))
+                {
+                    // Start moving this segment.
+                    canvas.MouseMove -= canvas_MouseMove_NotDown;
+                    canvas.MouseMove += canvas_MouseMove_MovingSegment;
+                    canvas.MouseUp += canvas_MouseUp_MovingSegment;
 
-                // Remember the offset from the mouse to the segment's first point.
-                OffsetX = Pt1[segment_number].X - e.X;
-                OffsetY = Pt1[segment_number].Y - e.Y;
-            }
-            else
-            {
-                // Start drawing a new segment.
-                canvas.MouseMove -= canvas_MouseMove_NotDown;
-                canvas.MouseMove += canvas_MouseMove_Drawing;
-                canvas.MouseUp += canvas_MouseUp_Drawing;
+                    // Remember the segment number.
+                    MovingSegment = segment_number;
 
-                IsDrawing = true;
-                NewPt1 = new Point(e.X, e.Y);
-                NewPt2 = new Point(e.X, e.Y);
+                    // Remember the offset from the mouse to the segment's first point.
+                    OffsetX = Pt1[segment_number].X - e.X;
+                    OffsetY = Pt1[segment_number].Y - e.Y;
+                }
+                else
+                {
+                    // Start drawing a new segment.
+                    canvas.MouseMove -= canvas_MouseMove_NotDown;
+                    canvas.MouseMove += canvas_MouseMove_Drawing;
+                    canvas.MouseUp += canvas_MouseUp_Drawing;
+
+                    IsDrawing = true;
+                    NewPt1 = new Point(e.X, e.Y);
+                    NewPt2 = new Point(e.X, e.Y);
+                }
             }
         }
 
@@ -431,28 +441,31 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         private void pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            //Check to see if the parent is the canvas
-            if(((PictureBox)sender).Parent == canvas)
+            if (drawable == false)
             {
-                if(e.Button == MouseButtons.Left)
+                //Check to see if the parent is the canvas
+                if (((PictureBox)sender).Parent == canvas)
                 {
-                    isDragged = true;
-                    //grab the current location of the picture box
-                    Point ptStartPosition = ((PictureBox)sender).PointToScreen(new Point(e.X, e.Y));
+                    if (e.Button == MouseButtons.Left)
+                    {
+                        isDragged = true;
+                        //grab the current location of the picture box
+                        Point ptStartPosition = ((PictureBox)sender).PointToScreen(new Point(e.X, e.Y));
 
-                    ptOffset = new Point();
-                    ptOffset.X = ((PictureBox)sender).Location.X - ptStartPosition.X;
-                    ptOffset.Y = ((PictureBox)sender).Location.Y - ptStartPosition.Y;
+                        ptOffset = new Point();
+                        ptOffset.X = ((PictureBox)sender).Location.X - ptStartPosition.X;
+                        ptOffset.Y = ((PictureBox)sender).Location.Y - ptStartPosition.Y;
+                    }
+                    else
+                    {
+                        isDragged = false;
+                    }
                 }
+                //Drag and drop onto the canvas
                 else
                 {
-                    isDragged = false;
+                    ((PictureBox)sender).DoDragDrop(((PictureBox)sender), DragDropEffects.Move);
                 }
-            }
-            //Drag and drop onto the canvas
-            else
-            {
-                ((PictureBox)sender).DoDragDrop(((PictureBox)sender), DragDropEffects.Move);
             }
         }
 
@@ -460,9 +473,13 @@ namespace PDA_Cyber_Security_Simulator_V1
         {
             //Stop dragging
             isDragged = false;
+            if(((PictureBox)sender).Location.X >= picTrashCan.Location.X - 30 && ((PictureBox)sender).Location.Y >= picTrashCan.Location.Y && ((PictureBox)sender).Location.X <= picTrashCan.Location.X + 60 && ((PictureBox)sender).Location.Y <= picTrashCan.Location.Y + 80)
+            {
+                ((PictureBox)sender).Parent = flowLayoutPanel1;
+            }
             //This is to check to see if the picture is out of bounds
             //If it is, reset its location
-            if (((PictureBox)sender).Location.X < 0 || ((PictureBox)sender).Location.Y < 0 || ((PictureBox)sender).Location.X > 750 || ((PictureBox)sender).Location.Y > 640)
+            if (((PictureBox)sender).Location.X < 0 || ((PictureBox)sender).Location.Y < 0 || ((PictureBox)sender).Location.X > 750 || ((PictureBox)sender).Location.Y > 700)
             {
                 ((PictureBox)sender).Location = new Point(0, 0);
             }
@@ -491,9 +508,16 @@ namespace PDA_Cyber_Security_Simulator_V1
         void panel_DragDrop(object sender, DragEventArgs e)
         {
             ((PictureBox)e.Data.GetData(typeof(PictureBox))).Parent = (Panel)sender;
+            ((PictureBox)e.Data.GetData(typeof(PictureBox))).BringToFront();
         }
 
         #endregion //DragDrop
 
+        private void enableLineDraw_MouseClick(object sender, MouseEventArgs e)
+        {
+            //toggle the draw command
+            drawable = !drawable;
+            lblDrawEnabled.Visible = drawable ? true : false;
+        }
     }
 }

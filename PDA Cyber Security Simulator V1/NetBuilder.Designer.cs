@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             this.canvas = new System.Windows.Forms.Panel();
+            this.lblDrawEnabled = new System.Windows.Forms.Label();
+            this.enableLineDraw = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -44,10 +48,10 @@
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.picTrashCan = new System.Windows.Forms.PictureBox();
+            this.canvas.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -62,19 +66,44 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTrashCan)).BeginInit();
             this.SuspendLayout();
             // 
             // canvas
             // 
             this.canvas.AllowDrop = true;
-            this.canvas.Location = new System.Drawing.Point(445, 181);
+            this.canvas.Controls.Add(this.lblDrawEnabled);
+            this.canvas.Controls.Add(this.enableLineDraw);
+            this.canvas.Controls.Add(this.picTrashCan);
+            this.canvas.Location = new System.Drawing.Point(445, 108);
             this.canvas.Margin = new System.Windows.Forms.Padding(6);
             this.canvas.Name = "canvas";
-            this.canvas.Size = new System.Drawing.Size(1520, 1232);
+            this.canvas.Size = new System.Drawing.Size(1520, 1507);
             this.canvas.TabIndex = 0;
             this.canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
             this.canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseDown);
+            // 
+            // lblDrawEnabled
+            // 
+            this.lblDrawEnabled.AutoSize = true;
+            this.lblDrawEnabled.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDrawEnabled.Location = new System.Drawing.Point(165, 1464);
+            this.lblDrawEnabled.Name = "lblDrawEnabled";
+            this.lblDrawEnabled.Size = new System.Drawing.Size(276, 37);
+            this.lblDrawEnabled.TabIndex = 1;
+            this.lblDrawEnabled.Text = "Drawing Enabled";
+            // 
+            // enableLineDraw
+            // 
+            this.enableLineDraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.enableLineDraw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enableLineDraw.Location = new System.Drawing.Point(1272, 32);
+            this.enableLineDraw.Name = "enableLineDraw";
+            this.enableLineDraw.Size = new System.Drawing.Size(62, 50);
+            this.enableLineDraw.TabIndex = 0;
+            this.enableLineDraw.Text = "/";
+            this.enableLineDraw.UseVisualStyleBackColor = true;
+            this.enableLineDraw.MouseClick += new System.Windows.Forms.MouseEventHandler(this.enableLineDraw_MouseClick);
             // 
             // flowLayoutPanel1
             // 
@@ -94,11 +123,40 @@
             this.flowLayoutPanel1.Controls.Add(this.pictureBox13);
             this.flowLayoutPanel1.Controls.Add(this.pictureBox14);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 181);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 108);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(427, 1232);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(427, 1507);
             this.flowLayoutPanel1.TabIndex = 3;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.31237F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.68763F));
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.canvas, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1519F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1972, 1621);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(144)))), ((int)(((byte)(24)))));
+            this.tableLayoutPanel1.SetColumnSpan(this.panel2, 2);
+            this.panel2.Location = new System.Drawing.Point(6, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1960, 80);
+            this.panel2.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -254,55 +312,31 @@
             this.pictureBox14.TabIndex = 13;
             this.pictureBox14.TabStop = false;
             // 
-            // panel2
+            // picTrashCan
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(144)))), ((int)(((byte)(24)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(6, 6);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(427, 163);
-            this.panel2.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(144)))), ((int)(((byte)(24)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(445, 6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1521, 163);
-            this.panel1.TabIndex = 1;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.31237F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.68763F));
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.canvas, 1, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1244F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1972, 1419);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.picTrashCan.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.trash_can;
+            this.picTrashCan.ImageLocation = "";
+            this.picTrashCan.Location = new System.Drawing.Point(3, 1336);
+            this.picTrashCan.MaximumSize = new System.Drawing.Size(138, 165);
+            this.picTrashCan.Name = "picTrashCan";
+            this.picTrashCan.Size = new System.Drawing.Size(138, 165);
+            this.picTrashCan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTrashCan.TabIndex = 2;
+            this.picTrashCan.TabStop = false;
             // 
             // NetBuilder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1972, 1419);
+            this.ClientSize = new System.Drawing.Size(1972, 1621);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "NetBuilder";
             this.Text = "NetBuilder";
+            this.canvas.ResumeLayout(false);
+            this.canvas.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -317,7 +351,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picTrashCan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -340,8 +374,10 @@
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button enableLineDraw;
+        private System.Windows.Forms.Label lblDrawEnabled;
+        private System.Windows.Forms.PictureBox picTrashCan;
     }
 }
