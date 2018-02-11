@@ -12,6 +12,15 @@ namespace PDA_Cyber_Security_Simulator_V1
 {
     public partial class NetBuilder : Form
     {
+        #region "DragVariables"
+        public bool Status { get; set; }
+        public Point StartPoint { get; set; }
+        public Point EndPoint { get; set; }
+        public bool isDragged = false;
+        Point ptOffset;
+        #endregion //DragVariables
+
+
         // The "size" of an object for mouse over purposes.
         private const int object_radius = 3;
 
@@ -30,7 +39,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         {
             
             InitializeComponent();
-            
+            InitializeDragDrop();
         }
 
         // The mouse is up. See whether we're over an end point or segment.
@@ -345,7 +354,6 @@ namespace PDA_Cyber_Security_Simulator_V1
             {
                 e.Graphics.DrawLine(Pens.Red, NewPt1, NewPt2);
             }
-
         }
 
        
@@ -368,6 +376,124 @@ namespace PDA_Cyber_Security_Simulator_V1
             }
         }
 
+        #region "DragDrop"
+        private void InitializeDragDrop()
+        {
+            canvas.AllowDrop = true;
+            canvas.DragEnter += panel_DragEnter;
+            canvas.DragDrop += panel_DragDrop;
+
+            pictureBox1.MouseDown += pictureBox_MouseDown;
+            pictureBox2.MouseDown += pictureBox_MouseDown;
+            pictureBox3.MouseDown += pictureBox_MouseDown;
+            pictureBox4.MouseDown += pictureBox_MouseDown;
+            pictureBox5.MouseDown += pictureBox_MouseDown;
+            pictureBox6.MouseDown += pictureBox_MouseDown;
+            pictureBox7.MouseDown += pictureBox_MouseDown;
+            pictureBox8.MouseDown += pictureBox_MouseDown;
+            pictureBox9.MouseDown += pictureBox_MouseDown;
+            pictureBox10.MouseDown += pictureBox_MouseDown;
+            pictureBox11.MouseDown += pictureBox_MouseDown;
+            pictureBox12.MouseDown += pictureBox_MouseDown;
+            pictureBox13.MouseDown += pictureBox_MouseDown;
+            pictureBox14.MouseDown += pictureBox_MouseDown;
+
+            pictureBox1.MouseUp += pictureBox_MouseUp;
+            pictureBox2.MouseUp += pictureBox_MouseUp;
+            pictureBox3.MouseUp += pictureBox_MouseUp;
+            pictureBox4.MouseUp += pictureBox_MouseUp;
+            pictureBox5.MouseUp += pictureBox_MouseUp;
+            pictureBox6.MouseUp += pictureBox_MouseUp;
+            pictureBox7.MouseUp += pictureBox_MouseUp;
+            pictureBox8.MouseUp += pictureBox_MouseUp;
+            pictureBox9.MouseUp += pictureBox_MouseUp;
+            pictureBox10.MouseUp += pictureBox_MouseUp;
+            pictureBox11.MouseUp += pictureBox_MouseUp;
+            pictureBox12.MouseUp += pictureBox_MouseUp;
+            pictureBox13.MouseUp += pictureBox_MouseUp;
+            pictureBox14.MouseUp += pictureBox_MouseUp;
+
+            pictureBox1.MouseMove += pictureBox_MouseMove;
+            pictureBox2.MouseMove += pictureBox_MouseMove;
+            pictureBox3.MouseMove += pictureBox_MouseMove;
+            pictureBox4.MouseMove += pictureBox_MouseMove;
+            pictureBox5.MouseMove += pictureBox_MouseMove;
+            pictureBox6.MouseMove += pictureBox_MouseMove;
+            pictureBox7.MouseMove += pictureBox_MouseMove;
+            pictureBox8.MouseMove += pictureBox_MouseMove;
+            pictureBox9.MouseMove += pictureBox_MouseMove;
+            pictureBox10.MouseMove += pictureBox_MouseMove;
+            pictureBox11.MouseMove += pictureBox_MouseMove;
+            pictureBox12.MouseMove += pictureBox_MouseMove;
+            pictureBox13.MouseMove += pictureBox_MouseMove;
+            pictureBox14.MouseMove += pictureBox_MouseMove;
+        }
+
+        private void pictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            //Check to see if the parent is the canvas
+            if(((PictureBox)sender).Parent == canvas)
+            {
+                if(e.Button == MouseButtons.Left)
+                {
+                    isDragged = true;
+                    //grab the current location of the picture box
+                    Point ptStartPosition = ((PictureBox)sender).PointToScreen(new Point(e.X, e.Y));
+
+                    ptOffset = new Point();
+                    ptOffset.X = ((PictureBox)sender).Location.X - ptStartPosition.X;
+                    ptOffset.Y = ((PictureBox)sender).Location.Y - ptStartPosition.Y;
+                }
+                else
+                {
+                    isDragged = false;
+                }
+            }
+            //Drag and drop onto the canvas
+            else
+            {
+                ((PictureBox)sender).DoDragDrop(((PictureBox)sender), DragDropEffects.Move);
+            }
+        }
+
+        private void pictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            //Stop dragging
+            isDragged = false;
+            //This is to check to see if the picture is out of bounds
+            //If it is, reset its location
+            if (((PictureBox)sender).Location.X < 0 || ((PictureBox)sender).Location.Y < 0 || ((PictureBox)sender).Location.X > 750 || ((PictureBox)sender).Location.Y > 640)
+            {
+                ((PictureBox)sender).Location = new Point(0, 0);
+            }
+        }
+
+        private void pictureBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDragged)
+            {   
+                //Grab the point of the cursor on the screen
+                Point newPoint = ((PictureBox)sender).PointToScreen(new Point(e.X, e.Y));
+                newPoint.Offset(ptOffset);
+
+                //Update the location of the object
+                ((PictureBox)sender).Location = newPoint;
+            }
+        }
+
+        //Setup for the drop onto the canvas
+        void panel_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        //Update the parent of the object
+        void panel_DragDrop(object sender, DragEventArgs e)
+        {
+            ((PictureBox)e.Data.GetData(typeof(PictureBox))).Parent = (Panel)sender;
+        }
+
+        #endregion //DragDrop
 
     }
 }
