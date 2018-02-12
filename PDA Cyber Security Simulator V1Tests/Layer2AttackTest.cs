@@ -18,7 +18,7 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         }
 
         [TestMethod]
-        public void constructTest()
+        public void constructLayer2AttackTest()
         {
             Layer2AttackTest testAttack;
             Network testNetwork;

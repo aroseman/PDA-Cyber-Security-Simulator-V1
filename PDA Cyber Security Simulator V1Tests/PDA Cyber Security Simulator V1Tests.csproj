@@ -73,6 +73,7 @@
     <Compile Include="Layer3AttackTest.cs" />
     <Compile Include="Layer2AttackTest.cs" />
     <Compile Include="DeviceTest.cs" />
+    <Compile Include="NetworkTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PDA Cyber Security Simulator V1\PDA Cyber Security Simulator V1.csproj">

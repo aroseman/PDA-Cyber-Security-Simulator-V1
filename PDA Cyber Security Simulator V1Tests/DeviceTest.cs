@@ -8,6 +8,12 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
     [TestClass]
     public class DeviceTest
     {
+        public DeviceTest()
+        {
+            Device.dropDeviceTable();
+            Device.makeDeviceTable();
+        }
+
         [TestMethod]
         public void addDeviceTest()
         {
@@ -19,11 +25,21 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         }
 
         [TestMethod]
+        public void dropDeviceTest()
+        {
+            Device testDevice = new Device();
+            Device.removeDevice(testDevice);
+        }
+
+        [TestMethod]
         public void getDevicesTest()
         {
-            String devices = Device.getDevices();
+            String[] devices = Device.getDevices();
 
-            Debug.WriteLine(devices);
+            for (int i = 0; i < devices.Length; i++)
+            {
+                Debug.WriteLine(devices[i]);
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,10 @@ namespace PDA_Cyber_Security_Simulator_V1
         {
             Name = name;
             Devices = devices;
+        }
+
+        public Network()
+        {
         }
 
         public List<Device> Devices { get; set; }
@@ -63,6 +68,90 @@ namespace PDA_Cyber_Security_Simulator_V1
             b.Neighbors.Remove(a);
         }
 
-        
+        public static void makeNetworkTable()
+        {
+            SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
+            dbConnection.Open();
+
+            SQLiteCommand createDeviceTable = dbConnection.CreateCommand();
+            createDeviceTable.CommandText = "CREATE TABLE network (id integer primary key, name varchar(50));";
+            createDeviceTable.ExecuteNonQuery();
+        }
+
+        public static void dropNetworkTable()
+        {
+            SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
+            dbConnection.Open();
+
+            SQLiteCommand createDeviceTable = dbConnection.CreateCommand();
+            createDeviceTable.CommandText = "DROP TABLE network;";
+            createDeviceTable.ExecuteNonQuery();
+        }
+
+        public static void addNetwork(Network newNetwork)
+        {
+            SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
+            dbConnection.Open();
+
+            SQLiteCommand insertDevice = dbConnection.CreateCommand();
+            insertDevice.CommandText = "INSERT INTO network (id, name) VALUES ('1', 'Test Network');";
+            insertDevice.ExecuteNonQuery();
+        }
+
+        public static String[] getNetworks()
+        {
+            SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
+            dbConnection.Open();
+
+            SQLiteCommand getNetworks = dbConnection.CreateCommand();
+            getNetworks.CommandText = "SELECT * FROM network";
+            SQLiteDataReader networkReader = getNetworks.ExecuteReader();
+
+            String[] networkList;
+
+            networkList = new String[100];
+            int counter = 0;
+
+            while (networkReader.Read())
+            {
+                int id = networkReader.GetInt32(0);
+                String name = networkReader.GetString(1);
+
+                networkList[counter] = id.ToString() + " " + name;
+                counter++;
+            }
+
+            return networkList;
+        }
+
+        public static String[] getDevices(int networkID)
+        {
+            SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
+            dbConnection.Open();
+
+            SQLiteCommand getDevices = dbConnection.CreateCommand();
+            getDevices.CommandText = "SELECT * FROM device INNER JOIN network ON device.netid = network.id";
+            SQLiteDataReader networkReader = getDevices.ExecuteReader();
+
+            String[] deviceList;
+
+            deviceList = new String[100];
+            int counter = 0;
+
+            while (networkReader.Read())
+            {
+                int id = networkReader.GetInt32(0);
+                String name = networkReader.GetString(1);
+                deviceList[counter] = id.ToString() + " " + name;
+
+                //String whole = networkReader.ToString();
+                //deviceList[counter] = whole;
+
+
+                counter++;
+            }
+
+            return deviceList;
+        }
     }
 }
