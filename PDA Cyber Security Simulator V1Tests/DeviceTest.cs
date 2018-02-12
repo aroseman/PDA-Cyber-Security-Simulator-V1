@@ -8,17 +8,27 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
     [TestClass]
     public class DeviceTest
     {
-        [TestMethod]
-        public void addDeviceTest()
+        public DeviceTest()
         {
             Device.dropDeviceTable();
             Device.makeDeviceTable();
+        }
 
+        [TestMethod]
+        public void addDeviceTest()
+        {
             Device testDevice = new Device();
             testDevice.Name = "CiscoRouter";
             testDevice.IpAddress = "192.168.1.5";
 
             Device.addDevice(testDevice);
+        }
+
+        [TestMethod]
+        public void dropDeviceTest()
+        {
+            Device testDevice = new Device();
+            Device.removeDevice(testDevice);
         }
 
         [TestMethod]

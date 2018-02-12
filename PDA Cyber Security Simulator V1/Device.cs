@@ -46,6 +46,16 @@ public class Device
         insertDevice.ExecuteNonQuery();
     }
 
+    public static void removeDevice(Device newDevice)
+    {
+        SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
+        dbConnection.Open();
+
+        SQLiteCommand insertDevice = dbConnection.CreateCommand();
+        insertDevice.CommandText = "DELETE FROM device WHERE id='1';";
+        insertDevice.ExecuteNonQuery();
+    }
+
     public static String[] getDevices()
     {
         SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
