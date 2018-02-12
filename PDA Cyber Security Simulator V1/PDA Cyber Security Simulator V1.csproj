@@ -73,6 +73,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevicePropertiesPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevicePropertiesPopup.Designer.cs">
+      <DependentUpon>DevicePropertiesPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layer2Attack.cs" />
     <Compile Include="Layer3Attack.cs" />
     <Compile Include="NetBuilder.cs">
@@ -88,6 +94,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevicePropertiesPopup.resx">
+      <DependentUpon>DevicePropertiesPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NetBuilder.resx">
       <DependentUpon>NetBuilder.cs</DependentUpon>

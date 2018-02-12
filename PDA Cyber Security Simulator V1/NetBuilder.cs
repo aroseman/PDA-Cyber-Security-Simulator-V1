@@ -46,6 +46,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             InitializeComponent();
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             InitializeDragDrop();
+            InitializePopup();
             lblDrawEnabled.Visible = false;
         }
 
@@ -519,5 +520,47 @@ namespace PDA_Cyber_Security_Simulator_V1
             drawable = !drawable;
             lblDrawEnabled.Visible = drawable ? true : false;
         }
+
+        #region "DevicePopup"
+        private void InitializePopup()
+        {
+            pictureBox1.MouseDoubleClick += pictureBox_MouseDoubleClick;
+            pictureBox2.MouseDoubleClick += pictureBox_MouseDoubleClick;
+            pictureBox3.MouseDoubleClick += pictureBox_MouseDoubleClick;
+            pictureBox4.MouseDoubleClick += pictureBox_MouseDoubleClick;
+            pictureBox5.MouseDoubleClick += pictureBox_MouseDoubleClick;
+            pictureBox6.MouseDoubleClick += pictureBox_MouseDoubleClick;
+            pictureBox7.MouseDoubleClick += pictureBox_MouseDoubleClick;
+            pictureBox8.MouseDoubleClick += pictureBox_MouseDoubleClick;
+            pictureBox9.MouseDoubleClick += pictureBox_MouseDoubleClick;
+            pictureBox10.MouseDoubleClick += pictureBox_MouseDoubleClick;
+            pictureBox11.MouseDoubleClick += pictureBox_MouseDoubleClick;
+            pictureBox12.MouseDoubleClick += pictureBox_MouseDoubleClick;
+            pictureBox13.MouseDoubleClick += pictureBox_MouseDoubleClick;
+            pictureBox14.MouseDoubleClick += pictureBox_MouseDoubleClick;
+        }
+
+        //Double click handler to display the popup box with device properties
+        private void pictureBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if(((PictureBox)sender).Parent == canvas)
+            {
+                //Trigger the popup to show
+                DeviceProperties devicePropertiesPopup = new DeviceProperties();
+                DialogResult dialogResult = devicePropertiesPopup.ShowDialog();
+                
+
+                //Result handlers
+                if(dialogResult == DialogResult.OK)
+                {
+                    devicePropertiesPopup.Dispose();
+                }
+                else if(dialogResult == DialogResult.Cancel)
+                {
+                    devicePropertiesPopup.Dispose();
+                }
+            }
+        }
+        #endregion
     }
 }
