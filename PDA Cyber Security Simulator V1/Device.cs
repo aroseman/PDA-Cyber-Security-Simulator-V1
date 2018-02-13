@@ -22,11 +22,14 @@ public class Device
 
     public String Notes { get; set; }
 
+    public bool Configured { get; set; }
+
     public Device()
     {
         
         Status = false;
         Neighbors = new List<Device>();
+        Configured = false;
         
     }
     public Device(string name, string ip, string mac, string description, string notes)
@@ -37,6 +40,7 @@ public class Device
         Description = description;
         Notes = notes;
         Neighbors = new List<Device>();
+        Configured = false;
     }
 
     public static void addDevice(Device newDevice)

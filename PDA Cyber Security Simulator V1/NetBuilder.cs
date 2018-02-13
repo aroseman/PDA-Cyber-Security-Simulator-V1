@@ -40,6 +40,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         //DRAWING ALSO DISABLES DRAG AND DROP
         private bool drawable = false;
         private Network network;
+        //public Device Device { get; set; }
         
         public NetBuilder()
         {
@@ -510,8 +511,10 @@ namespace PDA_Cyber_Security_Simulator_V1
         //Update the parent of the object
         void panel_DragDrop(object sender, DragEventArgs e)
         {
+            var device = new Device();
             ((PictureBox)e.Data.GetData(typeof(PictureBox))).Parent = (Panel)sender;
             ((PictureBox)e.Data.GetData(typeof(PictureBox))).BringToFront();
+            ((PictureBox)e.Data.GetData(typeof(PictureBox))).Tag = device;
         }
 
         #endregion //DragDrop
@@ -521,11 +524,6 @@ namespace PDA_Cyber_Security_Simulator_V1
             //toggle the draw command
             drawable = !drawable;
             lblDrawEnabled.Visible = drawable ? true : false;
-        }
-
-        private void textBox1_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = network.Devices[0].Name;
         }
 
         #region "DevicePopup"
@@ -553,7 +551,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             if(((PictureBox)sender).Parent == canvas)
             {
                 //Trigger the popup to show
-                DeviceProperties devicePropertiesPopup = new DeviceProperties();
+                DeviceProperties devicePropertiesPopup = new DeviceProperties((Device)((PictureBox)sender).Tag);
                 DialogResult dialogResult = devicePropertiesPopup.ShowDialog();
                 
 
@@ -561,6 +559,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                 if(dialogResult == DialogResult.OK)
                 {
                     network.Devices.Add(devicePropertiesPopup.Device);
+                    ((PictureBox)sender).Tag = devicePropertiesPopup.Device;
                     devicePropertiesPopup.Dispose();
                 }
                 else if(dialogResult == DialogResult.Cancel)
