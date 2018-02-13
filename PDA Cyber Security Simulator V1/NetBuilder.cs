@@ -39,11 +39,13 @@ namespace PDA_Cyber_Security_Simulator_V1
         //variable to enable line drawing
         //DRAWING ALSO DISABLES DRAG AND DROP
         private bool drawable = false;
-
+        private Network network;
+        
         public NetBuilder()
         {
             
             InitializeComponent();
+            network = new Network();
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             InitializeDragDrop();
             InitializePopup();
@@ -521,6 +523,11 @@ namespace PDA_Cyber_Security_Simulator_V1
             lblDrawEnabled.Visible = drawable ? true : false;
         }
 
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = network.Devices[0].Name;
+        }
+
         #region "DevicePopup"
         private void InitializePopup()
         {
@@ -553,6 +560,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                 //Result handlers
                 if(dialogResult == DialogResult.OK)
                 {
+                    network.Devices.Add(devicePropertiesPopup.Device);
                     devicePropertiesPopup.Dispose();
                 }
                 else if(dialogResult == DialogResult.Cancel)

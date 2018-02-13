@@ -24,13 +24,19 @@ public class Device
 
     public Device()
     {
-        Name = "";
-        IpAddress = "";
-        MacAddress = "";
-        Description = "";
+        
         Status = false;
         Neighbors = new List<Device>();
-        Notes = "";
+        
+    }
+    public Device(string name, string ip, string mac, string description, string notes)
+    {
+        Name = name;
+        IpAddress = ip;
+        MacAddress = mac;
+        Description = description;
+        Notes = notes;
+        Neighbors = new List<Device>();
     }
 
     public static void addDevice(Device newDevice)

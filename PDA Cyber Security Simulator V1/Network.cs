@@ -23,6 +23,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         public Network()
         {
+            Devices = new List<Device>();
         }
 
         public List<Device> Devices { get; set; }

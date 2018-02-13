@@ -86,3 +86,4 @@ C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-S
 C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.exe
 C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.pdb
 C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.DeviceProperties.resources
+C:\Users\whois\Documents\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.DeviceProperties.resources
