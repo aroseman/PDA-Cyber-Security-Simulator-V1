@@ -74,7 +74,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             dbConnection.Open();
 
             SQLiteCommand createDeviceTable = dbConnection.CreateCommand();
-            createDeviceTable.CommandText = "CREATE TABLE network (id integer primary key, name varchar(50));";
+            createDeviceTable.CommandText = "CREATE TABLE network (id integer primary key autoincrement, name varchar(50));";
             createDeviceTable.ExecuteNonQuery();
         }
 
@@ -94,7 +94,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             dbConnection.Open();
 
             SQLiteCommand insertDevice = dbConnection.CreateCommand();
-            insertDevice.CommandText = "INSERT INTO network (id, name) VALUES ('1', 'Test Network');";
+            insertDevice.CommandText = "INSERT INTO network (name) VALUES ('" + newNetwork.Name + "');";
             insertDevice.ExecuteNonQuery();
         }
 

@@ -39,10 +39,10 @@ public class Device
         dbConnection.Open();
 
         SQLiteCommand insertDevice = dbConnection.CreateCommand();
-        insertDevice.CommandText = "INSERT INTO device (id, ip, name, netid) VALUES ('1', '192.168.1.5' , 'Cisco Router', '1');";
+        insertDevice.CommandText = "INSERT INTO device (ip, name, mac, description, notes, netid) VALUES ('" + newDevice.IpAddress + "', '" + newDevice.Name + "', '" + newDevice.MacAddress + "', '" + newDevice.Description + "', '" + newDevice.Notes + "', '1');";
         insertDevice.ExecuteNonQuery();
 
-        insertDevice.CommandText = "INSERT INTO device (id, ip, name, netid) VALUES ('2', '192.168.2.5' , 'Cisco Router', '1');";
+        insertDevice.CommandText = "INSERT INTO device (ip, name, mac, description, notes, netid) VALUES ('192.168.2.5' , 'Cisco Router', '00:0a:95:9d:68:16', 'This a description', 'This is a note', '1');";
         insertDevice.ExecuteNonQuery();
     }
 
@@ -90,7 +90,7 @@ public class Device
         dbConnection.Open();
 
         SQLiteCommand createDeviceTable = dbConnection.CreateCommand();
-        createDeviceTable.CommandText = "CREATE TABLE device (id integer primary key, ip varchar(15), name varchar(50), netid integer, foreign key(netid) references network(id));";
+        createDeviceTable.CommandText = "CREATE TABLE device (id integer primary key autoincrement, ip varchar(15), name varchar(50),mac char(17),description varchar(50),notes varchar(200), netid integer, foreign key(netid) references network(id));";
         createDeviceTable.ExecuteNonQuery();
     }
 
