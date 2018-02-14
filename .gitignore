@@ -2,5 +2,8 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/PDA Cyber Security Simulator V1/v15/Server/sqlite3/db.lock
+/.vs/PDA Cyber Security Simulator V1/v15/Server/sqlite3/
 /.vs/PDA Cyber Security Simulator V1/v15/sqlite3/db.lock
+/PDA Cyber Security Simulator V1/obj/
+/PDA Cyber Security Simulator V1/obj/Debug/
+/PDA Cyber Security Simulator V1Tests/obj/Debug/
