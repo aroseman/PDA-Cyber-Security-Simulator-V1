@@ -41,6 +41,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         private bool drawable = false;
         private Network network;
         //public Device Device { get; set; }
+        private Object activeObject;
         
         public NetBuilder()
         {
