@@ -85,7 +85,10 @@ public class Device
             int id = deviceReader.GetInt32(0);
             String ip = deviceReader.GetString(1);
             String name = deviceReader.GetString(2);
-            int netid = deviceReader.GetInt32(3);
+            String mac = deviceReader.GetString(3);
+            String desc = deviceReader.GetString(4);
+            String notes = deviceReader.GetString(5);
+            int netid = deviceReader.GetInt32(6);
 
             deviceList[counter] = id.ToString() + " " + ip + " " + name + " " + netid.ToString();
             counter++;

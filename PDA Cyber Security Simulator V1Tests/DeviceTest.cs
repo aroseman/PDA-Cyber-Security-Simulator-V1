@@ -8,27 +8,24 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
     [TestClass]
     public class DeviceTest
     {
-        public DeviceTest()
+        /*[TestInitialize]
+        public void testInit()
         {
             Device.dropDeviceTable();
             Device.makeDeviceTable();
-        }
+        }*/
 
         [TestMethod]
         public void addDeviceTest()
         {
+            Device.dropDeviceTable();
+            Device.makeDeviceTable();
+
             Device testDevice = new Device();
             testDevice.Name = "CiscoRouter";
             testDevice.IpAddress = "192.168.1.5";
 
             Device.addDevice(testDevice);
-        }
-
-        [TestMethod]
-        public void dropDeviceTest()
-        {
-            Device testDevice = new Device();
-            Device.removeDevice(testDevice);
         }
 
         [TestMethod]
@@ -38,8 +35,15 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
 
             for (int i = 0; i < devices.Length; i++)
             {
-                Debug.WriteLine(devices[i]);
+                Console.WriteLine(devices[i]);
             }
+        }
+
+        [TestMethod]
+        public void dropDeviceTest()
+        {
+            Device testDevice = new Device();
+            Device.removeDevice(testDevice);
         }
     }
 }
