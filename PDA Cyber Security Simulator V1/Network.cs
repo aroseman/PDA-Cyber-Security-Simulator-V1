@@ -75,7 +75,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             dbConnection.Open();
 
             SQLiteCommand createDeviceTable = dbConnection.CreateCommand();
-            createDeviceTable.CommandText = "CREATE TABLE network (id integer primary key autoincrement, name varchar(50));";
+            createDeviceTable.CommandText = "CREATE TABLE IF NOT EXISTS network (id integer primary key autoincrement, name varchar(50));";
             createDeviceTable.ExecuteNonQuery();
         }
 
@@ -85,7 +85,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             dbConnection.Open();
 
             SQLiteCommand createDeviceTable = dbConnection.CreateCommand();
-            createDeviceTable.CommandText = "DROP TABLE network;";
+            createDeviceTable.CommandText = "DROP TABLE IF EXISTS network;";
             createDeviceTable.ExecuteNonQuery();
         }
 

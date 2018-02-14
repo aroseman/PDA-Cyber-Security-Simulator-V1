@@ -103,7 +103,7 @@ public class Device
         dbConnection.Open();
 
         SQLiteCommand createDeviceTable = dbConnection.CreateCommand();
-        createDeviceTable.CommandText = "CREATE TABLE device (id integer primary key autoincrement, ip varchar(15), name varchar(50),mac char(17),description varchar(50),notes varchar(200), netid integer, foreign key(netid) references network(id));";
+        createDeviceTable.CommandText = "CREATE TABLE IF NOT EXISTS device (id integer primary key autoincrement, ip varchar(15), name varchar(50),mac char(17),description varchar(50),notes varchar(200), netid integer, foreign key(netid) references network(id));";
         createDeviceTable.ExecuteNonQuery();
     }
 
@@ -113,7 +113,7 @@ public class Device
         dbConnection.Open();
 
         SQLiteCommand createDeviceTable = dbConnection.CreateCommand();
-        createDeviceTable.CommandText = "DROP TABLE device;";
+        createDeviceTable.CommandText = "DROP TABLE IF EXISTS device;";
         createDeviceTable.ExecuteNonQuery();
     }
 }

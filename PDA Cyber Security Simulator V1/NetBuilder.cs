@@ -527,6 +527,8 @@ namespace PDA_Cyber_Security_Simulator_V1
             lblDrawEnabled.Visible = drawable ? true : false;
         }
 
+
+
         #region "DevicePopup"
         private void InitializePopup()
         {
@@ -562,6 +564,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                     network.Devices.Add(devicePropertiesPopup.Device);
                     ((PictureBox)sender).Tag = devicePropertiesPopup.Device;
                     devicePropertiesPopup.Dispose();
+                    Device.addDevice((Device)((PictureBox)sender).Tag);
                 }
                 else if(dialogResult == DialogResult.Cancel)
                 {
@@ -570,5 +573,11 @@ namespace PDA_Cyber_Security_Simulator_V1
             }
         }
         #endregion
+
+        private void btnSaveNetwork_Click(object sender, EventArgs e)
+        {
+            //Device.addDevice()
+        }
+
     }
 }
