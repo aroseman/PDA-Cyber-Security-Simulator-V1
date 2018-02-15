@@ -12,6 +12,8 @@ namespace PDA_Cyber_Security_Simulator_V1
 {
     public partial class Form1 : Form
     {
+        private NetBuilder NetBuilder { get; set; }
+
         public Form1()
         {
             InitializeComponent();
@@ -36,14 +38,24 @@ namespace PDA_Cyber_Security_Simulator_V1
         private void conifgureNetworkOnClick(object sender, EventArgs e)
         {
 
-            homeScreen.Visible = false;
-            breadCrumbFlowLayoutPanel.BackColor = Color.FromArgb(240,144,24);
-            imagePanel.BackColor = Color.FromArgb(240, 144, 24);
-            networkConfigurationPanel.Visible = true;
+            //homeScreen.Visible = false;
+            //breadCrumbFlowLayoutPanel.BackColor = Color.FromArgb(240,144,24);
+            //imagePanel.BackColor = Color.FromArgb(240, 144, 24);
+            //networkConfigurationPanel.Visible = true;
 
-            NetBuilder form = new NetBuilder();
-            this.Hide();
-            form.Show();
+            if(NetBuilder is null)
+            {
+                NetBuilder form = new NetBuilder(this);
+                NetBuilder = form;
+                this.Hide();
+                form.Show();
+            }
+            else
+            {
+                NetBuilder.Show();
+                this.Hide();
+            }
+            
         }
 
         private void viewNetworkOnClick(object sender, EventArgs e)
@@ -143,6 +155,27 @@ namespace PDA_Cyber_Security_Simulator_V1
             NetworkTester networkTester = new NetworkTester();
             networkTester.TestDevice("www.google.com", pingResultTextBox);
 
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if(this.Visible == true)
+            {
+                base.OnFormClosing(e);
+                System.Windows.Forms.Application.Exit(); // Do not move!
+                if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+                // Confirm user wants to close
+                switch (MessageBox.Show(this, "Are you sure you want to close?", "Closing", MessageBoxButtons.YesNo))
+                {
+                    case DialogResult.No:
+                        e.Cancel = true;
+                        break;
+                    default:
+
+                        break;
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

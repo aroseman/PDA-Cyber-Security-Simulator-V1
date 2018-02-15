@@ -42,16 +42,25 @@ namespace PDA_Cyber_Security_Simulator_V1
         private Network network;
         //public Device Device { get; set; }
         private Object activeObject;
-        
-        public NetBuilder()
+
+        private Form1 Form1;
+
+        public NetBuilder(Form1 form1)
         {
-            
+            Form1 = form1;
             InitializeComponent();
             network = new Network();
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             InitializeDragDrop();
             InitializePopup();
             lblDrawEnabled.Visible = false;
+        }
+
+        //Navigate back to Home screen
+        private void rootCrumb_Click(object sender, EventArgs e)
+        {
+            Form1.Show();
+            this.Hide();
         }
 
         // The mouse is up. See whether we're over an end point or segment.
@@ -374,20 +383,22 @@ namespace PDA_Cyber_Security_Simulator_V1
        
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-        
-            base.OnFormClosing(e);
-            System.Windows.Forms.Application.Exit(); // Do not move!
-            if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
-           // Confirm user wants to close
-            switch (MessageBox.Show(this, "Are you sure you want to close?", "Closing", MessageBoxButtons.YesNo))
+            if(this.Visible == true)
             {
-                case DialogResult.No:
-                    e.Cancel = true;
-                    break;
-                default:
+                base.OnFormClosing(e);
+                System.Windows.Forms.Application.Exit(); // Do not move!
+                if (e.CloseReason == CloseReason.WindowsShutDown) return;
 
-                    break;
+                // Confirm user wants to close
+                switch (MessageBox.Show(this, "Are you sure you want to close?", "Closing", MessageBoxButtons.YesNo))
+                {
+                    case DialogResult.No:
+                        e.Cancel = true;
+                        break;
+                    default:
+
+                        break;
+                }
             }
         }
 

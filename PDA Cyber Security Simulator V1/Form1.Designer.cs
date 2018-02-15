@@ -795,6 +795,7 @@
             this.configureNetwork.PerformLayout();
             this.simulateAttack.ResumeLayout(false);
             this.simulateAttack.PerformLayout();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.viewNetwork.ResumeLayout(false);
             this.viewNetwork.PerformLayout();
             this.testNetwork.ResumeLayout(false);
