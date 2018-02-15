@@ -50,6 +50,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSaveNetwork = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClearNetwork = new System.Windows.Forms.Button();
             this.canvas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTrashCan)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -68,18 +70,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // canvas
             // 
             this.canvas.AllowDrop = true;
+            this.canvas.BackColor = System.Drawing.Color.LightGray;
             this.canvas.Controls.Add(this.lblDrawEnabled);
             this.canvas.Controls.Add(this.enableLineDraw);
             this.canvas.Controls.Add(this.picTrashCan);
-            this.canvas.Location = new System.Drawing.Point(445, -451);
-            this.canvas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.canvas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.canvas.Location = new System.Drawing.Point(443, 113);
+            this.canvas.Margin = new System.Windows.Forms.Padding(6);
             this.canvas.Name = "canvas";
-            this.canvas.Size = new System.Drawing.Size(1520, 1507);
+            this.tableLayoutPanel1.SetRowSpan(this.canvas, 2);
+            this.canvas.Size = new System.Drawing.Size(1725, 1576);
             this.canvas.TabIndex = 0;
             this.canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
             this.canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseDown);
@@ -88,7 +94,7 @@
             // 
             this.lblDrawEnabled.AutoSize = true;
             this.lblDrawEnabled.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDrawEnabled.Location = new System.Drawing.Point(164, 1463);
+            this.lblDrawEnabled.Location = new System.Drawing.Point(162, 1443);
             this.lblDrawEnabled.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDrawEnabled.Name = "lblDrawEnabled";
             this.lblDrawEnabled.Size = new System.Drawing.Size(276, 37);
@@ -99,8 +105,8 @@
             // 
             this.enableLineDraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.enableLineDraw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enableLineDraw.Location = new System.Drawing.Point(1272, 33);
-            this.enableLineDraw.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enableLineDraw.Location = new System.Drawing.Point(1599, 33);
+            this.enableLineDraw.Margin = new System.Windows.Forms.Padding(4);
             this.enableLineDraw.Name = "enableLineDraw";
             this.enableLineDraw.Size = new System.Drawing.Size(62, 50);
             this.enableLineDraw.TabIndex = 0;
@@ -112,8 +118,8 @@
             // 
             this.picTrashCan.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.trash_can;
             this.picTrashCan.ImageLocation = "";
-            this.picTrashCan.Location = new System.Drawing.Point(4, 1337);
-            this.picTrashCan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picTrashCan.Location = new System.Drawing.Point(4, 1315);
+            this.picTrashCan.Margin = new System.Windows.Forms.Padding(4);
             this.picTrashCan.MaximumSize = new System.Drawing.Size(138, 165);
             this.picTrashCan.Name = "picTrashCan";
             this.picTrashCan.Size = new System.Drawing.Size(138, 165);
@@ -138,12 +144,10 @@
             this.flowLayoutPanel1.Controls.Add(this.pictureBox12);
             this.flowLayoutPanel1.Controls.Add(this.pictureBox13);
             this.flowLayoutPanel1.Controls.Add(this.pictureBox14);
-            this.flowLayoutPanel1.Controls.Add(this.btnSaveNetwork);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, -451);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 113);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(427, 1507);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(425, 1418);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // pictureBox1
@@ -151,7 +155,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.pictureBox1.Location = new System.Drawing.Point(6, 6);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 162);
             this.pictureBox1.TabIndex = 0;
@@ -162,7 +166,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.pictureBox2.Location = new System.Drawing.Point(218, 6);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(200, 162);
             this.pictureBox2.TabIndex = 1;
@@ -173,7 +177,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.pictureBox3.Location = new System.Drawing.Point(6, 180);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(200, 162);
             this.pictureBox3.TabIndex = 2;
@@ -184,7 +188,7 @@
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.pictureBox4.Location = new System.Drawing.Point(218, 180);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(200, 162);
             this.pictureBox4.TabIndex = 3;
@@ -195,7 +199,7 @@
             this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.pictureBox5.Location = new System.Drawing.Point(6, 354);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(200, 162);
             this.pictureBox5.TabIndex = 4;
@@ -206,7 +210,7 @@
             this.pictureBox6.BackColor = System.Drawing.Color.White;
             this.pictureBox6.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.pictureBox6.Location = new System.Drawing.Point(218, 354);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(200, 162);
             this.pictureBox6.TabIndex = 5;
@@ -217,7 +221,7 @@
             this.pictureBox7.BackColor = System.Drawing.Color.White;
             this.pictureBox7.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.pictureBox7.Location = new System.Drawing.Point(6, 528);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(200, 162);
             this.pictureBox7.TabIndex = 6;
@@ -228,7 +232,7 @@
             this.pictureBox8.BackColor = System.Drawing.Color.White;
             this.pictureBox8.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.pictureBox8.Location = new System.Drawing.Point(218, 528);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(200, 162);
             this.pictureBox8.TabIndex = 7;
@@ -239,7 +243,7 @@
             this.pictureBox9.BackColor = System.Drawing.Color.White;
             this.pictureBox9.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.pictureBox9.Location = new System.Drawing.Point(6, 702);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(200, 162);
             this.pictureBox9.TabIndex = 8;
@@ -250,7 +254,7 @@
             this.pictureBox10.BackColor = System.Drawing.Color.White;
             this.pictureBox10.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.pictureBox10.Location = new System.Drawing.Point(218, 702);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(200, 162);
             this.pictureBox10.TabIndex = 9;
@@ -261,7 +265,7 @@
             this.pictureBox11.BackColor = System.Drawing.Color.White;
             this.pictureBox11.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.pictureBox11.Location = new System.Drawing.Point(6, 876);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(200, 162);
             this.pictureBox11.TabIndex = 10;
@@ -272,7 +276,7 @@
             this.pictureBox12.BackColor = System.Drawing.Color.White;
             this.pictureBox12.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.pictureBox12.Location = new System.Drawing.Point(218, 876);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(200, 162);
             this.pictureBox12.TabIndex = 11;
@@ -283,7 +287,7 @@
             this.pictureBox13.BackColor = System.Drawing.Color.White;
             this.pictureBox13.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.pictureBox13.Location = new System.Drawing.Point(6, 1050);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(200, 162);
             this.pictureBox13.TabIndex = 12;
@@ -294,7 +298,7 @@
             this.pictureBox14.BackColor = System.Drawing.Color.White;
             this.pictureBox14.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.pictureBox14.Location = new System.Drawing.Point(218, 1050);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(200, 162);
             this.pictureBox14.TabIndex = 13;
@@ -302,51 +306,76 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.LightGray;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.31237F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.68763F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.14719F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.85281F));
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.canvas, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1519F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 19F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1972, 1062);
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 107F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1430F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 158F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(2174, 1624);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel2
             // 
+            this.panel2.AutoSize = true;
+            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(144)))), ((int)(((byte)(24)))));
             this.tableLayoutPanel1.SetColumnSpan(this.panel2, 2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(6, 6);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1960, 1);
+            this.panel2.Size = new System.Drawing.Size(2162, 95);
             this.panel2.TabIndex = 2;
             // 
             // btnSaveNetwork
             // 
-            this.btnSaveNetwork.Location = new System.Drawing.Point(10, 1443);
-            this.btnSaveNetwork.Margin = new System.Windows.Forms.Padding(10, 225, 3, 3);
+            this.btnSaveNetwork.Location = new System.Drawing.Point(64, 16);
+            this.btnSaveNetwork.Margin = new System.Windows.Forms.Padding(100, 10, 0, 0);
             this.btnSaveNetwork.Name = "btnSaveNetwork";
             this.btnSaveNetwork.Size = new System.Drawing.Size(105, 46);
-            this.btnSaveNetwork.TabIndex = 14;
+            this.btnSaveNetwork.TabIndex = 15;
             this.btnSaveNetwork.Text = "Save";
             this.btnSaveNetwork.UseVisualStyleBackColor = true;
-            this.btnSaveNetwork.Click += new System.EventHandler(this.btnSaveNetwork_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnClearNetwork);
+            this.panel1.Controls.Add(this.btnSaveNetwork);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 1540);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(431, 152);
+            this.panel1.TabIndex = 4;
+            // 
+            // btnClearNetwork
+            // 
+            this.btnClearNetwork.Location = new System.Drawing.Point(221, 16);
+            this.btnClearNetwork.Margin = new System.Windows.Forms.Padding(100, 10, 0, 0);
+            this.btnClearNetwork.Name = "btnClearNetwork";
+            this.btnClearNetwork.Size = new System.Drawing.Size(105, 46);
+            this.btnClearNetwork.TabIndex = 16;
+            this.btnClearNetwork.Text = "Clear";
+            this.btnClearNetwork.UseVisualStyleBackColor = true;
             // 
             // NetBuilder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1972, 1062);
+            this.ClientSize = new System.Drawing.Size(2174, 1624);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "NetBuilder";
             this.Text = "NetBuilder";
             this.canvas.ResumeLayout(false);
@@ -368,6 +397,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -396,5 +427,7 @@
         private System.Windows.Forms.Label lblDrawEnabled;
         private System.Windows.Forms.PictureBox picTrashCan;
         private System.Windows.Forms.Button btnSaveNetwork;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnClearNetwork;
     }
 }
