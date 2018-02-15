@@ -49,12 +49,12 @@
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.breadCrumbsPanel = new System.Windows.Forms.Panel();
+            this.rootCrumb = new System.Windows.Forms.Label();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClearNetwork = new System.Windows.Forms.Button();
             this.btnSaveNetwork = new System.Windows.Forms.Button();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.breadCrumbsPanel = new System.Windows.Forms.Panel();
-            this.rootCrumb = new System.Windows.Forms.Label();
             this.canvas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTrashCan)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -74,9 +74,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.breadCrumbsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // canvas
@@ -346,6 +346,40 @@
             this.panel2.Size = new System.Drawing.Size(2162, 180);
             this.panel2.TabIndex = 2;
             // 
+            // breadCrumbsPanel
+            // 
+            this.breadCrumbsPanel.Controls.Add(this.rootCrumb);
+            this.breadCrumbsPanel.Location = new System.Drawing.Point(542, 6);
+            this.breadCrumbsPanel.Margin = new System.Windows.Forms.Padding(6);
+            this.breadCrumbsPanel.Name = "breadCrumbsPanel";
+            this.breadCrumbsPanel.Size = new System.Drawing.Size(400, 167);
+            this.breadCrumbsPanel.TabIndex = 5;
+            // 
+            // rootCrumb
+            // 
+            this.rootCrumb.AutoSize = true;
+            this.rootCrumb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(121)))), ((int)(((byte)(14)))));
+            this.rootCrumb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rootCrumb.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rootCrumb.Location = new System.Drawing.Point(24, 52);
+            this.rootCrumb.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.rootCrumb.Name = "rootCrumb";
+            this.rootCrumb.Size = new System.Drawing.Size(173, 65);
+            this.rootCrumb.TabIndex = 0;
+            this.rootCrumb.Text = "Home";
+            this.rootCrumb.Click += new System.EventHandler(this.rootCrumb_Click);
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox15.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
+            this.pictureBox15.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(2162, 180);
+            this.pictureBox15.TabIndex = 1;
+            this.pictureBox15.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnClearNetwork);
@@ -375,40 +409,6 @@
             this.btnSaveNetwork.TabIndex = 15;
             this.btnSaveNetwork.Text = "Save";
             this.btnSaveNetwork.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox15.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
-            this.pictureBox15.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(6);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(2162, 180);
-            this.pictureBox15.TabIndex = 1;
-            this.pictureBox15.TabStop = false;
-            // 
-            // breadCrumbsPanel
-            // 
-            this.breadCrumbsPanel.Controls.Add(this.rootCrumb);
-            this.breadCrumbsPanel.Location = new System.Drawing.Point(542, 6);
-            this.breadCrumbsPanel.Margin = new System.Windows.Forms.Padding(6);
-            this.breadCrumbsPanel.Name = "breadCrumbsPanel";
-            this.breadCrumbsPanel.Size = new System.Drawing.Size(400, 167);
-            this.breadCrumbsPanel.TabIndex = 5;
-            // 
-            // rootCrumb
-            // 
-            this.rootCrumb.AutoSize = true;
-            this.rootCrumb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(121)))), ((int)(((byte)(14)))));
-            this.rootCrumb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rootCrumb.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rootCrumb.Location = new System.Drawing.Point(24, 52);
-            this.rootCrumb.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.rootCrumb.Name = "rootCrumb";
-            this.rootCrumb.Size = new System.Drawing.Size(173, 65);
-            this.rootCrumb.TabIndex = 0;
-            this.rootCrumb.Text = "Home";
-            this.rootCrumb.Click += new System.EventHandler(this.rootCrumb_Click);
             // 
             // NetBuilder
             // 
@@ -440,10 +440,10 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.breadCrumbsPanel.ResumeLayout(false);
             this.breadCrumbsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
