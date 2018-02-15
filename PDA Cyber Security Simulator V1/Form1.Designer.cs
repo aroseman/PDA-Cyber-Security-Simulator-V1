@@ -239,6 +239,8 @@
             this.configureNetworkLabel.Size = new System.Drawing.Size(189, 25);
             this.configureNetworkLabel.TabIndex = 0;
             this.configureNetworkLabel.Text = "Configure Network";
+            this.configureNetworkLabel.AutoSize = false; // recentered
+            this.configureNetworkLabel.Dock = System.Windows.Forms.DockStyle.Fill; // recentered
             this.configureNetworkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.configureNetworkLabel.Click += new System.EventHandler(this.conifgureNetworkOnClick);
             // 
@@ -263,6 +265,8 @@
             this.simulateAttackLabel.Size = new System.Drawing.Size(161, 25);
             this.simulateAttackLabel.TabIndex = 3;
             this.simulateAttackLabel.Text = "Simulate Attack";
+            this.simulateAttackLabel.AutoSize = false; // recentered
+            this.simulateAttackLabel.Dock = System.Windows.Forms.DockStyle.Fill; // recentered
             this.simulateAttackLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.simulateAttackLabel.Click += new System.EventHandler(this.simulateAttackPanelOnClick);
             // 
@@ -287,6 +291,8 @@
             this.viewNetworkLabel.Size = new System.Drawing.Size(142, 25);
             this.viewNetworkLabel.TabIndex = 1;
             this.viewNetworkLabel.Text = "View Network";
+            this.viewNetworkLabel.AutoSize = false; // recentered
+            this.viewNetworkLabel.Dock = System.Windows.Forms.DockStyle.Fill; // recentered
             this.viewNetworkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.viewNetworkLabel.Click += new System.EventHandler(this.viewNetworkOnClick);
             // 
@@ -311,6 +317,8 @@
             this.testNetworkLabel.Size = new System.Drawing.Size(138, 25);
             this.testNetworkLabel.TabIndex = 2;
             this.testNetworkLabel.Text = "Test Network";
+            this.testNetworkLabel.AutoSize = false; // recentered
+            this.testNetworkLabel.Dock = System.Windows.Forms.DockStyle.Fill; // recentered
             this.testNetworkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.testNetworkLabel.Click += new System.EventHandler(this.testNetworkOnClick);
             // 
