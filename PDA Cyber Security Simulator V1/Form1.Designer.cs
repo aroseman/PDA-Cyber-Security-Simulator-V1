@@ -78,12 +78,12 @@
             this.testNetworkFlowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.testNetworkTableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.testNetworkFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.testNetworkLabel1 = new System.Windows.Forms.Label();
+            this.testNetworkComboBox1 = new System.Windows.Forms.ComboBox();
             this.testNetworkFlowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.testNetworkLabel2 = new System.Windows.Forms.Label();
+            this.testNetworkListBox1 = new System.Windows.Forms.ListBox();
+            this.testNetworkButton1 = new System.Windows.Forms.Button();
             this.pingResultTextBox = new System.Windows.Forms.TextBox();
             this.simulateAttackTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.simulateAttackTextBox = new System.Windows.Forms.TextBox();
@@ -125,7 +125,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(887, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1700, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -231,16 +231,14 @@
             // 
             // configureNetworkLabel
             // 
-            this.configureNetworkLabel.AutoSize = true;
+            this.configureNetworkLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.configureNetworkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.configureNetworkLabel.ForeColor = System.Drawing.Color.White;
-            this.configureNetworkLabel.Location = new System.Drawing.Point(109, 78);
+            this.configureNetworkLabel.Location = new System.Drawing.Point(0, 0);
             this.configureNetworkLabel.Name = "configureNetworkLabel";
-            this.configureNetworkLabel.Size = new System.Drawing.Size(189, 25);
+            this.configureNetworkLabel.Size = new System.Drawing.Size(390, 166);
             this.configureNetworkLabel.TabIndex = 0;
             this.configureNetworkLabel.Text = "Configure Network";
-            this.configureNetworkLabel.AutoSize = false; // recentered
-            this.configureNetworkLabel.Dock = System.Windows.Forms.DockStyle.Fill; // recentered
             this.configureNetworkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.configureNetworkLabel.Click += new System.EventHandler(this.conifgureNetworkOnClick);
             // 
@@ -257,16 +255,14 @@
             // 
             // simulateAttackLabel
             // 
-            this.simulateAttackLabel.AutoSize = true;
+            this.simulateAttackLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.simulateAttackLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simulateAttackLabel.ForeColor = System.Drawing.Color.White;
-            this.simulateAttackLabel.Location = new System.Drawing.Point(110, 79);
+            this.simulateAttackLabel.Location = new System.Drawing.Point(0, 0);
             this.simulateAttackLabel.Name = "simulateAttackLabel";
-            this.simulateAttackLabel.Size = new System.Drawing.Size(161, 25);
+            this.simulateAttackLabel.Size = new System.Drawing.Size(390, 166);
             this.simulateAttackLabel.TabIndex = 3;
             this.simulateAttackLabel.Text = "Simulate Attack";
-            this.simulateAttackLabel.AutoSize = false; // recentered
-            this.simulateAttackLabel.Dock = System.Windows.Forms.DockStyle.Fill; // recentered
             this.simulateAttackLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.simulateAttackLabel.Click += new System.EventHandler(this.simulateAttackPanelOnClick);
             // 
@@ -283,16 +279,14 @@
             // 
             // viewNetworkLabel
             // 
-            this.viewNetworkLabel.AutoSize = true;
+            this.viewNetworkLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.viewNetworkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewNetworkLabel.ForeColor = System.Drawing.Color.White;
-            this.viewNetworkLabel.Location = new System.Drawing.Point(129, 78);
+            this.viewNetworkLabel.Location = new System.Drawing.Point(0, 0);
             this.viewNetworkLabel.Name = "viewNetworkLabel";
-            this.viewNetworkLabel.Size = new System.Drawing.Size(142, 25);
+            this.viewNetworkLabel.Size = new System.Drawing.Size(390, 166);
             this.viewNetworkLabel.TabIndex = 1;
             this.viewNetworkLabel.Text = "View Network";
-            this.viewNetworkLabel.AutoSize = false; // recentered
-            this.viewNetworkLabel.Dock = System.Windows.Forms.DockStyle.Fill; // recentered
             this.viewNetworkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.viewNetworkLabel.Click += new System.EventHandler(this.viewNetworkOnClick);
             // 
@@ -309,16 +303,14 @@
             // 
             // testNetworkLabel
             // 
-            this.testNetworkLabel.AutoSize = true;
+            this.testNetworkLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.testNetworkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.testNetworkLabel.ForeColor = System.Drawing.Color.White;
-            this.testNetworkLabel.Location = new System.Drawing.Point(135, 79);
+            this.testNetworkLabel.Location = new System.Drawing.Point(0, 0);
             this.testNetworkLabel.Name = "testNetworkLabel";
-            this.testNetworkLabel.Size = new System.Drawing.Size(138, 25);
+            this.testNetworkLabel.Size = new System.Drawing.Size(390, 166);
             this.testNetworkLabel.TabIndex = 2;
             this.testNetworkLabel.Text = "Test Network";
-            this.testNetworkLabel.AutoSize = false; // recentered
-            this.testNetworkLabel.Dock = System.Windows.Forms.DockStyle.Fill; // recentered
             this.testNetworkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.testNetworkLabel.Click += new System.EventHandler(this.testNetworkOnClick);
             // 
@@ -362,10 +354,11 @@
             // rootCrumb
             // 
             this.rootCrumb.AutoSize = true;
+            this.rootCrumb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rootCrumb.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rootCrumb.Location = new System.Drawing.Point(12, 27);
             this.rootCrumb.Name = "rootCrumb";
-            this.rootCrumb.Size = new System.Drawing.Size(86, 31);
+            this.rootCrumb.Size = new System.Drawing.Size(88, 33);
             this.rootCrumb.TabIndex = 0;
             this.rootCrumb.Text = "Home";
             this.rootCrumb.Click += new System.EventHandler(this.Load_Home);
@@ -636,71 +629,73 @@
             // 
             // testNetworkFlowLayoutPanel
             // 
-            this.testNetworkFlowLayoutPanel.Controls.Add(this.label6);
-            this.testNetworkFlowLayoutPanel.Controls.Add(this.comboBox1);
+            this.testNetworkFlowLayoutPanel.Controls.Add(this.testNetworkLabel1);
+            this.testNetworkFlowLayoutPanel.Controls.Add(this.testNetworkComboBox1);
             this.testNetworkFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.testNetworkFlowLayoutPanel.Location = new System.Drawing.Point(3, 3);
             this.testNetworkFlowLayoutPanel.Name = "testNetworkFlowLayoutPanel";
             this.testNetworkFlowLayoutPanel.Size = new System.Drawing.Size(300, 45);
             this.testNetworkFlowLayoutPanel.TabIndex = 0;
             // 
-            // label6
+            // testNetworkLabel1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 3);
-            this.label6.Margin = new System.Windows.Forms.Padding(3, 3, 200, 3);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "label6";
+            this.testNetworkLabel1.AutoSize = true;
+            this.testNetworkLabel1.Location = new System.Drawing.Point(3, 3);
+            this.testNetworkLabel1.Margin = new System.Windows.Forms.Padding(3, 3, 200, 3);
+            this.testNetworkLabel1.Name = "testNetworkLabel1";
+            this.testNetworkLabel1.Size = new System.Drawing.Size(35, 13);
+            this.testNetworkLabel1.TabIndex = 0;
+            this.testNetworkLabel1.Text = "Network List";
             // 
-            // comboBox1
+            // testNetworkComboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 22);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.testNetworkComboBox1.FormattingEnabled = true;
+            this.testNetworkComboBox1.Location = new System.Drawing.Point(3, 22);
+            this.testNetworkComboBox1.Name = "comboBox1";
+            this.testNetworkComboBox1.Size = new System.Drawing.Size(121, 21);
+            this.testNetworkComboBox1.TabIndex = 1;
+            this.testNetworkComboBox1.SelectedValueChanged +=
+                new System.EventHandler(testNetworkComboBoxOnClick);
             // 
             // testNetworkFlowLayoutPanel2
             // 
-            this.testNetworkFlowLayoutPanel2.Controls.Add(this.label7);
-            this.testNetworkFlowLayoutPanel2.Controls.Add(this.listBox2);
-            this.testNetworkFlowLayoutPanel2.Controls.Add(this.button1);
+            this.testNetworkFlowLayoutPanel2.Controls.Add(this.testNetworkLabel2);
+            this.testNetworkFlowLayoutPanel2.Controls.Add(this.testNetworkListBox1);
+            this.testNetworkFlowLayoutPanel2.Controls.Add(this.testNetworkButton1);
             this.testNetworkFlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.testNetworkFlowLayoutPanel2.Location = new System.Drawing.Point(3, 54);
             this.testNetworkFlowLayoutPanel2.Name = "testNetworkFlowLayoutPanel2";
             this.testNetworkFlowLayoutPanel2.Size = new System.Drawing.Size(300, 250);
             this.testNetworkFlowLayoutPanel2.TabIndex = 1;
             // 
-            // label7
+            // testNetworkLabel2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 3);
-            this.label7.Margin = new System.Windows.Forms.Padding(3, 3, 200, 3);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "label7";
+            this.testNetworkLabel2.AutoSize = true;
+            this.testNetworkLabel2.Location = new System.Drawing.Point(3, 3);
+            this.testNetworkLabel2.Margin = new System.Windows.Forms.Padding(3, 3, 200, 3);
+            this.testNetworkLabel2.Name = "testNetworkLabel2";
+            this.testNetworkLabel2.Size = new System.Drawing.Size(35, 13);
+            this.testNetworkLabel2.TabIndex = 0;
+            this.testNetworkLabel2.Text = "Device List";
             // 
             // listBox2
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(3, 22);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(3, 3, 200, 3);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(120, 95);
-            this.listBox2.TabIndex = 1;
+            this.testNetworkListBox1.FormattingEnabled = true;
+            this.testNetworkListBox1.Location = new System.Drawing.Point(3, 22);
+            this.testNetworkListBox1.Margin = new System.Windows.Forms.Padding(3, 3, 200, 3);
+            this.testNetworkListBox1.Name = "listBox2";
+            this.testNetworkListBox1.Size = new System.Drawing.Size(120, 95);
+            this.testNetworkListBox1.TabIndex = 1;
             // 
-            // button1
+            // testNetworkButton1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 123);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.testNetworkButton1.Location = new System.Drawing.Point(3, 123);
+            this.testNetworkButton1.Name = "testNetworkButton1";
+            this.testNetworkButton1.Size = new System.Drawing.Size(75, 23);
+            this.testNetworkButton1.TabIndex = 2;
+            this.testNetworkButton1.Text = "Test Network";
+            this.testNetworkButton1.UseVisualStyleBackColor = true;
+            this.testNetworkButton1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pingResultTextBox
             // 
@@ -753,6 +748,7 @@
             this.simulateAttackTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.simulateAttackTableLayoutPanel2.Size = new System.Drawing.Size(390, 338);
             this.simulateAttackTableLayoutPanel2.TabIndex = 1;
+            this.simulateAttackTableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.simulateAttackTableLayoutPanel2_Paint);
             // 
             // simulateAttackComboBox
             // 
@@ -777,7 +773,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 724);
+            this.ClientSize = new System.Drawing.Size(1700, 1061);
             this.Controls.Add(this.simulateAttackTableLayoutPanel);
             this.Controls.Add(this.testNetworkTableLayoutPanel);
             this.Controls.Add(this.networkConfigurationPanel);
@@ -786,20 +782,16 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PDA Cyber Security Simulator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.homeScreen.ResumeLayout(false);
             this.configureNetwork.ResumeLayout(false);
-            this.configureNetwork.PerformLayout();
             this.simulateAttack.ResumeLayout(false);
-            this.simulateAttack.PerformLayout();
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.viewNetwork.ResumeLayout(false);
-            this.viewNetwork.PerformLayout();
             this.testNetwork.ResumeLayout(false);
-            this.testNetwork.PerformLayout();
             this.breadCrumbFlowLayoutPanel.ResumeLayout(false);
             this.imagePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -877,6 +869,10 @@
         private System.Windows.Forms.FlowLayoutPanel testNetworkFlowLayoutPanel;
         private System.Windows.Forms.FlowLayoutPanel testNetworkFlowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel testNetworkFlowLayoutPanel3;
+        private System.Windows.Forms.ComboBox testNetworkComboBox1;
+        private System.Windows.Forms.Label testNetworkLabel1;
+        private System.Windows.Forms.Label testNetworkLabel2;
+        private System.Windows.Forms.Button testNetworkButton1;
         private System.Windows.Forms.TextBox pingResultTextBox;
 
         private System.Windows.Forms.Panel breadCrumbsPanel;
@@ -895,13 +891,8 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button addNew;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Button button1;
-        
+        private System.Windows.Forms.Button addNew;   
+        private System.Windows.Forms.ListBox testNetworkListBox1;  
 
     }
 }

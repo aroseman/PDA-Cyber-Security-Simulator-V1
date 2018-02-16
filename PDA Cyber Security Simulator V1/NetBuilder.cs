@@ -31,6 +31,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         // The points that make up the line segments.
         private List<Point> Pt1 = new List<Point>();
         private List<Point> Pt2 = new List<Point>();
+        private List<PictureBox> ActiveDevices = new List<PictureBox>();
 
         // Points for the new line.
         private bool IsDrawing = false;
@@ -41,6 +42,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         private bool drawable = false;
         private Network network;
         //public Device Device { get; set; }
+
         private Object activeObject;
 
         private Form1 Form1;
@@ -48,6 +50,19 @@ namespace PDA_Cyber_Security_Simulator_V1
         public NetBuilder(Form1 form1)
         {
             Form1 = form1;
+            InitializeComponent();
+            network = new Network();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            InitializeDragDrop();
+            InitializePopup();
+            lblDrawEnabled.Visible = false;
+        }
+
+       
+        
+        public NetBuilder()
+
+        {
             InitializeComponent();
             network = new Network();
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -465,6 +480,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                     if (e.Button == MouseButtons.Left)
                     {
                         isDragged = true;
+                        ActiveDevices.Remove((PictureBox)sender);
                         //grab the current location of the picture box
                         Point ptStartPosition = ((PictureBox)sender).PointToScreen(new Point(e.X, e.Y));
 
@@ -489,6 +505,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         {
             //Stop dragging
             isDragged = false;
+            ActiveDevices.Add((PictureBox)sender);
             if(((PictureBox)sender).Location.X >= picTrashCan.Location.X - 30 && ((PictureBox)sender).Location.Y >= picTrashCan.Location.Y && ((PictureBox)sender).Location.X <= picTrashCan.Location.X + 60 && ((PictureBox)sender).Location.Y <= picTrashCan.Location.Y + 80)
             {
                 ((PictureBox)sender).Parent = flowLayoutPanel1;
@@ -538,7 +555,35 @@ namespace PDA_Cyber_Security_Simulator_V1
             lblDrawEnabled.Visible = drawable ? true : false;
         }
 
+        /**
+         * Search all active devices, make sure there is an endpoint. If there is an endpoint search all devices for the second endpoint 
+         **/
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(this, "Saved");
+            
+            for (int i = 0; i < ActiveDevices.Count; i++)
+            {
 
+                for(int j = 0; j < Pt1.Count; j++)
+                {
+                    if(InBounds(ActiveDevices[i], Pt1[j]))
+                    {
+                        Console.WriteLine("In Bounds");
+                    }
+                }
+                    
+            }
+        }
+
+        private bool InBounds(PictureBox box, Point x)
+        {
+            bool inBounds = true;
+
+            if ((x.X < box.Location.X || x.X > (box.Width + box.Location.X)) && (x.Y < box.Location.Y || x.Y > (box.Height + box.Location.Y)))
+                inBounds = false;
+            return inBounds;
+        }
 
         #region "DevicePopup"
         private void InitializePopup()

@@ -43,7 +43,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             //imagePanel.BackColor = Color.FromArgb(240, 144, 24);
             //networkConfigurationPanel.Visible = true;
 
-            if(NetBuilder is null)
+            if(NetBuilder == null)
             {
                 NetBuilder form = new NetBuilder(this);
                 NetBuilder = form;
@@ -68,7 +68,35 @@ namespace PDA_Cyber_Security_Simulator_V1
             homeScreen.Visible = false;
             breadCrumbFlowLayoutPanel.BackColor = Color.FromArgb(0, 144, 120);
             imagePanel.BackColor = Color.FromArgb(0, 144, 120);
+
+            testNetworkComboBox1.ResetText();
+            testNetworkComboBox1.SelectedIndex = -1;
+            testNetworkComboBox1.Items.Clear();
+            testNetworkListBox1.Items.Clear();
+
+            String[] nList = Network.getNetworkNames();
+            for (int i = 0; i < nList.Length; i++)
+            {
+                if (!String.IsNullOrEmpty(nList[i]))
+                    testNetworkComboBox1.Items.Add(nList[i]);
+            }
+
             testNetworkTableLayoutPanel.Visible = true;
+        }
+
+        private void testNetworkComboBoxOnClick(object sender, EventArgs e)
+        {
+            if (testNetworkComboBox1.SelectedIndex != -1)
+            {
+                testNetworkListBox1.Items.Clear();
+
+                String[] dList = Network.getDeviceNames(testNetworkComboBox1.SelectedIndex);
+                for (int i = 0; i < dList.Length; i++)
+                {
+                    if (!String.IsNullOrEmpty(dList[i]))
+                        testNetworkListBox1.Items.Add(dList[i]);
+                }
+            }
         }
 
         private void simulateAttackPanelOnClick(object sender, EventArgs e)
@@ -183,5 +211,9 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         }
 
+        private void simulateAttackTableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

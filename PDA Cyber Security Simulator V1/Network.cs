@@ -99,7 +99,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             insertDevice.ExecuteNonQuery();
         }
 
-        public static String[] getNetworks()
+        public static String[] getNetworkNames()
         {
             SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
             dbConnection.Open();
@@ -118,14 +118,14 @@ namespace PDA_Cyber_Security_Simulator_V1
                 int id = networkReader.GetInt32(0);
                 String name = networkReader.GetString(1);
 
-                networkList[counter] = id.ToString() + " " + name;
+                networkList[counter] = name;
                 counter++;
             }
 
             return networkList;
         }
 
-        public static String[] getDevices(int networkID)
+        public static String[] getDeviceNames(int networkID)
         {
             SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
             dbConnection.Open();
@@ -142,12 +142,13 @@ namespace PDA_Cyber_Security_Simulator_V1
             while (networkReader.Read())
             {
                 int id = networkReader.GetInt32(0);
-                String name = networkReader.GetString(1);
-                deviceList[counter] = id.ToString() + " " + name;
-
-                //String whole = networkReader.ToString();
-                //deviceList[counter] = whole;
-
+                String ip = networkReader.GetString(1);
+                String name = networkReader.GetString(2);
+                String mac = networkReader.GetString(3);
+                String desc = networkReader.GetString(4);
+                String notes = networkReader.GetString(5);
+                int netid = networkReader.GetInt32(6);
+                deviceList[counter] = name;
 
                 counter++;
             }

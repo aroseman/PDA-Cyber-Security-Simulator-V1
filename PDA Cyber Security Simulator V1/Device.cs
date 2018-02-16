@@ -51,9 +51,6 @@ public class Device
         SQLiteCommand insertDevice = dbConnection.CreateCommand();
         insertDevice.CommandText = "INSERT INTO device (ip, name, mac, description, notes, netid) VALUES ('" + newDevice.IpAddress + "', '" + newDevice.Name + "', '" + newDevice.MacAddress + "', '" + newDevice.Description + "', '" + newDevice.Notes + "', '1');";
         insertDevice.ExecuteNonQuery();
-
-        insertDevice.CommandText = "INSERT INTO device (ip, name, mac, description, notes, netid) VALUES ('192.168.2.5' , 'Cisco Router', '00:0a:95:9d:68:16', 'This a description', 'This is a note', '1');";
-        insertDevice.ExecuteNonQuery();
     }
 
     public static void removeDevice(Device newDevice)
@@ -66,7 +63,7 @@ public class Device
         insertDevice.ExecuteNonQuery();
     }
 
-    public static String[] getDevices()
+    public static String[] getDeviceNames()
     {
         SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
         dbConnection.Open();
@@ -82,6 +79,32 @@ public class Device
 
         while (deviceReader.Read())
         {
+            String name = deviceReader.GetString(2);
+            deviceList[counter] = name;
+            counter++;
+        }
+
+        return deviceList;
+    }
+
+    public static Device[] getDevices()
+    {
+        SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
+        dbConnection.Open();
+
+        SQLiteCommand getDevice = dbConnection.CreateCommand();
+        getDevice.CommandText = "SELECT * FROM device";
+        SQLiteDataReader deviceReader = getDevice.ExecuteReader();
+
+        Device[] deviceList;
+
+        deviceList = new Device[50];
+        int counter = 0;
+
+        while (deviceReader.Read())
+        {
+            Device newD = new Device();
+
             int id = deviceReader.GetInt32(0);
             String ip = deviceReader.GetString(1);
             String name = deviceReader.GetString(2);
@@ -90,7 +113,13 @@ public class Device
             String notes = deviceReader.GetString(5);
             int netid = deviceReader.GetInt32(6);
 
-            deviceList[counter] = id.ToString() + " " + ip + " " + name + " " + netid.ToString();
+            newD.IpAddress = ip;
+            newD.Name = name;
+            newD.MacAddress = mac;
+            newD.Description = desc;
+            newD.Notes = notes;
+
+            deviceList[counter] = newD;
             counter++;
         }
 
@@ -105,6 +134,7 @@ public class Device
         SQLiteCommand createDeviceTable = dbConnection.CreateCommand();
         createDeviceTable.CommandText = "CREATE TABLE IF NOT EXISTS device (id integer primary key autoincrement, ip varchar(15), name varchar(50),mac char(17),description varchar(50),notes varchar(200), netid integer, foreign key(netid) references network(id));";
         createDeviceTable.ExecuteNonQuery();
+
     }
 
     public static void dropDeviceTable()
@@ -115,5 +145,19 @@ public class Device
         SQLiteCommand createDeviceTable = dbConnection.CreateCommand();
         createDeviceTable.CommandText = "DROP TABLE IF EXISTS device;";
         createDeviceTable.ExecuteNonQuery();
+    }
+
+    public int getMaxTableID()
+    {
+        SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
+        dbConnection.Open();
+
+        SQLiteCommand getDevice = dbConnection.CreateCommand();
+        getDevice.CommandText = "SELECT MAX(id) FROM device";
+        SQLiteDataReader deviceReader = getDevice.ExecuteReader();
+        deviceReader.Read();
+
+        int maxID = deviceReader.GetInt32(0);
+        return maxID;
     }
 }
