@@ -77,6 +77,10 @@ namespace PDA_Cyber_Security_Simulator_V1
             SQLiteCommand createDeviceTable = dbConnection.CreateCommand();
             createDeviceTable.CommandText = "CREATE TABLE IF NOT EXISTS network (id integer primary key autoincrement, name varchar(50));";
             createDeviceTable.ExecuteNonQuery();
+
+            /*SQLiteCommand insertDevice = dbConnection.CreateCommand();
+            insertDevice.CommandText = "INSERT INTO network (name) VALUES ('test');";
+            insertDevice.ExecuteNonQuery();*/
         }
 
         public static void dropNetworkTable()

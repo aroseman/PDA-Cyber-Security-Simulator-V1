@@ -105,6 +105,10 @@ public class Device
         SQLiteCommand createDeviceTable = dbConnection.CreateCommand();
         createDeviceTable.CommandText = "CREATE TABLE IF NOT EXISTS device (id integer primary key autoincrement, ip varchar(15), name varchar(50),mac char(17),description varchar(50),notes varchar(200), netid integer, foreign key(netid) references network(id));";
         createDeviceTable.ExecuteNonQuery();
+
+        /*SQLiteCommand insertDevice = dbConnection.CreateCommand();
+        insertDevice.CommandText = "INSERT INTO device (ip, name, mac, description, notes, netid) VALUES ('192.168.2.5' , 'Cisco Router', '00:0a:95:9d:68:16', 'This a description', 'This is a note', '1');";
+        insertDevice.ExecuteNonQuery();*/
     }
 
     public static void dropDeviceTable()

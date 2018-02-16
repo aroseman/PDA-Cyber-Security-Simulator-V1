@@ -72,7 +72,8 @@ namespace PDA_Cyber_Security_Simulator_V1
             String[] nList = Network.getNetworks();
             for (int i = 0; i < nList.Length; i++)
             {
-                testNetworkComboBox1.Items.AddRange(nList);
+                if (!String.IsNullOrEmpty(nList[i]))
+                    testNetworkComboBox1.Items.Add(nList[i]);
             }
 
             testNetworkTableLayoutPanel.Visible = true;
