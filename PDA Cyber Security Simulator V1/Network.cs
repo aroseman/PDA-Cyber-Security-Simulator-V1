@@ -77,10 +77,6 @@ namespace PDA_Cyber_Security_Simulator_V1
             SQLiteCommand createDeviceTable = dbConnection.CreateCommand();
             createDeviceTable.CommandText = "CREATE TABLE IF NOT EXISTS network (id integer primary key autoincrement, name varchar(50));";
             createDeviceTable.ExecuteNonQuery();
-
-            /*SQLiteCommand insertDevice = dbConnection.CreateCommand();
-            insertDevice.CommandText = "INSERT INTO network (name) VALUES ('test');";
-            insertDevice.ExecuteNonQuery();*/
         }
 
         public static void dropNetworkTable()
@@ -103,7 +99,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             insertDevice.ExecuteNonQuery();
         }
 
-        public static String[] getNetworks()
+        public static String[] getNetworkNames()
         {
             SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
             dbConnection.Open();
@@ -129,7 +125,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             return networkList;
         }
 
-        public static String[] getDevices(int networkID)
+        public static String[] getDeviceNames(int networkID)
         {
             SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
             dbConnection.Open();
@@ -152,7 +148,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                 String desc = networkReader.GetString(4);
                 String notes = networkReader.GetString(5);
                 int netid = networkReader.GetInt32(6);
-                deviceList[counter] = id.ToString() + " " + name;
+                deviceList[counter] = name;
 
                 counter++;
             }

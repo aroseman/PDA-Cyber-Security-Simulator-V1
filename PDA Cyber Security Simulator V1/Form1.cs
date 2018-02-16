@@ -69,7 +69,12 @@ namespace PDA_Cyber_Security_Simulator_V1
             breadCrumbFlowLayoutPanel.BackColor = Color.FromArgb(0, 144, 120);
             imagePanel.BackColor = Color.FromArgb(0, 144, 120);
 
-            String[] nList = Network.getNetworks();
+            testNetworkComboBox1.ResetText();
+            testNetworkComboBox1.SelectedIndex = -1;
+            testNetworkComboBox1.Items.Clear();
+            testNetworkListBox1.Items.Clear();
+
+            String[] nList = Network.getNetworkNames();
             for (int i = 0; i < nList.Length; i++)
             {
                 if (!String.IsNullOrEmpty(nList[i]))
@@ -77,6 +82,21 @@ namespace PDA_Cyber_Security_Simulator_V1
             }
 
             testNetworkTableLayoutPanel.Visible = true;
+        }
+
+        private void testNetworkComboBoxOnClick(object sender, EventArgs e)
+        {
+            if (testNetworkComboBox1.SelectedIndex != -1)
+            {
+                testNetworkListBox1.Items.Clear();
+
+                String[] dList = Network.getDeviceNames(testNetworkComboBox1.SelectedIndex);
+                for (int i = 0; i < dList.Length; i++)
+                {
+                    if (!String.IsNullOrEmpty(dList[i]))
+                        testNetworkListBox1.Items.Add(dList[i]);
+                }
+            }
         }
 
         private void simulateAttackPanelOnClick(object sender, EventArgs e)

@@ -20,7 +20,7 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         [TestMethod]
         public void getNetworksTest()
         {
-            String[] networks = Network.getNetworks();
+            String[] networks = Network.getNetworkNames();
 
             for (int i = 0; i < networks.Length; i++)
             {
@@ -31,7 +31,7 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         [TestMethod]
         public void getDeviceTest()
         {
-            String[] devices = Network.getDevices(1);
+            String[] devices = Network.getDeviceNames(1);
 
             for (int i = 0; i < devices.Length; i++)
             {

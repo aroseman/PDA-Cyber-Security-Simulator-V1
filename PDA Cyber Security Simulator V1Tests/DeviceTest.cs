@@ -31,11 +31,11 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         [TestMethod]
         public void getDevicesTest()
         {
-            String[] devices = Device.getDevices();
+            Device[] devices = Device.getDevices();
 
             for (int i = 0; i < devices.Length; i++)
             {
-                Console.WriteLine(devices[i]);
+                Console.WriteLine(devices[i].Name);
             }
         }
 

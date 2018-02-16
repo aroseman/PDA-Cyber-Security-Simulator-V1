@@ -82,7 +82,7 @@
             this.testNetworkComboBox1 = new System.Windows.Forms.ComboBox();
             this.testNetworkFlowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.testNetworkLabel2 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.testNetworkListBox1 = new System.Windows.Forms.ListBox();
             this.testNetworkButton1 = new System.Windows.Forms.Button();
             this.pingResultTextBox = new System.Windows.Forms.TextBox();
             this.simulateAttackTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -647,18 +647,20 @@
             this.testNetworkLabel1.TabIndex = 0;
             this.testNetworkLabel1.Text = "Network List";
             // 
-            // comboBox1
+            // testNetworkComboBox1
             // 
             this.testNetworkComboBox1.FormattingEnabled = true;
             this.testNetworkComboBox1.Location = new System.Drawing.Point(3, 22);
             this.testNetworkComboBox1.Name = "comboBox1";
             this.testNetworkComboBox1.Size = new System.Drawing.Size(121, 21);
             this.testNetworkComboBox1.TabIndex = 1;
+            this.testNetworkComboBox1.SelectedValueChanged +=
+                new System.EventHandler(testNetworkComboBoxOnClick);
             // 
             // testNetworkFlowLayoutPanel2
             // 
             this.testNetworkFlowLayoutPanel2.Controls.Add(this.testNetworkLabel2);
-            this.testNetworkFlowLayoutPanel2.Controls.Add(this.listBox2);
+            this.testNetworkFlowLayoutPanel2.Controls.Add(this.testNetworkListBox1);
             this.testNetworkFlowLayoutPanel2.Controls.Add(this.testNetworkButton1);
             this.testNetworkFlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.testNetworkFlowLayoutPanel2.Location = new System.Drawing.Point(3, 54);
@@ -678,12 +680,12 @@
             // 
             // listBox2
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(3, 22);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(3, 3, 200, 3);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(120, 95);
-            this.listBox2.TabIndex = 1;
+            this.testNetworkListBox1.FormattingEnabled = true;
+            this.testNetworkListBox1.Location = new System.Drawing.Point(3, 22);
+            this.testNetworkListBox1.Margin = new System.Windows.Forms.Padding(3, 3, 200, 3);
+            this.testNetworkListBox1.Name = "listBox2";
+            this.testNetworkListBox1.Size = new System.Drawing.Size(120, 95);
+            this.testNetworkListBox1.TabIndex = 1;
             // 
             // testNetworkButton1
             // 
@@ -890,7 +892,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button addNew;   
-        private System.Windows.Forms.ListBox listBox2;  
+        private System.Windows.Forms.ListBox testNetworkListBox1;  
 
     }
 }
