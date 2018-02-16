@@ -43,7 +43,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             //imagePanel.BackColor = Color.FromArgb(240, 144, 24);
             //networkConfigurationPanel.Visible = true;
 
-            if(NetBuilder is null)
+            if(NetBuilder == null)
             {
                 NetBuilder form = new NetBuilder(this);
                 NetBuilder = form;

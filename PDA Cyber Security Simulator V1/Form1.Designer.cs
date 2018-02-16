@@ -78,12 +78,12 @@
             this.testNetworkFlowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.testNetworkTableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.testNetworkFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.testNetworkLabel1 = new System.Windows.Forms.Label();
             this.testNetworkComboBox1 = new System.Windows.Forms.ComboBox();
             this.testNetworkFlowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.testNetworkLabel2 = new System.Windows.Forms.Label();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.testNetworkButton1 = new System.Windows.Forms.Button();
             this.pingResultTextBox = new System.Windows.Forms.TextBox();
             this.simulateAttackTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.simulateAttackTextBox = new System.Windows.Forms.TextBox();
@@ -629,7 +629,7 @@
             // 
             // testNetworkFlowLayoutPanel
             // 
-            this.testNetworkFlowLayoutPanel.Controls.Add(this.label6);
+            this.testNetworkFlowLayoutPanel.Controls.Add(this.testNetworkLabel1);
             this.testNetworkFlowLayoutPanel.Controls.Add(this.testNetworkComboBox1);
             this.testNetworkFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.testNetworkFlowLayoutPanel.Location = new System.Drawing.Point(3, 3);
@@ -637,15 +637,15 @@
             this.testNetworkFlowLayoutPanel.Size = new System.Drawing.Size(300, 45);
             this.testNetworkFlowLayoutPanel.TabIndex = 0;
             // 
-            // label6
+            // testNetworkLabel1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 3);
-            this.label6.Margin = new System.Windows.Forms.Padding(3, 3, 200, 3);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "label6";
+            this.testNetworkLabel1.AutoSize = true;
+            this.testNetworkLabel1.Location = new System.Drawing.Point(3, 3);
+            this.testNetworkLabel1.Margin = new System.Windows.Forms.Padding(3, 3, 200, 3);
+            this.testNetworkLabel1.Name = "testNetworkLabel1";
+            this.testNetworkLabel1.Size = new System.Drawing.Size(35, 13);
+            this.testNetworkLabel1.TabIndex = 0;
+            this.testNetworkLabel1.Text = "Network List";
             // 
             // comboBox1
             // 
@@ -657,24 +657,24 @@
             // 
             // testNetworkFlowLayoutPanel2
             // 
-            this.testNetworkFlowLayoutPanel2.Controls.Add(this.label7);
+            this.testNetworkFlowLayoutPanel2.Controls.Add(this.testNetworkLabel2);
             this.testNetworkFlowLayoutPanel2.Controls.Add(this.listBox2);
-            this.testNetworkFlowLayoutPanel2.Controls.Add(this.button1);
+            this.testNetworkFlowLayoutPanel2.Controls.Add(this.testNetworkButton1);
             this.testNetworkFlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.testNetworkFlowLayoutPanel2.Location = new System.Drawing.Point(3, 54);
             this.testNetworkFlowLayoutPanel2.Name = "testNetworkFlowLayoutPanel2";
             this.testNetworkFlowLayoutPanel2.Size = new System.Drawing.Size(300, 250);
             this.testNetworkFlowLayoutPanel2.TabIndex = 1;
             // 
-            // label7
+            // testNetworkLabel2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 3);
-            this.label7.Margin = new System.Windows.Forms.Padding(3, 3, 200, 3);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "label7";
+            this.testNetworkLabel2.AutoSize = true;
+            this.testNetworkLabel2.Location = new System.Drawing.Point(3, 3);
+            this.testNetworkLabel2.Margin = new System.Windows.Forms.Padding(3, 3, 200, 3);
+            this.testNetworkLabel2.Name = "testNetworkLabel2";
+            this.testNetworkLabel2.Size = new System.Drawing.Size(35, 13);
+            this.testNetworkLabel2.TabIndex = 0;
+            this.testNetworkLabel2.Text = "Device List";
             // 
             // listBox2
             // 
@@ -685,15 +685,15 @@
             this.listBox2.Size = new System.Drawing.Size(120, 95);
             this.listBox2.TabIndex = 1;
             // 
-            // button1
+            // testNetworkButton1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 123);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.testNetworkButton1.Location = new System.Drawing.Point(3, 123);
+            this.testNetworkButton1.Name = "testNetworkButton1";
+            this.testNetworkButton1.Size = new System.Drawing.Size(75, 23);
+            this.testNetworkButton1.TabIndex = 2;
+            this.testNetworkButton1.Text = "Test Network";
+            this.testNetworkButton1.UseVisualStyleBackColor = true;
+            this.testNetworkButton1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pingResultTextBox
             // 
@@ -868,6 +868,9 @@
         private System.Windows.Forms.FlowLayoutPanel testNetworkFlowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel testNetworkFlowLayoutPanel3;
         private System.Windows.Forms.ComboBox testNetworkComboBox1;
+        private System.Windows.Forms.Label testNetworkLabel1;
+        private System.Windows.Forms.Label testNetworkLabel2;
+        private System.Windows.Forms.Button testNetworkButton1;
         private System.Windows.Forms.TextBox pingResultTextBox;
 
         private System.Windows.Forms.Panel breadCrumbsPanel;
@@ -886,12 +889,8 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button addNew;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Button button1;
-        
+        private System.Windows.Forms.Button addNew;   
+        private System.Windows.Forms.ListBox listBox2;  
 
     }
 }

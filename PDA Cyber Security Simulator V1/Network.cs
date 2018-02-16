@@ -122,7 +122,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                 int id = networkReader.GetInt32(0);
                 String name = networkReader.GetString(1);
 
-                networkList[counter] = id.ToString() + " " + name;
+                networkList[counter] = name;
                 counter++;
             }
 
