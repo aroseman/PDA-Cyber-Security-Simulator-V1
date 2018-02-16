@@ -79,7 +79,7 @@
             this.testNetworkTableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.testNetworkFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.testNetworkComboBox1 = new System.Windows.Forms.ComboBox();
             this.testNetworkFlowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -630,7 +630,7 @@
             // testNetworkFlowLayoutPanel
             // 
             this.testNetworkFlowLayoutPanel.Controls.Add(this.label6);
-            this.testNetworkFlowLayoutPanel.Controls.Add(this.comboBox1);
+            this.testNetworkFlowLayoutPanel.Controls.Add(this.testNetworkComboBox1);
             this.testNetworkFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.testNetworkFlowLayoutPanel.Location = new System.Drawing.Point(3, 3);
             this.testNetworkFlowLayoutPanel.Name = "testNetworkFlowLayoutPanel";
@@ -649,11 +649,11 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 22);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.testNetworkComboBox1.FormattingEnabled = true;
+            this.testNetworkComboBox1.Location = new System.Drawing.Point(3, 22);
+            this.testNetworkComboBox1.Name = "comboBox1";
+            this.testNetworkComboBox1.Size = new System.Drawing.Size(121, 21);
+            this.testNetworkComboBox1.TabIndex = 1;
             // 
             // testNetworkFlowLayoutPanel2
             // 
@@ -746,6 +746,7 @@
             this.simulateAttackTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.simulateAttackTableLayoutPanel2.Size = new System.Drawing.Size(390, 338);
             this.simulateAttackTableLayoutPanel2.TabIndex = 1;
+            this.simulateAttackTableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.simulateAttackTableLayoutPanel2_Paint);
             // 
             // simulateAttackComboBox
             // 
@@ -866,6 +867,7 @@
         private System.Windows.Forms.FlowLayoutPanel testNetworkFlowLayoutPanel;
         private System.Windows.Forms.FlowLayoutPanel testNetworkFlowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel testNetworkFlowLayoutPanel3;
+        private System.Windows.Forms.ComboBox testNetworkComboBox1;
         private System.Windows.Forms.TextBox pingResultTextBox;
 
         private System.Windows.Forms.Panel breadCrumbsPanel;
@@ -886,7 +888,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button addNew;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Button button1;

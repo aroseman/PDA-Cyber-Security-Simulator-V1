@@ -68,6 +68,13 @@ namespace PDA_Cyber_Security_Simulator_V1
             homeScreen.Visible = false;
             breadCrumbFlowLayoutPanel.BackColor = Color.FromArgb(0, 144, 120);
             imagePanel.BackColor = Color.FromArgb(0, 144, 120);
+
+            String[] nList = Network.getNetworks();
+            for (int i = 0; i < nList.Length; i++)
+            {
+                testNetworkComboBox1.Items.AddRange(nList);
+            }
+
             testNetworkTableLayoutPanel.Visible = true;
         }
 
@@ -183,5 +190,9 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         }
 
+        private void simulateAttackTableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

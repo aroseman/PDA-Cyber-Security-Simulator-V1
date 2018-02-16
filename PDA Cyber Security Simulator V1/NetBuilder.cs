@@ -42,19 +42,27 @@ namespace PDA_Cyber_Security_Simulator_V1
         private bool drawable = false;
         private Network network;
         //public Device Device { get; set; }
-<<<<<<< Updated upstream
+
         private Object activeObject;
 
         private Form1 Form1;
 
         public NetBuilder(Form1 form1)
-=======
+        {
+            Form1 = form1;
+            InitializeComponent();
+            network = new Network();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            InitializeDragDrop();
+            InitializePopup();
+            lblDrawEnabled.Visible = false;
+        }
+
        
         
         public NetBuilder()
->>>>>>> Stashed changes
+
         {
-            Form1 = form1;
             InitializeComponent();
             network = new Network();
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -547,9 +555,6 @@ namespace PDA_Cyber_Security_Simulator_V1
             lblDrawEnabled.Visible = drawable ? true : false;
         }
 
-<<<<<<< Updated upstream
-
-=======
         /**
          * Search all active devices, make sure there is an endpoint. If there is an endpoint search all devices for the second endpoint 
          **/
@@ -579,7 +584,6 @@ namespace PDA_Cyber_Security_Simulator_V1
                 inBounds = false;
             return inBounds;
         }
->>>>>>> Stashed changes
 
         #region "DevicePopup"
         private void InitializePopup()

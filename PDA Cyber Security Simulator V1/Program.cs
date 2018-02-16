@@ -15,6 +15,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         static void Main()
         {
             Device.makeDeviceTable();
+            Network.makeNetworkTable();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

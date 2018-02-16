@@ -142,12 +142,13 @@ namespace PDA_Cyber_Security_Simulator_V1
             while (networkReader.Read())
             {
                 int id = networkReader.GetInt32(0);
-                String name = networkReader.GetString(1);
+                String ip = networkReader.GetString(1);
+                String name = networkReader.GetString(2);
+                String mac = networkReader.GetString(3);
+                String desc = networkReader.GetString(4);
+                String notes = networkReader.GetString(5);
+                int netid = networkReader.GetInt32(6);
                 deviceList[counter] = id.ToString() + " " + name;
-
-                //String whole = networkReader.ToString();
-                //deviceList[counter] = whole;
-
 
                 counter++;
             }

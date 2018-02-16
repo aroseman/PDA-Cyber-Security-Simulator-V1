@@ -49,22 +49,17 @@
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-<<<<<<< Updated upstream
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClearNetwork = new System.Windows.Forms.Button();
             this.btnSaveNetwork = new System.Windows.Forms.Button();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.breadCrumbsPanel = new System.Windows.Forms.Panel();
             this.rootCrumb = new System.Windows.Forms.Label();
-=======
-<<<<<<< Updated upstream
-            this.btnSaveNetwork = new System.Windows.Forms.Button();
+
+            this.btnSave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClearNetwork = new System.Windows.Forms.Button();
-=======
-            this.btnSave = new System.Windows.Forms.Button();
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+            this.btnSaveNetwork = new System.Windows.Forms.Button();
             this.canvas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTrashCan)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -121,13 +116,10 @@
             // 
             this.enableLineDraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.enableLineDraw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< Updated upstream
             this.enableLineDraw.Location = new System.Drawing.Point(1599, 33);
             this.enableLineDraw.Margin = new System.Windows.Forms.Padding(4);
-=======
             this.enableLineDraw.Location = new System.Drawing.Point(636, 17);
             this.enableLineDraw.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> Stashed changes
             this.enableLineDraw.Name = "enableLineDraw";
             this.enableLineDraw.Size = new System.Drawing.Size(62, 50);
             this.enableLineDraw.TabIndex = 0;
@@ -139,19 +131,13 @@
             // 
             this.picTrashCan.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.trash_can;
             this.picTrashCan.ImageLocation = "";
-<<<<<<< Updated upstream
             this.picTrashCan.Location = new System.Drawing.Point(16, 1202);
-=======
-<<<<<<< Updated upstream
             this.picTrashCan.Location = new System.Drawing.Point(4, 1315);
->>>>>>> Stashed changes
             this.picTrashCan.Margin = new System.Windows.Forms.Padding(4);
             this.picTrashCan.MaximumSize = new System.Drawing.Size(138, 165);
-=======
             this.picTrashCan.Location = new System.Drawing.Point(2, 695);
             this.picTrashCan.Margin = new System.Windows.Forms.Padding(2);
             this.picTrashCan.MaximumSize = new System.Drawing.Size(69, 86);
->>>>>>> Stashed changes
             this.picTrashCan.Name = "picTrashCan";
             this.picTrashCan.Size = new System.Drawing.Size(138, 165);
             this.picTrashCan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -175,18 +161,12 @@
             this.flowLayoutPanel1.Controls.Add(this.pictureBox12);
             this.flowLayoutPanel1.Controls.Add(this.pictureBox13);
             this.flowLayoutPanel1.Controls.Add(this.pictureBox14);
-<<<<<<< Updated upstream
             this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 198);
-=======
-<<<<<<< Updated upstream
             this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 113);
->>>>>>> Stashed changes
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
-=======
-            this.flowLayoutPanel1.Controls.Add(this.btnSave);
+            this.flowLayoutPanel1.Controls.Add(this.btnSaveNetwork);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, -235);
->>>>>>> Stashed changes
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(425, 1295);
             this.flowLayoutPanel1.TabIndex = 3;
@@ -381,9 +361,6 @@
             this.panel2.Size = new System.Drawing.Size(2162, 180);
             this.panel2.TabIndex = 2;
             // 
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
             // btnSaveNetwork
             // 
             this.btnSaveNetwork.Location = new System.Drawing.Point(64, 16);
@@ -394,7 +371,6 @@
             this.btnSaveNetwork.Text = "Save";
             this.btnSaveNetwork.UseVisualStyleBackColor = true;
             // 
->>>>>>> Stashed changes
             // panel1
             // 
             this.panel1.Controls.Add(this.btnClearNetwork);
@@ -414,7 +390,6 @@
             this.btnClearNetwork.TabIndex = 16;
             this.btnClearNetwork.Text = "Clear";
             this.btnClearNetwork.UseVisualStyleBackColor = true;
-=======
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(3, 633);
@@ -424,7 +399,6 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
->>>>>>> Stashed changes
             // 
             // btnSaveNetwork
             // 
@@ -531,18 +505,12 @@
         private System.Windows.Forms.Button enableLineDraw;
         private System.Windows.Forms.Label lblDrawEnabled;
         private System.Windows.Forms.PictureBox picTrashCan;
-<<<<<<< Updated upstream
         private System.Windows.Forms.Button btnSaveNetwork;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnClearNetwork;
-<<<<<<< Updated upstream
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.Panel breadCrumbsPanel;
         private System.Windows.Forms.Label rootCrumb;
-=======
-=======
         private System.Windows.Forms.Button btnSave;
->>>>>>> Stashed changes
->>>>>>> Stashed changes
     }
 }
