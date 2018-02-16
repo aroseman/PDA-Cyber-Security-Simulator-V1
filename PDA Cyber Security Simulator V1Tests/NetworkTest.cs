@@ -9,7 +9,7 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
     public class NetworkTest
     {
         [TestMethod]
-        public void addNetworkTest()
+        public void AddNetworkTest()
         {
             Network.dropNetworkTable();
             Network.makeNetworkTable();
@@ -18,7 +18,7 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         }
 
         [TestMethod]
-        public void getNetworksTest()
+        public void GetNetworksTest()
         {
             String[] networks = Network.getNetworkNames();
 
@@ -29,7 +29,7 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         }
 
         [TestMethod]
-        public void getDeviceTest()
+        public void GetDeviceTest()
         {
             String[] devices = Network.getDeviceNames(1);
 

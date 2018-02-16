@@ -146,4 +146,18 @@ public class Device
         createDeviceTable.CommandText = "DROP TABLE IF EXISTS device;";
         createDeviceTable.ExecuteNonQuery();
     }
+
+    public int getMaxTableID()
+    {
+        SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
+        dbConnection.Open();
+
+        SQLiteCommand getDevice = dbConnection.CreateCommand();
+        getDevice.CommandText = "SELECT MAX(id) FROM device";
+        SQLiteDataReader deviceReader = getDevice.ExecuteReader();
+        deviceReader.Read();
+
+        int maxID = deviceReader.GetInt32(0);
+        return maxID;
+    }
 }
