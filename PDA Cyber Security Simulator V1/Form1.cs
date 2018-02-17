@@ -17,7 +17,8 @@ namespace PDA_Cyber_Security_Simulator_V1
         public Form1()
         {
             InitializeComponent();
-           
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)

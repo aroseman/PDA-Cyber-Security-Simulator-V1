@@ -78,7 +78,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             this.Hide();
         }
 
-        // The mouse is up. See whether we're over an end point or segment.
+        // The mouse is currently up. See whether we're over an end point or segment.
         private void canvas_MouseMove_NotDown(object sender, MouseEventArgs e)
         {
             Cursor new_cursor = Cursors.Cross;
@@ -209,6 +209,32 @@ namespace PDA_Cyber_Security_Simulator_V1
             canvas.Invalidate();
         }
 
+        private Point checkIfEndpointIsInPictureBox(Point location)
+        {
+            Point centerPoint = new Point();
+            foreach (Control c in canvas.Controls)
+            {
+                if(c is PictureBox)
+                {
+                    if(location.X >= c.Location.X && location.X <= c.Location.X + 200 && location.Y >= c.Location.Y && location.Y <= c.Location.Y + 162)
+                    {
+                        //We know that our end point is within a picture box
+                        //set the location of the center of the picture box
+                        centerPoint.X = c.Location.X + (200 / 4);
+                        centerPoint.Y = c.Location.Y + (162 / 4);
+
+                        //c.SendToBack();
+                        return centerPoint;
+                    }
+                }
+            }
+
+            //If the foreach loop is exited, we know that the endpoint is not currently inside a picture box
+            centerPoint.X = -1;
+            centerPoint.Y = -1;
+            return centerPoint;
+        }
+
         // Stop moving the end point.
         private void canvas_MouseUp_MovingEndPoint(object sender, MouseEventArgs e)
         {
@@ -216,6 +242,22 @@ namespace PDA_Cyber_Security_Simulator_V1
             canvas.MouseMove += canvas_MouseMove_NotDown;
             canvas.MouseMove -= canvas_MouseMove_MovingEndPoint;
             canvas.MouseUp -= canvas_MouseUp_MovingEndPoint;
+
+            Point checkLocation = new Point();
+
+            if (MovingStartEndPoint)
+                checkLocation = checkIfEndpointIsInPictureBox(Pt1[MovingSegment]);
+            else
+                checkLocation = checkIfEndpointIsInPictureBox(Pt2[MovingSegment]);
+
+            //If the location is within a picture box, the point will return positive
+            if(checkLocation.X >= 0)
+            {
+                if (MovingStartEndPoint)
+                    Pt1[MovingSegment] = checkLocation;
+                else
+                    Pt2[MovingSegment] = checkLocation;
+            }
 
             // Redraw.
             canvas.Invalidate();
@@ -506,7 +548,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             //Stop dragging
             isDragged = false;
             ActiveDevices.Add((PictureBox)sender);
-            if(((PictureBox)sender).Location.X >= picTrashCan.Location.X - 30 && ((PictureBox)sender).Location.Y >= picTrashCan.Location.Y && ((PictureBox)sender).Location.X <= picTrashCan.Location.X + 60 && ((PictureBox)sender).Location.Y <= picTrashCan.Location.Y + 80)
+            if(((PictureBox)sender).Location.X >= picTrashCan.Location.X - 30 && ((PictureBox)sender).Location.Y >= picTrashCan.Location.Y - 30 && ((PictureBox)sender).Location.X <= picTrashCan.Location.X + 30 && ((PictureBox)sender).Location.Y <= picTrashCan.Location.Y + 30)
             {
                 ((PictureBox)sender).Parent = flowLayoutPanel1;
             }

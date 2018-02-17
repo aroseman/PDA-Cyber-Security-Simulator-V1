@@ -55,17 +55,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClearNetwork = new System.Windows.Forms.Button();
             this.btnSaveNetwork = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-=======
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.breadCrumbsPanel = new System.Windows.Forms.Panel();
-            this.rootCrumb = new System.Windows.Forms.Label();
-
             this.btnSave = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnClearNetwork = new System.Windows.Forms.Button();
-            this.btnSaveNetwork = new System.Windows.Forms.Button();
->>>>>>> master
             this.canvas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTrashCan)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -122,8 +112,6 @@
             // 
             this.enableLineDraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.enableLineDraw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enableLineDraw.Location = new System.Drawing.Point(1599, 33);
-            this.enableLineDraw.Margin = new System.Windows.Forms.Padding(4);
             this.enableLineDraw.Location = new System.Drawing.Point(636, 17);
             this.enableLineDraw.Margin = new System.Windows.Forms.Padding(2);
             this.enableLineDraw.Name = "enableLineDraw";
@@ -137,15 +125,11 @@
             // 
             this.picTrashCan.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.trash_can;
             this.picTrashCan.ImageLocation = "";
-            this.picTrashCan.Location = new System.Drawing.Point(16, 1202);
-            this.picTrashCan.Location = new System.Drawing.Point(4, 1315);
-            this.picTrashCan.Margin = new System.Windows.Forms.Padding(4);
-            this.picTrashCan.MaximumSize = new System.Drawing.Size(138, 165);
-            this.picTrashCan.Location = new System.Drawing.Point(2, 695);
+            this.picTrashCan.Location = new System.Drawing.Point(39, 1281);
             this.picTrashCan.Margin = new System.Windows.Forms.Padding(2);
             this.picTrashCan.MaximumSize = new System.Drawing.Size(69, 86);
             this.picTrashCan.Name = "picTrashCan";
-            this.picTrashCan.Size = new System.Drawing.Size(138, 165);
+            this.picTrashCan.Size = new System.Drawing.Size(69, 86);
             this.picTrashCan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTrashCan.TabIndex = 2;
             this.picTrashCan.TabStop = false;
@@ -167,14 +151,11 @@
             this.flowLayoutPanel1.Controls.Add(this.pictureBox12);
             this.flowLayoutPanel1.Controls.Add(this.pictureBox13);
             this.flowLayoutPanel1.Controls.Add(this.pictureBox14);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 198);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 113);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
-            this.flowLayoutPanel1.Controls.Add(this.btnSaveNetwork);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, -235);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 198);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(425, 1295);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(425, 1296);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // pictureBox1
@@ -367,7 +348,6 @@
             this.panel2.Size = new System.Drawing.Size(2162, 180);
             this.panel2.TabIndex = 2;
             // 
-<<<<<<< HEAD
             // breadCrumbsPanel
             // 
             this.breadCrumbsPanel.Controls.Add(this.rootCrumb);
@@ -401,17 +381,6 @@
             this.pictureBox15.Size = new System.Drawing.Size(2162, 180);
             this.pictureBox15.TabIndex = 1;
             this.pictureBox15.TabStop = false;
-=======
-            // btnSaveNetwork
-            // 
-            this.btnSaveNetwork.Location = new System.Drawing.Point(64, 16);
-            this.btnSaveNetwork.Margin = new System.Windows.Forms.Padding(100, 10, 0, 0);
-            this.btnSaveNetwork.Name = "btnSaveNetwork";
-            this.btnSaveNetwork.Size = new System.Drawing.Size(105, 46);
-            this.btnSaveNetwork.TabIndex = 15;
-            this.btnSaveNetwork.Text = "Save";
-            this.btnSaveNetwork.UseVisualStyleBackColor = true;
->>>>>>> master
             // 
             // panel1
             // 
@@ -432,15 +401,6 @@
             this.btnClearNetwork.TabIndex = 16;
             this.btnClearNetwork.Text = "Clear";
             this.btnClearNetwork.UseVisualStyleBackColor = true;
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(3, 633);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 14;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnSaveNetwork
             // 
@@ -451,6 +411,16 @@
             this.btnSaveNetwork.TabIndex = 15;
             this.btnSaveNetwork.Text = "Save";
             this.btnSaveNetwork.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(3, 633);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 14;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // NetBuilder
             // 
