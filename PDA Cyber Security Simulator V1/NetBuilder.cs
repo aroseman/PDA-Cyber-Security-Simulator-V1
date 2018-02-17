@@ -18,6 +18,11 @@ namespace PDA_Cyber_Security_Simulator_V1
         public Point EndPoint { get; set; }
         public bool isDragged = false;
         Point ptOffset;
+        private bool EndPointHasBeenFound = false;
+        private List<bool> IsFirstEndPoint = new List<bool>();
+        private List<int> EndPointIndex = new List<int>();
+        private List<int> ListOffsetX = new List<int>();
+        private List<int> ListOffsetY = new List<int>();
         #endregion //DragVariables
 
 
@@ -112,13 +117,14 @@ namespace PDA_Cyber_Security_Simulator_V1
                     canvas.MouseMove -= canvas_MouseMove_NotDown;
                     canvas.MouseMove += canvas_MouseMove_MovingEndPoint;
                     canvas.MouseUp += canvas_MouseUp_MovingEndPoint;
-
+                    
                     // Remember the segment number.
+
                     MovingSegment = segment_number;
 
                     // See if we're moving the start end point.
                     MovingStartEndPoint = (Pt1[segment_number].Equals(hit_point));
-
+                    
                     // Remember the offset from the mouse to the point.
                     OffsetX = hit_point.X - e.X;
                     OffsetY = hit_point.Y - e.Y;
@@ -197,14 +203,35 @@ namespace PDA_Cyber_Security_Simulator_V1
         // We're moving an end point.
         private void canvas_MouseMove_MovingEndPoint(object sender, MouseEventArgs e)
         {
-            // Move the point to its new location.
-            if (MovingStartEndPoint)
-                Pt1[MovingSegment] =
-                    new Point(e.X + OffsetX, e.Y + OffsetY);
+            //If the point of the line is being dragged within a picture box
+            //Move it with the picture box
+            if(isDragged)
+            {
+                for(int index = 0; index <  EndPointIndex.Count; index++)
+                {
+                    if (IsFirstEndPoint[index])
+                    {
+                        Pt1[EndPointIndex[index]] = new Point(((PictureBox)sender).Location.X, ((PictureBox)sender).Location.Y);
+                    }
+                    else
+                    {
+                        Pt2[EndPointIndex[index]] = new Point(((PictureBox)sender).Location.X, ((PictureBox)sender).Location.Y);
+                    }
+                }
+                
+            }
+            //else, just move the point itself
             else
-                Pt2[MovingSegment] =
-                    new Point(e.X + OffsetX, e.Y + OffsetY);
-
+            {
+                // Move the point to its new location.
+                if (MovingStartEndPoint)
+                    Pt1[MovingSegment] =
+                        new Point(e.X + OffsetX, e.Y + OffsetY);
+                else
+                    Pt2[MovingSegment] =
+                        new Point(e.X + OffsetX, e.Y + OffsetY);
+            }
+            
             // Redraw.
             canvas.Invalidate();
         }
@@ -236,29 +263,67 @@ namespace PDA_Cyber_Security_Simulator_V1
         }
 
         // Stop moving the end point.
+        // or stop moving a picture box with an endpoint inside
         private void canvas_MouseUp_MovingEndPoint(object sender, MouseEventArgs e)
         {
-            // Reset the event handlers.
-            canvas.MouseMove += canvas_MouseMove_NotDown;
-            canvas.MouseMove -= canvas_MouseMove_MovingEndPoint;
-            canvas.MouseUp -= canvas_MouseUp_MovingEndPoint;
+            List<Point> checkLocation = new List<Point>();
 
-            Point checkLocation = new Point();
-
-            if (MovingStartEndPoint)
-                checkLocation = checkIfEndpointIsInPictureBox(Pt1[MovingSegment]);
-            else
-                checkLocation = checkIfEndpointIsInPictureBox(Pt2[MovingSegment]);
-
-            //If the location is within a picture box, the point will return positive
-            if(checkLocation.X >= 0)
+            //If we are dragging a Picture box with multiple Line Endpoints inside it...
+            if(EndPointHasBeenFound && isDragged)
             {
-                if (MovingStartEndPoint)
-                    Pt1[MovingSegment] = checkLocation;
-                else
-                    Pt2[MovingSegment] = checkLocation;
+                //For each endpoint inside, check and make sure it really is
+                for(int index = 0; index < EndPointIndex.Count; index++)
+                {
+                    if (IsFirstEndPoint[index])
+                        checkLocation.Add(checkIfEndpointIsInPictureBox(Pt1[EndPointIndex[index]]));
+                    else
+                        checkLocation.Add(checkIfEndpointIsInPictureBox(Pt2[EndPointIndex[index]]));
+
+                    //Then, set its location to the center of the picture box
+                    if (checkLocation[index].X >= 0)
+                    {
+                        if (IsFirstEndPoint[index])
+                            Pt1[EndPointIndex[index]] = checkLocation[index];
+                        else
+                            Pt2[EndPointIndex[index]] = checkLocation[index];
+                    }
+                }
+                //Clear all of the variables and lists associated
+                EndPointHasBeenFound = false;
+                isDragged = false;
+                IsFirstEndPoint.Clear();
+                EndPointIndex.Clear();
+                ListOffsetX.Clear();
+                ListOffsetY.Clear();
             }
 
+            //If we are dragging a picture box with only a single endpoint inside
+            else
+            {
+                //Check to see if the endpoint is inside the picture box
+                if (MovingStartEndPoint)
+                    checkLocation.Add(checkIfEndpointIsInPictureBox(Pt1[MovingSegment]));
+                else
+                    checkLocation.Add(checkIfEndpointIsInPictureBox(Pt2[MovingSegment]));
+
+                //If the line is indeed inside the picture box, place its endpoint at the center
+                if (checkLocation[0].X >= 0)
+                {
+                    if (MovingStartEndPoint)
+                        Pt1[MovingSegment] = checkLocation[0];
+                    else
+                        Pt2[MovingSegment] = checkLocation[0];
+                }
+            }
+
+            //Reset handlers
+            if(!isDragged)
+            {
+                canvas.MouseMove += canvas_MouseMove_NotDown;
+                canvas.MouseMove -= canvas_MouseMove_MovingEndPoint;
+                canvas.MouseUp -= canvas_MouseUp_MovingEndPoint;
+            }
+                
             // Redraw.
             canvas.Invalidate();
         }
@@ -529,6 +594,49 @@ namespace PDA_Cyber_Security_Simulator_V1
                         ptOffset = new Point();
                         ptOffset.X = ((PictureBox)sender).Location.X - ptStartPosition.X;
                         ptOffset.Y = ((PictureBox)sender).Location.Y - ptStartPosition.Y;
+
+                        //If we are about to drag a picture box, check to see if any end points reside inside
+                        if (!EndPointHasBeenFound)
+                        {
+                            for (int i = 0; i < Pt1.Count; i++)
+                            {
+                                if (Pt1[i].X >= ((PictureBox)sender).Location.X && Pt1[i].X <= ((PictureBox)sender).Location.X + 200 && Pt1[i].Y >= ((PictureBox)sender).Location.Y && Pt1[i].Y <= ((PictureBox)sender).Location.Y + 162)
+                                {
+                                    EndPointHasBeenFound = true;
+                                    IsFirstEndPoint.Add(true);
+                                    EndPointIndex.Add(i);
+                                }
+                                else if (Pt2[i].X >= ((PictureBox)sender).Location.X && Pt2[i].X <= ((PictureBox)sender).Location.X + 200 && Pt2[i].Y >= ((PictureBox)sender).Location.Y && Pt2[i].Y <= ((PictureBox)sender).Location.Y + 162)
+                                {
+                                    EndPointHasBeenFound = true;
+                                    IsFirstEndPoint.Add(false);
+                                    EndPointIndex.Add(i);
+                                }
+                            }
+                        }
+                        //If an endpoint has been found set handlers to start moving the point
+                        if (EndPointHasBeenFound)
+                        {
+                            // Start moving this end point.
+                            ((PictureBox)sender).MouseMove += canvas_MouseMove_MovingEndPoint;
+                            ((PictureBox)sender).MouseUp += canvas_MouseUp_MovingEndPoint;
+
+                            //I'm not actually sure if this for loop and the offsets within it are even necessary for this
+                            //TEST THIS
+                            for(int i = 0; i < EndPointIndex.Count; i++)
+                            {
+                                if (IsFirstEndPoint[i])
+                                {
+                                    ListOffsetX.Add(Pt1[EndPointIndex[i]].X - e.X);
+                                    ListOffsetY.Add(Pt1[EndPointIndex[i]].Y - e.Y);
+                                }
+                                else
+                                {
+                                    ListOffsetX.Add(Pt2[EndPointIndex[i]].X - e.X);
+                                    ListOffsetY.Add(Pt2[EndPointIndex[i]].Y - e.Y);
+                                }
+                            }
+                        }
                     }
                     else
                     {
@@ -545,9 +653,26 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         private void pictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            //Stop dragging
-            isDragged = false;
+            //If we have been dragging around a picture box with endpoints inside
+            //Reset the handlers
+            if(EndPointHasBeenFound && isDragged)
+            {
+                ((PictureBox)sender).MouseMove -= canvas_MouseMove_MovingEndPoint;
+                ((PictureBox)sender).MouseUp -= canvas_MouseUp_MovingEndPoint;
+            }
+
+            //If there were no endpoints inside clear the variables we used
+            if(!EndPointHasBeenFound)
+            {
+                isDragged = false;
+                IsFirstEndPoint.Clear();
+                EndPointIndex.Clear();
+                ListOffsetX.Clear();
+                ListOffsetY.Clear();
+            }
+                        
             ActiveDevices.Add((PictureBox)sender);
+
             if(((PictureBox)sender).Location.X >= picTrashCan.Location.X - 30 && ((PictureBox)sender).Location.Y >= picTrashCan.Location.Y - 30 && ((PictureBox)sender).Location.X <= picTrashCan.Location.X + 30 && ((PictureBox)sender).Location.Y <= picTrashCan.Location.Y + 30)
             {
                 ((PictureBox)sender).Parent = flowLayoutPanel1;
@@ -570,6 +695,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 
                 //Update the location of the object
                 ((PictureBox)sender).Location = newPoint;
+
             }
         }
 
