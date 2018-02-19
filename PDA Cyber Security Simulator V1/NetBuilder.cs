@@ -211,11 +211,11 @@ namespace PDA_Cyber_Security_Simulator_V1
                 {
                     if (IsFirstEndPoint[index])
                     {
-                        Pt1[EndPointIndex[index]] = new Point(((PictureBox)sender).Location.X, ((PictureBox)sender).Location.Y);
+                        Pt1[EndPointIndex[index]] = new Point(((PictureBox)sender).Location.X + (200/4), ((PictureBox)sender).Location.Y + (162/4));
                     }
                     else
                     {
-                        Pt2[EndPointIndex[index]] = new Point(((PictureBox)sender).Location.X, ((PictureBox)sender).Location.Y);
+                        Pt2[EndPointIndex[index]] = new Point(((PictureBox)sender).Location.X + (200 / 4), ((PictureBox)sender).Location.Y + (162 / 4));
                     }
                 }
                 
@@ -366,7 +366,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             canvas.Invalidate();
         }
 
-        #endregion // Moving End Point
+        #endregion // Moving Segment
 
         // See if the mouse is over an end point.
         private bool MouseIsOverEndpoint(Point mouse_pt, out int segment_number, out Point hit_pt)
@@ -502,7 +502,6 @@ namespace PDA_Cyber_Security_Simulator_V1
             }
         }
 
-       
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             if(this.Visible == true)
@@ -711,6 +710,8 @@ namespace PDA_Cyber_Security_Simulator_V1
             var device = new Device();
             ((PictureBox)e.Data.GetData(typeof(PictureBox))).Parent = (Panel)sender;
             ((PictureBox)e.Data.GetData(typeof(PictureBox))).BringToFront();
+            /*Assign the new instance of the device to the Tag of the
+              picture box in order to link them together*/
             ((PictureBox)e.Data.GetData(typeof(PictureBox))).Tag = device;
         }
 
@@ -785,9 +786,15 @@ namespace PDA_Cyber_Security_Simulator_V1
                 //Result handlers
                 if(dialogResult == DialogResult.OK)
                 {
+                    //Add the device to the network
+                    //Add logic to update the network DB if the device had already been previously configured
                     network.Devices.Add(devicePropertiesPopup.Device);
+
+                    //Re-link the picture box with the newly filled device
                     ((PictureBox)sender).Tag = devicePropertiesPopup.Device;
                     devicePropertiesPopup.Dispose();
+
+                    //Push device to DB (ONLY HERE FOR TESTING PURPOSES)
                     Device.addDevice((Device)((PictureBox)sender).Tag);
                 }
                 else if(dialogResult == DialogResult.Cancel)
