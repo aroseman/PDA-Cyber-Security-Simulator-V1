@@ -112,7 +112,7 @@
             // 
             this.enableLineDraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.enableLineDraw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enableLineDraw.Location = new System.Drawing.Point(636, 17);
+            this.enableLineDraw.Location = new System.Drawing.Point(1641, 17);
             this.enableLineDraw.Margin = new System.Windows.Forms.Padding(2);
             this.enableLineDraw.Name = "enableLineDraw";
             this.enableLineDraw.Size = new System.Drawing.Size(62, 50);

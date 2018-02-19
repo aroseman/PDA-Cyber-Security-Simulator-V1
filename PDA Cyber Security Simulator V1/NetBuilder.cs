@@ -679,7 +679,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             }
             //This is to check to see if the picture is out of bounds
             //If it is, reset its location
-            if (((PictureBox)sender).Location.X < 0 || ((PictureBox)sender).Location.Y < 0 || ((PictureBox)sender).Location.X > 750 || ((PictureBox)sender).Location.Y > 700)
+            if (((PictureBox)sender).Location.X < 0 || ((PictureBox)sender).Location.Y < 0 || ((PictureBox)sender).Location.X > 1125 || ((PictureBox)sender).Location.Y > 700)
             {
                 ((PictureBox)sender).Location = new Point(0, 0);
             }

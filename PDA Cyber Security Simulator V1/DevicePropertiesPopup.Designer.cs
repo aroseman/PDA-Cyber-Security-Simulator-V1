@@ -46,8 +46,8 @@
             // 
             // btnSaveDeviceProperties
             // 
-            this.btnSaveDeviceProperties.Location = new System.Drawing.Point(38, 549);
-            this.btnSaveDeviceProperties.Margin = new System.Windows.Forms.Padding(38, 4, 0, 4);
+            this.btnSaveDeviceProperties.Location = new System.Drawing.Point(38, 565);
+            this.btnSaveDeviceProperties.Margin = new System.Windows.Forms.Padding(38, 20, 0, 4);
             this.btnSaveDeviceProperties.Name = "btnSaveDeviceProperties";
             this.btnSaveDeviceProperties.Size = new System.Drawing.Size(120, 46);
             this.btnSaveDeviceProperties.TabIndex = 0;
@@ -57,8 +57,8 @@
             // 
             // btnCancelPopup
             // 
-            this.btnCancelPopup.Location = new System.Drawing.Point(346, 549);
-            this.btnCancelPopup.Margin = new System.Windows.Forms.Padding(188, 4, 4, 4);
+            this.btnCancelPopup.Location = new System.Drawing.Point(346, 565);
+            this.btnCancelPopup.Margin = new System.Windows.Forms.Padding(188, 20, 4, 4);
             this.btnCancelPopup.Name = "btnCancelPopup";
             this.btnCancelPopup.Size = new System.Drawing.Size(96, 46);
             this.btnCancelPopup.TabIndex = 1;
@@ -104,7 +104,7 @@
             this.txtDeviceName.Margin = new System.Windows.Forms.Padding(40, 6, 500, 6);
             this.txtDeviceName.MaxLength = 50;
             this.txtDeviceName.Name = "txtDeviceName";
-            this.txtDeviceName.Size = new System.Drawing.Size(196, 44);
+            this.txtDeviceName.Size = new System.Drawing.Size(293, 44);
             this.txtDeviceName.TabIndex = 2;
             // 
             // lblDeviceIP
@@ -123,9 +123,9 @@
             this.txtDeviceIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDeviceIP.Location = new System.Drawing.Point(40, 148);
             this.txtDeviceIP.Margin = new System.Windows.Forms.Padding(40, 6, 600, 6);
-            this.txtDeviceIP.MaxLength = 11;
+            this.txtDeviceIP.MaxLength = 15;
             this.txtDeviceIP.Name = "txtDeviceIP";
-            this.txtDeviceIP.Size = new System.Drawing.Size(196, 44);
+            this.txtDeviceIP.Size = new System.Drawing.Size(293, 44);
             this.txtDeviceIP.TabIndex = 3;
             // 
             // lblDeviceMac
@@ -146,7 +146,7 @@
             this.txtDeviceMac.Margin = new System.Windows.Forms.Padding(40, 6, 600, 6);
             this.txtDeviceMac.MaxLength = 17;
             this.txtDeviceMac.Name = "txtDeviceMac";
-            this.txtDeviceMac.Size = new System.Drawing.Size(196, 44);
+            this.txtDeviceMac.Size = new System.Drawing.Size(293, 44);
             this.txtDeviceMac.TabIndex = 4;
             // 
             // lblDeviceDescription
@@ -189,8 +189,9 @@
             this.txtDeviceNotes.MaximumSize = new System.Drawing.Size(396, 100);
             this.txtDeviceNotes.MaxLength = 200;
             this.txtDeviceNotes.MinimumSize = new System.Drawing.Size(396, 100);
+            this.txtDeviceNotes.Multiline = true;
             this.txtDeviceNotes.Name = "txtDeviceNotes";
-            this.txtDeviceNotes.Size = new System.Drawing.Size(396, 44);
+            this.txtDeviceNotes.Size = new System.Drawing.Size(396, 100);
             this.txtDeviceNotes.TabIndex = 6;
             // 
             // DeviceProperties
