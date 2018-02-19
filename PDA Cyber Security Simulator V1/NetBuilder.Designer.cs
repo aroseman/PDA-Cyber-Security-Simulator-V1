@@ -52,10 +52,11 @@
             this.breadCrumbsPanel = new System.Windows.Forms.Panel();
             this.rootCrumb = new System.Windows.Forms.Label();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnClearNetwork = new System.Windows.Forms.Button();
             this.btnSaveNetwork = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.canvas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTrashCan)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -83,7 +84,9 @@
             // canvas
             // 
             this.canvas.AllowDrop = true;
-            this.canvas.BackColor = System.Drawing.Color.LightGray;
+            this.canvas.BackColor = System.Drawing.SystemColors.Control;
+            this.canvas.Controls.Add(this.btnSaveNetwork);
+            this.canvas.Controls.Add(this.btnClearNetwork);
             this.canvas.Controls.Add(this.lblDrawEnabled);
             this.canvas.Controls.Add(this.enableLineDraw);
             this.canvas.Controls.Add(this.picTrashCan);
@@ -91,8 +94,7 @@
             this.canvas.Location = new System.Drawing.Point(443, 198);
             this.canvas.Margin = new System.Windows.Forms.Padding(6);
             this.canvas.Name = "canvas";
-            this.tableLayoutPanel1.SetRowSpan(this.canvas, 2);
-            this.canvas.Size = new System.Drawing.Size(1725, 1420);
+            this.canvas.Size = new System.Drawing.Size(1725, 1356);
             this.canvas.TabIndex = 0;
             this.canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
             this.canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseDown);
@@ -101,7 +103,7 @@
             // 
             this.lblDrawEnabled.AutoSize = true;
             this.lblDrawEnabled.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDrawEnabled.Location = new System.Drawing.Point(162, 1330);
+            this.lblDrawEnabled.Location = new System.Drawing.Point(1284, 1306);
             this.lblDrawEnabled.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDrawEnabled.Name = "lblDrawEnabled";
             this.lblDrawEnabled.Size = new System.Drawing.Size(276, 37);
@@ -112,7 +114,7 @@
             // 
             this.enableLineDraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.enableLineDraw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enableLineDraw.Location = new System.Drawing.Point(1641, 17);
+            this.enableLineDraw.Location = new System.Drawing.Point(1641, 20);
             this.enableLineDraw.Margin = new System.Windows.Forms.Padding(2);
             this.enableLineDraw.Name = "enableLineDraw";
             this.enableLineDraw.Size = new System.Drawing.Size(62, 50);
@@ -123,20 +125,21 @@
             // 
             // picTrashCan
             // 
+            this.picTrashCan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picTrashCan.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.trash_can;
             this.picTrashCan.ImageLocation = "";
-            this.picTrashCan.Location = new System.Drawing.Point(39, 1281);
+            this.picTrashCan.Location = new System.Drawing.Point(1575, 1175);
             this.picTrashCan.Margin = new System.Windows.Forms.Padding(2);
-            this.picTrashCan.MaximumSize = new System.Drawing.Size(69, 86);
+            this.picTrashCan.MaximumSize = new System.Drawing.Size(135, 168);
             this.picTrashCan.Name = "picTrashCan";
-            this.picTrashCan.Size = new System.Drawing.Size(69, 86);
+            this.picTrashCan.Size = new System.Drawing.Size(135, 168);
             this.picTrashCan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTrashCan.TabIndex = 2;
             this.picTrashCan.TabStop = false;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(231)))));
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
             this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
             this.flowLayoutPanel1.Controls.Add(this.pictureBox2);
             this.flowLayoutPanel1.Controls.Add(this.pictureBox3);
@@ -155,7 +158,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 198);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(425, 1296);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(425, 1356);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // pictureBox1
@@ -314,7 +317,7 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.LightGray;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.14719F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.85281F));
@@ -328,8 +331,8 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 192F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1308F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1368F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(2174, 1624);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -350,6 +353,7 @@
             // 
             // breadCrumbsPanel
             // 
+            this.breadCrumbsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
             this.breadCrumbsPanel.Controls.Add(this.rootCrumb);
             this.breadCrumbsPanel.Location = new System.Drawing.Point(542, 6);
             this.breadCrumbsPanel.Margin = new System.Windows.Forms.Padding(6);
@@ -360,7 +364,7 @@
             // rootCrumb
             // 
             this.rootCrumb.AutoSize = true;
-            this.rootCrumb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(121)))), ((int)(((byte)(14)))));
+            this.rootCrumb.BackColor = System.Drawing.Color.White;
             this.rootCrumb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rootCrumb.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rootCrumb.Location = new System.Drawing.Point(24, 52);
@@ -373,6 +377,7 @@
             // 
             // pictureBox15
             // 
+            this.pictureBox15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
             this.pictureBox15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox15.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.pictureBox15.Location = new System.Drawing.Point(0, 0);
@@ -382,19 +387,9 @@
             this.pictureBox15.TabIndex = 1;
             this.pictureBox15.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnClearNetwork);
-            this.panel1.Controls.Add(this.btnSaveNetwork);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 1503);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(431, 118);
-            this.panel1.TabIndex = 4;
-            // 
             // btnClearNetwork
             // 
-            this.btnClearNetwork.Location = new System.Drawing.Point(221, 16);
+            this.btnClearNetwork.Location = new System.Drawing.Point(1504, 22);
             this.btnClearNetwork.Margin = new System.Windows.Forms.Padding(100, 10, 0, 0);
             this.btnClearNetwork.Name = "btnClearNetwork";
             this.btnClearNetwork.Size = new System.Drawing.Size(105, 46);
@@ -404,7 +399,7 @@
             // 
             // btnSaveNetwork
             // 
-            this.btnSaveNetwork.Location = new System.Drawing.Point(64, 16);
+            this.btnSaveNetwork.Location = new System.Drawing.Point(1367, 22);
             this.btnSaveNetwork.Margin = new System.Windows.Forms.Padding(100, 10, 0, 0);
             this.btnSaveNetwork.Name = "btnSaveNetwork";
             this.btnSaveNetwork.Size = new System.Drawing.Size(105, 46);
@@ -422,6 +417,28 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(144)))), ((int)(((byte)(24)))));
+            this.tableLayoutPanel1.SetColumnSpan(this.panel1, 2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 1563);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(2168, 58);
+            this.panel1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(1845, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(305, 31);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Network Configuration";
+            // 
             // NetBuilder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -429,6 +446,7 @@
             this.ClientSize = new System.Drawing.Size(2174, 1624);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximumSize = new System.Drawing.Size(2200, 1965);
             this.Name = "NetBuilder";
             this.Text = "NetBuilder";
             this.canvas.ResumeLayout(false);
@@ -456,6 +474,7 @@
             this.breadCrumbsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -484,11 +503,12 @@
         private System.Windows.Forms.Label lblDrawEnabled;
         private System.Windows.Forms.PictureBox picTrashCan;
         private System.Windows.Forms.Button btnSaveNetwork;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnClearNetwork;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.Panel breadCrumbsPanel;
         private System.Windows.Forms.Label rootCrumb;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }
