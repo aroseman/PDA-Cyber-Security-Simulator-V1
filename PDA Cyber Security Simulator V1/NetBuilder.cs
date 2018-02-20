@@ -586,7 +586,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                     if (e.Button == MouseButtons.Left)
                     {
                         isDragged = true;
-                        ActiveDevices.Remove((PictureBox)sender);
+                        //ActiveDevices.Remove((PictureBox)sender);
                         //grab the current location of the picture box
                         Point ptStartPosition = ((PictureBox)sender).PointToScreen(new Point(e.X, e.Y));
 
@@ -670,11 +670,12 @@ namespace PDA_Cyber_Security_Simulator_V1
                 ListOffsetY.Clear();
             }
                         
-            ActiveDevices.Add((PictureBox)sender);
+            //ActiveDevices.Add((PictureBox)sender);
 
             if(((PictureBox)sender).Location.X >= picTrashCan.Location.X - 30 && ((PictureBox)sender).Location.Y >= picTrashCan.Location.Y - 30 && ((PictureBox)sender).Location.X <= picTrashCan.Location.X + 30 && ((PictureBox)sender).Location.Y <= picTrashCan.Location.Y + 30)
             {
                 ((PictureBox)sender).Parent = flowLayoutPanel1;
+                ActiveDevices.Remove((PictureBox)sender);
             }
             //This is to check to see if the picture is out of bounds
             //If it is, reset its location
@@ -708,6 +709,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         void panel_DragDrop(object sender, DragEventArgs e)
         {
             var device = new Device();
+            ActiveDevices.Add((PictureBox)e.Data.GetData(typeof(PictureBox)));
             ((PictureBox)e.Data.GetData(typeof(PictureBox))).Parent = (Panel)sender;
             ((PictureBox)e.Data.GetData(typeof(PictureBox))).BringToFront();
             /*Assign the new instance of the device to the Tag of the
@@ -730,27 +732,42 @@ namespace PDA_Cyber_Security_Simulator_V1
         private void btnSave_Click(object sender, EventArgs e)
         {
             MessageBox.Show(this, "Saved");
-            
+
             for (int i = 0; i < ActiveDevices.Count; i++)
             {
 
-                for(int j = 0; j < Pt1.Count; j++)
+                for (int j = 0; j < Pt1.Count; j++)
                 {
-                    if(InBounds(ActiveDevices[i], Pt1[j]))
+                    if (InBounds(ActiveDevices[i], Pt1[j]))
                     {
-                        Console.WriteLine("In Bounds");
+                        for (int k = 0; k < ActiveDevices.Count; k++)
+                        {
+                            if (InBounds(ActiveDevices[k], Pt2[j]))
+                            {
+                                Device d1 = (Device)ActiveDevices[k].Tag;
+                                Device d2 = (Device)ActiveDevices[i].Tag;
+                                d1.Neighbors.Add(d2);
+                                d2.Neighbors.Add(d1);
+                                ActiveDevices[k].Tag = d1;
+                                ActiveDevices[i].Tag = d2;
+                            }
+                        }
                     }
                 }
-                    
             }
         }
 
         private bool InBounds(PictureBox box, Point x)
         {
-            bool inBounds = true;
+            //bool inBounds = true;
 
-            if ((x.X < box.Location.X || x.X > (box.Width + box.Location.X)) && (x.Y < box.Location.Y || x.Y > (box.Height + box.Location.Y)))
-                inBounds = false;
+            //if ((x.X < box.Location.X || x.X > (box.Width + box.Location.X)) && (x.Y < box.Location.Y || x.Y > (box.Height + box.Location.Y)))
+            //    inBounds = false;
+            bool inBounds = false;
+
+            if (x.X > box.Location.X && x.X < (box.Location.X + box.Width) && x.Y > box.Location.Y && x.Y < (box.Location.Y + box.Height))
+                inBounds = true;
+
             return inBounds;
         }
 
