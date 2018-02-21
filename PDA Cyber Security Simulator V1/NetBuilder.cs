@@ -25,6 +25,8 @@ namespace PDA_Cyber_Security_Simulator_V1
         private List<int> ListOffsetY = new List<int>();
         #endregion //DragVariables
 
+        //Clear flag
+        private bool beingCleared = false;
 
         // The "size" of an object for mouse over purposes.
         private const int object_radius = 3;
@@ -79,6 +81,8 @@ namespace PDA_Cyber_Security_Simulator_V1
         //Navigate back to Home screen
         private void rootCrumb_Click(object sender, EventArgs e)
         {
+            //Need to relink this page to the home form (this needs to happen if the form has been cleared)
+            Form1.NetBuilder = this;
             Form1.Show();
             this.Hide();
         }
@@ -504,7 +508,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            if(this.Visible == true)
+            if(this.Visible == true && !beingCleared)
             {
                 base.OnFormClosing(e);
                 System.Windows.Forms.Application.Exit(); // Do not move!
@@ -599,13 +603,13 @@ namespace PDA_Cyber_Security_Simulator_V1
                         {
                             for (int i = 0; i < Pt1.Count; i++)
                             {
-                                if (Pt1[i].X >= ((PictureBox)sender).Location.X && Pt1[i].X <= ((PictureBox)sender).Location.X + 200 && Pt1[i].Y >= ((PictureBox)sender).Location.Y && Pt1[i].Y <= ((PictureBox)sender).Location.Y + 162)
+                                if (Pt1[i].X >= ((PictureBox)sender).Location.X + 10 && Pt1[i].X <= ((PictureBox)sender).Location.X + ((PictureBox)sender).Width - 10 && Pt1[i].Y >= ((PictureBox)sender).Location.Y + 10 && Pt1[i].Y <= ((PictureBox)sender).Location.Y + ((PictureBox)sender).Height - 10)
                                 {
                                     EndPointHasBeenFound = true;
                                     IsFirstEndPoint.Add(true);
                                     EndPointIndex.Add(i);
                                 }
-                                else if (Pt2[i].X >= ((PictureBox)sender).Location.X && Pt2[i].X <= ((PictureBox)sender).Location.X + 200 && Pt2[i].Y >= ((PictureBox)sender).Location.Y && Pt2[i].Y <= ((PictureBox)sender).Location.Y + 162)
+                                else if (Pt2[i].X >= ((PictureBox)sender).Location.X + 10 && Pt2[i].X <= ((PictureBox)sender).Location.X + ((PictureBox)sender).Width - 10 && Pt2[i].Y >= ((PictureBox)sender).Location.Y + 10 && Pt2[i].Y <= ((PictureBox)sender).Location.Y + ((PictureBox)sender).Height - 10)
                                 {
                                     EndPointHasBeenFound = true;
                                     IsFirstEndPoint.Add(false);
@@ -672,7 +676,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                         
             //ActiveDevices.Add((PictureBox)sender);
 
-            if(((PictureBox)sender).Location.X >= picTrashCan.Location.X - 30 && ((PictureBox)sender).Location.Y >= picTrashCan.Location.Y - 30 && ((PictureBox)sender).Location.X <= picTrashCan.Location.X + 30 && ((PictureBox)sender).Location.Y <= picTrashCan.Location.Y + 30)
+            if(((PictureBox)sender).Location.X + ((PictureBox)sender).Width >= picTrashCan.Location.X + 35 && ((PictureBox)sender).Location.Y + ((PictureBox)sender).Height >= picTrashCan.Location.Y + 35 && ((PictureBox)sender).Location.X + ((PictureBox)sender).Width <= picTrashCan.Location.X + picTrashCan.Width && ((PictureBox)sender).Location.Y + ((PictureBox)sender).Height <= picTrashCan.Location.Y + picTrashCan.Height)
             {
                 ((PictureBox)sender).Parent = flowLayoutPanel1;
                 ActiveDevices.Remove((PictureBox)sender);
@@ -755,6 +759,18 @@ namespace PDA_Cyber_Security_Simulator_V1
                     }
                 }
             }
+
+            //Now we want to push these devices into the network
+            foreach(Control c in canvas.Controls)
+            {
+                if(c is PictureBox)
+                {
+                    //Grab the device object from the tag
+                    //Push object into device list
+                    network.Devices.Add((Device)c.Tag);
+                }
+            }
+
         }
 
         private bool InBounds(PictureBox box, Point x)
@@ -803,10 +819,6 @@ namespace PDA_Cyber_Security_Simulator_V1
                 //Result handlers
                 if(dialogResult == DialogResult.OK)
                 {
-                    //Add the device to the network
-                    //Add logic to update the network DB if the device had already been previously configured
-                    network.Devices.Add(devicePropertiesPopup.Device);
-
                     //Re-link the picture box with the newly filled device
                     ((PictureBox)sender).Tag = devicePropertiesPopup.Device;
                     devicePropertiesPopup.Dispose();
@@ -827,5 +839,22 @@ namespace PDA_Cyber_Security_Simulator_V1
             //Device.addDevice()
         }
 
+        private void btnClearNetwork_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to clear?", "Clear Network Graph", MessageBoxButtons.YesNo);
+            if(dialogResult == DialogResult.Yes)
+            {
+                //Instantiate a new form
+                NetBuilder clearNet = new NetBuilder(Form1);
+                beingCleared = true;
+                //Show the new form and close the existing form
+                clearNet.Show();
+                this.Close();
+            }
+            else if(dialogResult == DialogResult.No)
+            {
+
+            }
+        }
     }
 }

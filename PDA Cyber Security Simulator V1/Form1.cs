@@ -12,7 +12,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 {
     public partial class Form1 : Form
     {
-        private NetBuilder NetBuilder { get; set; }
+        public NetBuilder NetBuilder { get; set; }
 
         public Form1()
         {
