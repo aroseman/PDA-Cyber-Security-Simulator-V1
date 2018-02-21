@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="Layer2Attack.cs" />
     <Compile Include="Layer3Attack.cs" />
+    <Compile Include="Neighbors.cs" />
     <Compile Include="NetBuilder.cs">
       <SubType>Form</SubType>
     </Compile>

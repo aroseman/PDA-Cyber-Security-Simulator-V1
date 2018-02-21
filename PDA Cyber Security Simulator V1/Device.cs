@@ -22,6 +22,8 @@ public class Device
 
     public String Notes { get; set; }
 
+    public int ID { get; set; }
+
     public bool Configured { get; set; }
 
     public Device()
@@ -113,6 +115,7 @@ public class Device
             String notes = deviceReader.GetString(5);
             int netid = deviceReader.GetInt32(6);
 
+            newD.ID = id;
             newD.IpAddress = ip;
             newD.Name = name;
             newD.MacAddress = mac;
