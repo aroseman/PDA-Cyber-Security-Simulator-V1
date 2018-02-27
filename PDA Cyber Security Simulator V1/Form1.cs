@@ -68,37 +68,37 @@ namespace PDA_Cyber_Security_Simulator_V1
         private void testNetworkOnClick(object sender, EventArgs e)
         {
             //////////////////////////////////DO NOT DELETE////////////////////////////
-            //if (TestNetwork == null)
-            //{
-            //    TestNetwork newTestNetwork = new TestNetwork(this);
-            //    TestNetwork = newTestNetwork;
-            //    this.Hide();
-            //    newTestNetwork.Show();
-            //}
-            //else
-            //{
-            //    TestNetwork.Show();
-            //    this.Hide();
-            //}
+            if (TestNetwork == null)
+            {
+                TestNetwork newTestNetwork = new TestNetwork(this);
+                TestNetwork = newTestNetwork;
+                this.Hide();
+                newTestNetwork.Show();
+            }
+            else
+            {
+                TestNetwork.Show();
+                this.Hide();
+            }
             //////////////////////////////////DO NOT DELETE////////////////////////////
 
-            homeScreen.Visible = false;
-            breadCrumbFlowLayoutPanel.BackColor = Color.FromArgb(0, 144, 120);
-            imagePanel.BackColor = Color.FromArgb(0, 144, 120);
+            //homeScreen.Visible = false;
+            //breadCrumbFlowLayoutPanel.BackColor = Color.FromArgb(0, 144, 120);
+            //imagePanel.BackColor = Color.FromArgb(0, 144, 120);
 
-            testNetworkComboBox1.ResetText();
-            testNetworkComboBox1.SelectedIndex = -1;
-            testNetworkComboBox1.Items.Clear();
-            testNetworkListBox1.Items.Clear();
+            //testNetworkComboBox1.ResetText();
+            //testNetworkComboBox1.SelectedIndex = -1;
+            //testNetworkComboBox1.Items.Clear();
+            //testNetworkListBox1.Items.Clear();
 
-            String[] nList = Network.getNetworkNames();
-            for (int i = 0; i < nList.Length; i++)
-            {
-                if (!String.IsNullOrEmpty(nList[i]))
-                    testNetworkComboBox1.Items.Add(nList[i]);
-            }
+            //String[] nList = Network.getNetworkNames();
+            //for (int i = 0; i < nList.Length; i++)
+            //{
+            //    if (!String.IsNullOrEmpty(nList[i]))
+            //        testNetworkComboBox1.Items.Add(nList[i]);
+            //}
 
-            testNetworkTableLayoutPanel.Visible = true;
+            //testNetworkTableLayoutPanel.Visible = true;
         }
 
         private void testNetworkComboBoxOnClick(object sender, EventArgs e)

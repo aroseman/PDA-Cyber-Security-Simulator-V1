@@ -65,6 +65,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attack.cs" />
+    <Compile Include="Controls\CirclePanelGreen.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CirclePanelRed.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Device.cs" />
     <Compile Include="DeviceTester.cs" />
     <Compile Include="Form1.cs">

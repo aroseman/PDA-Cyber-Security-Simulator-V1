@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PDA_Cyber_Security_Simulator_V1.Controls;
 
 namespace PDA_Cyber_Security_Simulator_V1
 {
     public partial class TestNetwork : Form
     {
         private Form1 Form1;
+        private bool test = false;
 
         public TestNetwork(Form1 form1)
         {
@@ -48,6 +50,42 @@ namespace PDA_Cyber_Security_Simulator_V1
                     default:
 
                         break;
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in pnlTestStatus.Controls)
+            {
+                if (c is CirclePanelRed)
+                {
+                    if (!test)
+                    {
+                        c.Hide();
+                    }
+                    else
+                    {
+                        c.Show();
+                    }
+                }
+            }
+
+            test = !test;
+        }
+
+
+        private void testNetworkComboBoxOnClick(object sender, EventArgs e)
+        {
+            if (testNetworkComboBox1.SelectedIndex != -1)
+            {
+                testNetworkListBox1.Items.Clear();
+
+                String[] dList = Network.getDeviceNames(testNetworkComboBox1.SelectedIndex);
+                for (int i = 0; i < dList.Length; i++)
+                {
+                    if (!String.IsNullOrEmpty(dList[i]))
+                        testNetworkListBox1.Items.Add(dList[i]);
                 }
             }
         }
