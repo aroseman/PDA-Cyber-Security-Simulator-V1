@@ -13,6 +13,7 @@ namespace PDA_Cyber_Security_Simulator_V1
     public partial class Form1 : Form
     {
         public NetBuilder NetBuilder { get; set; }
+        public TestNetwork TestNetwork { get; set; }
 
         public Form1()
         {
@@ -66,6 +67,21 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         private void testNetworkOnClick(object sender, EventArgs e)
         {
+            //////////////////////////////////DO NOT DELETE////////////////////////////
+            //if (TestNetwork == null)
+            //{
+            //    TestNetwork newTestNetwork = new TestNetwork(this);
+            //    TestNetwork = newTestNetwork;
+            //    this.Hide();
+            //    newTestNetwork.Show();
+            //}
+            //else
+            //{
+            //    TestNetwork.Show();
+            //    this.Hide();
+            //}
+            //////////////////////////////////DO NOT DELETE////////////////////////////
+
             homeScreen.Visible = false;
             breadCrumbFlowLayoutPanel.BackColor = Color.FromArgb(0, 144, 120);
             imagePanel.BackColor = Color.FromArgb(0, 144, 120);

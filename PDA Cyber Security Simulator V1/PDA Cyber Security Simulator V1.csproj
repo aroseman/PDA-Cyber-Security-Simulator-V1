@@ -93,6 +93,24 @@
     <Compile Include="NetworkTester.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimulateAttack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimulateAttack.Designer.cs">
+      <DependentUpon>SimulateAttack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestNetwork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestNetwork.Designer.cs">
+      <DependentUpon>TestNetwork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewNetwork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewNetwork.Designer.cs">
+      <DependentUpon>ViewNetwork.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +130,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SimulateAttack.resx">
+      <DependentUpon>SimulateAttack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestNetwork.resx">
+      <DependentUpon>TestNetwork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewNetwork.resx">
+      <DependentUpon>ViewNetwork.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
