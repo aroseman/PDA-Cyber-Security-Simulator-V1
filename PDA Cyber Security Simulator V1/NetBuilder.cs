@@ -65,8 +65,8 @@ namespace PDA_Cyber_Security_Simulator_V1
             lblDrawEnabled.Visible = false;
         }
 
-       
-        
+
+
         public NetBuilder()
 
         {
@@ -121,14 +121,14 @@ namespace PDA_Cyber_Security_Simulator_V1
                     canvas.MouseMove -= canvas_MouseMove_NotDown;
                     canvas.MouseMove += canvas_MouseMove_MovingEndPoint;
                     canvas.MouseUp += canvas_MouseUp_MovingEndPoint;
-                    
+
                     // Remember the segment number.
 
                     MovingSegment = segment_number;
 
                     // See if we're moving the start end point.
                     MovingStartEndPoint = (Pt1[segment_number].Equals(hit_point));
-                    
+
                     // Remember the offset from the mouse to the point.
                     OffsetX = hit_point.X - e.X;
                     OffsetY = hit_point.Y - e.Y;
@@ -209,20 +209,20 @@ namespace PDA_Cyber_Security_Simulator_V1
         {
             //If the point of the line is being dragged within a picture box
             //Move it with the picture box
-            if(isDragged)
+            if (isDragged)
             {
-                for(int index = 0; index <  EndPointIndex.Count; index++)
+                for (int index = 0; index < EndPointIndex.Count; index++)
                 {
                     if (IsFirstEndPoint[index])
                     {
-                        Pt1[EndPointIndex[index]] = new Point(((PictureBox)sender).Location.X + (200/4), ((PictureBox)sender).Location.Y + (162/4));
+                        Pt1[EndPointIndex[index]] = new Point(((PictureBox)sender).Location.X + (200 / 4), ((PictureBox)sender).Location.Y + (162 / 4));
                     }
                     else
                     {
                         Pt2[EndPointIndex[index]] = new Point(((PictureBox)sender).Location.X + (200 / 4), ((PictureBox)sender).Location.Y + (162 / 4));
                     }
                 }
-                
+
             }
             //else, just move the point itself
             else
@@ -235,7 +235,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                     Pt2[MovingSegment] =
                         new Point(e.X + OffsetX, e.Y + OffsetY);
             }
-            
+
             // Redraw.
             canvas.Invalidate();
         }
@@ -245,9 +245,9 @@ namespace PDA_Cyber_Security_Simulator_V1
             Point centerPoint = new Point();
             foreach (Control c in canvas.Controls)
             {
-                if(c is PictureBox)
+                if (c is PictureBox)
                 {
-                    if(location.X >= c.Location.X && location.X <= c.Location.X + 200 && location.Y >= c.Location.Y && location.Y <= c.Location.Y + 162)
+                    if (location.X >= c.Location.X && location.X <= c.Location.X + 200 && location.Y >= c.Location.Y && location.Y <= c.Location.Y + 162)
                     {
                         //We know that our end point is within a picture box
                         //set the location of the center of the picture box
@@ -273,10 +273,10 @@ namespace PDA_Cyber_Security_Simulator_V1
             List<Point> checkLocation = new List<Point>();
 
             //If we are dragging a Picture box with multiple Line Endpoints inside it...
-            if(EndPointHasBeenFound && isDragged)
+            if (EndPointHasBeenFound && isDragged)
             {
                 //For each endpoint inside, check and make sure it really is
-                for(int index = 0; index < EndPointIndex.Count; index++)
+                for (int index = 0; index < EndPointIndex.Count; index++)
                 {
                     if (IsFirstEndPoint[index])
                         checkLocation.Add(checkIfEndpointIsInPictureBox(Pt1[EndPointIndex[index]]));
@@ -321,13 +321,13 @@ namespace PDA_Cyber_Security_Simulator_V1
             }
 
             //Reset handlers
-            if(!isDragged)
+            if (!isDragged)
             {
                 canvas.MouseMove += canvas_MouseMove_NotDown;
                 canvas.MouseMove -= canvas_MouseMove_MovingEndPoint;
                 canvas.MouseUp -= canvas_MouseUp_MovingEndPoint;
             }
-                
+
             // Redraw.
             canvas.Invalidate();
         }
@@ -508,7 +508,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            if(this.Visible == true && !beingCleared)
+            if (this.Visible == true && !beingCleared)
             {
                 base.OnFormClosing(e);
                 System.Windows.Forms.Application.Exit(); // Do not move!
@@ -626,7 +626,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 
                             //I'm not actually sure if this for loop and the offsets within it are even necessary for this
                             //TEST THIS
-                            for(int i = 0; i < EndPointIndex.Count; i++)
+                            for (int i = 0; i < EndPointIndex.Count; i++)
                             {
                                 if (IsFirstEndPoint[i])
                                 {
@@ -658,14 +658,14 @@ namespace PDA_Cyber_Security_Simulator_V1
         {
             //If we have been dragging around a picture box with endpoints inside
             //Reset the handlers
-            if(EndPointHasBeenFound && isDragged)
+            if (EndPointHasBeenFound && isDragged)
             {
                 ((PictureBox)sender).MouseMove -= canvas_MouseMove_MovingEndPoint;
                 ((PictureBox)sender).MouseUp -= canvas_MouseUp_MovingEndPoint;
             }
 
             //If there were no endpoints inside clear the variables we used
-            if(!EndPointHasBeenFound)
+            if (!EndPointHasBeenFound)
             {
                 isDragged = false;
                 IsFirstEndPoint.Clear();
@@ -673,10 +673,10 @@ namespace PDA_Cyber_Security_Simulator_V1
                 ListOffsetX.Clear();
                 ListOffsetY.Clear();
             }
-                        
+
             //ActiveDevices.Add((PictureBox)sender);
 
-            if(((PictureBox)sender).Location.X + ((PictureBox)sender).Width >= picTrashCan.Location.X + 35 && ((PictureBox)sender).Location.Y + ((PictureBox)sender).Height >= picTrashCan.Location.Y + 35 && ((PictureBox)sender).Location.X + ((PictureBox)sender).Width <= picTrashCan.Location.X + picTrashCan.Width && ((PictureBox)sender).Location.Y + ((PictureBox)sender).Height <= picTrashCan.Location.Y + picTrashCan.Height)
+            if (((PictureBox)sender).Location.X + ((PictureBox)sender).Width >= picTrashCan.Location.X + 35 && ((PictureBox)sender).Location.Y + ((PictureBox)sender).Height >= picTrashCan.Location.Y + 35 && ((PictureBox)sender).Location.X + ((PictureBox)sender).Width <= picTrashCan.Location.X + picTrashCan.Width && ((PictureBox)sender).Location.Y + ((PictureBox)sender).Height <= picTrashCan.Location.Y + picTrashCan.Height)
             {
                 ((PictureBox)sender).Parent = flowLayoutPanel1;
                 ActiveDevices.Remove((PictureBox)sender);
@@ -692,7 +692,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         private void pictureBox_MouseMove(object sender, MouseEventArgs e)
         {
             if (isDragged)
-            {   
+            {
                 //Grab the point of the cursor on the screen
                 Point newPoint = ((PictureBox)sender).PointToScreen(new Point(e.X, e.Y));
                 newPoint.Offset(ptOffset);
@@ -735,42 +735,56 @@ namespace PDA_Cyber_Security_Simulator_V1
          **/
         private void btnSave_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this, "Saved");
+            var netName = txtNetworkName.Text;
 
-            for (int i = 0; i < ActiveDevices.Count; i++)
+            if (string.IsNullOrWhiteSpace(netName))
             {
-
-                for (int j = 0; j < Pt1.Count; j++)
+                MessageBox.Show(this, "ERROR: Empty Network Name");
+                txtNetworkName.Text = string.Empty;
+            }
+            else
+            {
+                MessageBox.Show(this, "Saved");
+                //Algorithm for neighbor checking
+                for (int i = 0; i < ActiveDevices.Count; i++)
                 {
-                    if (InBounds(ActiveDevices[i], Pt1[j]))
+                    for (int j = 0; j < Pt1.Count; j++)
                     {
-                        for (int k = 0; k < ActiveDevices.Count; k++)
+                        if (InBounds(ActiveDevices[i], Pt1[j]))
                         {
-                            if (InBounds(ActiveDevices[k], Pt2[j]))
+                            for (int k = 0; k < ActiveDevices.Count; k++)
                             {
-                                Device d1 = (Device)ActiveDevices[k].Tag;
-                                Device d2 = (Device)ActiveDevices[i].Tag;
-                                d1.Neighbors.Add(d2);
-                                d2.Neighbors.Add(d1);
-                                ActiveDevices[k].Tag = d1;
-                                ActiveDevices[i].Tag = d2;
+                                if (InBounds(ActiveDevices[k], Pt2[j]))
+                                {
+                                    Device d1 = (Device)ActiveDevices[k].Tag;
+                                    Device d2 = (Device)ActiveDevices[i].Tag;
+                                    d1.Neighbors.Add(d2);
+                                    d2.Neighbors.Add(d1);
+                                    ActiveDevices[k].Tag = d1;
+                                    ActiveDevices[i].Tag = d2;
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            //Now we want to push these devices into the network
-            foreach(Control c in canvas.Controls)
-            {
-                if(c is PictureBox)
+                //Now we want to push these devices into the network
+                foreach (Control c in canvas.Controls)
                 {
-                    //Grab the device object from the tag
-                    //Push object into device list
-                    network.Devices.Add((Device)c.Tag);
+                    if (c is PictureBox)
+                    {
+                        //FINISH THIS
+                        if(c.Name != "")
+                        //Grab the device object from the tag
+                        //Push object into device list
+                        network.Devices.Add((Device)c.Tag);
+                    }
                 }
-            }
 
+                network.Name = netName;
+                //Push network to db
+                Network.addNetwork(network);
+            }
         }
 
         private bool InBounds(PictureBox box, Point x)
@@ -809,15 +823,15 @@ namespace PDA_Cyber_Security_Simulator_V1
         //Double click handler to display the popup box with device properties
         private void pictureBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if(((PictureBox)sender).Parent == canvas)
+            if (((PictureBox)sender).Parent == canvas)
             {
                 //Trigger the popup to show
                 DeviceProperties devicePropertiesPopup = new DeviceProperties((Device)((PictureBox)sender).Tag);
                 DialogResult dialogResult = devicePropertiesPopup.ShowDialog();
-                
+
 
                 //Result handlers
-                if(dialogResult == DialogResult.OK)
+                if (dialogResult == DialogResult.OK)
                 {
                     //Re-link the picture box with the newly filled device
                     ((PictureBox)sender).Tag = devicePropertiesPopup.Device;
@@ -826,7 +840,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                     //Push device to DB (ONLY HERE FOR TESTING PURPOSES)
                     Device.addDevice((Device)((PictureBox)sender).Tag);
                 }
-                else if(dialogResult == DialogResult.Cancel)
+                else if (dialogResult == DialogResult.Cancel)
                 {
                     devicePropertiesPopup.Dispose();
                 }
@@ -842,7 +856,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         private void btnClearNetwork_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to clear?", "Clear Network Graph", MessageBoxButtons.YesNo);
-            if(dialogResult == DialogResult.Yes)
+            if (dialogResult == DialogResult.Yes)
             {
                 //Instantiate a new form
                 NetBuilder clearNet = new NetBuilder(Form1);
@@ -851,7 +865,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                 clearNet.Show();
                 this.Close();
             }
-            else if(dialogResult == DialogResult.No)
+            else if (dialogResult == DialogResult.No)
             {
 
             }

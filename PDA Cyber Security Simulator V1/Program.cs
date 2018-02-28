@@ -20,7 +20,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 
             // Adds a test network on first install
             if (String.IsNullOrEmpty(Network.getNetworkNames()[0]))
-                Network.addNetwork(new Network("Test"));
+                //Network.addNetwork(new Network("Test"));
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

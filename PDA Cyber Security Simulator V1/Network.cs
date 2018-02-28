@@ -75,7 +75,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             dbConnection.Open();
 
             SQLiteCommand createDeviceTable = dbConnection.CreateCommand();
-            createDeviceTable.CommandText = "CREATE TABLE IF NOT EXISTS network (id integer primary key autoincrement, name varchar(50));";
+            createDeviceTable.CommandText = "CREATE TABLE IF NOT EXISTS network (id integer primary key autoincrement, name varchar(50), DeviceCount int);";
             createDeviceTable.ExecuteNonQuery();
         }
 
@@ -95,7 +95,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             dbConnection.Open();
 
             SQLiteCommand insertDevice = dbConnection.CreateCommand();
-            insertDevice.CommandText = "INSERT INTO network (name) VALUES ('" + newNetwork.Name + "');";
+            insertDevice.CommandText = "INSERT INTO network (name, DeviceCount) VALUES ('" + newNetwork.Name + "', '" + newNetwork.Devices.Count + "');";
             insertDevice.ExecuteNonQuery();
         }
 
@@ -109,16 +109,20 @@ namespace PDA_Cyber_Security_Simulator_V1
             SQLiteDataReader networkReader = getNetworks.ExecuteReader();
 
             String[] networkList;
+            int[] deviceCounts;
 
             networkList = new String[100];
+            deviceCounts = new int[100];
             int counter = 0;
 
             while (networkReader.Read())
             {
                 int id = networkReader.GetInt32(0);
                 String name = networkReader.GetString(1);
+                int deviceCount = networkReader.GetInt32(2);
 
                 networkList[counter] = name;
+                deviceCounts[counter] = deviceCount;
                 counter++;
             }
 
