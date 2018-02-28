@@ -27,10 +27,36 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
             Device.addDevice(testDevice);
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void AddNeighborTest()
         {
             Neighbors.addNeighbors(0, 1);
+            neighbor[] test = Neighbors.getNeighbors();
+            int i = 0;
+            while (i < 100)
+            {
+                if (test[i].d1 != 0 || test[i].d2 != 0)
+                {
+                    Console.WriteLine(test[i].d1.ToString() + " " + test[i].d2.ToString());
+                }
+                i++;
+            }
         }
+
+        [TestMethod()]
+        public void GetNeighborsTest()
+        {
+            neighbor[] test = Neighbors.getNeighbors();
+            int i = 0;
+            while (i < 100)
+            {
+                if (test[i].d1 != 0 || test[i].d2 != 0)
+                {
+                    Console.WriteLine(test[i].d1.ToString() + " " + test[i].d2.ToString());
+                }
+                i++;
+            }
+        }
+
     }
 }

@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 
 namespace PDA_Cyber_Security_Simulator_V1
 {
+    public struct neighbor
+    {
+        public int d1;
+        public int d2;
+    }
+
     public class Neighbors
     {
         public static void makeNeighborsTable()
@@ -45,8 +51,35 @@ namespace PDA_Cyber_Security_Simulator_V1
             dbConnection.Open();
 
             SQLiteCommand insertDevice = dbConnection.CreateCommand();
-            insertDevice.CommandText = "DELETE FROM device WHERE d_one='" + d_one +"AND d_two=" + d_two +"';";
+            insertDevice.CommandText = "DELETE FROM neighbors WHERE d_one='" + d_one +"AND d_two=" + d_two +"';";
             insertDevice.ExecuteNonQuery();
         }
+
+        public static neighbor[] getNeighbors()
+        {
+            SQLiteConnection dbConnection = new SQLiteConnection("DataSource = db.sqlite; Version = 3; ");
+            dbConnection.Open();
+
+            SQLiteCommand getNetworks = dbConnection.CreateCommand();
+            getNetworks.CommandText = "SELECT * FROM neighbors";
+            SQLiteDataReader neighborReader = getNetworks.ExecuteReader();
+
+            neighbor[] neighborList;
+
+            neighborList = new neighbor[100];
+            int counter = 0;
+
+            while (neighborReader.Read())
+            {
+                int d1 = neighborReader.GetInt32(0);
+                int d2 = neighborReader.GetInt32(1);
+                neighborList[counter].d1 = d1;
+                neighborList[counter].d2 = d2;
+                counter++;
+            }
+
+            return neighborList;
+        }
+
     }
 }
