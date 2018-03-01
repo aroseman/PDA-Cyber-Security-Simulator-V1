@@ -24,10 +24,13 @@ namespace PDA_Cyber_Security_Simulator_V1
         public Network()
         {
             Devices = new List<Device>();
+            Name = string.Empty;
+            Id = default(int);
         }
 
         public List<Device> Devices { get; set; }
-        public string Name { get; set; }    
+        public string Name { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// This will add a device to a network
@@ -127,6 +130,26 @@ namespace PDA_Cyber_Security_Simulator_V1
             }
 
             return networkList;
+        }
+
+        public static int getNetworkIdByName(string networkName)
+        {
+            SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
+            dbConnection.Open();
+
+            SQLiteCommand getNetworkIdByName = dbConnection.CreateCommand();
+            getNetworkIdByName.CommandText = "SELECT * FROM network WHERE name = '" + networkName + "'";
+            //getNetworkIdByName.Parameters.Add(new SQLiteParameter("@parameter1", networkName));
+            SQLiteDataReader networkReader = getNetworkIdByName.ExecuteReader();
+
+            int id = 0;
+
+            while (networkReader.Read())
+            {
+                id = networkReader.GetInt32(0);
+            }
+
+            return id;
         }
 
         public static String[] getDeviceNames(int networkID)

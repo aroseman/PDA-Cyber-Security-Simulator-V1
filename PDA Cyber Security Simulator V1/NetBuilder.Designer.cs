@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.canvas = new System.Windows.Forms.Panel();
+            this.lblNetworkName = new System.Windows.Forms.Label();
+            this.txtNetworkName = new System.Windows.Forms.TextBox();
             this.btnSaveNetwork = new System.Windows.Forms.Button();
             this.btnClearNetwork = new System.Windows.Forms.Button();
             this.lblDrawEnabled = new System.Windows.Forms.Label();
@@ -57,8 +59,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
-            this.txtNetworkName = new System.Windows.Forms.TextBox();
-            this.lblNetworkName = new System.Windows.Forms.Label();
             this.canvas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTrashCan)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -102,6 +102,25 @@
             this.canvas.TabIndex = 0;
             this.canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
             this.canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseDown);
+            // 
+            // lblNetworkName
+            // 
+            this.lblNetworkName.AutoSize = true;
+            this.lblNetworkName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNetworkName.Location = new System.Drawing.Point(13, 1253);
+            this.lblNetworkName.Name = "lblNetworkName";
+            this.lblNetworkName.Size = new System.Drawing.Size(252, 37);
+            this.lblNetworkName.TabIndex = 18;
+            this.lblNetworkName.Text = "Network Name:";
+            // 
+            // txtNetworkName
+            // 
+            this.txtNetworkName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNetworkName.Location = new System.Drawing.Point(23, 1297);
+            this.txtNetworkName.MaxLength = 50;
+            this.txtNetworkName.Name = "txtNetworkName";
+            this.txtNetworkName.Size = new System.Drawing.Size(281, 44);
+            this.txtNetworkName.TabIndex = 17;
             // 
             // btnSaveNetwork
             // 
@@ -446,25 +465,6 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // txtNetworkName
-            // 
-            this.txtNetworkName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNetworkName.Location = new System.Drawing.Point(23, 1297);
-            this.txtNetworkName.MaxLength = 50;
-            this.txtNetworkName.Name = "txtNetworkName";
-            this.txtNetworkName.Size = new System.Drawing.Size(281, 44);
-            this.txtNetworkName.TabIndex = 17;
-            // 
-            // lblNetworkName
-            // 
-            this.lblNetworkName.AutoSize = true;
-            this.lblNetworkName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNetworkName.Location = new System.Drawing.Point(13, 1253);
-            this.lblNetworkName.Name = "lblNetworkName";
-            this.lblNetworkName.Size = new System.Drawing.Size(252, 37);
-            this.lblNetworkName.TabIndex = 18;
-            this.lblNetworkName.Text = "Network Name:";
             // 
             // NetBuilder
             // 

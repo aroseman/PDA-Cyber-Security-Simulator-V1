@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AutoMapper;
 
 namespace PDA_Cyber_Security_Simulator_V1
 {
@@ -730,63 +731,6 @@ namespace PDA_Cyber_Security_Simulator_V1
             lblDrawEnabled.Visible = drawable ? true : false;
         }
 
-        /**
-         * Search all active devices, make sure there is an endpoint. If there is an endpoint search all devices for the second endpoint 
-         **/
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            var netName = txtNetworkName.Text;
-
-            if (string.IsNullOrWhiteSpace(netName))
-            {
-                MessageBox.Show(this, "ERROR: Empty Network Name");
-                txtNetworkName.Text = string.Empty;
-            }
-            else
-            {
-                MessageBox.Show(this, "Saved");
-                //Algorithm for neighbor checking
-                for (int i = 0; i < ActiveDevices.Count; i++)
-                {
-                    for (int j = 0; j < Pt1.Count; j++)
-                    {
-                        if (InBounds(ActiveDevices[i], Pt1[j]))
-                        {
-                            for (int k = 0; k < ActiveDevices.Count; k++)
-                            {
-                                if (InBounds(ActiveDevices[k], Pt2[j]))
-                                {
-                                    Device d1 = (Device)ActiveDevices[k].Tag;
-                                    Device d2 = (Device)ActiveDevices[i].Tag;
-                                    d1.Neighbors.Add(d2);
-                                    d2.Neighbors.Add(d1);
-                                    ActiveDevices[k].Tag = d1;
-                                    ActiveDevices[i].Tag = d2;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                //Now we want to push these devices into the network
-                foreach (Control c in canvas.Controls)
-                {
-                    if (c is PictureBox)
-                    {
-                        //FINISH THIS
-                        if(c.Name != "")
-                        //Grab the device object from the tag
-                        //Push object into device list
-                        network.Devices.Add((Device)c.Tag);
-                    }
-                }
-
-                network.Name = netName;
-                //Push network to db
-                Network.addNetwork(network);
-            }
-        }
-
         private bool InBounds(PictureBox box, Point x)
         {
             //bool inBounds = true;
@@ -836,9 +780,6 @@ namespace PDA_Cyber_Security_Simulator_V1
                     //Re-link the picture box with the newly filled device
                     ((PictureBox)sender).Tag = devicePropertiesPopup.Device;
                     devicePropertiesPopup.Dispose();
-
-                    //Push device to DB (ONLY HERE FOR TESTING PURPOSES)
-                    Device.addDevice((Device)((PictureBox)sender).Tag);
                 }
                 else if (dialogResult == DialogResult.Cancel)
                 {
@@ -847,11 +788,6 @@ namespace PDA_Cyber_Security_Simulator_V1
             }
         }
         #endregion
-
-        private void btnSaveNetwork_Click(object sender, EventArgs e)
-        {
-            //Device.addDevice()
-        }
 
         private void btnClearNetwork_Click(object sender, EventArgs e)
         {
@@ -868,6 +804,81 @@ namespace PDA_Cyber_Security_Simulator_V1
             else if (dialogResult == DialogResult.No)
             {
 
+            }
+        }
+
+        /**
+ * Search all active devices, make sure there is an endpoint. If there is an endpoint search all devices for the second endpoint 
+ **/
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            var netName = txtNetworkName.Text;
+
+            if (string.IsNullOrWhiteSpace(netName))
+            {
+                MessageBox.Show(this, "ERROR: Empty Network Name");
+                txtNetworkName.Text = string.Empty;
+            }
+            else
+            {
+                MessageBox.Show(this, "Saved");
+                //Algorithm for neighbor checking
+                for (int i = 0; i < ActiveDevices.Count; i++)
+                {
+                    for (int j = 0; j < Pt1.Count; j++)
+                    {
+                        if (InBounds(ActiveDevices[i], Pt1[j]))
+                        {
+                            for (int k = 0; k < ActiveDevices.Count; k++)
+                            {
+                                if (InBounds(ActiveDevices[k], Pt2[j]))
+                                {
+                                    Device d1 = (Device)ActiveDevices[k].Tag;
+                                    Device d2 = (Device)ActiveDevices[i].Tag;
+                                    d1.Neighbors.Add(d2);
+                                    d2.Neighbors.Add(d1);
+                                    ActiveDevices[k].Tag = d1;
+                                    ActiveDevices[i].Tag = d2;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                //Now we want to push these devices into the network
+                foreach (Control c in canvas.Controls)
+                {
+                    if (c is PictureBox)
+                    {
+                        if (c.Name != "picTrashCan")
+                            //Grab the device object from the tag
+                            //Push object into device list
+                            network.Devices.Add((Device)c.Tag);
+                    }
+                }
+
+                network.Name = netName;
+
+                //Push network to db
+                Network.addNetwork(network);
+
+                //Grab the network Id generated by the DB
+                network.Id = Network.getNetworkIdByName(network.Name);
+
+                //assign the network ID to all devices inside the network
+                for (int i = 0; i < network.Devices.Count; i++)
+                {
+                    network.Devices[i].NetID = network.Id;
+                    Device.addDevice(network.Devices[i]);
+                }
+
+
+                var devices = Device.getDevicesByNetworkID(network.Id);
+                network.Devices = devices;
+
+                /*
+                    PUSH NEIGHBORS INTO DB HERE 
+                */
             }
         }
     }

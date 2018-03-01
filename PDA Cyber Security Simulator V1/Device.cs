@@ -6,13 +6,13 @@ using PDA_Cyber_Security_Simulator_V1;
 
 public class Device
 {
-    public String Name { get; set; }
+    public string Name { get; set; }
 
-    public String IpAddress { get; set; }
+    public string IpAddress { get; set; }
    
-    public String MacAddress { get; set; }
+    public string MacAddress { get; set; }
 
-    public String Description { get; set; }
+    public string Description { get; set; }
 
     //1 is connected, 0 is disconnected
     public bool Status { get; set; }
@@ -20,19 +20,26 @@ public class Device
     //Contains Neighboring IP Addresses
     public List<Device> Neighbors { get; set; }
 
-    public String Notes { get; set; }
+    public string Notes { get; set; }
 
     public int ID { get; set; }
 
     public bool Configured { get; set; }
 
+    public int NetID { get; set; }
+
     public Device()
     {
-        
+        Name = string.Empty;
+        IpAddress = string.Empty;
+        MacAddress = string.Empty;
+        Description = string.Empty;
         Status = false;
         Neighbors = new List<Device>();
+        Notes = string.Empty;
+        ID = default(int);
         Configured = false;
-        
+        NetID = default(int);
     }
     public Device(string name, string ip, string mac, string description, string notes)
     {
@@ -51,7 +58,7 @@ public class Device
         dbConnection.Open();
 
         SQLiteCommand insertDevice = dbConnection.CreateCommand();
-        insertDevice.CommandText = "INSERT INTO device (ip, name, mac, description, notes, netid) VALUES ('" + newDevice.IpAddress + "', '" + newDevice.Name + "', '" + newDevice.MacAddress + "', '" + newDevice.Description + "', '" + newDevice.Notes + "', '1');";
+        insertDevice.CommandText = "INSERT INTO device (ip, name, mac, description, notes, netid) VALUES ('" + newDevice.IpAddress + "', '" + newDevice.Name + "', '" + newDevice.MacAddress + "', '" + newDevice.Description + "', '" + newDevice.Notes + "', '" + newDevice.NetID + "');";
         insertDevice.ExecuteNonQuery();
     }
 
@@ -162,5 +169,34 @@ public class Device
 
         int maxID = deviceReader.GetInt32(0);
         return maxID;
+    }
+
+    public static List<Device> getDevicesByNetworkID(int networkID)
+    {
+        SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
+        dbConnection.Open();
+
+        SQLiteCommand getDevices = dbConnection.CreateCommand();
+        getDevices.CommandText = "SELECT * FROM device WHERE netid = @parameter1";
+        getDevices.Parameters.Add(new SQLiteParameter("@parameter1", networkID));
+        SQLiteDataReader networkReader = getDevices.ExecuteReader();
+
+        List<Device> deviceList = new List<Device>();
+
+        while (networkReader.Read())
+        {
+            var device = new Device();
+            device.ID = networkReader.GetInt32(0);
+            device.IpAddress = networkReader.GetString(1);
+            device.Name = networkReader.GetString(2);
+            device.MacAddress = networkReader.GetString(3);
+            device.Description = networkReader.GetString(4);
+            device.Notes = networkReader.GetString(5);
+            device.NetID = networkReader.GetInt32(6);
+
+            deviceList.Add(device);
+        }
+
+        return deviceList;
     }
 }

@@ -83,3 +83,5 @@ C:\Users\whois\Documents\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Securit
 C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.ViewNetwork.resources
 C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.SimulateAttack.resources
 C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.TestNetwork.resources
+C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\AutoMapper.dll
+C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\AutoMapper.xml
