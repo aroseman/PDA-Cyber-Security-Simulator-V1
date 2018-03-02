@@ -13,14 +13,82 @@ namespace PDA_Cyber_Security_Simulator_V1
 {
     public partial class TestNetwork : Form
     {
+        #region Attributes
         private Form1 Form1;
         private bool test = false;
+        private List<Label> DeviceNames;
+        private List<Label> PingLabels;
+        private List<Label> PingTime;
+        private List<Label> IpLabels;
+        private List<Label> DeviceIp;
+        private List<CirclePanelRed> RedDots;
+        private List<CirclePanelGreen> GreenDots;
+        #endregion
 
         public TestNetwork(Form1 form1)
         {
             Form1 = form1;
             InitializeComponent();
+            InitializeGraphics();
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+        }
+
+        private void InitializeGraphics()
+        {
+            DeviceNames = new List<Label>();
+            PingLabels = new List<Label>();
+            PingTime = new List<Label>();
+            IpLabels = new List<Label>();
+            DeviceIp = new List<Label>();
+            RedDots = new List<CirclePanelRed>();
+            GreenDots = new List<CirclePanelGreen>();
+
+            foreach(Control c in pnlTestStatus.Controls)
+            {
+                if(c is Label && c.Name.Contains("lblDevice"))
+                {
+                    DeviceNames.Add((Label)c);
+                }
+                else if(c is Label && c.Name.Contains("lblPingTime"))
+                {
+                    PingTime.Add((Label)c);
+                }
+                else if(c is Label && c.Name.Contains("lblPing"))
+                {
+                    PingLabels.Add((Label)c);
+                }
+                else if(c is Label && c.Name.Contains("lblIp"))
+                {
+                    IpLabels.Add((Label)c);
+                }
+                else if(c is Label && c.Name.Contains("lblAddress"))
+                {
+                    DeviceIp.Add((Label)c);
+                }
+                else if(c is CirclePanelGreen)
+                {
+                    GreenDots.Add((CirclePanelGreen)c);
+                }
+                else if(c is CirclePanelRed)
+                {
+                    RedDots.Add((CirclePanelRed)c);
+                }
+                else
+                {
+
+                }
+            }
+
+            for(int i = 0; i < RedDots.Count; i++)
+            {
+                RedDots[i].Hide();
+                GreenDots[i].Hide();
+                DeviceNames[i].Hide();
+                DeviceIp[i].Hide();
+                IpLabels[i].Hide();
+                PingLabels[i].Hide();
+                PingTime[i].Hide();
+            }
         }
 
         //Navigate back to Home screen
