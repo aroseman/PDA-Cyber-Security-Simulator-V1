@@ -17,68 +17,92 @@ namespace PDA_Cyber_Security_Simulator_V1
     {
         public static void makeNeighborsTable()
         {
-            SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
-            dbConnection.Open();
+            using (SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;"))
+            {
+                dbConnection.Open();
 
-            SQLiteCommand createDeviceTable = dbConnection.CreateCommand();
-            createDeviceTable.CommandText = "CREATE TABLE IF NOT EXISTS neighbors (d_one integer NOT NULL, d_two integer NOT NULL, PRIMARY KEY (d_one, d_two), FOREIGN KEY (d_one) REFERENCES device(id), FOREIGN KEY (d_two) REFERENCES device(id));";
-            createDeviceTable.ExecuteNonQuery();
+                using (SQLiteCommand createDeviceTable = dbConnection.CreateCommand())
+                {
+                    createDeviceTable.CommandText = "CREATE TABLE IF NOT EXISTS neighbors (d_one integer NOT NULL, d_two integer NOT NULL, PRIMARY KEY (d_one, d_two), FOREIGN KEY (d_one) REFERENCES device(id), FOREIGN KEY (d_two) REFERENCES device(id));";
+                    createDeviceTable.ExecuteNonQuery();
+                }
+            }
         }
 
         public static void dropNeighborsTable()
         {
-            SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
-            dbConnection.Open();
+            using (SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;"))
+            { 
+                dbConnection.Open();
 
-            SQLiteCommand createDeviceTable = dbConnection.CreateCommand();
-            createDeviceTable.CommandText = "DROP TABLE IF EXISTS neighbors;";
-            createDeviceTable.ExecuteNonQuery();
+                using (SQLiteCommand createDeviceTable = dbConnection.CreateCommand())
+                {
+                    createDeviceTable.CommandText = "DROP TABLE IF EXISTS neighbors;";
+                    createDeviceTable.ExecuteNonQuery();
+                }
+            }
         }
 
         public static void addNeighbors(int d_one, int d_two)
         {
-            SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
-            dbConnection.Open();
+            using (SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;"))
+            {
+                dbConnection.Open();
 
-            SQLiteCommand insertDevice = dbConnection.CreateCommand();
-            insertDevice.CommandText = "INSERT INTO neighbors (d_one, d_two) VALUES ('" + d_one + "','" + d_two + "');";
-            insertDevice.ExecuteNonQuery();
+                using (SQLiteCommand insertDevice = dbConnection.CreateCommand())
+                {
+                    insertDevice.CommandText = "INSERT INTO neighbors (d_one, d_two) VALUES (@parameter1, @parameter2);";
+                    insertDevice.Parameters.Add(new SQLiteParameter("@parameter1", d_one.ToString()));
+                    insertDevice.Parameters.Add(new SQLiteParameter("@parameter2", d_two.ToString()));
+                    insertDevice.ExecuteNonQuery();
+                }
+            }
         }
 
         public static void removeNeighbor(int d_one, int d_two)
         {
-            SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
-            dbConnection.Open();
+            using (SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;"))
+            {
+                dbConnection.Open();
 
-            SQLiteCommand insertDevice = dbConnection.CreateCommand();
-            insertDevice.CommandText = "DELETE FROM neighbors WHERE d_one='" + d_one +"AND d_two=" + d_two +"';";
-            insertDevice.ExecuteNonQuery();
+                using (SQLiteCommand insertDevice = dbConnection.CreateCommand())
+                {
+                    insertDevice.CommandText = "DELETE FROM neighbors WHERE d_one= @parameter1 AND d_two= @parameter2;";
+                    insertDevice.Parameters.Add(new SQLiteParameter("@parameter1", d_one.ToString()));
+                    insertDevice.Parameters.Add(new SQLiteParameter("@parameter2", d_two.ToString()));
+                    insertDevice.ExecuteNonQuery();
+                }
+            }
         }
 
         public static neighbor[] getNeighbors()
         {
-            SQLiteConnection dbConnection = new SQLiteConnection("DataSource = db.sqlite; Version = 3; ");
-            dbConnection.Open();
-
-            SQLiteCommand getNetworks = dbConnection.CreateCommand();
-            getNetworks.CommandText = "SELECT * FROM neighbors";
-            SQLiteDataReader neighborReader = getNetworks.ExecuteReader();
-
-            neighbor[] neighborList;
-
-            neighborList = new neighbor[100];
-            int counter = 0;
-
-            while (neighborReader.Read())
+            using (SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;"))
             {
-                int d1 = neighborReader.GetInt32(0);
-                int d2 = neighborReader.GetInt32(1);
-                neighborList[counter].d1 = d1;
-                neighborList[counter].d2 = d2;
-                counter++;
-            }
+                dbConnection.Open();
 
-            return neighborList;
+                using (SQLiteCommand getNetworks = dbConnection.CreateCommand())
+                {
+                    getNetworks.CommandText = "SELECT * FROM neighbors";
+                    SQLiteDataReader neighborReader = getNetworks.ExecuteReader();
+
+                    neighbor[] neighborList;
+
+                    neighborList = new neighbor[100];
+                    int counter = 0;
+
+                    while (neighborReader.Read())
+                    {
+                        int d1 = neighborReader.GetInt32(0);
+                        int d2 = neighborReader.GetInt32(1);
+                        neighborList[counter].d1 = d1;
+                        neighborList[counter].d2 = d2;
+                        counter++;
+                    }
+
+                    return neighborList;
+                }
+            }
         }
 
     }

@@ -50,5 +50,13 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
             Device.addDevice(testDevice);
             Device.removeDevice(testDevice);
         }
+
+        [TestMethod]
+        public void DeviceMaxIDTest()
+        {
+            int testMax = Device.getMaxTableID();
+            Console.WriteLine(testMax.ToString());
+        }
+            
     }
 }
