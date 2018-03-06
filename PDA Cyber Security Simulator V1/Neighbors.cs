@@ -1,13 +1,9 @@
-﻿using System;
+﻿using System.Data.SQLite;
 using System.Collections.Generic;
-using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PDA_Cyber_Security_Simulator_V1
 {
-    public struct neighbor
+    public struct Neighbor
     {
         public int d1;
         public int d2;
@@ -23,7 +19,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 
                 using (SQLiteCommand createDeviceTable = dbConnection.CreateCommand())
                 {
-                    createDeviceTable.CommandText = "CREATE TABLE IF NOT EXISTS neighbors (d_one integer NOT NULL, d_two integer NOT NULL, PRIMARY KEY (d_one, d_two), FOREIGN KEY (d_one) REFERENCES device(id), FOREIGN KEY (d_two) REFERENCES device(id));";
+                    createDeviceTable.CommandText = "CREATE TABLE IF NOT EXISTS Neighbors (d_one integer NOT NULL, d_two integer NOT NULL, PRIMARY KEY (d_one, d_two), FOREIGN KEY (d_one) REFERENCES device(id), FOREIGN KEY (d_two) REFERENCES device(id));";
                     createDeviceTable.ExecuteNonQuery();
                 }
             }
@@ -37,7 +33,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 
                 using (SQLiteCommand createDeviceTable = dbConnection.CreateCommand())
                 {
-                    createDeviceTable.CommandText = "DROP TABLE IF EXISTS neighbors;";
+                    createDeviceTable.CommandText = "DROP TABLE IF EXISTS Neighbors;";
                     createDeviceTable.ExecuteNonQuery();
                 }
             }
@@ -51,7 +47,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 
                 using (SQLiteCommand insertDevice = dbConnection.CreateCommand())
                 {
-                    insertDevice.CommandText = "INSERT INTO neighbors (d_one, d_two) VALUES (@parameter1, @parameter2);";
+                    insertDevice.CommandText = "INSERT INTO Neighbors (d_one, d_two) VALUES (@parameter1, @parameter2);";
                     insertDevice.Parameters.Add(new SQLiteParameter("@parameter1", d_one.ToString()));
                     insertDevice.Parameters.Add(new SQLiteParameter("@parameter2", d_two.ToString()));
                     insertDevice.ExecuteNonQuery();
@@ -67,7 +63,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 
                 using (SQLiteCommand insertDevice = dbConnection.CreateCommand())
                 {
-                    insertDevice.CommandText = "DELETE FROM neighbors WHERE d_one= @parameter1 AND d_two= @parameter2;";
+                    insertDevice.CommandText = "DELETE FROM Neighbors WHERE d_one= @parameter1 AND d_two= @parameter2;";
                     insertDevice.Parameters.Add(new SQLiteParameter("@parameter1", d_one.ToString()));
                     insertDevice.Parameters.Add(new SQLiteParameter("@parameter2", d_two.ToString()));
                     insertDevice.ExecuteNonQuery();
@@ -75,7 +71,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             }
         }
 
-        public static neighbor[] getNeighbors()
+        public static List<Neighbor> getNeighbors()
         {
             using (SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;"))
             {
@@ -83,20 +79,21 @@ namespace PDA_Cyber_Security_Simulator_V1
 
                 using (SQLiteCommand getNetworks = dbConnection.CreateCommand())
                 {
-                    getNetworks.CommandText = "SELECT * FROM neighbors";
+                    getNetworks.CommandText = "SELECT * FROM Neighbors";
                     SQLiteDataReader neighborReader = getNetworks.ExecuteReader();
 
-                    neighbor[] neighborList;
+                    List<Neighbor> neighborList = new List<Neighbor>();
 
-                    neighborList = new neighbor[100];
                     int counter = 0;
 
                     while (neighborReader.Read())
                     {
                         int d1 = neighborReader.GetInt32(0);
                         int d2 = neighborReader.GetInt32(1);
-                        neighborList[counter].d1 = d1;
-                        neighborList[counter].d2 = d2;
+                        Neighbor n;
+                        n.d1 = d1;
+                        n.d2 = d2;
+                        neighborList.Add(n);
                         counter++;
                     }
 

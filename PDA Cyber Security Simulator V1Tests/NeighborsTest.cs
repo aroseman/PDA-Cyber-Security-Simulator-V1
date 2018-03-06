@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PDA_Cyber_Security_Simulator_V1;
 
@@ -31,9 +32,9 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         public void AddNeighborTest()
         {
             Neighbors.addNeighbors(0, 1);
-            neighbor[] test = Neighbors.getNeighbors();
-            int i = 0;
-            while (i < 100)
+            List<Neighbor> test = Neighbors.getNeighbors();
+
+            for (int i = 0; i < test.Count; i++)
             {
                 if (test[i].d1 != 0 || test[i].d2 != 0)
                 {
@@ -46,9 +47,9 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         [TestMethod()]
         public void GetNeighborsTest()
         {
-            neighbor[] test = Neighbors.getNeighbors();
-            int i = 0;
-            while (i < 100)
+            List<Neighbor> test = Neighbors.getNeighbors();
+
+            for (int i = 0; i < test.Count; i++)
             {
                 if (test[i].d1 != 0 || test[i].d2 != 0)
                 {

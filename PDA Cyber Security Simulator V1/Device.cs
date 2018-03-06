@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Diagnostics;
-using PDA_Cyber_Security_Simulator_V1;
 
 public class Device
 {
@@ -60,7 +58,7 @@ public class Device
 
             using (SQLiteCommand insertDevice = dbConnection.CreateCommand())
             {
-                insertDevice.CommandText = "INSERT INTO device (ip, name, mac, description, notes, netid) VALUES (@parameter1, @parameter2, @parameter3, @parameter4, @parameter5, @parameter6);";
+                insertDevice.CommandText = "INSERT INTO Device (ip, name, mac, description, notes, netid) VALUES (@parameter1, @parameter2, @parameter3, @parameter4, @parameter5, @parameter6);";
                 insertDevice.Parameters.Add(new SQLiteParameter("@parameter1", newDevice.IpAddress));
                 insertDevice.Parameters.Add(new SQLiteParameter("@parameter2", newDevice.Name));
                 insertDevice.Parameters.Add(new SQLiteParameter("@parameter3", newDevice.MacAddress));
@@ -80,14 +78,14 @@ public class Device
 
             using (SQLiteCommand insertDevice = dbConnection.CreateCommand())
             {
-                insertDevice.CommandText = "DELETE FROM device WHERE id=@parameter1;";
+                insertDevice.CommandText = "DELETE FROM Device WHERE id=@parameter1;";
                 insertDevice.Parameters.Add(new SQLiteParameter("@parameter1", newDevice.ID));
                 insertDevice.ExecuteNonQuery();
             }
         }
     }
 
-    public static String[] getDeviceNames()
+    public static List<String> getDeviceNames()
     {
         using (SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;"))
         {
@@ -95,18 +93,17 @@ public class Device
 
             using (SQLiteCommand getDevice = dbConnection.CreateCommand())
             {
-                getDevice.CommandText = "SELECT * FROM device";
+                getDevice.CommandText = "SELECT * FROM Device";
                 using (SQLiteDataReader deviceReader = getDevice.ExecuteReader())
                 {
-                    String[] deviceList;
+                    List<String> deviceList = new List<string>();
 
-                    deviceList = new String[100];
                     int counter = 0;
 
                     while (deviceReader.Read())
                     {
                         String name = deviceReader.GetString(2);
-                        deviceList[counter] = name;
+                        deviceList.Add(name);
                         counter++;
                     }
 
@@ -116,7 +113,7 @@ public class Device
         }
     }
 
-    public static Device[] getDevices()
+    public static List<Device> getDevices()
     {
         using (SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;"))
         {
@@ -124,13 +121,12 @@ public class Device
 
             using (SQLiteCommand getDevice = dbConnection.CreateCommand())
             {
-                getDevice.CommandText = "SELECT * FROM device";
+                getDevice.CommandText = "SELECT * FROM Device";
                 using (SQLiteDataReader deviceReader = getDevice.ExecuteReader())
                 {
 
-                    Device[] deviceList;
+                    List<Device> deviceList = new List<Device> ();
 
-                    deviceList = new Device[50];
                     int counter = 0;
 
                     while (deviceReader.Read())
@@ -152,7 +148,7 @@ public class Device
                         newD.Description = desc;
                         newD.Notes = notes;
 
-                        deviceList[counter] = newD;
+                        deviceList.Add(newD);
                         counter++;
                     }
 
@@ -170,7 +166,7 @@ public class Device
 
             using (SQLiteCommand createDeviceTable = dbConnection.CreateCommand())
             {
-                createDeviceTable.CommandText = "CREATE TABLE IF NOT EXISTS device (id integer primary key autoincrement, ip varchar(15), name varchar(50),mac char(17),description varchar(50),notes varchar(200), netid integer, foreign key(netid) references network(id));";
+                createDeviceTable.CommandText = "CREATE TABLE IF NOT EXISTS Device (id integer primary key autoincrement, ip varchar(15), name varchar(50),mac char(17),description varchar(50),notes varchar(200), netid integer, foreign key(netid) references network(id));";
                 createDeviceTable.ExecuteNonQuery();
             }
         }
@@ -184,7 +180,7 @@ public class Device
 
             using (SQLiteCommand createDeviceTable = dbConnection.CreateCommand())
             {
-                createDeviceTable.CommandText = "DROP TABLE IF EXISTS device;";
+                createDeviceTable.CommandText = "DROP TABLE IF EXISTS Device;";
                 createDeviceTable.ExecuteNonQuery();
             }
         }
@@ -218,7 +214,7 @@ public class Device
 
             using (SQLiteCommand getDevices = dbConnection.CreateCommand())
             {
-                getDevices.CommandText = "SELECT * FROM device WHERE netid = @parameter1";
+                getDevices.CommandText = "SELECT * FROM Device WHERE netid = @parameter1";
                 getDevices.Parameters.Add(new SQLiteParameter("@parameter1", networkID));
                 using (SQLiteDataReader networkReader = getDevices.ExecuteReader())
                 {

@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Diagnostics;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PDA_Cyber_Security_Simulator_V1;
 
 namespace PDA_Cyber_Security_Simulator_V1Tests
 {
@@ -34,9 +33,9 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         [TestMethod]
         public void GetDevicesTest()
         {
-            Device[] devices = Device.getDevices();
+            List<Device> devices = Device.getDevices();
 
-            for (int i = 0; i < devices.Length; i++)
+            for (int i = 0; i < devices.Count; i++)
             {
                 if (devices[i] != null)
                     Console.WriteLine(devices[i].Name);

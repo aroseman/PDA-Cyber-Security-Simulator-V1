@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PDA_Cyber_Security_Simulator_V1
@@ -107,12 +102,19 @@ namespace PDA_Cyber_Security_Simulator_V1
             {
                 testNetworkListBox1.Items.Clear();
 
-                String[] dList = Network.getDeviceNames(testNetworkComboBox1.SelectedIndex);
-                for (int i = 0; i < dList.Length; i++)
+                List<String> dList = Network.getDeviceNames(testNetworkComboBox1.SelectedIndex);
+                for (int i = 0; i < dList.Count; i++)
                 {
                     if (!String.IsNullOrEmpty(dList[i]))
                         testNetworkListBox1.Items.Add(dList[i]);
                 }
+
+                /*String[] dList = Network.getDeviceNames(testNetworkComboBox1.SelectedIndex);
+                for (int i = 0; i < dList.Length; i++)
+                {
+                    if (!String.IsNullOrEmpty(dList[i]))
+                        testNetworkListBox1.Items.Add(dList[i]);
+                }*/
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PDA_Cyber_Security_Simulator_V1;
@@ -20,9 +21,9 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         [TestMethod]
         public void GetNetworksTest()
         {
-            String[] networks = Network.getNetworkNames();
+            List<String> networks = Network.getNetworkNames();
 
-            for (int i = 0; i < networks.Length; i++)
+            for (int i = 0; i < networks.Count; i++)
             {
                 Debug.WriteLine(networks[i]);
             }
@@ -31,12 +32,19 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         [TestMethod]
         public void GetDeviceTest()
         {
-            String[] devices = Network.getDeviceNames(1);
+            List<String> devices = Network.getDeviceNames(1);
 
-            for (int i = 0; i < devices.Length; i++)
+            for (int i = 0; i < devices.Count; i++)
             {
                 Debug.WriteLine(devices[i]);
             }
+        }
+
+        [TestMethod]
+        public void NetworkMaxIDTest()
+        {
+            int testMax = Network.getMaxTableID();
+            Console.WriteLine(testMax.ToString());
         }
     }
 }

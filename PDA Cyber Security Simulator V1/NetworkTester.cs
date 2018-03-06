@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net.NetworkInformation;
 using System.Windows.Forms;
 namespace PDA_Cyber_Security_Simulator_V1
 {
-   public class NetworkTester
+    public class NetworkTester
     {
 
        public void TestDevice(string ipAddress, TextBox tb)

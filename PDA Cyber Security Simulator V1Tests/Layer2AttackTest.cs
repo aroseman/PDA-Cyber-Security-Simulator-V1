@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PDA_Cyber_Security_Simulator_V1;
 
 namespace PDA_Cyber_Security_Simulator_V1Tests
