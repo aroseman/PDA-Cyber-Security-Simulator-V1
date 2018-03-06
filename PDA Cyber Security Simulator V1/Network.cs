@@ -168,7 +168,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             }
         }
 
-        public static List<String> getDeviceNames(int NetworkID)
+        public static List<Device> getDevices(int NetworkID)
         {
             using (SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;"))
             {
@@ -176,10 +176,10 @@ namespace PDA_Cyber_Security_Simulator_V1
 
                 using (SQLiteCommand getDevices = dbConnection.CreateCommand())
                 {
-                    getDevices.CommandText = "SELECT * FROM device INNER JOIN Network ON Device.netid = Network.id";
+                    getDevices.CommandText = "SELECT * FROM Device INNER JOIN Network ON Device.netid = Network.id";
                     using (SQLiteDataReader networkReader = getDevices.ExecuteReader())
                     {
-                        List<String> deviceList = new List<string>();
+                        List<Device> deviceList = new List<Device>();
 
                         int counter = 0;
 
@@ -192,7 +192,17 @@ namespace PDA_Cyber_Security_Simulator_V1
                             String desc = networkReader.GetString(4);
                             String notes = networkReader.GetString(5);
                             int netid = networkReader.GetInt32(6);
-                            deviceList.Add(name);
+
+                            Device d = new Device();
+                            d.ID = id;
+                            d.IpAddress = ip;
+                            d.Name = name;
+                            d.MacAddress = mac;
+                            d.Description = desc;
+                            d.Notes = d.Notes;
+                            d.NetID = netid;
+
+                            deviceList.Add(d);
 
                             counter++;
                         }
@@ -211,7 +221,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 
                 using (SQLiteCommand getDevice = dbConnection.CreateCommand())
                 {
-                    getDevice.CommandText = "SELECT MAX(id) FROM Network";
+                    getDevice.CommandText = "SELECT COUNT(*) FROM Network";
                     using (SQLiteDataReader deviceReader = getDevice.ExecuteReader())
                     {
                         deviceReader.Read();

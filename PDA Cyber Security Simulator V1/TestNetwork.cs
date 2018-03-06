@@ -143,11 +143,11 @@ namespace PDA_Cyber_Security_Simulator_V1
             {
                 testNetworkListBox1.Items.Clear();
 
-                List<String> dList = Network.getDeviceNames(testNetworkComboBox1.SelectedIndex);
+                List<Device> dList = Network.getDevices(testNetworkComboBox1.SelectedIndex);
                 for (int i = 0; i < dList.Count; i++)
                 {
-                    if (!String.IsNullOrEmpty(dList[i]))
-                        testNetworkListBox1.Items.Add(dList[i]);
+                    if (!String.IsNullOrEmpty(dList[i].Name))
+                        testNetworkListBox1.Items.Add(dList[i].Name);
                 }
             }
         }

@@ -9,42 +9,46 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
     [TestClass]
     public class NetworkTest
     {
-        [TestMethod]
-        public void AddNetworkTest()
+        [TestInitialize()]
+        public void TestInit()
         {
+            Device.dropDeviceTable();
+            Device.makeDeviceTable();
+
             Network.dropNetworkTable();
             Network.makeNetworkTable();
-
-            Network.addNetwork(new Network());
         }
 
-        [TestMethod]
-        public void GetNetworksTest()
+        [TestMethod()]
+        public void GetAndAddNetworksTest()
         {
-            List<String> networks = Network.getNetworkNames();
+            Network.addNetwork(new Network());
 
-            for (int i = 0; i < networks.Count; i++)
-            {
-                Debug.WriteLine(networks[i]);
-            }
+            int idCheck = Network.getMaxTableID();
+
+            Assert.AreEqual(1, idCheck);
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void GetDeviceTest()
         {
-            List<String> devices = Network.getDeviceNames(1);
+            Network.addNetwork(new Network());
 
-            for (int i = 0; i < devices.Count; i++)
-            {
-                Debug.WriteLine(devices[i]);
-            }
-        }
+            Device testDevice = new Device();
+            testDevice.Name = "CiscoRouter";
+            testDevice.IpAddress = "192.168.1.5";
+            testDevice.NetID = 1;
+            Device.addDevice(testDevice);
 
-        [TestMethod]
-        public void NetworkMaxIDTest()
-        {
-            int testMax = Network.getMaxTableID();
-            Console.WriteLine(testMax.ToString());
+            Device testDevice2 = new Device();
+            testDevice2.Name = "CiscoFirewall";
+            testDevice2.IpAddress = "192.168.1.6";
+            testDevice2.NetID = 1;
+            Device.addDevice(testDevice2);
+
+            List<Device> devices = Network.getDevices(1);
+
+            Assert.AreEqual(2, devices.Count);
         }
     }
 }

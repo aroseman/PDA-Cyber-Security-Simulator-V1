@@ -11,11 +11,11 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         [TestInitialize()]
         public void TestInit()
         {
-            Neighbors.dropNeighborsTable();
-            Neighbors.makeNeighborsTable();
-
             Device.dropDeviceTable();
             Device.makeDeviceTable();
+
+            Neighbors.dropNeighborsTable();
+            Neighbors.makeNeighborsTable();
 
             Device testDevice = new Device();
             testDevice.Name = "CiscoRouter";
@@ -32,31 +32,21 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         public void AddNeighborTest()
         {
             Neighbors.addNeighbors(0, 1);
-            List<Neighbor> test = Neighbors.getNeighbors();
 
-            for (int i = 0; i < test.Count; i++)
-            {
-                if (test[i].d1 != 0 || test[i].d2 != 0)
-                {
-                    Console.WriteLine(test[i].d1.ToString() + " " + test[i].d2.ToString());
-                }
-                i++;
-            }
+            int idCheck = Neighbors.getMaxTableID();
+
+            Assert.AreEqual(1, idCheck);
         }
 
         [TestMethod()]
         public void GetNeighborsTest()
         {
+            Neighbors.addNeighbors(0, 1);
+
             List<Neighbor> test = Neighbors.getNeighbors();
 
-            for (int i = 0; i < test.Count; i++)
-            {
-                if (test[i].d1 != 0 || test[i].d2 != 0)
-                {
-                    Console.WriteLine(test[i].d1.ToString() + " " + test[i].d2.ToString());
-                }
-                i++;
-            }
+            Assert.AreEqual(0, test[0].d1);
+            Assert.AreEqual(1, test[0].d2);
         }
 
     }

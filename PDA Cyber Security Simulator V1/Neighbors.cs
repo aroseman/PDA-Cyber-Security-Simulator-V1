@@ -102,5 +102,24 @@ namespace PDA_Cyber_Security_Simulator_V1
             }
         }
 
+        public static int getMaxTableID()
+        {
+            using (SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;"))
+            {
+                dbConnection.Open();
+
+                using (SQLiteCommand getDevice = dbConnection.CreateCommand())
+                {
+                    getDevice.CommandText = "SELECT COUNT(*) FROM Neighbors";
+                    using (SQLiteDataReader deviceReader = getDevice.ExecuteReader())
+                    {
+                        deviceReader.Read();
+
+                        int maxID = deviceReader.GetInt32(0);
+                        return maxID;
+                    }
+                }
+            }
+        }
     }
 }
