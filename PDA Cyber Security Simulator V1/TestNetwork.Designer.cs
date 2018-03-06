@@ -41,63 +41,6 @@
             this.lblDevices = new System.Windows.Forms.Label();
             this.testNetworkListBox1 = new System.Windows.Forms.ListBox();
             this.pnlTestStatus = new System.Windows.Forms.Panel();
-            this.circlePanelRed3 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelRed();
-            this.circlePanelRed2 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelRed();
-            this.circlePanelGreen2 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelGreen();
-            this.circlePanelGreen1 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelGreen();
-            this.circlePanelRed4 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelRed();
-            this.circlePanelGreen3 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelGreen();
-            this.circlePanelRed1 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelRed();
-            this.button1 = new System.Windows.Forms.Button();
-            this.circlePanel1 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelGreen();
-            this.lblDeviceA = new System.Windows.Forms.Label();
-            this.lblPingA = new System.Windows.Forms.Label();
-            this.lblPingTimeA = new System.Windows.Forms.Label();
-            this.lblIpA = new System.Windows.Forms.Label();
-            this.lblAddressA = new System.Windows.Forms.Label();
-            this.lblAddressB = new System.Windows.Forms.Label();
-            this.lblIpB = new System.Windows.Forms.Label();
-            this.lblPingTimeB = new System.Windows.Forms.Label();
-            this.lblPingB = new System.Windows.Forms.Label();
-            this.lblDeviceB = new System.Windows.Forms.Label();
-            this.lblAddressC = new System.Windows.Forms.Label();
-            this.lblIpC = new System.Windows.Forms.Label();
-            this.lblPingTimeC = new System.Windows.Forms.Label();
-            this.lblPingC = new System.Windows.Forms.Label();
-            this.lblDeviceC = new System.Windows.Forms.Label();
-            this.lblAddressD = new System.Windows.Forms.Label();
-            this.lblIpD = new System.Windows.Forms.Label();
-            this.lblPingTimeD = new System.Windows.Forms.Label();
-            this.lblPingD = new System.Windows.Forms.Label();
-            this.lblDeviceD = new System.Windows.Forms.Label();
-            this.lblAddressH = new System.Windows.Forms.Label();
-            this.lblIpH = new System.Windows.Forms.Label();
-            this.lblPingTimeH = new System.Windows.Forms.Label();
-            this.lblPingH = new System.Windows.Forms.Label();
-            this.lblDeviceH = new System.Windows.Forms.Label();
-            this.lblAddressG = new System.Windows.Forms.Label();
-            this.lblIpG = new System.Windows.Forms.Label();
-            this.lblPingTimeG = new System.Windows.Forms.Label();
-            this.lblPingG = new System.Windows.Forms.Label();
-            this.lblDeviceG = new System.Windows.Forms.Label();
-            this.lblAddressF = new System.Windows.Forms.Label();
-            this.lblIpF = new System.Windows.Forms.Label();
-            this.lblPingTimeF = new System.Windows.Forms.Label();
-            this.lblPingF = new System.Windows.Forms.Label();
-            this.lblDeviceF = new System.Windows.Forms.Label();
-            this.lblAddressE = new System.Windows.Forms.Label();
-            this.lblIpE = new System.Windows.Forms.Label();
-            this.lblPingTimeE = new System.Windows.Forms.Label();
-            this.lblPingE = new System.Windows.Forms.Label();
-            this.lblDeviceE = new System.Windows.Forms.Label();
-            this.circlePanelRed5 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelRed();
-            this.circlePanelRed6 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelRed();
-            this.circlePanelGreen4 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelGreen();
-            this.circlePanelGreen5 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelGreen();
-            this.circlePanelRed7 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelRed();
-            this.circlePanelGreen6 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelGreen();
-            this.circlePanelRed8 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelRed();
-            this.circlePanelGreen7 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelGreen();
             this.lblAddressL = new System.Windows.Forms.Label();
             this.lblIpL = new System.Windows.Forms.Label();
             this.lblPingTimeL = new System.Windows.Forms.Label();
@@ -126,6 +69,63 @@
             this.circlePanelGreen10 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelGreen();
             this.circlePanelRed12 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelRed();
             this.circlePanelGreen11 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelGreen();
+            this.lblAddressH = new System.Windows.Forms.Label();
+            this.lblIpH = new System.Windows.Forms.Label();
+            this.lblPingTimeH = new System.Windows.Forms.Label();
+            this.lblPingH = new System.Windows.Forms.Label();
+            this.lblDeviceH = new System.Windows.Forms.Label();
+            this.lblAddressG = new System.Windows.Forms.Label();
+            this.lblIpG = new System.Windows.Forms.Label();
+            this.lblPingTimeG = new System.Windows.Forms.Label();
+            this.lblPingG = new System.Windows.Forms.Label();
+            this.lblDeviceG = new System.Windows.Forms.Label();
+            this.lblAddressF = new System.Windows.Forms.Label();
+            this.lblIpF = new System.Windows.Forms.Label();
+            this.lblPingTimeF = new System.Windows.Forms.Label();
+            this.lblPingF = new System.Windows.Forms.Label();
+            this.lblDeviceF = new System.Windows.Forms.Label();
+            this.lblAddressE = new System.Windows.Forms.Label();
+            this.lblIpE = new System.Windows.Forms.Label();
+            this.lblPingTimeE = new System.Windows.Forms.Label();
+            this.lblPingE = new System.Windows.Forms.Label();
+            this.lblDeviceE = new System.Windows.Forms.Label();
+            this.circlePanelRed5 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelRed();
+            this.circlePanelRed6 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelRed();
+            this.circlePanelGreen4 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelGreen();
+            this.circlePanelGreen5 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelGreen();
+            this.circlePanelRed7 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelRed();
+            this.circlePanelGreen6 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelGreen();
+            this.circlePanelRed8 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelRed();
+            this.circlePanelGreen7 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelGreen();
+            this.lblAddressD = new System.Windows.Forms.Label();
+            this.lblIpD = new System.Windows.Forms.Label();
+            this.lblPingTimeD = new System.Windows.Forms.Label();
+            this.lblPingD = new System.Windows.Forms.Label();
+            this.lblDeviceD = new System.Windows.Forms.Label();
+            this.lblAddressC = new System.Windows.Forms.Label();
+            this.lblIpC = new System.Windows.Forms.Label();
+            this.lblPingTimeC = new System.Windows.Forms.Label();
+            this.lblPingC = new System.Windows.Forms.Label();
+            this.lblDeviceC = new System.Windows.Forms.Label();
+            this.lblAddressB = new System.Windows.Forms.Label();
+            this.lblIpB = new System.Windows.Forms.Label();
+            this.lblPingTimeB = new System.Windows.Forms.Label();
+            this.lblPingB = new System.Windows.Forms.Label();
+            this.lblDeviceB = new System.Windows.Forms.Label();
+            this.lblAddressA = new System.Windows.Forms.Label();
+            this.lblIpA = new System.Windows.Forms.Label();
+            this.lblPingTimeA = new System.Windows.Forms.Label();
+            this.lblPingA = new System.Windows.Forms.Label();
+            this.lblDeviceA = new System.Windows.Forms.Label();
+            this.circlePanelRed3 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelRed();
+            this.circlePanelRed2 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelRed();
+            this.circlePanelGreen2 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelGreen();
+            this.circlePanelGreen1 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelGreen();
+            this.circlePanelRed4 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelRed();
+            this.circlePanelGreen3 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelGreen();
+            this.circlePanelRed1 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelRed();
+            this.button1 = new System.Windows.Forms.Button();
+            this.circlePanel1 = new PDA_Cyber_Security_Simulator_V1.Controls.CirclePanelGreen();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.breadCrumbsPanel.SuspendLayout();
@@ -147,7 +147,7 @@
             this.tableLayoutPanel1.Controls.Add(this.pnlTestStatus, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 192F));
@@ -166,7 +166,7 @@
             this.panel2.Controls.Add(this.picProcessAndDataLogo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(6, 6);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(2142, 180);
             this.panel2.TabIndex = 2;
@@ -176,7 +176,7 @@
             this.breadCrumbsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
             this.breadCrumbsPanel.Controls.Add(this.rootCrumb);
             this.breadCrumbsPanel.Location = new System.Drawing.Point(542, 6);
-            this.breadCrumbsPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.breadCrumbsPanel.Margin = new System.Windows.Forms.Padding(6);
             this.breadCrumbsPanel.Name = "breadCrumbsPanel";
             this.breadCrumbsPanel.Size = new System.Drawing.Size(400, 167);
             this.breadCrumbsPanel.TabIndex = 5;
@@ -201,7 +201,7 @@
             this.picProcessAndDataLogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picProcessAndDataLogo.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.picProcessAndDataLogo.Location = new System.Drawing.Point(0, 0);
-            this.picProcessAndDataLogo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.picProcessAndDataLogo.Margin = new System.Windows.Forms.Padding(6);
             this.picProcessAndDataLogo.Name = "picProcessAndDataLogo";
             this.picProcessAndDataLogo.Size = new System.Drawing.Size(2142, 180);
             this.picProcessAndDataLogo.TabIndex = 1;
@@ -214,9 +214,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(4, 1563);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2146, 192);
+            this.panel1.Size = new System.Drawing.Size(2146, 32);
             this.panel1.TabIndex = 4;
             // 
             // label1
@@ -239,7 +239,7 @@
             this.flowLayoutPanel1.Controls.Add(this.testNetworkListBox1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 196);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(425, 1359);
             this.flowLayoutPanel1.TabIndex = 5;
@@ -376,557 +376,10 @@
             this.pnlTestStatus.Controls.Add(this.circlePanel1);
             this.pnlTestStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTestStatus.Location = new System.Drawing.Point(437, 196);
-            this.pnlTestStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlTestStatus.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTestStatus.Name = "pnlTestStatus";
             this.pnlTestStatus.Size = new System.Drawing.Size(1713, 1359);
             this.pnlTestStatus.TabIndex = 6;
-            // 
-            // circlePanelRed3
-            // 
-            this.circlePanelRed3.Location = new System.Drawing.Point(136, 633);
-            this.circlePanelRed3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.circlePanelRed3.Name = "circlePanelRed3";
-            this.circlePanelRed3.Size = new System.Drawing.Size(65, 65);
-            this.circlePanelRed3.TabIndex = 8;
-            // 
-            // circlePanelRed2
-            // 
-            this.circlePanelRed2.Location = new System.Drawing.Point(136, 265);
-            this.circlePanelRed2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.circlePanelRed2.Name = "circlePanelRed2";
-            this.circlePanelRed2.Size = new System.Drawing.Size(65, 65);
-            this.circlePanelRed2.TabIndex = 4;
-            // 
-            // circlePanelGreen2
-            // 
-            this.circlePanelGreen2.BackColor = System.Drawing.Color.Transparent;
-            this.circlePanelGreen2.Location = new System.Drawing.Point(136, 633);
-            this.circlePanelGreen2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.circlePanelGreen2.Name = "circlePanelGreen2";
-            this.circlePanelGreen2.Size = new System.Drawing.Size(65, 65);
-            this.circlePanelGreen2.TabIndex = 7;
-            // 
-            // circlePanelGreen1
-            // 
-            this.circlePanelGreen1.BackColor = System.Drawing.Color.Transparent;
-            this.circlePanelGreen1.Location = new System.Drawing.Point(136, 265);
-            this.circlePanelGreen1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.circlePanelGreen1.Name = "circlePanelGreen1";
-            this.circlePanelGreen1.Size = new System.Drawing.Size(65, 65);
-            this.circlePanelGreen1.TabIndex = 3;
-            // 
-            // circlePanelRed4
-            // 
-            this.circlePanelRed4.Location = new System.Drawing.Point(136, 449);
-            this.circlePanelRed4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.circlePanelRed4.Name = "circlePanelRed4";
-            this.circlePanelRed4.Size = new System.Drawing.Size(65, 65);
-            this.circlePanelRed4.TabIndex = 6;
-            // 
-            // circlePanelGreen3
-            // 
-            this.circlePanelGreen3.BackColor = System.Drawing.Color.Transparent;
-            this.circlePanelGreen3.Location = new System.Drawing.Point(136, 449);
-            this.circlePanelGreen3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.circlePanelGreen3.Name = "circlePanelGreen3";
-            this.circlePanelGreen3.Size = new System.Drawing.Size(65, 65);
-            this.circlePanelGreen3.TabIndex = 5;
-            // 
-            // circlePanelRed1
-            // 
-            this.circlePanelRed1.Location = new System.Drawing.Point(136, 81);
-            this.circlePanelRed1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.circlePanelRed1.Name = "circlePanelRed1";
-            this.circlePanelRed1.Size = new System.Drawing.Size(65, 65);
-            this.circlePanelRed1.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1510, 1265);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 71);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Test";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // circlePanel1
-            // 
-            this.circlePanel1.BackColor = System.Drawing.Color.Transparent;
-            this.circlePanel1.Location = new System.Drawing.Point(136, 81);
-            this.circlePanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.circlePanel1.Name = "circlePanel1";
-            this.circlePanel1.Size = new System.Drawing.Size(65, 65);
-            this.circlePanel1.TabIndex = 0;
-            // 
-            // lblDeviceA
-            // 
-            this.lblDeviceA.AutoSize = true;
-            this.lblDeviceA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceA.Location = new System.Drawing.Point(231, 66);
-            this.lblDeviceA.Name = "lblDeviceA";
-            this.lblDeviceA.Size = new System.Drawing.Size(151, 37);
-            this.lblDeviceA.TabIndex = 25;
-            this.lblDeviceA.Text = "Device A";
-            // 
-            // lblPingA
-            // 
-            this.lblPingA.AutoSize = true;
-            this.lblPingA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPingA.Location = new System.Drawing.Point(233, 103);
-            this.lblPingA.Name = "lblPingA";
-            this.lblPingA.Size = new System.Drawing.Size(153, 31);
-            this.lblPingA.TabIndex = 26;
-            this.lblPingA.Text = "Ping Time:";
-            // 
-            // lblPingTimeA
-            // 
-            this.lblPingTimeA.AutoSize = true;
-            this.lblPingTimeA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPingTimeA.Location = new System.Drawing.Point(394, 103);
-            this.lblPingTimeA.Name = "lblPingTimeA";
-            this.lblPingTimeA.Size = new System.Drawing.Size(66, 31);
-            this.lblPingTimeA.TabIndex = 27;
-            this.lblPingTimeA.Text = "xxxx";
-            // 
-            // lblIpA
-            // 
-            this.lblIpA.AutoSize = true;
-            this.lblIpA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpA.Location = new System.Drawing.Point(233, 137);
-            this.lblIpA.Name = "lblIpA";
-            this.lblIpA.Size = new System.Drawing.Size(51, 31);
-            this.lblIpA.TabIndex = 28;
-            this.lblIpA.Text = "IP:";
-            // 
-            // lblAddressA
-            // 
-            this.lblAddressA.AutoSize = true;
-            this.lblAddressA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressA.Location = new System.Drawing.Point(278, 137);
-            this.lblAddressA.Name = "lblAddressA";
-            this.lblAddressA.Size = new System.Drawing.Size(194, 31);
-            this.lblAddressA.TabIndex = 29;
-            this.lblAddressA.Text = "xxx.xxx.xxx.xxx";
-            // 
-            // lblAddressB
-            // 
-            this.lblAddressB.AutoSize = true;
-            this.lblAddressB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressB.Location = new System.Drawing.Point(278, 321);
-            this.lblAddressB.Name = "lblAddressB";
-            this.lblAddressB.Size = new System.Drawing.Size(194, 31);
-            this.lblAddressB.TabIndex = 34;
-            this.lblAddressB.Text = "xxx.xxx.xxx.xxx";
-            // 
-            // lblIpB
-            // 
-            this.lblIpB.AutoSize = true;
-            this.lblIpB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpB.Location = new System.Drawing.Point(233, 321);
-            this.lblIpB.Name = "lblIpB";
-            this.lblIpB.Size = new System.Drawing.Size(51, 31);
-            this.lblIpB.TabIndex = 33;
-            this.lblIpB.Text = "IP:";
-            // 
-            // lblPingTimeB
-            // 
-            this.lblPingTimeB.AutoSize = true;
-            this.lblPingTimeB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPingTimeB.Location = new System.Drawing.Point(394, 287);
-            this.lblPingTimeB.Name = "lblPingTimeB";
-            this.lblPingTimeB.Size = new System.Drawing.Size(66, 31);
-            this.lblPingTimeB.TabIndex = 32;
-            this.lblPingTimeB.Text = "xxxx";
-            // 
-            // lblPingB
-            // 
-            this.lblPingB.AutoSize = true;
-            this.lblPingB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPingB.Location = new System.Drawing.Point(233, 287);
-            this.lblPingB.Name = "lblPingB";
-            this.lblPingB.Size = new System.Drawing.Size(153, 31);
-            this.lblPingB.TabIndex = 31;
-            this.lblPingB.Text = "Ping Time:";
-            // 
-            // lblDeviceB
-            // 
-            this.lblDeviceB.AutoSize = true;
-            this.lblDeviceB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceB.Location = new System.Drawing.Point(231, 250);
-            this.lblDeviceB.Name = "lblDeviceB";
-            this.lblDeviceB.Size = new System.Drawing.Size(150, 37);
-            this.lblDeviceB.TabIndex = 30;
-            this.lblDeviceB.Text = "Device B";
-            // 
-            // lblAddressC
-            // 
-            this.lblAddressC.AutoSize = true;
-            this.lblAddressC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressC.Location = new System.Drawing.Point(278, 505);
-            this.lblAddressC.Name = "lblAddressC";
-            this.lblAddressC.Size = new System.Drawing.Size(194, 31);
-            this.lblAddressC.TabIndex = 39;
-            this.lblAddressC.Text = "xxx.xxx.xxx.xxx";
-            // 
-            // lblIpC
-            // 
-            this.lblIpC.AutoSize = true;
-            this.lblIpC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpC.Location = new System.Drawing.Point(233, 505);
-            this.lblIpC.Name = "lblIpC";
-            this.lblIpC.Size = new System.Drawing.Size(51, 31);
-            this.lblIpC.TabIndex = 38;
-            this.lblIpC.Text = "IP:";
-            // 
-            // lblPingTimeC
-            // 
-            this.lblPingTimeC.AutoSize = true;
-            this.lblPingTimeC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPingTimeC.Location = new System.Drawing.Point(394, 471);
-            this.lblPingTimeC.Name = "lblPingTimeC";
-            this.lblPingTimeC.Size = new System.Drawing.Size(66, 31);
-            this.lblPingTimeC.TabIndex = 37;
-            this.lblPingTimeC.Text = "xxxx";
-            // 
-            // lblPingC
-            // 
-            this.lblPingC.AutoSize = true;
-            this.lblPingC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPingC.Location = new System.Drawing.Point(233, 471);
-            this.lblPingC.Name = "lblPingC";
-            this.lblPingC.Size = new System.Drawing.Size(153, 31);
-            this.lblPingC.TabIndex = 36;
-            this.lblPingC.Text = "Ping Time:";
-            // 
-            // lblDeviceC
-            // 
-            this.lblDeviceC.AutoSize = true;
-            this.lblDeviceC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceC.Location = new System.Drawing.Point(231, 434);
-            this.lblDeviceC.Name = "lblDeviceC";
-            this.lblDeviceC.Size = new System.Drawing.Size(152, 37);
-            this.lblDeviceC.TabIndex = 35;
-            this.lblDeviceC.Text = "Device C";
-            // 
-            // lblAddressD
-            // 
-            this.lblAddressD.AutoSize = true;
-            this.lblAddressD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressD.Location = new System.Drawing.Point(278, 688);
-            this.lblAddressD.Name = "lblAddressD";
-            this.lblAddressD.Size = new System.Drawing.Size(194, 31);
-            this.lblAddressD.TabIndex = 44;
-            this.lblAddressD.Text = "xxx.xxx.xxx.xxx";
-            // 
-            // lblIpD
-            // 
-            this.lblIpD.AutoSize = true;
-            this.lblIpD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpD.Location = new System.Drawing.Point(233, 688);
-            this.lblIpD.Name = "lblIpD";
-            this.lblIpD.Size = new System.Drawing.Size(51, 31);
-            this.lblIpD.TabIndex = 43;
-            this.lblIpD.Text = "IP:";
-            // 
-            // lblPingTimeD
-            // 
-            this.lblPingTimeD.AutoSize = true;
-            this.lblPingTimeD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPingTimeD.Location = new System.Drawing.Point(394, 655);
-            this.lblPingTimeD.Name = "lblPingTimeD";
-            this.lblPingTimeD.Size = new System.Drawing.Size(66, 31);
-            this.lblPingTimeD.TabIndex = 42;
-            this.lblPingTimeD.Text = "xxxx";
-            // 
-            // lblPingD
-            // 
-            this.lblPingD.AutoSize = true;
-            this.lblPingD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPingD.Location = new System.Drawing.Point(233, 655);
-            this.lblPingD.Name = "lblPingD";
-            this.lblPingD.Size = new System.Drawing.Size(153, 31);
-            this.lblPingD.TabIndex = 41;
-            this.lblPingD.Text = "Ping Time:";
-            // 
-            // lblDeviceD
-            // 
-            this.lblDeviceD.AutoSize = true;
-            this.lblDeviceD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceD.Location = new System.Drawing.Point(231, 618);
-            this.lblDeviceD.Name = "lblDeviceD";
-            this.lblDeviceD.Size = new System.Drawing.Size(152, 37);
-            this.lblDeviceD.TabIndex = 40;
-            this.lblDeviceD.Text = "Device D";
-            // 
-            // lblAddressH
-            // 
-            this.lblAddressH.AutoSize = true;
-            this.lblAddressH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressH.Location = new System.Drawing.Point(757, 688);
-            this.lblAddressH.Name = "lblAddressH";
-            this.lblAddressH.Size = new System.Drawing.Size(194, 31);
-            this.lblAddressH.TabIndex = 72;
-            this.lblAddressH.Text = "xxx.xxx.xxx.xxx";
-            // 
-            // lblIpH
-            // 
-            this.lblIpH.AutoSize = true;
-            this.lblIpH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpH.Location = new System.Drawing.Point(712, 688);
-            this.lblIpH.Name = "lblIpH";
-            this.lblIpH.Size = new System.Drawing.Size(51, 31);
-            this.lblIpH.TabIndex = 71;
-            this.lblIpH.Text = "IP:";
-            // 
-            // lblPingTimeH
-            // 
-            this.lblPingTimeH.AutoSize = true;
-            this.lblPingTimeH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPingTimeH.Location = new System.Drawing.Point(873, 655);
-            this.lblPingTimeH.Name = "lblPingTimeH";
-            this.lblPingTimeH.Size = new System.Drawing.Size(66, 31);
-            this.lblPingTimeH.TabIndex = 70;
-            this.lblPingTimeH.Text = "xxxx";
-            // 
-            // lblPingH
-            // 
-            this.lblPingH.AutoSize = true;
-            this.lblPingH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPingH.Location = new System.Drawing.Point(712, 655);
-            this.lblPingH.Name = "lblPingH";
-            this.lblPingH.Size = new System.Drawing.Size(153, 31);
-            this.lblPingH.TabIndex = 69;
-            this.lblPingH.Text = "Ping Time:";
-            // 
-            // lblDeviceH
-            // 
-            this.lblDeviceH.AutoSize = true;
-            this.lblDeviceH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceH.Location = new System.Drawing.Point(710, 618);
-            this.lblDeviceH.Name = "lblDeviceH";
-            this.lblDeviceH.Size = new System.Drawing.Size(152, 37);
-            this.lblDeviceH.TabIndex = 68;
-            this.lblDeviceH.Text = "Device H";
-            // 
-            // lblAddressG
-            // 
-            this.lblAddressG.AutoSize = true;
-            this.lblAddressG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressG.Location = new System.Drawing.Point(757, 505);
-            this.lblAddressG.Name = "lblAddressG";
-            this.lblAddressG.Size = new System.Drawing.Size(194, 31);
-            this.lblAddressG.TabIndex = 67;
-            this.lblAddressG.Text = "xxx.xxx.xxx.xxx";
-            // 
-            // lblIpG
-            // 
-            this.lblIpG.AutoSize = true;
-            this.lblIpG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpG.Location = new System.Drawing.Point(712, 505);
-            this.lblIpG.Name = "lblIpG";
-            this.lblIpG.Size = new System.Drawing.Size(51, 31);
-            this.lblIpG.TabIndex = 66;
-            this.lblIpG.Text = "IP:";
-            // 
-            // lblPingTimeG
-            // 
-            this.lblPingTimeG.AutoSize = true;
-            this.lblPingTimeG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPingTimeG.Location = new System.Drawing.Point(873, 471);
-            this.lblPingTimeG.Name = "lblPingTimeG";
-            this.lblPingTimeG.Size = new System.Drawing.Size(66, 31);
-            this.lblPingTimeG.TabIndex = 65;
-            this.lblPingTimeG.Text = "xxxx";
-            // 
-            // lblPingG
-            // 
-            this.lblPingG.AutoSize = true;
-            this.lblPingG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPingG.Location = new System.Drawing.Point(712, 471);
-            this.lblPingG.Name = "lblPingG";
-            this.lblPingG.Size = new System.Drawing.Size(153, 31);
-            this.lblPingG.TabIndex = 64;
-            this.lblPingG.Text = "Ping Time:";
-            // 
-            // lblDeviceG
-            // 
-            this.lblDeviceG.AutoSize = true;
-            this.lblDeviceG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceG.Location = new System.Drawing.Point(710, 434);
-            this.lblDeviceG.Name = "lblDeviceG";
-            this.lblDeviceG.Size = new System.Drawing.Size(154, 37);
-            this.lblDeviceG.TabIndex = 63;
-            this.lblDeviceG.Text = "Device G";
-            // 
-            // lblAddressF
-            // 
-            this.lblAddressF.AutoSize = true;
-            this.lblAddressF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressF.Location = new System.Drawing.Point(757, 321);
-            this.lblAddressF.Name = "lblAddressF";
-            this.lblAddressF.Size = new System.Drawing.Size(194, 31);
-            this.lblAddressF.TabIndex = 62;
-            this.lblAddressF.Text = "xxx.xxx.xxx.xxx";
-            // 
-            // lblIpF
-            // 
-            this.lblIpF.AutoSize = true;
-            this.lblIpF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpF.Location = new System.Drawing.Point(712, 321);
-            this.lblIpF.Name = "lblIpF";
-            this.lblIpF.Size = new System.Drawing.Size(51, 31);
-            this.lblIpF.TabIndex = 61;
-            this.lblIpF.Text = "IP:";
-            // 
-            // lblPingTimeF
-            // 
-            this.lblPingTimeF.AutoSize = true;
-            this.lblPingTimeF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPingTimeF.Location = new System.Drawing.Point(873, 287);
-            this.lblPingTimeF.Name = "lblPingTimeF";
-            this.lblPingTimeF.Size = new System.Drawing.Size(66, 31);
-            this.lblPingTimeF.TabIndex = 60;
-            this.lblPingTimeF.Text = "xxxx";
-            // 
-            // lblPingF
-            // 
-            this.lblPingF.AutoSize = true;
-            this.lblPingF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPingF.Location = new System.Drawing.Point(712, 287);
-            this.lblPingF.Name = "lblPingF";
-            this.lblPingF.Size = new System.Drawing.Size(153, 31);
-            this.lblPingF.TabIndex = 59;
-            this.lblPingF.Text = "Ping Time:";
-            // 
-            // lblDeviceF
-            // 
-            this.lblDeviceF.AutoSize = true;
-            this.lblDeviceF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceF.Location = new System.Drawing.Point(710, 250);
-            this.lblDeviceF.Name = "lblDeviceF";
-            this.lblDeviceF.Size = new System.Drawing.Size(149, 37);
-            this.lblDeviceF.TabIndex = 58;
-            this.lblDeviceF.Text = "Device F";
-            // 
-            // lblAddressE
-            // 
-            this.lblAddressE.AutoSize = true;
-            this.lblAddressE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressE.Location = new System.Drawing.Point(757, 137);
-            this.lblAddressE.Name = "lblAddressE";
-            this.lblAddressE.Size = new System.Drawing.Size(194, 31);
-            this.lblAddressE.TabIndex = 57;
-            this.lblAddressE.Text = "xxx.xxx.xxx.xxx";
-            // 
-            // lblIpE
-            // 
-            this.lblIpE.AutoSize = true;
-            this.lblIpE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpE.Location = new System.Drawing.Point(712, 137);
-            this.lblIpE.Name = "lblIpE";
-            this.lblIpE.Size = new System.Drawing.Size(51, 31);
-            this.lblIpE.TabIndex = 56;
-            this.lblIpE.Text = "IP:";
-            // 
-            // lblPingTimeE
-            // 
-            this.lblPingTimeE.AutoSize = true;
-            this.lblPingTimeE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPingTimeE.Location = new System.Drawing.Point(873, 103);
-            this.lblPingTimeE.Name = "lblPingTimeE";
-            this.lblPingTimeE.Size = new System.Drawing.Size(66, 31);
-            this.lblPingTimeE.TabIndex = 55;
-            this.lblPingTimeE.Text = "xxxx";
-            // 
-            // lblPingE
-            // 
-            this.lblPingE.AutoSize = true;
-            this.lblPingE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPingE.Location = new System.Drawing.Point(712, 103);
-            this.lblPingE.Name = "lblPingE";
-            this.lblPingE.Size = new System.Drawing.Size(153, 31);
-            this.lblPingE.TabIndex = 54;
-            this.lblPingE.Text = "Ping Time:";
-            // 
-            // lblDeviceE
-            // 
-            this.lblDeviceE.AutoSize = true;
-            this.lblDeviceE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceE.Location = new System.Drawing.Point(710, 66);
-            this.lblDeviceE.Name = "lblDeviceE";
-            this.lblDeviceE.Size = new System.Drawing.Size(150, 37);
-            this.lblDeviceE.TabIndex = 53;
-            this.lblDeviceE.Text = "Device E";
-            // 
-            // circlePanelRed5
-            // 
-            this.circlePanelRed5.Location = new System.Drawing.Point(615, 633);
-            this.circlePanelRed5.Margin = new System.Windows.Forms.Padding(4);
-            this.circlePanelRed5.Name = "circlePanelRed5";
-            this.circlePanelRed5.Size = new System.Drawing.Size(65, 65);
-            this.circlePanelRed5.TabIndex = 52;
-            // 
-            // circlePanelRed6
-            // 
-            this.circlePanelRed6.Location = new System.Drawing.Point(615, 265);
-            this.circlePanelRed6.Margin = new System.Windows.Forms.Padding(4);
-            this.circlePanelRed6.Name = "circlePanelRed6";
-            this.circlePanelRed6.Size = new System.Drawing.Size(65, 65);
-            this.circlePanelRed6.TabIndex = 48;
-            // 
-            // circlePanelGreen4
-            // 
-            this.circlePanelGreen4.BackColor = System.Drawing.Color.Transparent;
-            this.circlePanelGreen4.Location = new System.Drawing.Point(615, 633);
-            this.circlePanelGreen4.Margin = new System.Windows.Forms.Padding(4);
-            this.circlePanelGreen4.Name = "circlePanelGreen4";
-            this.circlePanelGreen4.Size = new System.Drawing.Size(65, 65);
-            this.circlePanelGreen4.TabIndex = 51;
-            // 
-            // circlePanelGreen5
-            // 
-            this.circlePanelGreen5.BackColor = System.Drawing.Color.Transparent;
-            this.circlePanelGreen5.Location = new System.Drawing.Point(615, 265);
-            this.circlePanelGreen5.Margin = new System.Windows.Forms.Padding(4);
-            this.circlePanelGreen5.Name = "circlePanelGreen5";
-            this.circlePanelGreen5.Size = new System.Drawing.Size(65, 65);
-            this.circlePanelGreen5.TabIndex = 47;
-            // 
-            // circlePanelRed7
-            // 
-            this.circlePanelRed7.Location = new System.Drawing.Point(615, 449);
-            this.circlePanelRed7.Margin = new System.Windows.Forms.Padding(4);
-            this.circlePanelRed7.Name = "circlePanelRed7";
-            this.circlePanelRed7.Size = new System.Drawing.Size(65, 65);
-            this.circlePanelRed7.TabIndex = 50;
-            // 
-            // circlePanelGreen6
-            // 
-            this.circlePanelGreen6.BackColor = System.Drawing.Color.Transparent;
-            this.circlePanelGreen6.Location = new System.Drawing.Point(615, 449);
-            this.circlePanelGreen6.Margin = new System.Windows.Forms.Padding(4);
-            this.circlePanelGreen6.Name = "circlePanelGreen6";
-            this.circlePanelGreen6.Size = new System.Drawing.Size(65, 65);
-            this.circlePanelGreen6.TabIndex = 49;
-            // 
-            // circlePanelRed8
-            // 
-            this.circlePanelRed8.Location = new System.Drawing.Point(615, 81);
-            this.circlePanelRed8.Margin = new System.Windows.Forms.Padding(4);
-            this.circlePanelRed8.Name = "circlePanelRed8";
-            this.circlePanelRed8.Size = new System.Drawing.Size(65, 65);
-            this.circlePanelRed8.TabIndex = 46;
-            // 
-            // circlePanelGreen7
-            // 
-            this.circlePanelGreen7.BackColor = System.Drawing.Color.Transparent;
-            this.circlePanelGreen7.Location = new System.Drawing.Point(615, 81);
-            this.circlePanelGreen7.Margin = new System.Windows.Forms.Padding(4);
-            this.circlePanelGreen7.Name = "circlePanelGreen7";
-            this.circlePanelGreen7.Size = new System.Drawing.Size(65, 65);
-            this.circlePanelGreen7.TabIndex = 45;
             // 
             // lblAddressL
             // 
@@ -1196,17 +649,564 @@
             this.circlePanelGreen11.Size = new System.Drawing.Size(65, 65);
             this.circlePanelGreen11.TabIndex = 73;
             // 
+            // lblAddressH
+            // 
+            this.lblAddressH.AutoSize = true;
+            this.lblAddressH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddressH.Location = new System.Drawing.Point(757, 688);
+            this.lblAddressH.Name = "lblAddressH";
+            this.lblAddressH.Size = new System.Drawing.Size(194, 31);
+            this.lblAddressH.TabIndex = 72;
+            this.lblAddressH.Text = "xxx.xxx.xxx.xxx";
+            // 
+            // lblIpH
+            // 
+            this.lblIpH.AutoSize = true;
+            this.lblIpH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIpH.Location = new System.Drawing.Point(712, 688);
+            this.lblIpH.Name = "lblIpH";
+            this.lblIpH.Size = new System.Drawing.Size(51, 31);
+            this.lblIpH.TabIndex = 71;
+            this.lblIpH.Text = "IP:";
+            // 
+            // lblPingTimeH
+            // 
+            this.lblPingTimeH.AutoSize = true;
+            this.lblPingTimeH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPingTimeH.Location = new System.Drawing.Point(873, 655);
+            this.lblPingTimeH.Name = "lblPingTimeH";
+            this.lblPingTimeH.Size = new System.Drawing.Size(66, 31);
+            this.lblPingTimeH.TabIndex = 70;
+            this.lblPingTimeH.Text = "xxxx";
+            // 
+            // lblPingH
+            // 
+            this.lblPingH.AutoSize = true;
+            this.lblPingH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPingH.Location = new System.Drawing.Point(712, 655);
+            this.lblPingH.Name = "lblPingH";
+            this.lblPingH.Size = new System.Drawing.Size(153, 31);
+            this.lblPingH.TabIndex = 69;
+            this.lblPingH.Text = "Ping Time:";
+            // 
+            // lblDeviceH
+            // 
+            this.lblDeviceH.AutoSize = true;
+            this.lblDeviceH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeviceH.Location = new System.Drawing.Point(710, 618);
+            this.lblDeviceH.Name = "lblDeviceH";
+            this.lblDeviceH.Size = new System.Drawing.Size(152, 37);
+            this.lblDeviceH.TabIndex = 68;
+            this.lblDeviceH.Text = "Device H";
+            // 
+            // lblAddressG
+            // 
+            this.lblAddressG.AutoSize = true;
+            this.lblAddressG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddressG.Location = new System.Drawing.Point(757, 505);
+            this.lblAddressG.Name = "lblAddressG";
+            this.lblAddressG.Size = new System.Drawing.Size(194, 31);
+            this.lblAddressG.TabIndex = 67;
+            this.lblAddressG.Text = "xxx.xxx.xxx.xxx";
+            // 
+            // lblIpG
+            // 
+            this.lblIpG.AutoSize = true;
+            this.lblIpG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIpG.Location = new System.Drawing.Point(712, 505);
+            this.lblIpG.Name = "lblIpG";
+            this.lblIpG.Size = new System.Drawing.Size(51, 31);
+            this.lblIpG.TabIndex = 66;
+            this.lblIpG.Text = "IP:";
+            // 
+            // lblPingTimeG
+            // 
+            this.lblPingTimeG.AutoSize = true;
+            this.lblPingTimeG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPingTimeG.Location = new System.Drawing.Point(873, 471);
+            this.lblPingTimeG.Name = "lblPingTimeG";
+            this.lblPingTimeG.Size = new System.Drawing.Size(66, 31);
+            this.lblPingTimeG.TabIndex = 65;
+            this.lblPingTimeG.Text = "xxxx";
+            // 
+            // lblPingG
+            // 
+            this.lblPingG.AutoSize = true;
+            this.lblPingG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPingG.Location = new System.Drawing.Point(712, 471);
+            this.lblPingG.Name = "lblPingG";
+            this.lblPingG.Size = new System.Drawing.Size(153, 31);
+            this.lblPingG.TabIndex = 64;
+            this.lblPingG.Text = "Ping Time:";
+            // 
+            // lblDeviceG
+            // 
+            this.lblDeviceG.AutoSize = true;
+            this.lblDeviceG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeviceG.Location = new System.Drawing.Point(710, 434);
+            this.lblDeviceG.Name = "lblDeviceG";
+            this.lblDeviceG.Size = new System.Drawing.Size(154, 37);
+            this.lblDeviceG.TabIndex = 63;
+            this.lblDeviceG.Text = "Device G";
+            // 
+            // lblAddressF
+            // 
+            this.lblAddressF.AutoSize = true;
+            this.lblAddressF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddressF.Location = new System.Drawing.Point(757, 321);
+            this.lblAddressF.Name = "lblAddressF";
+            this.lblAddressF.Size = new System.Drawing.Size(194, 31);
+            this.lblAddressF.TabIndex = 62;
+            this.lblAddressF.Text = "xxx.xxx.xxx.xxx";
+            // 
+            // lblIpF
+            // 
+            this.lblIpF.AutoSize = true;
+            this.lblIpF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIpF.Location = new System.Drawing.Point(712, 321);
+            this.lblIpF.Name = "lblIpF";
+            this.lblIpF.Size = new System.Drawing.Size(51, 31);
+            this.lblIpF.TabIndex = 61;
+            this.lblIpF.Text = "IP:";
+            // 
+            // lblPingTimeF
+            // 
+            this.lblPingTimeF.AutoSize = true;
+            this.lblPingTimeF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPingTimeF.Location = new System.Drawing.Point(873, 287);
+            this.lblPingTimeF.Name = "lblPingTimeF";
+            this.lblPingTimeF.Size = new System.Drawing.Size(66, 31);
+            this.lblPingTimeF.TabIndex = 60;
+            this.lblPingTimeF.Text = "xxxx";
+            // 
+            // lblPingF
+            // 
+            this.lblPingF.AutoSize = true;
+            this.lblPingF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPingF.Location = new System.Drawing.Point(712, 287);
+            this.lblPingF.Name = "lblPingF";
+            this.lblPingF.Size = new System.Drawing.Size(153, 31);
+            this.lblPingF.TabIndex = 59;
+            this.lblPingF.Text = "Ping Time:";
+            // 
+            // lblDeviceF
+            // 
+            this.lblDeviceF.AutoSize = true;
+            this.lblDeviceF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeviceF.Location = new System.Drawing.Point(710, 250);
+            this.lblDeviceF.Name = "lblDeviceF";
+            this.lblDeviceF.Size = new System.Drawing.Size(149, 37);
+            this.lblDeviceF.TabIndex = 58;
+            this.lblDeviceF.Text = "Device F";
+            // 
+            // lblAddressE
+            // 
+            this.lblAddressE.AutoSize = true;
+            this.lblAddressE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddressE.Location = new System.Drawing.Point(757, 137);
+            this.lblAddressE.Name = "lblAddressE";
+            this.lblAddressE.Size = new System.Drawing.Size(194, 31);
+            this.lblAddressE.TabIndex = 57;
+            this.lblAddressE.Text = "xxx.xxx.xxx.xxx";
+            // 
+            // lblIpE
+            // 
+            this.lblIpE.AutoSize = true;
+            this.lblIpE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIpE.Location = new System.Drawing.Point(712, 137);
+            this.lblIpE.Name = "lblIpE";
+            this.lblIpE.Size = new System.Drawing.Size(51, 31);
+            this.lblIpE.TabIndex = 56;
+            this.lblIpE.Text = "IP:";
+            // 
+            // lblPingTimeE
+            // 
+            this.lblPingTimeE.AutoSize = true;
+            this.lblPingTimeE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPingTimeE.Location = new System.Drawing.Point(873, 103);
+            this.lblPingTimeE.Name = "lblPingTimeE";
+            this.lblPingTimeE.Size = new System.Drawing.Size(66, 31);
+            this.lblPingTimeE.TabIndex = 55;
+            this.lblPingTimeE.Text = "xxxx";
+            // 
+            // lblPingE
+            // 
+            this.lblPingE.AutoSize = true;
+            this.lblPingE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPingE.Location = new System.Drawing.Point(712, 103);
+            this.lblPingE.Name = "lblPingE";
+            this.lblPingE.Size = new System.Drawing.Size(153, 31);
+            this.lblPingE.TabIndex = 54;
+            this.lblPingE.Text = "Ping Time:";
+            // 
+            // lblDeviceE
+            // 
+            this.lblDeviceE.AutoSize = true;
+            this.lblDeviceE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeviceE.Location = new System.Drawing.Point(710, 66);
+            this.lblDeviceE.Name = "lblDeviceE";
+            this.lblDeviceE.Size = new System.Drawing.Size(150, 37);
+            this.lblDeviceE.TabIndex = 53;
+            this.lblDeviceE.Text = "Device E";
+            // 
+            // circlePanelRed5
+            // 
+            this.circlePanelRed5.Location = new System.Drawing.Point(615, 633);
+            this.circlePanelRed5.Margin = new System.Windows.Forms.Padding(4);
+            this.circlePanelRed5.Name = "circlePanelRed5";
+            this.circlePanelRed5.Size = new System.Drawing.Size(65, 65);
+            this.circlePanelRed5.TabIndex = 52;
+            // 
+            // circlePanelRed6
+            // 
+            this.circlePanelRed6.Location = new System.Drawing.Point(615, 265);
+            this.circlePanelRed6.Margin = new System.Windows.Forms.Padding(4);
+            this.circlePanelRed6.Name = "circlePanelRed6";
+            this.circlePanelRed6.Size = new System.Drawing.Size(65, 65);
+            this.circlePanelRed6.TabIndex = 48;
+            // 
+            // circlePanelGreen4
+            // 
+            this.circlePanelGreen4.BackColor = System.Drawing.Color.Transparent;
+            this.circlePanelGreen4.Location = new System.Drawing.Point(615, 633);
+            this.circlePanelGreen4.Margin = new System.Windows.Forms.Padding(4);
+            this.circlePanelGreen4.Name = "circlePanelGreen4";
+            this.circlePanelGreen4.Size = new System.Drawing.Size(65, 65);
+            this.circlePanelGreen4.TabIndex = 51;
+            // 
+            // circlePanelGreen5
+            // 
+            this.circlePanelGreen5.BackColor = System.Drawing.Color.Transparent;
+            this.circlePanelGreen5.Location = new System.Drawing.Point(615, 265);
+            this.circlePanelGreen5.Margin = new System.Windows.Forms.Padding(4);
+            this.circlePanelGreen5.Name = "circlePanelGreen5";
+            this.circlePanelGreen5.Size = new System.Drawing.Size(65, 65);
+            this.circlePanelGreen5.TabIndex = 47;
+            // 
+            // circlePanelRed7
+            // 
+            this.circlePanelRed7.Location = new System.Drawing.Point(615, 449);
+            this.circlePanelRed7.Margin = new System.Windows.Forms.Padding(4);
+            this.circlePanelRed7.Name = "circlePanelRed7";
+            this.circlePanelRed7.Size = new System.Drawing.Size(65, 65);
+            this.circlePanelRed7.TabIndex = 50;
+            // 
+            // circlePanelGreen6
+            // 
+            this.circlePanelGreen6.BackColor = System.Drawing.Color.Transparent;
+            this.circlePanelGreen6.Location = new System.Drawing.Point(615, 449);
+            this.circlePanelGreen6.Margin = new System.Windows.Forms.Padding(4);
+            this.circlePanelGreen6.Name = "circlePanelGreen6";
+            this.circlePanelGreen6.Size = new System.Drawing.Size(65, 65);
+            this.circlePanelGreen6.TabIndex = 49;
+            // 
+            // circlePanelRed8
+            // 
+            this.circlePanelRed8.Location = new System.Drawing.Point(615, 81);
+            this.circlePanelRed8.Margin = new System.Windows.Forms.Padding(4);
+            this.circlePanelRed8.Name = "circlePanelRed8";
+            this.circlePanelRed8.Size = new System.Drawing.Size(65, 65);
+            this.circlePanelRed8.TabIndex = 46;
+            // 
+            // circlePanelGreen7
+            // 
+            this.circlePanelGreen7.BackColor = System.Drawing.Color.Transparent;
+            this.circlePanelGreen7.Location = new System.Drawing.Point(615, 81);
+            this.circlePanelGreen7.Margin = new System.Windows.Forms.Padding(4);
+            this.circlePanelGreen7.Name = "circlePanelGreen7";
+            this.circlePanelGreen7.Size = new System.Drawing.Size(65, 65);
+            this.circlePanelGreen7.TabIndex = 45;
+            // 
+            // lblAddressD
+            // 
+            this.lblAddressD.AutoSize = true;
+            this.lblAddressD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddressD.Location = new System.Drawing.Point(278, 688);
+            this.lblAddressD.Name = "lblAddressD";
+            this.lblAddressD.Size = new System.Drawing.Size(194, 31);
+            this.lblAddressD.TabIndex = 44;
+            this.lblAddressD.Text = "xxx.xxx.xxx.xxx";
+            // 
+            // lblIpD
+            // 
+            this.lblIpD.AutoSize = true;
+            this.lblIpD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIpD.Location = new System.Drawing.Point(233, 688);
+            this.lblIpD.Name = "lblIpD";
+            this.lblIpD.Size = new System.Drawing.Size(51, 31);
+            this.lblIpD.TabIndex = 43;
+            this.lblIpD.Text = "IP:";
+            // 
+            // lblPingTimeD
+            // 
+            this.lblPingTimeD.AutoSize = true;
+            this.lblPingTimeD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPingTimeD.Location = new System.Drawing.Point(394, 655);
+            this.lblPingTimeD.Name = "lblPingTimeD";
+            this.lblPingTimeD.Size = new System.Drawing.Size(66, 31);
+            this.lblPingTimeD.TabIndex = 42;
+            this.lblPingTimeD.Text = "xxxx";
+            // 
+            // lblPingD
+            // 
+            this.lblPingD.AutoSize = true;
+            this.lblPingD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPingD.Location = new System.Drawing.Point(233, 655);
+            this.lblPingD.Name = "lblPingD";
+            this.lblPingD.Size = new System.Drawing.Size(153, 31);
+            this.lblPingD.TabIndex = 41;
+            this.lblPingD.Text = "Ping Time:";
+            // 
+            // lblDeviceD
+            // 
+            this.lblDeviceD.AutoSize = true;
+            this.lblDeviceD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeviceD.Location = new System.Drawing.Point(231, 618);
+            this.lblDeviceD.Name = "lblDeviceD";
+            this.lblDeviceD.Size = new System.Drawing.Size(152, 37);
+            this.lblDeviceD.TabIndex = 40;
+            this.lblDeviceD.Text = "Device D";
+            // 
+            // lblAddressC
+            // 
+            this.lblAddressC.AutoSize = true;
+            this.lblAddressC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddressC.Location = new System.Drawing.Point(278, 505);
+            this.lblAddressC.Name = "lblAddressC";
+            this.lblAddressC.Size = new System.Drawing.Size(194, 31);
+            this.lblAddressC.TabIndex = 39;
+            this.lblAddressC.Text = "xxx.xxx.xxx.xxx";
+            // 
+            // lblIpC
+            // 
+            this.lblIpC.AutoSize = true;
+            this.lblIpC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIpC.Location = new System.Drawing.Point(233, 505);
+            this.lblIpC.Name = "lblIpC";
+            this.lblIpC.Size = new System.Drawing.Size(51, 31);
+            this.lblIpC.TabIndex = 38;
+            this.lblIpC.Text = "IP:";
+            // 
+            // lblPingTimeC
+            // 
+            this.lblPingTimeC.AutoSize = true;
+            this.lblPingTimeC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPingTimeC.Location = new System.Drawing.Point(394, 471);
+            this.lblPingTimeC.Name = "lblPingTimeC";
+            this.lblPingTimeC.Size = new System.Drawing.Size(66, 31);
+            this.lblPingTimeC.TabIndex = 37;
+            this.lblPingTimeC.Text = "xxxx";
+            // 
+            // lblPingC
+            // 
+            this.lblPingC.AutoSize = true;
+            this.lblPingC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPingC.Location = new System.Drawing.Point(233, 471);
+            this.lblPingC.Name = "lblPingC";
+            this.lblPingC.Size = new System.Drawing.Size(153, 31);
+            this.lblPingC.TabIndex = 36;
+            this.lblPingC.Text = "Ping Time:";
+            // 
+            // lblDeviceC
+            // 
+            this.lblDeviceC.AutoSize = true;
+            this.lblDeviceC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeviceC.Location = new System.Drawing.Point(231, 434);
+            this.lblDeviceC.Name = "lblDeviceC";
+            this.lblDeviceC.Size = new System.Drawing.Size(152, 37);
+            this.lblDeviceC.TabIndex = 35;
+            this.lblDeviceC.Text = "Device C";
+            // 
+            // lblAddressB
+            // 
+            this.lblAddressB.AutoSize = true;
+            this.lblAddressB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddressB.Location = new System.Drawing.Point(278, 321);
+            this.lblAddressB.Name = "lblAddressB";
+            this.lblAddressB.Size = new System.Drawing.Size(194, 31);
+            this.lblAddressB.TabIndex = 34;
+            this.lblAddressB.Text = "xxx.xxx.xxx.xxx";
+            // 
+            // lblIpB
+            // 
+            this.lblIpB.AutoSize = true;
+            this.lblIpB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIpB.Location = new System.Drawing.Point(233, 321);
+            this.lblIpB.Name = "lblIpB";
+            this.lblIpB.Size = new System.Drawing.Size(51, 31);
+            this.lblIpB.TabIndex = 33;
+            this.lblIpB.Text = "IP:";
+            // 
+            // lblPingTimeB
+            // 
+            this.lblPingTimeB.AutoSize = true;
+            this.lblPingTimeB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPingTimeB.Location = new System.Drawing.Point(394, 287);
+            this.lblPingTimeB.Name = "lblPingTimeB";
+            this.lblPingTimeB.Size = new System.Drawing.Size(66, 31);
+            this.lblPingTimeB.TabIndex = 32;
+            this.lblPingTimeB.Text = "xxxx";
+            // 
+            // lblPingB
+            // 
+            this.lblPingB.AutoSize = true;
+            this.lblPingB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPingB.Location = new System.Drawing.Point(233, 287);
+            this.lblPingB.Name = "lblPingB";
+            this.lblPingB.Size = new System.Drawing.Size(153, 31);
+            this.lblPingB.TabIndex = 31;
+            this.lblPingB.Text = "Ping Time:";
+            // 
+            // lblDeviceB
+            // 
+            this.lblDeviceB.AutoSize = true;
+            this.lblDeviceB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeviceB.Location = new System.Drawing.Point(231, 250);
+            this.lblDeviceB.Name = "lblDeviceB";
+            this.lblDeviceB.Size = new System.Drawing.Size(150, 37);
+            this.lblDeviceB.TabIndex = 30;
+            this.lblDeviceB.Text = "Device B";
+            // 
+            // lblAddressA
+            // 
+            this.lblAddressA.AutoSize = true;
+            this.lblAddressA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddressA.Location = new System.Drawing.Point(278, 137);
+            this.lblAddressA.Name = "lblAddressA";
+            this.lblAddressA.Size = new System.Drawing.Size(194, 31);
+            this.lblAddressA.TabIndex = 29;
+            this.lblAddressA.Text = "xxx.xxx.xxx.xxx";
+            // 
+            // lblIpA
+            // 
+            this.lblIpA.AutoSize = true;
+            this.lblIpA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIpA.Location = new System.Drawing.Point(233, 137);
+            this.lblIpA.Name = "lblIpA";
+            this.lblIpA.Size = new System.Drawing.Size(51, 31);
+            this.lblIpA.TabIndex = 28;
+            this.lblIpA.Text = "IP:";
+            // 
+            // lblPingTimeA
+            // 
+            this.lblPingTimeA.AutoSize = true;
+            this.lblPingTimeA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPingTimeA.Location = new System.Drawing.Point(394, 103);
+            this.lblPingTimeA.Name = "lblPingTimeA";
+            this.lblPingTimeA.Size = new System.Drawing.Size(66, 31);
+            this.lblPingTimeA.TabIndex = 27;
+            this.lblPingTimeA.Text = "xxxx";
+            // 
+            // lblPingA
+            // 
+            this.lblPingA.AutoSize = true;
+            this.lblPingA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPingA.Location = new System.Drawing.Point(233, 103);
+            this.lblPingA.Name = "lblPingA";
+            this.lblPingA.Size = new System.Drawing.Size(153, 31);
+            this.lblPingA.TabIndex = 26;
+            this.lblPingA.Text = "Ping Time:";
+            // 
+            // lblDeviceA
+            // 
+            this.lblDeviceA.AutoSize = true;
+            this.lblDeviceA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeviceA.Location = new System.Drawing.Point(231, 66);
+            this.lblDeviceA.Name = "lblDeviceA";
+            this.lblDeviceA.Size = new System.Drawing.Size(151, 37);
+            this.lblDeviceA.TabIndex = 25;
+            this.lblDeviceA.Text = "Device A";
+            // 
+            // circlePanelRed3
+            // 
+            this.circlePanelRed3.Location = new System.Drawing.Point(136, 633);
+            this.circlePanelRed3.Margin = new System.Windows.Forms.Padding(4);
+            this.circlePanelRed3.Name = "circlePanelRed3";
+            this.circlePanelRed3.Size = new System.Drawing.Size(65, 65);
+            this.circlePanelRed3.TabIndex = 8;
+            // 
+            // circlePanelRed2
+            // 
+            this.circlePanelRed2.Location = new System.Drawing.Point(136, 265);
+            this.circlePanelRed2.Margin = new System.Windows.Forms.Padding(4);
+            this.circlePanelRed2.Name = "circlePanelRed2";
+            this.circlePanelRed2.Size = new System.Drawing.Size(65, 65);
+            this.circlePanelRed2.TabIndex = 4;
+            // 
+            // circlePanelGreen2
+            // 
+            this.circlePanelGreen2.BackColor = System.Drawing.Color.Transparent;
+            this.circlePanelGreen2.Location = new System.Drawing.Point(136, 633);
+            this.circlePanelGreen2.Margin = new System.Windows.Forms.Padding(4);
+            this.circlePanelGreen2.Name = "circlePanelGreen2";
+            this.circlePanelGreen2.Size = new System.Drawing.Size(65, 65);
+            this.circlePanelGreen2.TabIndex = 7;
+            // 
+            // circlePanelGreen1
+            // 
+            this.circlePanelGreen1.BackColor = System.Drawing.Color.Transparent;
+            this.circlePanelGreen1.Location = new System.Drawing.Point(136, 265);
+            this.circlePanelGreen1.Margin = new System.Windows.Forms.Padding(4);
+            this.circlePanelGreen1.Name = "circlePanelGreen1";
+            this.circlePanelGreen1.Size = new System.Drawing.Size(65, 65);
+            this.circlePanelGreen1.TabIndex = 3;
+            // 
+            // circlePanelRed4
+            // 
+            this.circlePanelRed4.Location = new System.Drawing.Point(136, 449);
+            this.circlePanelRed4.Margin = new System.Windows.Forms.Padding(4);
+            this.circlePanelRed4.Name = "circlePanelRed4";
+            this.circlePanelRed4.Size = new System.Drawing.Size(65, 65);
+            this.circlePanelRed4.TabIndex = 6;
+            // 
+            // circlePanelGreen3
+            // 
+            this.circlePanelGreen3.BackColor = System.Drawing.Color.Transparent;
+            this.circlePanelGreen3.Location = new System.Drawing.Point(136, 449);
+            this.circlePanelGreen3.Margin = new System.Windows.Forms.Padding(4);
+            this.circlePanelGreen3.Name = "circlePanelGreen3";
+            this.circlePanelGreen3.Size = new System.Drawing.Size(65, 65);
+            this.circlePanelGreen3.TabIndex = 5;
+            // 
+            // circlePanelRed1
+            // 
+            this.circlePanelRed1.Location = new System.Drawing.Point(136, 81);
+            this.circlePanelRed1.Margin = new System.Windows.Forms.Padding(4);
+            this.circlePanelRed1.Name = "circlePanelRed1";
+            this.circlePanelRed1.Size = new System.Drawing.Size(65, 65);
+            this.circlePanelRed1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1510, 1265);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(180, 71);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Test";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // circlePanel1
+            // 
+            this.circlePanel1.BackColor = System.Drawing.Color.Transparent;
+            this.circlePanel1.Location = new System.Drawing.Point(136, 81);
+            this.circlePanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.circlePanel1.Name = "circlePanel1";
+            this.circlePanel1.Size = new System.Drawing.Size(65, 65);
+            this.circlePanel1.TabIndex = 0;
+            // 
             // TestNetwork
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2154, 1574);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(2180, 1645);
             this.MinimumSize = new System.Drawing.Size(1908, 1048);
             this.Name = "TestNetwork";
-            this.Text = "TestNetwork";
+            this.Text = "Test Network";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel2.ResumeLayout(false);

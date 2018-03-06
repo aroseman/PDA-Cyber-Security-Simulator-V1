@@ -475,7 +475,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximumSize = new System.Drawing.Size(2190, 1645);
             this.Name = "NetBuilder";
-            this.Text = "NetBuilder";
+            this.Text = "Net Builder";
             this.canvas.ResumeLayout(false);
             this.canvas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTrashCan)).EndInit();
