@@ -9,6 +9,7 @@ namespace PDA_Cyber_Security_Simulator_V1
     {
         public NetBuilder NetBuilder { get; set; }
         public TestNetwork TestNetwork { get; set; }
+        public SimulateAttack SimulateAttack { get; set; }
 
         public Form1()
         {
@@ -120,11 +121,28 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         private void simulateAttackPanelOnClick(object sender, EventArgs e)
         {
+            //working on it
+            if (SimulateAttack == null)
+            {
+                SimulateAttack newsimulateattack = new SimulateAttack(this);
+                SimulateAttack = newsimulateattack;
+                this.Hide();
+                newsimulateattack.Show();
+            }
+            else
+            {
+                SimulateAttack.Show();
+                this.Hide();
+            }
+
+            // DON'T DELETE
+            /*
             homeScreen.Visible = false;
             breadCrumbFlowLayoutPanel.BackColor = Color.FromArgb(0, 120, 192);
             imagePanel.BackColor = Color.FromArgb(0, 120, 192);
             simulateAttackTableLayoutPanel.Visible = true;
             Console.WriteLine("Simulate Attack");
+            */
         }
 
         private void Form1_Load(object sender, EventArgs e)
