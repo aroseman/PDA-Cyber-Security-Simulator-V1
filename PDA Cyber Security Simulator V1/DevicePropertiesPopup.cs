@@ -15,6 +15,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         {
             InitializeComponent();
             InitializeDeviceProperties(device);
+            this.ControlBox = false;
             btnSaveDeviceProperties.DialogResult = DialogResult.OK;
             btnCancelPopup.DialogResult = DialogResult.Cancel;
             Device = device;

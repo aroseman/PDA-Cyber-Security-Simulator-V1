@@ -46,6 +46,7 @@
             // 
             // btnSaveDeviceProperties
             // 
+            this.btnSaveDeviceProperties.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveDeviceProperties.Location = new System.Drawing.Point(38, 559);
             this.btnSaveDeviceProperties.Margin = new System.Windows.Forms.Padding(38, 20, 0, 4);
             this.btnSaveDeviceProperties.Name = "btnSaveDeviceProperties";
@@ -57,6 +58,7 @@
             // 
             // btnCancelPopup
             // 
+            this.btnCancelPopup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelPopup.Location = new System.Drawing.Point(346, 559);
             this.btnCancelPopup.Margin = new System.Windows.Forms.Padding(188, 20, 4, 4);
             this.btnCancelPopup.Name = "btnCancelPopup";
@@ -100,6 +102,7 @@
             // 
             // txtDeviceName
             // 
+            this.txtDeviceName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDeviceName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDeviceName.Location = new System.Drawing.Point(40, 49);
             this.txtDeviceName.Margin = new System.Windows.Forms.Padding(40, 6, 500, 6);
@@ -121,6 +124,7 @@
             // 
             // txtDeviceIP
             // 
+            this.txtDeviceIP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDeviceIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDeviceIP.Location = new System.Drawing.Point(40, 148);
             this.txtDeviceIP.Margin = new System.Windows.Forms.Padding(40, 6, 600, 6);
@@ -142,6 +146,7 @@
             // 
             // txtDeviceMac
             // 
+            this.txtDeviceMac.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDeviceMac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDeviceMac.Location = new System.Drawing.Point(40, 244);
             this.txtDeviceMac.Margin = new System.Windows.Forms.Padding(40, 3, 250, 3);
@@ -162,6 +167,7 @@
             // 
             // txtDeviceDescription
             // 
+            this.txtDeviceDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDeviceDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDeviceDescription.Location = new System.Drawing.Point(40, 340);
             this.txtDeviceDescription.Margin = new System.Windows.Forms.Padding(40, 6, 600, 6);
@@ -183,6 +189,7 @@
             // 
             // txtDeviceNotes
             // 
+            this.txtDeviceNotes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDeviceNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDeviceNotes.Location = new System.Drawing.Point(40, 433);
             this.txtDeviceNotes.Margin = new System.Windows.Forms.Padding(40, 6, 600, 6);
