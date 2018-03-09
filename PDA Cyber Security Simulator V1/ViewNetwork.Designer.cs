@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2164, 1062);
             this.Name = "ViewNetwork";
-            this.Text = "ViewNetwork";
+            this.Text = "View Network";
             this.ResumeLayout(false);
 
         }
