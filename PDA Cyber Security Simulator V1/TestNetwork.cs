@@ -6,10 +6,10 @@ using static System.Windows.Forms.ListBox;
 
 namespace PDA_Cyber_Security_Simulator_V1
 {
-    public partial class TestNetwork : Form
+    public partial class TestNetwork : Form, TestNetworkInterface
     {
         #region Attributes
-        private Form1 Form1;
+        private HomeView Form1;
         private bool test = false;
         private List<Label> DeviceNames;
         private List<Label> PingLabels;
@@ -19,28 +19,26 @@ namespace PDA_Cyber_Security_Simulator_V1
         private List<CirclePanelRed> RedDots;
         private List<CirclePanelGreen> GreenDots;
         #endregion
-        List<String> NetworkNames;
-        List<int> NetworkIDs;
-        List<Device> Devices;
-        List<Language> NetworkDataSource { get;  set; }
-        List<Language> DeviceDataSource { get; set; }
-        NetworkTester NT { get; set; }
-        public TestNetwork(Form1 form1)
+        public event Action NetworkSelected;
+        public List<String> NetworkNames { get { return this.testNetworkComboBox1.DataSource as List<String>; } }
+        public List<int> NetworkIDs { get; set; }
+        public List<Device> Devices { get { return this.testNetworkListBox1.DataSource as List<Device>;} }
+        public List<Language> NetworkDataSource { get; }
+        public List<Language> DeviceDataSource { get; }
+        public NetworkTester NT { get; }
+
+        public TestNetwork(HomeView form1)
         {
             Form1 = form1;
             NT = new NetworkTester();
             
-            InitializeNetworkNames();
-            InitializeNetworkIDs();
-            InitializeNetworkDataSource();
             InitializeComponent();
             InitializeGraphics();
-            PopulateNetworkList();
+            BindComponents();
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-          //  testNetworkComboBox1.Items = 
         }
         
-        private void InitializeNetworkNames()
+        /*private void InitializeNetworkNames()
         {
             NetworkNames = new List<string>();
             NetworkNames = Network.getNetworkNames();
@@ -74,6 +72,11 @@ namespace PDA_Cyber_Security_Simulator_V1
             foreach (String name in NetworkNames){
                 NetworkIDs.Add(Network.getNetworkIdByName(name));
             }
+        }*/
+
+        private void BindComponents()
+        {
+            this.testNetworkComboBox1.SelectedIndexChanged += testNetworkComboBoxOnClick;
         }
 
         private void InitializeGraphics()
@@ -139,15 +142,22 @@ namespace PDA_Cyber_Security_Simulator_V1
          * Populates testNetworkComboBox1 with all available networks.
          *
          **/
-        private void PopulateNetworkList()
+
+       public void LoadNetworkNames(List<String> network)
         {
-            testNetworkComboBox1.DataSource = NetworkDataSource;
+            testNetworkComboBox1.DataSource = network;
         }
 
-        private void PopulateDeviceList()
+        public void LoadDevices(List<Device> devices)
         {
-            testNetworkListBox1.DataSource = DeviceDataSource;
+            testNetworkListBox1.DataSource = devices;
         }
+
+        public void LoadNetworkIDs(List<int> ids)
+        {
+            testNetworkListBox1.DataSource = ids;
+        }
+
 
         //Navigate back to Home screen
         private void rootCrumb_Click(object sender, EventArgs e)
@@ -211,8 +221,6 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         private void testNetworkComboBoxOnClick(object sender, EventArgs e)
         {
-            if (testNetworkComboBox1.SelectedIndex != -1)
-            {
                 //testNetworkListBox1.Items.Clear();
 
                 //List<Device> dList = Network.getDevices(testNetworkComboBox1.SelectedIndex);
@@ -223,10 +231,12 @@ namespace PDA_Cyber_Security_Simulator_V1
                 //}
 
                 // InitializeDevices(Int32.Parse(testNetworkComboBox1.SelectedValue.ToString()));
-                InitializeDevices(Int32.Parse(NetworkDataSource[testNetworkComboBox1.SelectedIndex].Value));
+                /*InitializeDevices(Int32.Parse(NetworkDataSource[testNetworkComboBox1.SelectedIndex].Value));
                 InitializeDeviceDataSource();
-                PopulateDeviceList();
-            }
+                PopulateDeviceList();*/
+                if (this.NetworkSelected != null)
+                    this.NetworkSelected();
+
         }
     }
 }
