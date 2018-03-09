@@ -6,7 +6,7 @@ namespace PDA_Cyber_Security_Simulator_V1
     public class NetworkTester
     {
 
-       public void TestDevice(string ipAddress, TextBox tb)
+       public void TestDevice(string ipAddress)
         {
             Boolean status = false;
             Ping pingSender = new Ping();
@@ -16,12 +16,12 @@ namespace PDA_Cyber_Security_Simulator_V1
             {
                 status = true;
 
-                tb.AppendText("Address: " + reply.Address.ToString() + "\n");
-                tb.AppendText("RoundTrip time: " + reply.RoundtripTime + "\n");
-                tb.AppendText("Time to live: " + reply.Options.Ttl + "\n");
-                tb.AppendText("Don't fragment: " + reply.Options.DontFragment + "\n");
-                tb.AppendText("Buffer size: " + reply.Buffer.Length + "\n");
-                tb.AppendText("Device is available!" + "\n");
+                Console.WriteLine("Address: " + reply.Address.ToString() + "\n");
+                Console.WriteLine("RoundTrip time: " + reply.RoundtripTime + "\n");
+                Console.WriteLine("Time to live: " + reply.Options.Ttl + "\n");
+                Console.WriteLine("Don't fragment: " + reply.Options.DontFragment + "\n");
+                Console.WriteLine("Buffer size: " + reply.Buffer.Length + "\n");
+                Console.WriteLine("Device is available!" + "\n");
             }
             else
             {

@@ -89,6 +89,7 @@
     <Compile Include="DevicePropertiesPopup.Designer.cs">
       <DependentUpon>DevicePropertiesPopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Language.cs" />
     <Compile Include="Layer2Attack.cs" />
     <Compile Include="Layer3Attack.cs" />
     <Compile Include="Neighbors.cs" />

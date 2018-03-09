@@ -200,7 +200,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         private void button1_Click(object sender, EventArgs e)
         {
             NetworkTester networkTester = new NetworkTester();
-            networkTester.TestDevice("www.google.com", pingResultTextBox);
+   //         networkTester.TestDevice("www.google.com", pingResultTextBox);
 
         }
 
