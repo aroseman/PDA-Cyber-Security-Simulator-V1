@@ -5,10 +5,10 @@ namespace PDA_Cyber_Security_Simulator_V1
 {
     public partial class SimulateAttack : Form
     {
-        private Form1 Form1;
+        private HomeView Form1;
 
 
-        public SimulateAttack(Form1 form1)
+        public SimulateAttack(HomeView form1)
         {
             Form1 = form1;
             InitializeComponent();

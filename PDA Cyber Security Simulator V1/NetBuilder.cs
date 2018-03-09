@@ -47,9 +47,9 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         private Object activeObject;
 
-        private Form1 Form1;
+        private HomeView Form1;
 
-        public NetBuilder(Form1 form1)
+        public NetBuilder(HomeView form1)
         {
             Form1 = form1;
             InitializeComponent();

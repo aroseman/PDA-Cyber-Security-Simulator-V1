@@ -258,7 +258,7 @@
             this.testNetworkComboBox1.Name = "testNetworkComboBox1";
             this.testNetworkComboBox1.Size = new System.Drawing.Size(152, 21);
             this.testNetworkComboBox1.TabIndex = 1;
-            this.testNetworkComboBox1.SelectedValueChanged += new System.EventHandler(this.testNetworkComboBoxOnClick);
+            //this.testNetworkComboBox1.SelectedValueChanged += new System.EventHandler(this.testNetworkComboBoxOnClick);
             // 
             // lblDevices
             // 
