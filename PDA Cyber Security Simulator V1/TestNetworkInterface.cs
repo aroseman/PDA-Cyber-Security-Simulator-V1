@@ -20,5 +20,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         void LoadNetworkNames(List<String> network);
         void LoadNetworkIDs(List<int> ids);
         void LoadDevices(List<Device> devices);
+        void ShowView();
+        void HideView();
     }
 }

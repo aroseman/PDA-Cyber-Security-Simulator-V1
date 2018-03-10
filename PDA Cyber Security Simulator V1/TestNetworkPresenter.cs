@@ -8,9 +8,9 @@ namespace PDA_Cyber_Security_Simulator_V1
 {
     public class TestNetworkPresenter
     {
-        private TestNetwork view;
+        private TestNetworkView view;
 
-        public TestNetworkPresenter(TestNetwork newView)
+        public TestNetworkPresenter(TestNetworkView newView)
         {
             view = newView;
 
@@ -21,6 +21,16 @@ namespace PDA_Cyber_Security_Simulator_V1
         public void OnNetworkSelected()
         {
 
+        }
+
+        public void ShowView()
+        {
+            this.view.ShowView();
+        }
+
+        public void HideView()
+        {
+            this.view.HideView();
         }
     }
 }

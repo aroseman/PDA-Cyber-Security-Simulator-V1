@@ -15,7 +15,6 @@ C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security S
 C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.NetBuilder.resources
 C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.Properties.Resources.resources
 C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.SimulateAttack.resources
-C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.TestNetwork.resources
 C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.ViewNetwork.resources
 C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.csproj.GenerateResource.Cache
 C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.csproj.CoreCompileInputs.cache
@@ -24,3 +23,4 @@ C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security S
 C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\PDA Cyber Security Simulator V1.pdb
 C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.csprojResolveAssemblyReference.cache
 C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.HomeView.resources
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.TestNetworkView.resources

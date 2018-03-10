@@ -5,17 +5,54 @@ using System.Windows.Forms;
 
 namespace PDA_Cyber_Security_Simulator_V1
 {
-    public partial class HomeView : Form
+    public partial class HomeView : Form, HomeViewInterface
     {
+        public event Action TestNetworkButtonClicked;
+        public event Action ConfigureNetworkButtonClicked;
+        public event Action SimulateAttackButtonClicked;
+        public event Action ViewNetworkButtonClicked;
         public NetBuilder NetBuilder { get; set; }
-        public TestNetwork TestNetwork { get; set; }
+        public TestNetworkView TestNetwork { get; set; }
+        public TestNetworkPresenter TestNetworkPresenter { get; set; }
         public SimulateAttack SimulateAttack { get; set; }
 
         public HomeView()
         {
             InitializeComponent();
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.testNetwork.Click += OnTestNetworkButtonClicked;
+            this.simulateAttack.Click += OnSimulateAttackButtonClicked;
+            this.viewNetwork.Click += OnViewNetworkButtonClicked;
+            this.configureNetwork.Click += OnConfigureNetworkButtonClicked;
+            this.NetBuilder = new NetBuilder(this);
+            this.TestNetwork = new TestNetworkView(this);
+            this.TestNetworkPresenter = new TestNetworkPresenter(this.TestNetwork);
+            this.SimulateAttack = new SimulateAttack(this);
+            
+        }
 
+        private void OnTestNetworkButtonClicked(object sender, EventArgs e)
+        {
+            if (this.TestNetworkButtonClicked != null)
+                this.TestNetworkButtonClicked();
+        }
+
+        private void OnConfigureNetworkButtonClicked(object sender, EventArgs e)
+        {
+            if (this.ConfigureNetworkButtonClicked != null)
+                this.ConfigureNetworkButtonClicked();
+        }
+
+        private void OnSimulateAttackButtonClicked(object sender, EventArgs e)
+        {
+            if (this.SimulateAttackButtonClicked != null)
+                this.SimulateAttackButtonClicked();
+        }
+
+        private void OnViewNetworkButtonClicked(object sender, EventArgs e)
+        {
+            if (this.ViewNetworkButtonClicked != null)
+                this.ViewNetworkButtonClicked();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -66,15 +103,15 @@ namespace PDA_Cyber_Security_Simulator_V1
             //////////////////////////////////DO NOT DELETE////////////////////////////
             if (TestNetwork == null)
             {
-                TestNetwork newTestNetwork = new TestNetwork(this);
+                TestNetworkView newTestNetwork = new TestNetworkView(this);
                 TestNetwork = newTestNetwork;
                 TestNetworkPresenter testNetworkPresenter = new TestNetworkPresenter(newTestNetwork);
-                this.Hide();
-                newTestNetwork.Show();
+                TestNetworkPresenter = testNetworkPresenter;
+                TestNetworkPresenter.ShowView();
             }
             else
             {
-                TestNetwork.Show();
+                TestNetworkPresenter.ShowView();
                 this.Hide();
             }
             //////////////////////////////////DO NOT DELETE////////////////////////////
@@ -252,6 +289,36 @@ namespace PDA_Cyber_Security_Simulator_V1
         private void simulateAttackTableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        public void ShowTestNetworkView()
+        {
+            this.TestNetwork.ShowView();
+        }
+
+        public void HideTestNetworkView()
+        {
+            this.TestNetwork.HideView();
+        }
+
+        public void ShowNetBuilderView()
+        {
+            this.NetBuilder.Show();
+        }
+
+        public void HideNetBuilderView()
+        {
+            this.NetBuilder.Hide();
+        }
+
+        public void ShowSimulateAttackView()
+        {
+            this.SimulateAttack.Show();
+        }
+
+        public void HideSimulateAttackView()
+        {
+            this.SimulateAttack.Hide();
         }
     }
 }

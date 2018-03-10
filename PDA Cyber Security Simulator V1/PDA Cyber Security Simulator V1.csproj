@@ -89,6 +89,8 @@
     <Compile Include="HomeView.Designer.cs">
       <DependentUpon>HomeView.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomeViewInterface.cs" />
+    <Compile Include="HomeViewPresenter.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="Layer2Attack.cs" />
     <Compile Include="Layer3Attack.cs" />
@@ -110,11 +112,11 @@
     <Compile Include="SimulateAttack.Designer.cs">
       <DependentUpon>SimulateAttack.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestNetwork.cs">
+    <Compile Include="TestNetworkView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TestNetwork.Designer.cs">
-      <DependentUpon>TestNetwork.cs</DependentUpon>
+    <Compile Include="TestNetworkView.Designer.cs">
+      <DependentUpon>TestNetworkView.cs</DependentUpon>
     </Compile>
     <Compile Include="TestNetworkInterface.cs" />
     <Compile Include="TestNetworkPresenter.cs" />
@@ -146,8 +148,8 @@
     <EmbeddedResource Include="SimulateAttack.resx">
       <DependentUpon>SimulateAttack.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TestNetwork.resx">
-      <DependentUpon>TestNetwork.cs</DependentUpon>
+    <EmbeddedResource Include="TestNetworkView.resx">
+      <DependentUpon>TestNetworkView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewNetwork.resx">
       <DependentUpon>ViewNetwork.cs</DependentUpon>
