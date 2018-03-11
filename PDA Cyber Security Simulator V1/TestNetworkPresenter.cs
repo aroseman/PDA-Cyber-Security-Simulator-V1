@@ -8,19 +8,32 @@ namespace PDA_Cyber_Security_Simulator_V1
 {
     public class TestNetworkPresenter
     {
-        private TestNetwork view;
+        private TestNetworkView view;
 
-        public TestNetworkPresenter(TestNetwork newView)
+        public TestNetworkPresenter(TestNetworkView newView)
         {
-            view = newView;
+            this.view = newView;
 
+            this.view.RootCrumbClick += OnRootCrumbClick;
             this.view.LoadNetworkNames(Network.getNetworkNames());
             this.view.LoadDevices(Device.getDevices());
         }
 
-        public void OnNetworkSelected()
+        public void OnRootCrumbClick()
         {
+            this.view.Form1.TestNetworkPresenter = this;
+            this.view.Form1.Show();
+            this.view.Hide();
+        }
 
+        public void ShowView()
+        {
+            this.view.ShowView();
+        }
+
+        public void HideView()
+        {
+            this.view.HideView();
         }
     }
 }

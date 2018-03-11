@@ -231,7 +231,7 @@
             this.configureNetwork.Name = "configureNetwork";
             this.configureNetwork.Size = new System.Drawing.Size(780, 319);
             this.configureNetwork.TabIndex = 4;
-            this.configureNetwork.Click += new System.EventHandler(this.conifgureNetworkOnClick);
+            //this.configureNetwork.Click += new System.EventHandler(this.conifgureNetworkOnClick);
             // 
             // configureNetworkLabel
             // 
@@ -245,7 +245,7 @@
             this.configureNetworkLabel.TabIndex = 0;
             this.configureNetworkLabel.Text = "Configure Network";
             this.configureNetworkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.configureNetworkLabel.Click += new System.EventHandler(this.conifgureNetworkOnClick);
+            //this.configureNetworkLabel.Click += new System.EventHandler(this.conifgureNetworkOnClick);
             // 
             // simulateAttack
             // 
@@ -257,7 +257,7 @@
             this.simulateAttack.Name = "simulateAttack";
             this.simulateAttack.Size = new System.Drawing.Size(780, 319);
             this.simulateAttack.TabIndex = 7;
-            this.simulateAttack.Click += new System.EventHandler(this.simulateAttackPanelOnClick);
+            //this.simulateAttack.Click += new System.EventHandler(this.simulateAttackPanelOnClick);
             // 
             // simulateAttackLabel
             // 
@@ -271,7 +271,7 @@
             this.simulateAttackLabel.TabIndex = 3;
             this.simulateAttackLabel.Text = "Simulate Attack";
             this.simulateAttackLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.simulateAttackLabel.Click += new System.EventHandler(this.simulateAttackPanelOnClick);
+            //this.simulateAttackLabel.Click += new System.EventHandler(this.simulateAttackPanelOnClick);
             // 
             // viewNetwork
             // 
@@ -283,7 +283,7 @@
             this.viewNetwork.Name = "viewNetwork";
             this.viewNetwork.Size = new System.Drawing.Size(780, 319);
             this.viewNetwork.TabIndex = 5;
-            this.viewNetwork.Click += new System.EventHandler(this.viewNetworkOnClick);
+            //this.viewNetwork.Click += new System.EventHandler(this.viewNetworkOnClick);
             // 
             // viewNetworkLabel
             // 
@@ -297,7 +297,7 @@
             this.viewNetworkLabel.TabIndex = 1;
             this.viewNetworkLabel.Text = "View Network";
             this.viewNetworkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.viewNetworkLabel.Click += new System.EventHandler(this.viewNetworkOnClick);
+            //this.viewNetworkLabel.Click += new System.EventHandler(this.viewNetworkOnClick);
             // 
             // testNetwork
             // 
@@ -309,7 +309,7 @@
             this.testNetwork.Name = "testNetwork";
             this.testNetwork.Size = new System.Drawing.Size(780, 319);
             this.testNetwork.TabIndex = 6;
-            this.testNetwork.Click += new System.EventHandler(this.testNetworkOnClick);
+            //this.testNetwork.Click += new System.EventHandler(this.testNetworkOnClick);
             // 
             // testNetworkLabel
             // 
@@ -323,7 +323,7 @@
             this.testNetworkLabel.TabIndex = 2;
             this.testNetworkLabel.Text = "Test Network";
             this.testNetworkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.testNetworkLabel.Click += new System.EventHandler(this.testNetworkOnClick);
+            //this.testNetworkLabel.Click += new System.EventHandler(this.testNetworkOnClick);
             // 
             // breadCrumbFlowLayoutPanel
             // 
@@ -688,7 +688,7 @@
             this.testNetworkComboBox1.Name = "testNetworkComboBox1";
             this.testNetworkComboBox1.Size = new System.Drawing.Size(238, 33);
             this.testNetworkComboBox1.TabIndex = 1;
-            this.testNetworkComboBox1.SelectedValueChanged += new System.EventHandler(this.testNetworkComboBoxOnClick);
+            //this.testNetworkComboBox1.SelectedValueChanged += new System.EventHandler(this.testNetworkComboBoxOnClick);
             // 
             // testNetworkFlowLayoutPanel2
             // 

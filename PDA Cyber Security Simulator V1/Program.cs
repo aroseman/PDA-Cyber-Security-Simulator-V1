@@ -21,7 +21,9 @@ namespace PDA_Cyber_Security_Simulator_V1
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeView());
+            HomeView homeView = new HomeView();
+            HomeViewPresenter homeViewPresenter = new HomeViewPresenter(homeView);
+            Application.Run(homeView);
         }
     }
 }
