@@ -16,7 +16,8 @@ namespace PDA_Cyber_Security_Simulator_V1
         NetBuilder NetBuilder { get; }
         TestNetworkView TestNetwork { get; }
         TestNetworkPresenter TestNetworkPresenter { get; }
-        SimulateAttack SimulateAttack { get; }
+        SimulateAttackView SimulateAttackView { get; }
+        SimulateAttackPresenter SimulateAttackPresenter { get; }
 
         void ShowTestNetworkView();
         void HideTestNetworkView();

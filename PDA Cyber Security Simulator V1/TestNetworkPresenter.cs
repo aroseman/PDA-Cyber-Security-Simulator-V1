@@ -12,15 +12,18 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         public TestNetworkPresenter(TestNetworkView newView)
         {
-            view = newView;
+            this.view = newView;
 
+            this.view.RootCrumbClick += OnRootCrumbClick;
             this.view.LoadNetworkNames(Network.getNetworkNames());
             this.view.LoadDevices(Device.getDevices());
         }
 
-        public void OnNetworkSelected()
+        public void OnRootCrumbClick()
         {
-
+            this.view.Form1.TestNetworkPresenter = this;
+            this.view.Form1.Show();
+            this.view.Hide();
         }
 
         public void ShowView()

@@ -9,7 +9,6 @@ namespace PDA_Cyber_Security_Simulator_V1
     public partial class TestNetworkView : Form, TestNetworkInterface
     {
         #region Attributes
-        private HomeView Form1;
         private bool test = false;
         private List<Label> DeviceNames;
         private List<Label> PingLabels;
@@ -20,6 +19,9 @@ namespace PDA_Cyber_Security_Simulator_V1
         private List<CirclePanelGreen> GreenDots;
         #endregion
         public event Action NetworkSelected;
+        public event Action RootCrumbClick;
+        public HomeView Form1 { get; }
+        public HomeViewPresenter Form1Presenter { get; }
         public List<String> NetworkNames { get { return this.testNetworkComboBox1.DataSource as List<String>; } }
         public List<int> NetworkIDs { get; set; }
         public List<Device> Devices { get { return this.testNetworkListBox1.DataSource as List<Device>;} }
@@ -37,7 +39,18 @@ namespace PDA_Cyber_Security_Simulator_V1
             BindComponents();
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
-        
+
+        public TestNetworkView(HomeViewPresenter form1Presenter)
+        {
+            Form1Presenter = form1Presenter;
+            NT = new NetworkTester();
+
+            InitializeComponent();
+            InitializeGraphics();
+            BindComponents();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+        }
+
         /*private void InitializeNetworkNames()
         {
             NetworkNames = new List<string>();
@@ -77,6 +90,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         private void BindComponents()
         {
             this.testNetworkComboBox1.SelectedIndexChanged += testNetworkComboBoxOnClick;
+            this.rootCrumb.Click += OnRootCrumbClick;
         }
 
         private void InitializeGraphics()
@@ -169,12 +183,11 @@ namespace PDA_Cyber_Security_Simulator_V1
         }
 
         //Navigate back to Home screen
-        private void rootCrumb_Click(object sender, EventArgs e)
+        private void OnRootCrumbClick(object sender, EventArgs e)
         {
             //Need to relink this page to the home form (this needs to happen if the form has been cleared)
-            Form1.TestNetwork = this;
-            Form1.Show();
-            this.Hide();
+            if (this.RootCrumbClick != null)
+                this.RootCrumbClick();
         }
 
         //Form closing

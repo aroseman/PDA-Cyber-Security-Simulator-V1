@@ -14,20 +14,26 @@ namespace PDA_Cyber_Security_Simulator_V1
         public NetBuilder NetBuilder { get; set; }
         public TestNetworkView TestNetwork { get; set; }
         public TestNetworkPresenter TestNetworkPresenter { get; set; }
-        public SimulateAttack SimulateAttack { get; set; }
+        public SimulateAttackView SimulateAttackView { get; set; }
+        public SimulateAttackPresenter SimulateAttackPresenter { get; set; }
 
         public HomeView()
         {
             InitializeComponent();
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.testNetwork.Click += OnTestNetworkButtonClicked;
+            this.testNetworkLabel.Click += OnTestNetworkButtonClicked;
             this.simulateAttack.Click += OnSimulateAttackButtonClicked;
+            this.simulateAttackLabel.Click += OnSimulateAttackButtonClicked;
             this.viewNetwork.Click += OnViewNetworkButtonClicked;
+            this.viewNetworkLabel.Click += OnViewNetworkButtonClicked;
             this.configureNetwork.Click += OnConfigureNetworkButtonClicked;
+            this.configureNetworkLabel.Click += OnConfigureNetworkButtonClicked;
             this.NetBuilder = new NetBuilder(this);
             this.TestNetwork = new TestNetworkView(this);
             this.TestNetworkPresenter = new TestNetworkPresenter(this.TestNetwork);
-            this.SimulateAttack = new SimulateAttack(this);
+            this.SimulateAttackView = new SimulateAttackView(this);
+            this.SimulateAttackPresenter = new SimulateAttackPresenter(this.SimulateAttackView);
             
         }
 
@@ -70,7 +76,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         }
 
-        private void conifgureNetworkOnClick(object sender, EventArgs e)
+        /*private void conifgureNetworkOnClick(object sender, EventArgs e)
         {
 
             //homeScreen.Visible = false;
@@ -153,7 +159,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                 {
                     if (!String.IsNullOrEmpty(dList[i]))
                         testNetworkListBox1.Items.Add(dList[i]);
-                }*/
+                }
             }
         }
 
@@ -162,7 +168,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             //working on it
             if (SimulateAttack == null)
             {
-                SimulateAttack newsimulateattack = new SimulateAttack(this);
+                SimulateAttackView newsimulateattack = new SimulateAttackView(this);
                 SimulateAttack = newsimulateattack;
                 this.Hide();
                 newsimulateattack.Show();
@@ -180,8 +186,8 @@ namespace PDA_Cyber_Security_Simulator_V1
             imagePanel.BackColor = Color.FromArgb(0, 120, 192);
             simulateAttackTableLayoutPanel.Visible = true;
             Console.WriteLine("Simulate Attack");
-            */
-        }
+            
+        }*/
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -313,12 +319,12 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         public void ShowSimulateAttackView()
         {
-            this.SimulateAttack.Show();
+            this.SimulateAttackView.Show();
         }
 
         public void HideSimulateAttackView()
         {
-            this.SimulateAttack.Hide();
+            this.SimulateAttackView.Hide();
         }
     }
 }

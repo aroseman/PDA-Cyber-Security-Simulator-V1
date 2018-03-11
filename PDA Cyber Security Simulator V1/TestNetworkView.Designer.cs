@@ -189,7 +189,7 @@
             this.rootCrumb.Size = new System.Drawing.Size(88, 33);
             this.rootCrumb.TabIndex = 0;
             this.rootCrumb.Text = "Home";
-            this.rootCrumb.Click += new System.EventHandler(this.rootCrumb_Click);
+            //this.rootCrumb.Click += new System.EventHandler(this.rootCrumb_Click);
             // 
             // picProcessAndDataLogo
             // 

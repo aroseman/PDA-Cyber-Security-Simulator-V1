@@ -20,32 +20,38 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         public void ShowTestNetworkView()
         {
+            this.view.Hide();
             this.view.ShowTestNetworkView();
         }
 
         public void HideTestNetworkView()
         {
+            this.view.Show();
             this.view.HideTestNetworkView();
         }
 
         public void ShowNetBuilderView()
         {
-            this.ShowNetBuilderView();
+            this.view.Hide();
+            this.view.ShowNetBuilderView();
         }
 
         public void HideNetBuilderView()
         {
-            this.HideNetBuilderView();
+            this.view.Show();
+            this.view.HideNetBuilderView();
         }
 
         public void ShowSimulateAttackView()
         {
-            this.ShowSimulateAttackView();
+            this.view.Hide();
+            this.view.ShowSimulateAttackView();
         }
 
         public void HideSimulateAttackView()
         {
-            this.HideSimulateAttackView();
+            this.view.Show();
+            this.view.HideSimulateAttackView();
         }
     }
 }

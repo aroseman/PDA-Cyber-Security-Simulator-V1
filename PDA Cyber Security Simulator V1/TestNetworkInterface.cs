@@ -9,6 +9,7 @@ namespace PDA_Cyber_Security_Simulator_V1
     public interface TestNetworkInterface
     {
         event Action NetworkSelected;
+        event Action RootCrumbClick;
 
         List<String> NetworkNames { get; }
         List<int> NetworkIDs { get; }
@@ -16,6 +17,8 @@ namespace PDA_Cyber_Security_Simulator_V1
         List<Language> NetworkDataSource { get; }
         List<Language> DeviceDataSource { get; }
         NetworkTester NT { get; }
+        HomeView Form1 { get; }
+        HomeViewPresenter Form1Presenter { get; }
 
         void LoadNetworkNames(List<String> network);
         void LoadNetworkIDs(List<int> ids);
