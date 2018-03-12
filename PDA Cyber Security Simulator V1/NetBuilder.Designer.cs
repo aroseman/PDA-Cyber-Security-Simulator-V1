@@ -100,8 +100,8 @@
             this.canvas.Name = "canvas";
             this.canvas.Size = new System.Drawing.Size(1717, 1355);
             this.canvas.TabIndex = 0;
-            this.canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
-            this.canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseDown);
+            //this.canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
+            //this.canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseDown);
             // 
             // lblNetworkName
             // 
@@ -133,7 +133,7 @@
             this.btnSaveNetwork.TabIndex = 15;
             this.btnSaveNetwork.Text = "Save";
             this.btnSaveNetwork.UseVisualStyleBackColor = true;
-            this.btnSaveNetwork.Click += new System.EventHandler(this.btnSave_Click);
+            //this.btnSaveNetwork.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClearNetwork
             // 
@@ -145,7 +145,7 @@
             this.btnClearNetwork.TabIndex = 16;
             this.btnClearNetwork.Text = "Clear";
             this.btnClearNetwork.UseVisualStyleBackColor = true;
-            this.btnClearNetwork.Click += new System.EventHandler(this.btnClearNetwork_Click);
+            //this.btnClearNetwork.Click += new System.EventHandler(this.btnClearNetwork_Click);
             // 
             // lblDrawEnabled
             // 
@@ -169,7 +169,7 @@
             this.enableLineDraw.TabIndex = 0;
             this.enableLineDraw.Text = "/";
             this.enableLineDraw.UseVisualStyleBackColor = true;
-            this.enableLineDraw.MouseClick += new System.Windows.Forms.MouseEventHandler(this.enableLineDraw_MouseClick);
+            //this.enableLineDraw.MouseClick += new System.Windows.Forms.MouseEventHandler(this.enableLineDraw_MouseClick);
             // 
             // flowLayoutPanel1
             // 
@@ -253,7 +253,7 @@
             this.rootCrumb.Size = new System.Drawing.Size(173, 65);
             this.rootCrumb.TabIndex = 0;
             this.rootCrumb.Text = "Home";
-            this.rootCrumb.Click += new System.EventHandler(this.rootCrumb_Click);
+            //this.rootCrumb.Click += new System.EventHandler(this.rootCrumb_Click);
             // 
             // panel1
             // 
@@ -287,7 +287,7 @@
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            //this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pictureBox15
             // 

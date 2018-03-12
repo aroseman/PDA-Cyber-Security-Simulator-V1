@@ -16,6 +16,12 @@ namespace PDA_Cyber_Security_Simulator_V1
             this.view.TestNetworkButtonClicked += ShowTestNetworkView;
             this.view.ConfigureNetworkButtonClicked += ShowNetBuilderView;
             this.view.SimulateAttackButtonClicked += ShowSimulateAttackView;
+            this.view.RootCrumbClicked += ShowHomeView;
+        }
+
+        public void ShowHomeView()
+        {
+            this.view.Load_Home();
         }
 
         public void ShowTestNetworkView()

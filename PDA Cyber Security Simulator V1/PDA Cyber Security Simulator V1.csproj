@@ -101,6 +101,8 @@
     <Compile Include="NetBuilder.Designer.cs">
       <DependentUpon>NetBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="NetBuilderInterface.cs" />
+    <Compile Include="NetBuilderPresenter.cs" />
     <Compile Include="Network.cs" />
     <Compile Include="NetworkStub.cs" />
     <Compile Include="NetworkTester.cs" />

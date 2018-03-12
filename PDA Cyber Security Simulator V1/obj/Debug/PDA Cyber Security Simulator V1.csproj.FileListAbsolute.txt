@@ -24,3 +24,4 @@ C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security S
 C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.HomeView.resources
 C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.TestNetworkView.resources
 C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.SimulateAttackView.resources
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.csproj.CopyComplete

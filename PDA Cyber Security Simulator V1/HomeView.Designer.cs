@@ -377,7 +377,7 @@
             this.rootCrumb.Size = new System.Drawing.Size(173, 65);
             this.rootCrumb.TabIndex = 0;
             this.rootCrumb.Text = "Home";
-            this.rootCrumb.Click += new System.EventHandler(this.Load_Home);
+            //this.rootCrumb.Click += new System.EventHandler(this.Load_Home);
             // 
             // networkConfigurationPanel
             // 

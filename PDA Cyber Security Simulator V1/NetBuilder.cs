@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace PDA_Cyber_Security_Simulator_V1
 {
-    public partial class NetBuilder : Form
+    public partial class NetBuilder : Form, NetBuilderInterface
     {
         #region "DragVariables"
         public bool Status { get; set; }
@@ -47,7 +47,18 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         private Object activeObject;
 
-        private HomeView Form1;
+        public HomeView Form1 { get; }
+        public HomeViewPresenter Form1Presenter { get; }
+
+        public PaintEventArgs PaintEventArgs { get; set; }
+        public MouseEventArgs MouseEventArgs { get; set; }
+
+        public event Action CanvasPaint;
+        public event Action CanvasMouseDown;
+        public event Action BtnSaveClick;
+        public event Action BtnClearNetworkClick;
+        public event Action EnableLineDrawClick;
+        public event Action RootCrumbClick;
 
         public NetBuilder(HomeView form1)
         {
@@ -58,9 +69,32 @@ namespace PDA_Cyber_Security_Simulator_V1
             InitializeDragDrop();
             InitializePopup();
             lblDrawEnabled.Visible = false;
+            this.rootCrumb.Click += OnRootCrumbClick;
+            this.canvas.Paint += OnCanvasPaint;
+            this.canvas.MouseDown += OnCanvasMouseDown;
+            this.btnSaveNetwork.Click += OnBtnSaveClick;
+            this.btnClearNetwork.Click += OnBtnClearNetworkClick;
+            this.enableLineDraw.MouseClick += OnEnableLineDrawClick;
         }
 
-
+        public NetBuilder(HomeViewPresenter form1Presenter)
+        {
+            Form1Presenter = form1Presenter;
+            InitializeComponent();
+            network = new Network();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            InitializeDragDrop();
+            InitializePopup();
+            lblDrawEnabled.Visible = false;
+            this.rootCrumb.Click += OnRootCrumbClick;
+            this.rootCrumb.Click += OnRootCrumbClick;
+            this.canvas.Paint += OnCanvasPaint;
+            this.canvas.MouseDown += OnCanvasMouseDown;
+            this.btnSaveNetwork.Click += OnBtnSaveClick;
+            this.btnSave.Click += OnBtnSaveClick;
+            this.btnClearNetwork.Click += OnBtnClearNetworkClick;
+            this.enableLineDraw.MouseClick += OnEnableLineDrawClick;
+        }
 
         public NetBuilder()
 
@@ -73,8 +107,46 @@ namespace PDA_Cyber_Security_Simulator_V1
             lblDrawEnabled.Visible = false;
         }
 
+        private void OnRootCrumbClick(object sender, EventArgs e)
+        {
+            if (this.RootCrumbClick != null)
+                this.RootCrumbClick();
+        }
+
+        private void OnCanvasPaint(object sender, PaintEventArgs e)
+        {
+            this.PaintEventArgs = e;
+            if (this.CanvasPaint != null)
+                this.CanvasPaint();
+        }
+
+        private void OnCanvasMouseDown(object sender, MouseEventArgs e)
+        {
+            this.MouseEventArgs = e;
+            if (this.CanvasMouseDown != null)
+                this.CanvasMouseDown();
+        }
+
+        private void OnBtnSaveClick(object sender, EventArgs e)
+        {
+            if (this.BtnSaveClick != null)
+                this.BtnSaveClick();
+        }
+
+        private void OnBtnClearNetworkClick(object sender, EventArgs e)
+        {
+            if (this.BtnClearNetworkClick != null)
+                this.BtnClearNetworkClick();
+        }
+
+        private void OnEnableLineDrawClick(object sender, EventArgs e)
+        {
+            if (this.EnableLineDrawClick != null)
+                this.EnableLineDrawClick();
+        }
+
         //Navigate back to Home screen
-        private void rootCrumb_Click(object sender, EventArgs e)
+        public void ShowHomeView()
         {
             //Need to relink this page to the home form (this needs to happen if the form has been cleared)
             Form1.NetBuilder = this;
@@ -102,7 +174,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         }
 
         // See what we're over and start doing whatever is appropriate.
-        private void canvas_MouseDown(object sender, MouseEventArgs e)
+        public void canvas_MouseDown(MouseEventArgs e)
         {
             if (drawable)
             {
@@ -467,7 +539,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             return dx * dx + dy * dy;
         }
 
-        private void canvas_Paint(object sender, PaintEventArgs e)
+        public void canvas_Paint(PaintEventArgs e)
         {
             // Draw the segments.
             for (int i = 0; i < Pt1.Count; i++)
@@ -718,7 +790,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         #endregion //DragDrop
 
-        private void enableLineDraw_MouseClick(object sender, MouseEventArgs e)
+        public void enableLineDraw_MouseClick()
         {
             //toggle the draw command
             drawable = !drawable;
@@ -783,7 +855,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         }
         #endregion
 
-        private void btnClearNetwork_Click(object sender, EventArgs e)
+        public void btnClearNetwork_Click()
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to clear?", "Clear Network Graph", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
@@ -804,7 +876,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         /**
  * Search all active devices, make sure there is an endpoint. If there is an endpoint search all devices for the second endpoint 
  **/
-        private void btnSave_Click(object sender, EventArgs e)
+        public void btnSave_Click()
         {
             var netName = txtNetworkName.Text;
 

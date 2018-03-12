@@ -12,8 +12,10 @@ namespace PDA_Cyber_Security_Simulator_V1
         event Action ConfigureNetworkButtonClicked;
         event Action SimulateAttackButtonClicked;
         event Action ViewNetworkButtonClicked;
+        event Action RootCrumbClicked;
 
         NetBuilder NetBuilder { get; }
+        NetBuilderPresenter NetBuilderPresenter { get; }
         TestNetworkView TestNetwork { get; }
         TestNetworkPresenter TestNetworkPresenter { get; }
         SimulateAttackView SimulateAttackView { get; }

@@ -11,7 +11,9 @@ namespace PDA_Cyber_Security_Simulator_V1
         public event Action ConfigureNetworkButtonClicked;
         public event Action SimulateAttackButtonClicked;
         public event Action ViewNetworkButtonClicked;
+        public event Action RootCrumbClicked;
         public NetBuilder NetBuilder { get; set; }
+        public NetBuilderPresenter NetBuilderPresenter { get; set; }
         public TestNetworkView TestNetwork { get; set; }
         public TestNetworkPresenter TestNetworkPresenter { get; set; }
         public SimulateAttackView SimulateAttackView { get; set; }
@@ -29,7 +31,9 @@ namespace PDA_Cyber_Security_Simulator_V1
             this.viewNetworkLabel.Click += OnViewNetworkButtonClicked;
             this.configureNetwork.Click += OnConfigureNetworkButtonClicked;
             this.configureNetworkLabel.Click += OnConfigureNetworkButtonClicked;
+            this.rootCrumb.Click += OnRootCrumbClicked;
             this.NetBuilder = new NetBuilder(this);
+            this.NetBuilderPresenter = new NetBuilderPresenter(this.NetBuilder);
             this.TestNetwork = new TestNetworkView(this);
             this.TestNetworkPresenter = new TestNetworkPresenter(this.TestNetwork);
             this.SimulateAttackView = new SimulateAttackView(this);
@@ -59,6 +63,12 @@ namespace PDA_Cyber_Security_Simulator_V1
         {
             if (this.ViewNetworkButtonClicked != null)
                 this.ViewNetworkButtonClicked();
+        }
+
+        private void OnRootCrumbClicked(object sender, EventArgs e)
+        {
+            if (this.RootCrumbClicked != null)
+                this.RootCrumbClicked();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -194,7 +204,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         }
 
-        private void Load_Home(object send, EventArgs e)
+        public void Load_Home()
         {
             networkConfigurationPanel.Visible = false;
             testNetworkTableLayoutPanel.Visible = false;
