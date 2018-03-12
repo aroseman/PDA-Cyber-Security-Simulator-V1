@@ -12,6 +12,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         event Action RootCrumbClick;
 
         List<String> NetworkNames { get; }
+        String SelectedNetwork { get; } 
         List<int> NetworkIDs { get; }
         List<Device> Devices { get; }
         List<Language> NetworkDataSource { get; }

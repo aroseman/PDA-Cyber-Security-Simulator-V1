@@ -22,7 +22,7 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         [TestMethod()]
         public void GetAndAddNetworksTest()
         {
-            Network.addNetwork(new Network());
+            Network.addNetwork(new Network("Test"));
 
             int idCheck = Network.getMaxTableID();
 
@@ -32,7 +32,7 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         [TestMethod()]
         public void GetDeviceTest()
         {
-            Network.addNetwork(new Network());
+            Network.addNetwork(new Network("Test2"));
 
             Device testDevice = new Device();
             testDevice.Name = "CiscoRouter";
@@ -46,7 +46,9 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
             testDevice2.NetID = 1;
             Device.addDevice(testDevice2);
 
-            List<Device> devices = Network.getDevices(1);
+            int netid = Network.getNetworkIdByName("Test");
+
+            List<Device> devices = Network.getDevices(netid);
 
             Assert.AreEqual(2, devices.Count);
         }

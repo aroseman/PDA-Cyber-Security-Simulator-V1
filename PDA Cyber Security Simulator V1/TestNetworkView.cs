@@ -23,6 +23,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         public HomeView Form1 { get; }
         public HomeViewPresenter Form1Presenter { get; }
         public List<String> NetworkNames { get { return this.testNetworkComboBox1.DataSource as List<String>; } }
+        public String SelectedNetwork { get { return this.testNetworkComboBox1.Text as String; } }
         public List<int> NetworkIDs { get; set; }
         public List<Device> Devices { get { return this.testNetworkListBox1.DataSource as List<Device>;} }
         public List<Language> NetworkDataSource { get; }
@@ -89,7 +90,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         private void BindComponents()
         {
-            this.testNetworkComboBox1.SelectedIndexChanged += testNetworkComboBoxOnClick;
+            this.testNetworkComboBox1.SelectedValueChanged += testNetworkComboBoxOnClick;
             this.rootCrumb.Click += OnRootCrumbClick;
         }
 
@@ -164,7 +165,12 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         public void LoadDevices(List<Device> devices)
         {
-            testNetworkListBox1.DataSource = devices;
+            testNetworkListBox1.Items.Clear();
+            for (int i = 0; i < devices.Count; i++)
+            {
+                testNetworkListBox1.Items.Add(devices[i]);
+            }
+            //testNetworkListBox1.DataSource = devices;
         }
 
         public void LoadNetworkIDs(List<int> ids)
