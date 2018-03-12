@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,5 +22,13 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         HomeView Form1 { get; }
         HomeViewPresenter Form1Presenter { get; }
+
+        List<Point> Pt1 { get; }
+        List<Point> Pt2 { get; }
+        List<PictureBox> ActiveDevices { get; }
+        Panel Canvas { get; }
+
+        String NetName { get; }
+        Network Network { get; }
     }
 }
