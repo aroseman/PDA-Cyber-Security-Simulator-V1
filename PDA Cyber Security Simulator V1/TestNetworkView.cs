@@ -165,12 +165,13 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         public void LoadDevices(List<Device> devices)
         {
+            testNetworkListBox1.DataSource = null;
             testNetworkListBox1.Items.Clear();
             for (int i = 0; i < devices.Count; i++)
             {
                 testNetworkListBox1.Items.Add(devices[i]);
             }
-            //testNetworkListBox1.DataSource = devices;
+            testNetworkListBox1.DataSource = devices;
         }
 
         public void LoadNetworkIDs(List<int> ids)
