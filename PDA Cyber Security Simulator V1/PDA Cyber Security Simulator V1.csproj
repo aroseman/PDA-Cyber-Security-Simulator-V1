@@ -75,6 +75,10 @@
     <Compile Include="Controls\CirclePanelRed.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DAL\DeviceManager.cs" />
+    <Compile Include="DAL\IManager.cs" />
+    <Compile Include="DAL\NetworkManager.cs" />
+    <Compile Include="DAL\UnitOfWork.cs" />
     <Compile Include="Device.cs" />
     <Compile Include="DeviceTester.cs" />
     <Compile Include="DevicePropertiesPopup.cs">

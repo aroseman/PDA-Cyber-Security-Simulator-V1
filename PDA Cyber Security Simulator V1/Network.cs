@@ -193,12 +193,14 @@ namespace PDA_Cyber_Security_Simulator_V1
                             String notes = networkReader.GetString(5);
                             int netid = networkReader.GetInt32(6);
 
-                            Device d = new Device();
-                            d.ID = id;
-                            d.IpAddress = ip;
-                            d.Name = name;
-                            d.MacAddress = mac;
-                            d.Description = desc;
+                            Device d = new Device
+                            {
+                                ID = id,
+                                IpAddress = ip,
+                                Name = name,
+                                MacAddress = mac,
+                                Description = desc
+                            };
                             d.Notes = d.Notes;
                             d.NetID = netid;
 
