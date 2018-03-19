@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "task-SynFlood",
+      "appliesTo": "PDA Cyber Security Simulator V1/SynFlood.cs",
+      "type": "launch"
+    }
+  ]
+}
