@@ -47,14 +47,14 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.SQLite, Version=1.0.106.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.SQLite.Core.1.0.106.0\lib\net451\System.Data.SQLite.dll</HintPath>
+    <Reference Include="System.Data.SQLite, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.108.0\lib\net46\System.Data.SQLite.dll</HintPath>
     </Reference>
-    <Reference Include="System.Data.SQLite.EF6, Version=1.0.106.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.106.0\lib\net451\System.Data.SQLite.EF6.dll</HintPath>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.108.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
     </Reference>
-    <Reference Include="System.Data.SQLite.Linq, Version=1.0.106.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.106.0\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.108.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
@@ -75,11 +75,6 @@
     <Compile Include="Controls\CirclePanelRed.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DAL\DeviceManager.cs" />
-    <Compile Include="DAL\IManager.cs" />
-    <Compile Include="DAL\NetworkManager.cs" />
-    <Compile Include="DAL\UnitOfWork.cs" />
-    <Compile Include="Device.cs" />
     <Compile Include="DeviceTester.cs" />
     <Compile Include="DevicePropertiesPopup.cs">
       <SubType>Form</SubType>
@@ -87,47 +82,46 @@
     <Compile Include="DevicePropertiesPopup.Designer.cs">
       <DependentUpon>DevicePropertiesPopup.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomeView.cs">
+    <Compile Include="Views\HomeView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomeView.Designer.cs">
+    <Compile Include="Views\HomeView.Designer.cs">
       <DependentUpon>HomeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomeViewInterface.cs" />
-    <Compile Include="HomeViewPresenter.cs" />
+    <Compile Include="Interfaces\IHomeView.cs" />
+    <Compile Include="Presenters\HomeViewPresenter.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="Layer2Attack.cs" />
     <Compile Include="Layer3Attack.cs" />
     <Compile Include="Neighbors.cs" />
-    <Compile Include="NetBuilder.cs">
+    <Compile Include="Views\NetBuilder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NetBuilder.Designer.cs">
+    <Compile Include="Views\NetBuilder.Designer.cs">
       <DependentUpon>NetBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="NetBuilderInterface.cs" />
-    <Compile Include="NetBuilderPresenter.cs" />
-    <Compile Include="Network.cs" />
+    <Compile Include="Interfaces\INetBuilder.cs" />
+    <Compile Include="Presenters\NetBuilderPresenter.cs" />
     <Compile Include="NetworkStub.cs" />
     <Compile Include="NetworkTester.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimulateAttackPresenter.cs" />
-    <Compile Include="SimulateAttackView.cs">
+    <Compile Include="Presenters\SimulateAttackPresenter.cs" />
+    <Compile Include="Views\SimulateAttackView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SimulateAttackView.Designer.cs">
+    <Compile Include="Views\SimulateAttackView.Designer.cs">
       <DependentUpon>SimulateAttackView.cs</DependentUpon>
     </Compile>
-    <Compile Include="SimulateAttackInterface.cs" />
-    <Compile Include="TestNetworkView.cs">
+    <Compile Include="Interfaces\ISimulateAttack.cs" />
+    <Compile Include="Views\TestNetworkView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TestNetworkView.Designer.cs">
+    <Compile Include="Views\TestNetworkView.Designer.cs">
       <DependentUpon>TestNetworkView.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestNetworkInterface.cs" />
-    <Compile Include="TestNetworkPresenter.cs" />
+    <Compile Include="Interfaces\ITestNetwork.cs" />
+    <Compile Include="Presenters\TestNetworkPresenter.cs" />
     <Compile Include="ViewNetwork.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,10 +131,10 @@
     <EmbeddedResource Include="DevicePropertiesPopup.resx">
       <DependentUpon>DevicePropertiesPopup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomeView.resx">
+    <EmbeddedResource Include="Views\HomeView.resx">
       <DependentUpon>HomeView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NetBuilder.resx">
+    <EmbeddedResource Include="Views\NetBuilder.resx">
       <DependentUpon>NetBuilder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -153,10 +147,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SimulateAttackView.resx">
+    <EmbeddedResource Include="Views\SimulateAttackView.resx">
       <DependentUpon>SimulateAttackView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TestNetworkView.resx">
+    <EmbeddedResource Include="Views\TestNetworkView.resx">
       <DependentUpon>TestNetworkView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewNetwork.resx">
@@ -185,12 +179,18 @@
   <ItemGroup>
     <None Include="Resources\trash_can.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PDA Cyber Security Simulator Domain\PDA Cyber Security Simulator Domain.csproj">
+      <Project>{25523B06-7B43-4887-AF33-464E2FD36B60}</Project>
+      <Name>PDA Cyber Security Simulator Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\System.Data.SQLite.Core.1.0.106.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.106.0\build\net451\System.Data.SQLite.Core.targets')" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.106.0\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.106.0\build\net451\System.Data.SQLite.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets'))" />
   </Target>
 </Project>

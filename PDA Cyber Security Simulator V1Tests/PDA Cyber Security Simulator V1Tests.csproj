@@ -77,6 +77,10 @@
     <Compile Include="NeighborsTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PDA Cyber Security Simulator Domain\PDA Cyber Security Simulator Domain.csproj">
+      <Project>{25523B06-7B43-4887-AF33-464E2FD36B60}</Project>
+      <Name>PDA Cyber Security Simulator Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PDA Cyber Security Simulator V1\PDA Cyber Security Simulator V1.csproj">
       <Project>{5B4B7524-3EAD-4CBF-9BAE-107E918759A6}</Project>
       <Name>PDA Cyber Security Simulator V1</Name>

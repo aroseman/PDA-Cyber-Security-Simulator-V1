@@ -1,4 +1,5 @@
-﻿using System.Net.NetworkInformation;
+﻿using PDA_Cyber_Security_Simulator_V1.Domain;
+using System.Net.NetworkInformation;
 
 namespace PDA_Cyber_Security_Simulator_V1
 {
