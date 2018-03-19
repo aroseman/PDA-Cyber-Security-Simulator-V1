@@ -69,6 +69,9 @@ namespace PDA_Cyber_Security_Simulator_V1
             b.Neighbors.Remove(a);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public static void makeNetworkTable()
         {
             using (SQLiteConnection dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;"))
