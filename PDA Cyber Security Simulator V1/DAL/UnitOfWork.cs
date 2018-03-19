@@ -11,14 +11,10 @@ namespace PDA_Cyber_Security_Simulator_V1.DAL
         public NetworkManager networkManager;
         public DeviceManager deviceManager;
 
-        public UnitOfWork(NetworkManager newManager)
+        public UnitOfWork()
         {
-            this.networkManager = newManager;
-        }
-
-        public UnitOfWork(DeviceManager newManager)
-        {
-            this.deviceManager = newManager;
+            networkManager = new NetworkManager();
+            deviceManager = new DeviceManager();
         }
     }
 }
