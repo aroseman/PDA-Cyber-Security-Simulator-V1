@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using PDA_Cyber_Security_Simulator_V1.Controls;
-using PDA_Cyber_Security_Simulator_V1.Domain;
+using PDA_Cyber_Security_Simulator_Domain;
 using static System.Windows.Forms.ListBox;
 
 namespace PDA_Cyber_Security_Simulator_V1

@@ -2,7 +2,7 @@
 using System.Net;
 using System.Windows.Forms;
 using System.Net.NetworkInformation;
-using PDA_Cyber_Security_Simulator_V1.Domain;
+using PDA_Cyber_Security_Simulator_Domain;
 
 namespace PDA_Cyber_Security_Simulator_V1
 {

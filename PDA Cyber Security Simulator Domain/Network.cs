@@ -1,9 +1,8 @@
-﻿using PDA_Cyber_Security_Simulator_V1.Domain;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 
-namespace PDA_Cyber_Security_Simulator_V1
+namespace PDA_Cyber_Security_Simulator_Domain
 {
     public class Network
     {

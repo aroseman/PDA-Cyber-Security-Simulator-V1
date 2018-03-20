@@ -1,4 +1,6 @@
-﻿namespace PDA_Cyber_Security_Simulator_V1
+﻿using PDA_Cyber_Security_Simulator_Domain;
+
+namespace PDA_Cyber_Security_Simulator_V1
 {
     public abstract class Layer3Attack : Attack
     {
