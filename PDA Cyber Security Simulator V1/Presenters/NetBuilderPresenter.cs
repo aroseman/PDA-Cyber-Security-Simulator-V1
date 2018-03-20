@@ -115,7 +115,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                 //assign the network ID to all devices inside the network
                 for (int i = 0; i < network.Devices.Count; i++)
                 {
-                    network.Devices[i].NetID = network.Id;
+                    network.Devices[i].NetworkId = network.Id;
                     unitOfWork.DeviceManager.AddDevice(network.Devices[i]);
                     //Device.addDevice(network.Devices[i]);
                 }

@@ -28,14 +28,14 @@ namespace PDA_Cyber_Security_Simulator_DAL.Interfaces
             DbCommand.Parameters.Add(new SQLiteParameter("@parameter3", newDevice.MacAddress));
             DbCommand.Parameters.Add(new SQLiteParameter("@parameter4", newDevice.Description));
             DbCommand.Parameters.Add(new SQLiteParameter("@parameter5", newDevice.Notes));
-            DbCommand.Parameters.Add(new SQLiteParameter("@parameter6", newDevice.NetID));
+            DbCommand.Parameters.Add(new SQLiteParameter("@parameter6", newDevice.NetworkId));
             DbCommand.ExecuteNonQuery();
         }
 
         public void DeleteDevice(Device deviceToDelete)
         {
             DbCommand.CommandText = "DELETE FROM Device WHERE id=@parameter1;";
-            DbCommand.Parameters.Add(new SQLiteParameter("@parameter1", deviceToDelete.ID));
+            DbCommand.Parameters.Add(new SQLiteParameter("@parameter1", deviceToDelete.Id));
             DbCommand.ExecuteNonQuery();
         }
 
@@ -91,7 +91,7 @@ namespace PDA_Cyber_Security_Simulator_DAL.Interfaces
                     String notes = deviceReader.GetString(5);
                     int netid = deviceReader.GetInt32(6);
 
-                    newD.ID = id;
+                    newD.Id = id;
                     newD.IpAddress = ip;
                     newD.Name = name;
                     newD.MacAddress = mac;
@@ -141,13 +141,13 @@ namespace PDA_Cyber_Security_Simulator_DAL.Interfaces
                 while (networkReader.Read())
                 {
                     var device = new Device();
-                    device.ID = networkReader.GetInt32(0);
+                    device.Id = networkReader.GetInt32(0);
                     device.IpAddress = networkReader.GetString(1);
                     device.Name = networkReader.GetString(2);
                     device.MacAddress = networkReader.GetString(3);
                     device.Description = networkReader.GetString(4);
                     device.Notes = networkReader.GetString(5);
-                    device.NetID = networkReader.GetInt32(6);
+                    device.NetworkId = networkReader.GetInt32(6);
 
                     deviceList.Add(device);
                 }

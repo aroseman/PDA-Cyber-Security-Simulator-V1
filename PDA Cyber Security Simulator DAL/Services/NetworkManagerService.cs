@@ -69,13 +69,13 @@ namespace PDA_Cyber_Security_Simulator_DAL.Services
                 while (networkReader.Read())
                 {
                     var device = new Device();
-                    device.ID = networkReader.GetInt32(0);
+                    device.Id = networkReader.GetInt32(0);
                     device.IpAddress = networkReader.GetString(1);
                     device.Name = networkReader.GetString(2);
                     device.MacAddress = networkReader.GetString(3);
                     device.Description = networkReader.GetString(4);
                     device.Notes = networkReader.GetString(5);
-                    device.NetID = networkReader.GetInt32(6);
+                    device.NetworkId = networkReader.GetInt32(6);
 
                     deviceList.Add(device);
                 }
