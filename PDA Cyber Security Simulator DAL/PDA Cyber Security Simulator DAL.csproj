@@ -95,9 +95,11 @@
     <Compile Include="Common\UnitOfWork.cs" />
     <Compile Include="Interfaces\IDeviceManager.cs" />
     <Compile Include="Interfaces\IManager.cs" />
+    <Compile Include="Interfaces\INeighborManager.cs" />
     <Compile Include="Interfaces\INetworkManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DeviceManagerService.cs" />
+    <Compile Include="Services\NeighborManagerService.cs" />
     <Compile Include="Services\NetworkManagerService.cs" />
   </ItemGroup>
   <ItemGroup>

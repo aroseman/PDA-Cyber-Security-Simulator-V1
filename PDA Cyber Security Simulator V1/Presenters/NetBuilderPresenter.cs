@@ -113,21 +113,36 @@ namespace PDA_Cyber_Security_Simulator_V1
                 network.Id = unitOfWork.NetworkManager.GetNetworkIdByName(network.Name);
 
                 //assign the network ID to all devices inside the network
-                for (int i = 0; i < network.Devices.Count; i++)
+                for (int index = 0; index < network.Devices.Count; index++)
                 {
-                    network.Devices[i].NetworkId = network.Id;
-                    unitOfWork.DeviceManager.AddDevice(network.Devices[i]);
-                    //Device.addDevice(network.Devices[i]);
+                    network.Devices[index].NetworkId = network.Id;
+                    unitOfWork.DeviceManager.AddDevice(network.Devices[index]);
                 }
 
-
-                //var devices = Device.getDevicesByNetworkID(network.Id);
+                //Get the Ids of the devices, link those Ids to the list of devices in the network, get and link Neighbor device Ids
                 var devices = unitOfWork.DeviceManager.GetDevicesByNetworkId(network.Id);
-                network.Devices = devices;
+                if(devices.Count == network.Devices.Count)
+                {
+                    for(int n = 0; n < devices.Count; n++)
+                    {
+                        network.Devices[n].Id = devices[n].Id;
+                        
+                        for(int o = 0; o < network.Devices[n].Neighbors.Count; o++)
+                        {
+                            network.Devices[n].Neighbors[o].Id = unitOfWork.DeviceManager.GetDeviceIdByNameAndNetworkId(network.Devices[n].Neighbors[o].Name, network.Id);
+                        }
+                    }
 
-                /*
-                    PUSH NEIGHBORS INTO DB HERE 
-                */
+                }
+
+                //Push device neighbors into the neighbors table
+                for (int l = 0; l < network.Devices.Count; l++)
+                {
+                    for (int m = 0; m < network.Devices[l].Neighbors.Count; m++)
+                    {
+                        unitOfWork.NeighborManager.AddNeighbor(network.Devices[l].Id, network.Devices[l].Neighbors[m].Id);
+                    }
+                }
             }
         }
 

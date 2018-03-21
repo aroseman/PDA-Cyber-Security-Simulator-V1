@@ -155,5 +155,20 @@ namespace PDA_Cyber_Security_Simulator_DAL.Interfaces
                 return deviceList;
             }
         }
+
+        public int GetDeviceIdByNameAndNetworkId(string deviceName, int networkId)
+        {
+            DbCommand.CommandText = "SELECT id FROM Device WHERE netid = @parameter1 AND name = @parameter2;";
+            DbCommand.Parameters.Add(new SQLiteParameter("@parameter1", networkId));
+            DbCommand.Parameters.Add(new SQLiteParameter("@parameter2", deviceName));
+            using (SQLiteDataReader reader = DbCommand.ExecuteReader())
+            {
+                reader.Read();
+
+                int id = reader.GetInt32(0);
+
+                return id;
+            }
+        }
     }
 }

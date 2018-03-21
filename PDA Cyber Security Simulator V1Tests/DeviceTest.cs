@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PDA_Cyber_Security_Simulator_V1.Domain;
+using PDA_Cyber_Security_Simulator_Domain;
 
 namespace PDA_Cyber_Security_Simulator_V1Tests
 {

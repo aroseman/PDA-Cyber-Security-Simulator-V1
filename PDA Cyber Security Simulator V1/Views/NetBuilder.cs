@@ -876,6 +876,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             {
                 //Instantiate a new form
                 NetBuilder clearNet = new NetBuilder(Form1);
+                clearNet.drawable = false;
                 beingCleared = true;
                 //Show the new form and close the existing form
                 clearNet.Show();

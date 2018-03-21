@@ -2,39 +2,43 @@
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PDA_Cyber_Security_Simulator_V1;
-using PDA_Cyber_Security_Simulator_V1.Domain;
+using PDA_Cyber_Security_Simulator_Domain;
+using PDA_Cyber_Security_Simulator_DAL.Common;
 
 namespace PDA_Cyber_Security_Simulator_V1Tests
 {
     [TestClass]
     public class NeighborsTest
     {
+        private UnitOfWork UnitofWork = new UnitOfWork();
+
         [TestInitialize()]
         public void TestInit()
         {
-            Device.dropDeviceTable();
-            Device.makeDeviceTable();
+            UnitOfWork unitOfWork = new UnitOfWork();
+            unitOfWork.DeviceManager.DropDeviceTable();
+            unitOfWork.DeviceManager.CreateDeviceTable();
 
-            Neighbors.dropNeighborsTable();
-            Neighbors.makeNeighborsTable();
+            unitOfWork.NeighborManager.DropNeighborsTable();
+            unitOfWork.NeighborManager.MakeNeighborsTable();
 
             Device testDevice = new Device();
             testDevice.Name = "CiscoRouter";
             testDevice.IpAddress = "192.168.1.5";
-            Device.addDevice(testDevice);
+            unitOfWork.DeviceManager.AddDevice(testDevice);
 
             Device testDevice2 = new Device();
             testDevice.Name = "CiscoFirewall";
             testDevice.IpAddress = "192.168.1.6";
-            Device.addDevice(testDevice);
+            unitOfWork.DeviceManager.AddDevice(testDevice2);
         }
 
         [TestMethod()]
         public void AddNeighborTest()
         {
-            Neighbors.addNeighbors(0, 1);
+            UnitofWork.NeighborManager.AddNeighbor(1, 2);
 
-            int idCheck = Neighbors.getMaxTableID();
+            int idCheck = UnitofWork.NeighborManager.GetMaxTableID();
 
             Assert.AreEqual(1, idCheck);
         }
@@ -42,12 +46,18 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         [TestMethod()]
         public void GetNeighborsTest()
         {
-            Neighbors.addNeighbors(0, 1);
+            Device device = new Device();
+            Device neighbor = new Device();
 
-            List<Neighbor> test = Neighbors.getNeighbors();
+            device.Id = 1;
+            neighbor.Id = 3;
 
-            Assert.AreEqual(0, test[0].d1);
-            Assert.AreEqual(1, test[0].d2);
+            UnitofWork.NeighborManager.AddNeighbor(device.Id, neighbor.Id);
+
+            List<PDA_Cyber_Security_Simulator_Domain.Neighbors> test = UnitofWork.NeighborManager.GetNeighbors(device.Id);
+
+            Assert.AreEqual(1, test[0].DeviceId);
+            Assert.AreEqual(3, test[0].NeighborId);
         }
 
     }

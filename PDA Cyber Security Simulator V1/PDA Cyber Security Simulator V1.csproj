@@ -128,7 +128,6 @@
     <Compile Include="Language.cs" />
     <Compile Include="Layer2Attack.cs" />
     <Compile Include="Layer3Attack.cs" />
-    <Compile Include="Neighbors.cs" />
     <Compile Include="Views\NetBuilder.cs">
       <SubType>Form</SubType>
     </Compile>
