@@ -116,6 +116,8 @@
     <Compile Include="DevicePropertiesPopup.Designer.cs">
       <DependentUpon>DevicePropertiesPopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IViewNetwork.cs" />
+    <Compile Include="Presenters\ViewNetworkPresenter.cs" />
     <Compile Include="SynFlood.cs" />
     <Compile Include="Views\HomeView.cs">
       <SubType>Form</SubType>
@@ -156,10 +158,10 @@
     </Compile>
     <Compile Include="Interfaces\ITestNetwork.cs" />
     <Compile Include="Presenters\TestNetworkPresenter.cs" />
-    <Compile Include="ViewNetwork.cs">
+    <Compile Include="Views\ViewNetwork.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewNetwork.Designer.cs">
+    <Compile Include="Views\ViewNetwork.Designer.cs">
       <DependentUpon>ViewNetwork.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DevicePropertiesPopup.resx">
@@ -187,7 +189,7 @@
     <EmbeddedResource Include="Views\TestNetworkView.resx">
       <DependentUpon>TestNetworkView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewNetwork.resx">
+    <EmbeddedResource Include="Views\ViewNetwork.resx">
       <DependentUpon>ViewNetwork.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
