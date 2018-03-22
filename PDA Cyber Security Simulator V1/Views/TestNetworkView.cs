@@ -135,10 +135,6 @@ namespace PDA_Cyber_Security_Simulator_V1
                 {
                     RedDots.Add((CirclePanelRed)c);
                 }
-                else
-                {
-
-                }
             }
 
             for(int i = 0; i < RedDots.Count; i++)

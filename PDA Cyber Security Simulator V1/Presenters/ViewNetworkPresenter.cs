@@ -44,6 +44,11 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
                         t.Neighbors.Add(neighboringDevice);
                     }
                 }
+
+                for (var i=0;  i < network.Devices.Count; i++)
+                {
+                    
+                }
             }
             catch (Exception e)
             {
