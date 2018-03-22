@@ -1,4 +1,4 @@
-﻿namespace PDA_Cyber_Security_Simulator_V1
+﻿namespace PDA_Cyber_Security_Simulator_V1.Views
 {
     partial class ViewNetwork
     {
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.btnLoadNetwork = new System.Windows.Forms.Button();
+            this.txtNetworkName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnLoadNetwork
@@ -40,20 +41,31 @@
             this.btnLoadNetwork.Text = "Load Network";
             this.btnLoadNetwork.UseVisualStyleBackColor = true;
             // 
+            // txtNetworkName
+            // 
+            this.txtNetworkName.Location = new System.Drawing.Point(698, 207);
+            this.txtNetworkName.Name = "txtNetworkName";
+            this.txtNetworkName.Size = new System.Drawing.Size(158, 31);
+            this.txtNetworkName.TabIndex = 1;
+            // 
             // ViewNetwork
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2164, 1062);
+            this.ClientSize = new System.Drawing.Size(2164, 1574);
+            this.Controls.Add(this.txtNetworkName);
             this.Controls.Add(this.btnLoadNetwork);
+            this.MaximumSize = new System.Drawing.Size(2190, 1645);
             this.Name = "ViewNetwork";
             this.Text = "7";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnLoadNetwork;
+        private System.Windows.Forms.TextBox txtNetworkName;
     }
 }

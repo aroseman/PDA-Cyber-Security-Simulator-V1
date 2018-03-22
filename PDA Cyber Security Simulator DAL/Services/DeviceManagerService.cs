@@ -148,6 +148,7 @@ namespace PDA_Cyber_Security_Simulator_DAL.Interfaces
                     device.Description = networkReader.GetString(4);
                     device.Notes = networkReader.GetString(5);
                     device.NetworkId = networkReader.GetInt32(6);
+                    device.Neighbors = new List<Device>();
 
                     deviceList.Add(device);
                 }
@@ -168,6 +169,31 @@ namespace PDA_Cyber_Security_Simulator_DAL.Interfaces
                 int id = reader.GetInt32(0);
 
                 return id;
+            }
+        }
+
+        public Device GetDeviceById(int deviceId)
+        {
+            DbCommand.CommandText = "SELECT * FROM Device WHERE id = @parameter1;";
+            DbCommand.Parameters.Add(new SQLiteParameter("@parameter1", deviceId));
+            using (SQLiteDataReader deviceReader = DbCommand.ExecuteReader())
+            {
+                deviceReader.Read();
+                Device device = new Device
+                {
+                    Id = deviceReader.GetInt32(0),
+                    IpAddress = deviceReader.GetString(1),
+                    Name = deviceReader.GetString(2),
+                    MacAddress = deviceReader.GetString(3),
+                    Description = deviceReader.GetString(4),
+                    Notes = deviceReader.GetString(5),
+                    NetworkId = deviceReader.GetInt32(6),
+                    Configured = true,
+                    Neighbors = new List<Device>(),
+                    Status = false
+                };
+
+                return device;
             }
         }
     }

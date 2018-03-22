@@ -18,5 +18,6 @@ namespace PDA_Cyber_Security_Simulator_DAL.Interfaces
         List<Device> GetDeviceByNetworkId(int networkId);
         int GetMaxTableId();
         int GetNetworkIdByName(string networkName);
+        Network GetNetworkByName(string networkName);
     }
 }

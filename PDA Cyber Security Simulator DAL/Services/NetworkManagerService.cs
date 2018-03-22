@@ -98,20 +98,37 @@ namespace PDA_Cyber_Security_Simulator_DAL.Services
 
         public int GetNetworkIdByName(string networkName)
         {
+            DbCommand.CommandText = "SELECT id FROM Network WHERE name = @parameter1;";
+            DbCommand.Parameters.Add(new SQLiteParameter("@parameter1", networkName));
+
+            using (SQLiteDataReader networkReader = DbCommand.ExecuteReader())
+            {
+
+                networkReader.Read();
+
+                var id = networkReader.GetInt32(0);
+
+                return id;
+            }
+        }
+
+        public Network GetNetworkByName(string networkName)
+        {
             DbCommand.CommandText = "SELECT * FROM Network WHERE name = @parameter1;";
             DbCommand.Parameters.Add(new SQLiteParameter("@parameter1", networkName));
 
             using (SQLiteDataReader networkReader = DbCommand.ExecuteReader())
             {
-                int id = 0;
-
-                while (networkReader.Read())
+                networkReader.Read();
+                Network network = new Network
                 {
-                    id = networkReader.GetInt32(0);
-                }
+                    Id = networkReader.GetInt32(0),
+                    Name = networkReader.GetString(1)
+                };
 
-                return id;
+                return network;
             }
+
         }
     }
 }

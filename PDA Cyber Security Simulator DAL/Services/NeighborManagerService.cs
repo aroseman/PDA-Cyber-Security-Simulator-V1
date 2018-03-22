@@ -53,20 +53,21 @@ namespace PDA_Cyber_Security_Simulator_DAL.Services
         {
             DbCommand.CommandText = "SELECT * FROM Neighbors WHERE DeviceId=@parameter1;";
             DbCommand.Parameters.Add(new SQLiteParameter("@parameter1", deviceId.ToString()));
-            SQLiteDataReader neighborReader = DbCommand.ExecuteReader();
-
-            List<Neighbors> neighborList = new List<Neighbors>();
-
-            while (neighborReader.Read())
+            using (SQLiteDataReader neighborReader = DbCommand.ExecuteReader())
             {
-                int id = neighborReader.GetInt32(0);
-                int devId = neighborReader.GetInt32(1);
-                int neighId = neighborReader.GetInt32(1);
-                Neighbors n = new Neighbors(devId, neighId);
-                neighborList.Add(n);
-            }
+                List<Neighbors> neighborList = new List<Neighbors>();
 
-            return neighborList;
+                while (neighborReader.Read())
+                {
+                    int id = neighborReader.GetInt32(0);
+                    int devId = neighborReader.GetInt32(1);
+                    int neighId = neighborReader.GetInt32(2);
+                    Neighbors n = new Neighbors(devId, neighId);
+                    neighborList.Add(n);
+                }
+
+                return neighborList;
+            }
         }
 
         public int GetMaxTableID()

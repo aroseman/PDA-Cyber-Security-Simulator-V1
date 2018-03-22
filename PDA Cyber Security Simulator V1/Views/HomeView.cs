@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using PDA_Cyber_Security_Simulator_V1.Presenters;
+using PDA_Cyber_Security_Simulator_V1.Views;
 
 namespace PDA_Cyber_Security_Simulator_V1
 {
@@ -19,26 +21,30 @@ namespace PDA_Cyber_Security_Simulator_V1
         public TestNetworkPresenter TestNetworkPresenter { get; set; }
         public SimulateAttackView SimulateAttackView { get; set; }
         public SimulateAttackPresenter SimulateAttackPresenter { get; set; }
+        public ViewNetwork ViewNetwork { get; set; }
+        public ViewNetworkPresenter ViewNetworkPresenter { get; set; }
 
         public HomeView()
         {
             InitializeComponent();
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.testNetwork.Click += OnTestNetworkButtonClicked;
-            this.testNetworkLabel.Click += OnTestNetworkButtonClicked;
-            this.simulateAttack.Click += OnSimulateAttackButtonClicked;
-            this.simulateAttackLabel.Click += OnSimulateAttackButtonClicked;
-            this.viewNetwork.Click += OnViewNetworkButtonClicked;
-            this.viewNetworkLabel.Click += OnViewNetworkButtonClicked;
-            this.configureNetwork.Click += OnConfigureNetworkButtonClicked;
-            this.configureNetworkLabel.Click += OnConfigureNetworkButtonClicked;
-            this.rootCrumb.Click += OnRootCrumbClicked;
-            this.NetBuilder = new NetBuilder(this);
-            this.NetBuilderPresenter = new NetBuilderPresenter(this.NetBuilder);
-            this.TestNetwork = new TestNetworkView(this);
-            this.TestNetworkPresenter = new TestNetworkPresenter(this.TestNetwork);
-            this.SimulateAttackView = new SimulateAttackView(this);
-            this.SimulateAttackPresenter = new SimulateAttackPresenter(this.SimulateAttackView);
+            WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            testNetwork.Click += OnTestNetworkButtonClicked;
+            testNetworkLabel.Click += OnTestNetworkButtonClicked;
+            simulateAttack.Click += OnSimulateAttackButtonClicked;
+            simulateAttackLabel.Click += OnSimulateAttackButtonClicked;
+            viewNetwork.Click += OnViewNetworkButtonClicked;
+            viewNetworkLabel.Click += OnViewNetworkButtonClicked;
+            configureNetwork.Click += OnConfigureNetworkButtonClicked;
+            configureNetworkLabel.Click += OnConfigureNetworkButtonClicked;
+            rootCrumb.Click += OnRootCrumbClicked;
+            NetBuilder = new NetBuilder(this);
+            NetBuilderPresenter = new NetBuilderPresenter(this.NetBuilder);
+            TestNetwork = new TestNetworkView(this);
+            TestNetworkPresenter = new TestNetworkPresenter(this.TestNetwork);
+            SimulateAttackView = new SimulateAttackView(this);
+            SimulateAttackPresenter = new SimulateAttackPresenter(this.SimulateAttackView);
+            ViewNetwork = new ViewNetwork(this);
+            ViewNetworkPresenter = new ViewNetworkPresenter(ViewNetwork);
             
         }
 
@@ -323,6 +329,11 @@ namespace PDA_Cyber_Security_Simulator_V1
             this.NetBuilder.Show();
         }
 
+        public void ShowViewNetworkView()
+        {
+            ViewNetwork.Show();
+        }
+
         public void HideNetBuilderView()
         {
             this.NetBuilder.Hide();
@@ -336,6 +347,11 @@ namespace PDA_Cyber_Security_Simulator_V1
         public void HideSimulateAttackView()
         {
             this.SimulateAttackView.Hide();
+        }
+
+        public void HideViewNetworkView()
+        {
+            ViewNetwork.Hide();
         }
     }
 }
