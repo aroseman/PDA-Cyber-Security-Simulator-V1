@@ -31,6 +31,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             DeviceNames = new List<Label>();
             IpLabels = new List<Label>();
             IpAddresses = new List<Label>();
+            var placeholder = new List<Label>();
 
             foreach (Control c in pnlViewNetwork.Controls)
             {
@@ -45,7 +46,13 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
                 else if (c is Label && c.Name.Contains("lblAddress"))
                 {
                     IpAddresses.Add((Label)c);
+                    placeholder.Add((Label)c);
                 }
+            }
+
+            for (var j = 0; j < IpAddresses.Count; j++)
+            {
+                IpAddresses[j] = placeholder[IpAddresses.Count - j - 1];
             }
 
             for (var i = 0; i < DeviceNames.Count; i++)

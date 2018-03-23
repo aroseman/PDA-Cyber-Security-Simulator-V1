@@ -31,6 +31,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
         {
             try
             {
+                //Load in the specified network
                 var network = unitOfWork.NetworkManager.GetNetworkByName(view.TxtNetworkName.Text);
                 var devices = unitOfWork.DeviceManager.GetDevicesByNetworkId(network.Id);
                 network.Devices = devices;
@@ -45,9 +46,14 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
                     }
                 }
 
-                for (var i=0;  i < network.Devices.Count; i++)
+                //Push device properties onto view
+                for (var i = 0;  i < network.Devices.Count; i++)
                 {
-                    
+                    view.DeviceNames[view.DeviceNames.Count - i - 1].Text = network.Devices[network.Devices.Count - i - 1].Name;
+                    view.IpAddresses[i].Text = network.Devices[network.Devices.Count - i - 1].IpAddress;
+                    view.DeviceNames[view.DeviceNames.Count - i - 1].Visible = true;
+                    view.IpLabels[view.IpLabels.Count - i - 1].Visible = true;
+                    view.IpAddresses[i].Visible = true;
                 }
             }
             catch (Exception e)

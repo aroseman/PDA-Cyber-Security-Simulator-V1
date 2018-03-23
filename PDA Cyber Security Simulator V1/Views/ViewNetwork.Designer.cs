@@ -38,6 +38,7 @@
             this.pnlViewNetworkTitle = new System.Windows.Forms.Panel();
             this.lblViewNetworkTitle = new System.Windows.Forms.Label();
             this.pnlViewNetwork = new System.Windows.Forms.Panel();
+            this.lblNetworkName = new System.Windows.Forms.Label();
             this.lblAddressL = new System.Windows.Forms.Label();
             this.lblIpL = new System.Windows.Forms.Label();
             this.lblDeviceL = new System.Windows.Forms.Label();
@@ -74,7 +75,6 @@
             this.lblAddressA = new System.Windows.Forms.Label();
             this.lblIpA = new System.Windows.Forms.Label();
             this.lblDeviceA = new System.Windows.Forms.Label();
-            this.lblNetworkName = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.breadCrumbsPanel.SuspendLayout();
@@ -245,6 +245,16 @@
             this.pnlViewNetwork.Size = new System.Drawing.Size(2156, 1359);
             this.pnlViewNetwork.TabIndex = 6;
             // 
+            // lblNetworkName
+            // 
+            this.lblNetworkName.AutoSize = true;
+            this.lblNetworkName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNetworkName.Location = new System.Drawing.Point(37, 12);
+            this.lblNetworkName.Name = "lblNetworkName";
+            this.lblNetworkName.Size = new System.Drawing.Size(252, 37);
+            this.lblNetworkName.TabIndex = 101;
+            this.lblNetworkName.Text = "Network Name:";
+            // 
             // lblAddressL
             // 
             this.lblAddressL.AutoSize = true;
@@ -384,9 +394,9 @@
             this.lblAddressH.Location = new System.Drawing.Point(1269, 628);
             this.lblAddressH.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressH.Name = "lblAddressH";
-            this.lblAddressH.Size = new System.Drawing.Size(194, 31);
+            this.lblAddressH.Size = new System.Drawing.Size(196, 31);
             this.lblAddressH.TabIndex = 72;
-            this.lblAddressH.Text = "xxx.xxx.xxx.xxx";
+            this.lblAddressH.Text = "xxx.xxx.xxx.xx8";
             // 
             // lblIpH
             // 
@@ -417,9 +427,9 @@
             this.lblAddressG.Location = new System.Drawing.Point(1269, 446);
             this.lblAddressG.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressG.Name = "lblAddressG";
-            this.lblAddressG.Size = new System.Drawing.Size(194, 31);
+            this.lblAddressG.Size = new System.Drawing.Size(196, 31);
             this.lblAddressG.TabIndex = 67;
-            this.lblAddressG.Text = "xxx.xxx.xxx.xxx";
+            this.lblAddressG.Text = "xxx.xxx.xxx.xx7";
             // 
             // lblIpG
             // 
@@ -450,9 +460,9 @@
             this.lblAddressF.Location = new System.Drawing.Point(1269, 261);
             this.lblAddressF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressF.Name = "lblAddressF";
-            this.lblAddressF.Size = new System.Drawing.Size(194, 31);
+            this.lblAddressF.Size = new System.Drawing.Size(196, 31);
             this.lblAddressF.TabIndex = 62;
-            this.lblAddressF.Text = "xxx.xxx.xxx.xxx";
+            this.lblAddressF.Text = "xxx.xxx.xxx.xx6";
             // 
             // lblIpF
             // 
@@ -483,9 +493,9 @@
             this.lblAddressE.Location = new System.Drawing.Point(1269, 77);
             this.lblAddressE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressE.Name = "lblAddressE";
-            this.lblAddressE.Size = new System.Drawing.Size(194, 31);
+            this.lblAddressE.Size = new System.Drawing.Size(196, 31);
             this.lblAddressE.TabIndex = 57;
-            this.lblAddressE.Text = "xxx.xxx.xxx.xxx";
+            this.lblAddressE.Text = "xxx.xxx.xxx.xx5";
             // 
             // lblIpE
             // 
@@ -516,9 +526,9 @@
             this.lblAddressD.Location = new System.Drawing.Point(793, 628);
             this.lblAddressD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressD.Name = "lblAddressD";
-            this.lblAddressD.Size = new System.Drawing.Size(194, 31);
+            this.lblAddressD.Size = new System.Drawing.Size(196, 31);
             this.lblAddressD.TabIndex = 44;
-            this.lblAddressD.Text = "xxx.xxx.xxx.xxx";
+            this.lblAddressD.Text = "xxx.xxx.xxx.xx4";
             // 
             // lblIpD
             // 
@@ -549,9 +559,9 @@
             this.lblAddressC.Location = new System.Drawing.Point(793, 446);
             this.lblAddressC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressC.Name = "lblAddressC";
-            this.lblAddressC.Size = new System.Drawing.Size(194, 31);
+            this.lblAddressC.Size = new System.Drawing.Size(196, 31);
             this.lblAddressC.TabIndex = 39;
-            this.lblAddressC.Text = "xxx.xxx.xxx.xxx";
+            this.lblAddressC.Text = "xxx.xxx.xxx.xx3";
             // 
             // lblIpC
             // 
@@ -582,9 +592,9 @@
             this.lblAddressB.Location = new System.Drawing.Point(793, 261);
             this.lblAddressB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressB.Name = "lblAddressB";
-            this.lblAddressB.Size = new System.Drawing.Size(194, 31);
+            this.lblAddressB.Size = new System.Drawing.Size(196, 31);
             this.lblAddressB.TabIndex = 34;
-            this.lblAddressB.Text = "xxx.xxx.xxx.xxx";
+            this.lblAddressB.Text = "xxx.xxx.xxx.xx2";
             // 
             // lblIpB
             // 
@@ -615,9 +625,9 @@
             this.lblAddressA.Location = new System.Drawing.Point(793, 77);
             this.lblAddressA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressA.Name = "lblAddressA";
-            this.lblAddressA.Size = new System.Drawing.Size(194, 31);
+            this.lblAddressA.Size = new System.Drawing.Size(196, 31);
             this.lblAddressA.TabIndex = 29;
-            this.lblAddressA.Text = "xxx.xxx.xxx.xxx";
+            this.lblAddressA.Text = "xxx.xxx.xxx.xx1";
             // 
             // lblIpA
             // 
@@ -640,16 +650,6 @@
             this.lblDeviceA.Size = new System.Drawing.Size(151, 37);
             this.lblDeviceA.TabIndex = 25;
             this.lblDeviceA.Text = "Device A";
-            // 
-            // lblNetworkName
-            // 
-            this.lblNetworkName.AutoSize = true;
-            this.lblNetworkName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNetworkName.Location = new System.Drawing.Point(37, 12);
-            this.lblNetworkName.Name = "lblNetworkName";
-            this.lblNetworkName.Size = new System.Drawing.Size(252, 37);
-            this.lblNetworkName.TabIndex = 101;
-            this.lblNetworkName.Text = "Network Name:";
             // 
             // ViewNetwork
             // 
