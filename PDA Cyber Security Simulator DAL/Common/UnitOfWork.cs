@@ -14,14 +14,13 @@ namespace PDA_Cyber_Security_Simulator_DAL.Common
         public INetworkManager NetworkManager { get; private set; }
         public IDeviceManager DeviceManager { get; private set; }
         public INeighborManager NeighborManager { get; private set; }
-        private ConnectionStringSettings DbConnection = ConfigurationManager.ConnectionStrings["DbConnection"];
+        private string DbConnection = ConfigurationManager.ConnectionStrings["DbConnection"].ConnectionString;
 
         public UnitOfWork()
         {
-            string DbConnectionString = DbConnection.ConnectionString;
-            NetworkManager = new NetworkManagerService(DbConnectionString);
-            DeviceManager = new DeviceManagerService(DbConnectionString);
-            NeighborManager = new NeighborManagerService(DbConnectionString);
+            NetworkManager = new NetworkManagerService(DbConnection);
+            DeviceManager = new DeviceManagerService(DbConnection);
+            NeighborManager = new NeighborManagerService(DbConnection);
         }
     }
 }
