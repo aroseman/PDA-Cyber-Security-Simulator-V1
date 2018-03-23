@@ -49,7 +49,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         //DRAWING ALSO DISABLES DRAG AND DROP
         private bool drawable = false;
         private Network network;
-        //public Device Device { get; set; }
+ 
 
         private Object activeObject;
 
@@ -85,6 +85,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             this.btnSaveNetwork.Click += OnBtnSaveClick;
             this.btnClearNetwork.Click += OnBtnClearNetworkClick;
             this.enableLineDraw.MouseClick += OnEnableLineDrawClick;
+            this.canvas.KeyDown += DeletePressed;
         }
 
         public NetBuilder(HomeViewPresenter form1Presenter)
@@ -869,6 +870,27 @@ namespace PDA_Cyber_Security_Simulator_V1
         }
         #endregion
 
+        private void canvas_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Delete:
+                    e.IsInputKey = true;
+                    break;
+            }
+        }
+
+        private void DeletePressed(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Delete:
+                    Console.WriteLine("Deleted Bitch.");
+                    break;
+
+            }
+        }
+
         public void btnClearNetwork_Click()
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to clear?", "Clear Network Graph", MessageBoxButtons.YesNo);
@@ -889,5 +911,13 @@ namespace PDA_Cyber_Security_Simulator_V1
 
             }
         }
+
+        public void DeleteLine(Point startPoint, Point endPoint)
+        {
+            Pt1.Remove(startPoint);
+            Pt2.Remove(endPoint);
+        }
     }
+
+    
 }
