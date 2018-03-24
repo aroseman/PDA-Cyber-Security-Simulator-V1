@@ -12,5 +12,6 @@ namespace PDA_Cyber_Security_Simulator_V1.Interfaces
     interface IViewNetwork
     {
         event Action BtnLoadNetworkClick;
+        event Action FormPaint;
     }
 }

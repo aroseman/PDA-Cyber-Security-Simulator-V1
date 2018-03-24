@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewNetwork));
             this.btnLoadNetwork = new System.Windows.Forms.Button();
             this.txtNetworkName = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -75,12 +76,36 @@
             this.lblAddressA = new System.Windows.Forms.Label();
             this.lblIpA = new System.Windows.Forms.Label();
             this.lblDeviceA = new System.Windows.Forms.Label();
+            this.picDeviceA = new System.Windows.Forms.PictureBox();
+            this.picDeviceL = new System.Windows.Forms.PictureBox();
+            this.picDeviceI = new System.Windows.Forms.PictureBox();
+            this.picDeviceF = new System.Windows.Forms.PictureBox();
+            this.picDeviceC = new System.Windows.Forms.PictureBox();
+            this.picDeviceK = new System.Windows.Forms.PictureBox();
+            this.picDeviceH = new System.Windows.Forms.PictureBox();
+            this.picDeviceE = new System.Windows.Forms.PictureBox();
+            this.picDeviceJ = new System.Windows.Forms.PictureBox();
+            this.picDeviceG = new System.Windows.Forms.PictureBox();
+            this.picDeviceD = new System.Windows.Forms.PictureBox();
+            this.picDeviceB = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.breadCrumbsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProcessAndDataLogo)).BeginInit();
             this.pnlViewNetworkTitle.SuspendLayout();
             this.pnlViewNetwork.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceJ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceB)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLoadNetwork
@@ -238,6 +263,18 @@
             this.pnlViewNetwork.Controls.Add(this.lblAddressA);
             this.pnlViewNetwork.Controls.Add(this.lblIpA);
             this.pnlViewNetwork.Controls.Add(this.lblDeviceA);
+            this.pnlViewNetwork.Controls.Add(this.picDeviceA);
+            this.pnlViewNetwork.Controls.Add(this.picDeviceL);
+            this.pnlViewNetwork.Controls.Add(this.picDeviceI);
+            this.pnlViewNetwork.Controls.Add(this.picDeviceF);
+            this.pnlViewNetwork.Controls.Add(this.picDeviceC);
+            this.pnlViewNetwork.Controls.Add(this.picDeviceK);
+            this.pnlViewNetwork.Controls.Add(this.picDeviceH);
+            this.pnlViewNetwork.Controls.Add(this.picDeviceE);
+            this.pnlViewNetwork.Controls.Add(this.picDeviceJ);
+            this.pnlViewNetwork.Controls.Add(this.picDeviceG);
+            this.pnlViewNetwork.Controls.Add(this.picDeviceD);
+            this.pnlViewNetwork.Controls.Add(this.picDeviceB);
             this.pnlViewNetwork.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlViewNetwork.Location = new System.Drawing.Point(4, 196);
             this.pnlViewNetwork.Margin = new System.Windows.Forms.Padding(4);
@@ -259,7 +296,7 @@
             // 
             this.lblAddressL.AutoSize = true;
             this.lblAddressL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressL.Location = new System.Drawing.Point(1748, 628);
+            this.lblAddressL.Location = new System.Drawing.Point(508, 136);
             this.lblAddressL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressL.Name = "lblAddressL";
             this.lblAddressL.Size = new System.Drawing.Size(194, 31);
@@ -270,7 +307,7 @@
             // 
             this.lblIpL.AutoSize = true;
             this.lblIpL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpL.Location = new System.Drawing.Point(1704, 628);
+            this.lblIpL.Location = new System.Drawing.Point(464, 136);
             this.lblIpL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIpL.Name = "lblIpL";
             this.lblIpL.Size = new System.Drawing.Size(51, 31);
@@ -281,7 +318,7 @@
             // 
             this.lblDeviceL.AutoSize = true;
             this.lblDeviceL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceL.Location = new System.Drawing.Point(1703, 591);
+            this.lblDeviceL.Location = new System.Drawing.Point(463, 99);
             this.lblDeviceL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeviceL.Name = "lblDeviceL";
             this.lblDeviceL.Size = new System.Drawing.Size(147, 37);
@@ -292,7 +329,7 @@
             // 
             this.lblAddressK.AutoSize = true;
             this.lblAddressK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressK.Location = new System.Drawing.Point(1748, 446);
+            this.lblAddressK.Location = new System.Drawing.Point(313, 358);
             this.lblAddressK.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressK.Name = "lblAddressK";
             this.lblAddressK.Size = new System.Drawing.Size(194, 31);
@@ -303,7 +340,7 @@
             // 
             this.lblIpK.AutoSize = true;
             this.lblIpK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpK.Location = new System.Drawing.Point(1704, 446);
+            this.lblIpK.Location = new System.Drawing.Point(269, 358);
             this.lblIpK.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIpK.Name = "lblIpK";
             this.lblIpK.Size = new System.Drawing.Size(51, 31);
@@ -314,7 +351,7 @@
             // 
             this.lblDeviceK.AutoSize = true;
             this.lblDeviceK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceK.Location = new System.Drawing.Point(1703, 409);
+            this.lblDeviceK.Location = new System.Drawing.Point(268, 321);
             this.lblDeviceK.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeviceK.Name = "lblDeviceK";
             this.lblDeviceK.Size = new System.Drawing.Size(150, 37);
@@ -325,7 +362,7 @@
             // 
             this.lblAddressJ.AutoSize = true;
             this.lblAddressJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressJ.Location = new System.Drawing.Point(1748, 261);
+            this.lblAddressJ.Location = new System.Drawing.Point(237, 640);
             this.lblAddressJ.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressJ.Name = "lblAddressJ";
             this.lblAddressJ.Size = new System.Drawing.Size(194, 31);
@@ -336,7 +373,7 @@
             // 
             this.lblIpJ.AutoSize = true;
             this.lblIpJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpJ.Location = new System.Drawing.Point(1704, 261);
+            this.lblIpJ.Location = new System.Drawing.Point(193, 640);
             this.lblIpJ.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIpJ.Name = "lblIpJ";
             this.lblIpJ.Size = new System.Drawing.Size(51, 31);
@@ -347,7 +384,7 @@
             // 
             this.lblDeviceJ.AutoSize = true;
             this.lblDeviceJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceJ.Location = new System.Drawing.Point(1703, 224);
+            this.lblDeviceJ.Location = new System.Drawing.Point(192, 603);
             this.lblDeviceJ.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeviceJ.Name = "lblDeviceJ";
             this.lblDeviceJ.Size = new System.Drawing.Size(145, 37);
@@ -358,7 +395,7 @@
             // 
             this.lblAddressI.AutoSize = true;
             this.lblAddressI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressI.Location = new System.Drawing.Point(1748, 77);
+            this.lblAddressI.Location = new System.Drawing.Point(311, 947);
             this.lblAddressI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressI.Name = "lblAddressI";
             this.lblAddressI.Size = new System.Drawing.Size(194, 31);
@@ -369,7 +406,7 @@
             // 
             this.lblIpI.AutoSize = true;
             this.lblIpI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpI.Location = new System.Drawing.Point(1704, 77);
+            this.lblIpI.Location = new System.Drawing.Point(267, 947);
             this.lblIpI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIpI.Name = "lblIpI";
             this.lblIpI.Size = new System.Drawing.Size(51, 31);
@@ -380,7 +417,7 @@
             // 
             this.lblDeviceI.AutoSize = true;
             this.lblDeviceI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceI.Location = new System.Drawing.Point(1703, 39);
+            this.lblDeviceI.Location = new System.Drawing.Point(266, 909);
             this.lblDeviceI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeviceI.Name = "lblDeviceI";
             this.lblDeviceI.Size = new System.Drawing.Size(137, 37);
@@ -391,7 +428,7 @@
             // 
             this.lblAddressH.AutoSize = true;
             this.lblAddressH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressH.Location = new System.Drawing.Point(1269, 628);
+            this.lblAddressH.Location = new System.Drawing.Point(506, 1149);
             this.lblAddressH.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressH.Name = "lblAddressH";
             this.lblAddressH.Size = new System.Drawing.Size(196, 31);
@@ -402,7 +439,7 @@
             // 
             this.lblIpH.AutoSize = true;
             this.lblIpH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpH.Location = new System.Drawing.Point(1225, 628);
+            this.lblIpH.Location = new System.Drawing.Point(462, 1149);
             this.lblIpH.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIpH.Name = "lblIpH";
             this.lblIpH.Size = new System.Drawing.Size(51, 31);
@@ -413,7 +450,7 @@
             // 
             this.lblDeviceH.AutoSize = true;
             this.lblDeviceH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceH.Location = new System.Drawing.Point(1225, 591);
+            this.lblDeviceH.Location = new System.Drawing.Point(462, 1112);
             this.lblDeviceH.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeviceH.Name = "lblDeviceH";
             this.lblDeviceH.Size = new System.Drawing.Size(152, 37);
@@ -424,7 +461,7 @@
             // 
             this.lblAddressG.AutoSize = true;
             this.lblAddressG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressG.Location = new System.Drawing.Point(1269, 446);
+            this.lblAddressG.Location = new System.Drawing.Point(1222, 1325);
             this.lblAddressG.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressG.Name = "lblAddressG";
             this.lblAddressG.Size = new System.Drawing.Size(196, 31);
@@ -435,7 +472,7 @@
             // 
             this.lblIpG.AutoSize = true;
             this.lblIpG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpG.Location = new System.Drawing.Point(1225, 446);
+            this.lblIpG.Location = new System.Drawing.Point(1178, 1325);
             this.lblIpG.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIpG.Name = "lblIpG";
             this.lblIpG.Size = new System.Drawing.Size(51, 31);
@@ -446,7 +483,7 @@
             // 
             this.lblDeviceG.AutoSize = true;
             this.lblDeviceG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceG.Location = new System.Drawing.Point(1225, 409);
+            this.lblDeviceG.Location = new System.Drawing.Point(1178, 1288);
             this.lblDeviceG.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeviceG.Name = "lblDeviceG";
             this.lblDeviceG.Size = new System.Drawing.Size(154, 37);
@@ -457,7 +494,7 @@
             // 
             this.lblAddressF.AutoSize = true;
             this.lblAddressF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressF.Location = new System.Drawing.Point(1269, 261);
+            this.lblAddressF.Location = new System.Drawing.Point(1543, 1149);
             this.lblAddressF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressF.Name = "lblAddressF";
             this.lblAddressF.Size = new System.Drawing.Size(196, 31);
@@ -468,7 +505,7 @@
             // 
             this.lblIpF.AutoSize = true;
             this.lblIpF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpF.Location = new System.Drawing.Point(1225, 261);
+            this.lblIpF.Location = new System.Drawing.Point(1499, 1149);
             this.lblIpF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIpF.Name = "lblIpF";
             this.lblIpF.Size = new System.Drawing.Size(51, 31);
@@ -479,7 +516,7 @@
             // 
             this.lblDeviceF.AutoSize = true;
             this.lblDeviceF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceF.Location = new System.Drawing.Point(1225, 224);
+            this.lblDeviceF.Location = new System.Drawing.Point(1499, 1112);
             this.lblDeviceF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeviceF.Name = "lblDeviceF";
             this.lblDeviceF.Size = new System.Drawing.Size(149, 37);
@@ -490,7 +527,7 @@
             // 
             this.lblAddressE.AutoSize = true;
             this.lblAddressE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressE.Location = new System.Drawing.Point(1269, 77);
+            this.lblAddressE.Location = new System.Drawing.Point(1760, 947);
             this.lblAddressE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressE.Name = "lblAddressE";
             this.lblAddressE.Size = new System.Drawing.Size(196, 31);
@@ -501,7 +538,7 @@
             // 
             this.lblIpE.AutoSize = true;
             this.lblIpE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpE.Location = new System.Drawing.Point(1225, 77);
+            this.lblIpE.Location = new System.Drawing.Point(1716, 947);
             this.lblIpE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIpE.Name = "lblIpE";
             this.lblIpE.Size = new System.Drawing.Size(51, 31);
@@ -512,7 +549,7 @@
             // 
             this.lblDeviceE.AutoSize = true;
             this.lblDeviceE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceE.Location = new System.Drawing.Point(1225, 39);
+            this.lblDeviceE.Location = new System.Drawing.Point(1716, 909);
             this.lblDeviceE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeviceE.Name = "lblDeviceE";
             this.lblDeviceE.Size = new System.Drawing.Size(150, 37);
@@ -523,7 +560,7 @@
             // 
             this.lblAddressD.AutoSize = true;
             this.lblAddressD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressD.Location = new System.Drawing.Point(793, 628);
+            this.lblAddressD.Location = new System.Drawing.Point(1834, 640);
             this.lblAddressD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressD.Name = "lblAddressD";
             this.lblAddressD.Size = new System.Drawing.Size(196, 31);
@@ -534,7 +571,7 @@
             // 
             this.lblIpD.AutoSize = true;
             this.lblIpD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpD.Location = new System.Drawing.Point(747, 628);
+            this.lblIpD.Location = new System.Drawing.Point(1788, 640);
             this.lblIpD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIpD.Name = "lblIpD";
             this.lblIpD.Size = new System.Drawing.Size(51, 31);
@@ -545,7 +582,7 @@
             // 
             this.lblDeviceD.AutoSize = true;
             this.lblDeviceD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceD.Location = new System.Drawing.Point(747, 591);
+            this.lblDeviceD.Location = new System.Drawing.Point(1788, 603);
             this.lblDeviceD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeviceD.Name = "lblDeviceD";
             this.lblDeviceD.Size = new System.Drawing.Size(152, 37);
@@ -556,7 +593,7 @@
             // 
             this.lblAddressC.AutoSize = true;
             this.lblAddressC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressC.Location = new System.Drawing.Point(793, 446);
+            this.lblAddressC.Location = new System.Drawing.Point(1760, 358);
             this.lblAddressC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressC.Name = "lblAddressC";
             this.lblAddressC.Size = new System.Drawing.Size(196, 31);
@@ -567,7 +604,7 @@
             // 
             this.lblIpC.AutoSize = true;
             this.lblIpC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpC.Location = new System.Drawing.Point(747, 446);
+            this.lblIpC.Location = new System.Drawing.Point(1714, 358);
             this.lblIpC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIpC.Name = "lblIpC";
             this.lblIpC.Size = new System.Drawing.Size(51, 31);
@@ -578,7 +615,7 @@
             // 
             this.lblDeviceC.AutoSize = true;
             this.lblDeviceC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceC.Location = new System.Drawing.Point(747, 409);
+            this.lblDeviceC.Location = new System.Drawing.Point(1714, 321);
             this.lblDeviceC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeviceC.Name = "lblDeviceC";
             this.lblDeviceC.Size = new System.Drawing.Size(152, 37);
@@ -589,7 +626,7 @@
             // 
             this.lblAddressB.AutoSize = true;
             this.lblAddressB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressB.Location = new System.Drawing.Point(793, 261);
+            this.lblAddressB.Location = new System.Drawing.Point(1543, 136);
             this.lblAddressB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressB.Name = "lblAddressB";
             this.lblAddressB.Size = new System.Drawing.Size(196, 31);
@@ -600,7 +637,7 @@
             // 
             this.lblIpB.AutoSize = true;
             this.lblIpB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpB.Location = new System.Drawing.Point(747, 261);
+            this.lblIpB.Location = new System.Drawing.Point(1497, 136);
             this.lblIpB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIpB.Name = "lblIpB";
             this.lblIpB.Size = new System.Drawing.Size(51, 31);
@@ -611,7 +648,7 @@
             // 
             this.lblDeviceB.AutoSize = true;
             this.lblDeviceB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceB.Location = new System.Drawing.Point(747, 224);
+            this.lblDeviceB.Location = new System.Drawing.Point(1497, 99);
             this.lblDeviceB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeviceB.Name = "lblDeviceB";
             this.lblDeviceB.Size = new System.Drawing.Size(150, 37);
@@ -622,7 +659,7 @@
             // 
             this.lblAddressA.AutoSize = true;
             this.lblAddressA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressA.Location = new System.Drawing.Point(793, 77);
+            this.lblAddressA.Location = new System.Drawing.Point(1222, 43);
             this.lblAddressA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddressA.Name = "lblAddressA";
             this.lblAddressA.Size = new System.Drawing.Size(196, 31);
@@ -633,7 +670,7 @@
             // 
             this.lblIpA.AutoSize = true;
             this.lblIpA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpA.Location = new System.Drawing.Point(747, 77);
+            this.lblIpA.Location = new System.Drawing.Point(1176, 43);
             this.lblIpA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIpA.Name = "lblIpA";
             this.lblIpA.Size = new System.Drawing.Size(51, 31);
@@ -644,12 +681,132 @@
             // 
             this.lblDeviceA.AutoSize = true;
             this.lblDeviceA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeviceA.Location = new System.Drawing.Point(747, 39);
+            this.lblDeviceA.Location = new System.Drawing.Point(1176, 5);
             this.lblDeviceA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeviceA.Name = "lblDeviceA";
             this.lblDeviceA.Size = new System.Drawing.Size(151, 37);
             this.lblDeviceA.TabIndex = 25;
             this.lblDeviceA.Text = "Device A";
+            // 
+            // picDeviceA
+            // 
+            this.picDeviceA.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceA.Image")));
+            this.picDeviceA.InitialImage = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
+            this.picDeviceA.Location = new System.Drawing.Point(1038, 28);
+            this.picDeviceA.Name = "picDeviceA";
+            this.picDeviceA.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceA.TabIndex = 0;
+            this.picDeviceA.TabStop = false;
+            // 
+            // picDeviceL
+            // 
+            this.picDeviceL.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceL.Image")));
+            this.picDeviceL.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceL.InitialImage")));
+            this.picDeviceL.Location = new System.Drawing.Point(709, 136);
+            this.picDeviceL.Name = "picDeviceL";
+            this.picDeviceL.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceL.TabIndex = 11;
+            this.picDeviceL.TabStop = false;
+            // 
+            // picDeviceI
+            // 
+            this.picDeviceI.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceI.Image")));
+            this.picDeviceI.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceI.InitialImage")));
+            this.picDeviceI.Location = new System.Drawing.Point(514, 947);
+            this.picDeviceI.Name = "picDeviceI";
+            this.picDeviceI.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceI.TabIndex = 10;
+            this.picDeviceI.TabStop = false;
+            // 
+            // picDeviceF
+            // 
+            this.picDeviceF.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceF.Image")));
+            this.picDeviceF.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceF.InitialImage")));
+            this.picDeviceF.Location = new System.Drawing.Point(1359, 1149);
+            this.picDeviceF.Name = "picDeviceF";
+            this.picDeviceF.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceF.TabIndex = 9;
+            this.picDeviceF.TabStop = false;
+            // 
+            // picDeviceC
+            // 
+            this.picDeviceC.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceC.Image")));
+            this.picDeviceC.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceC.InitialImage")));
+            this.picDeviceC.Location = new System.Drawing.Point(1576, 356);
+            this.picDeviceC.Name = "picDeviceC";
+            this.picDeviceC.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceC.TabIndex = 8;
+            this.picDeviceC.TabStop = false;
+            // 
+            // picDeviceK
+            // 
+            this.picDeviceK.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceK.Image")));
+            this.picDeviceK.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceK.InitialImage")));
+            this.picDeviceK.Location = new System.Drawing.Point(514, 356);
+            this.picDeviceK.Name = "picDeviceK";
+            this.picDeviceK.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceK.TabIndex = 7;
+            this.picDeviceK.TabStop = false;
+            // 
+            // picDeviceH
+            // 
+            this.picDeviceH.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceH.Image")));
+            this.picDeviceH.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceH.InitialImage")));
+            this.picDeviceH.Location = new System.Drawing.Point(709, 1149);
+            this.picDeviceH.Name = "picDeviceH";
+            this.picDeviceH.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceH.TabIndex = 6;
+            this.picDeviceH.TabStop = false;
+            // 
+            // picDeviceE
+            // 
+            this.picDeviceE.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceE.Image")));
+            this.picDeviceE.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceE.InitialImage")));
+            this.picDeviceE.Location = new System.Drawing.Point(1576, 947);
+            this.picDeviceE.Name = "picDeviceE";
+            this.picDeviceE.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceE.TabIndex = 5;
+            this.picDeviceE.TabStop = false;
+            // 
+            // picDeviceJ
+            // 
+            this.picDeviceJ.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceJ.Image")));
+            this.picDeviceJ.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceJ.InitialImage")));
+            this.picDeviceJ.Location = new System.Drawing.Point(441, 639);
+            this.picDeviceJ.Name = "picDeviceJ";
+            this.picDeviceJ.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceJ.TabIndex = 4;
+            this.picDeviceJ.TabStop = false;
+            // 
+            // picDeviceG
+            // 
+            this.picDeviceG.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceG.Image")));
+            this.picDeviceG.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceG.InitialImage")));
+            this.picDeviceG.Location = new System.Drawing.Point(1038, 1248);
+            this.picDeviceG.Name = "picDeviceG";
+            this.picDeviceG.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceG.TabIndex = 3;
+            this.picDeviceG.TabStop = false;
+            // 
+            // picDeviceD
+            // 
+            this.picDeviceD.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceD.Image")));
+            this.picDeviceD.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceD.InitialImage")));
+            this.picDeviceD.Location = new System.Drawing.Point(1650, 639);
+            this.picDeviceD.Name = "picDeviceD";
+            this.picDeviceD.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceD.TabIndex = 2;
+            this.picDeviceD.TabStop = false;
+            // 
+            // picDeviceB
+            // 
+            this.picDeviceB.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceB.Image")));
+            this.picDeviceB.InitialImage = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
+            this.picDeviceB.Location = new System.Drawing.Point(1359, 136);
+            this.picDeviceB.Name = "picDeviceB";
+            this.picDeviceB.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceB.TabIndex = 1;
+            this.picDeviceB.TabStop = false;
             // 
             // ViewNetwork
             // 
@@ -670,6 +827,18 @@
             this.pnlViewNetworkTitle.PerformLayout();
             this.pnlViewNetwork.ResumeLayout(false);
             this.pnlViewNetwork.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceJ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeviceB)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -723,5 +892,17 @@
         private System.Windows.Forms.Label lblIpA;
         private System.Windows.Forms.Label lblDeviceA;
         private System.Windows.Forms.Label lblNetworkName;
+        private System.Windows.Forms.PictureBox picDeviceL;
+        private System.Windows.Forms.PictureBox picDeviceI;
+        private System.Windows.Forms.PictureBox picDeviceF;
+        private System.Windows.Forms.PictureBox picDeviceC;
+        private System.Windows.Forms.PictureBox picDeviceK;
+        private System.Windows.Forms.PictureBox picDeviceH;
+        private System.Windows.Forms.PictureBox picDeviceE;
+        private System.Windows.Forms.PictureBox picDeviceJ;
+        private System.Windows.Forms.PictureBox picDeviceG;
+        private System.Windows.Forms.PictureBox picDeviceD;
+        private System.Windows.Forms.PictureBox picDeviceB;
+        private System.Windows.Forms.PictureBox picDeviceA;
     }
 }
