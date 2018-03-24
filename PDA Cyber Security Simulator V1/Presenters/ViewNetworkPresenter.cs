@@ -15,16 +15,52 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
     {
         private ViewNetwork view;
         private UnitOfWork unitOfWork = new UnitOfWork();
+        private Network LoadedNetwork { get; set; }
 
         public ViewNetworkPresenter(ViewNetwork newView)
         {
             view = newView;
             view.BtnLoadNetworkClick += OnBtnLoadNetworkClick;
+            view.FormPaint += OnFormPaint;
         }
 
         public void OnBtnLoadNetworkClick()
         {
             LoadNetworkClick();
+        }
+
+        public void OnFormPaint()
+        {
+            if (view.NetworkLoaded)
+            {
+                for (var j = 0; j < LoadedNetwork.Devices.Count; j++)
+                {
+                    var deviceCenterX = view.DevicePictures[j].Location.X + (view.DevicePictures[j].Width / 2);
+                    var deviceCenterY = view.DevicePictures[j].Location.Y + (view.DevicePictures[j].Height / 2);
+
+                    for (var k = 0; k < LoadedNetwork.Devices[j].Neighbors.Count; k++)
+                    {
+                        var neighborCenterX = 0;
+                        var neighborCenterY = 0;
+                        for (var l = 0; l < view.DevicePictures.Count; l++)
+                        {
+                            if (LoadedNetwork.Devices[j].Neighbors[k].Name == ((Device)view.DevicePictures[l].Tag).Name)
+                            {
+                                neighborCenterX = view.DevicePictures[l].Location.X +
+                                                  (view.DevicePictures[l].Width / 2);
+                                neighborCenterY = view.DevicePictures[l].Location.Y +
+                                                  (view.DevicePictures[l].Height / 2);
+
+                                //We have our location, break this loop, start next loop
+                                break;
+                            }
+                        }
+
+                        view.PaintEventArgs.Graphics.DrawLine(view.Pen, deviceCenterX, deviceCenterY, neighborCenterX, neighborCenterY);
+
+                    }
+                }
+            }
         }
 
         public void LoadNetworkClick()
@@ -49,12 +85,19 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
                 //Push device properties onto view
                 for (var i = 0;  i < network.Devices.Count; i++)
                 {
-                    view.DeviceNames[view.DeviceNames.Count - i - 1].Text = network.Devices[network.Devices.Count - i - 1].Name;
+                    view.DeviceNames[i].Text = network.Devices[network.Devices.Count - i - 1].Name;
                     view.IpAddresses[i].Text = network.Devices[network.Devices.Count - i - 1].IpAddress;
-                    view.DeviceNames[view.DeviceNames.Count - i - 1].Visible = true;
-                    view.IpLabels[view.IpLabels.Count - i - 1].Visible = true;
+                    view.DeviceNames[i].Visible = true;
+                    view.IpLabels[i].Visible = true;
                     view.IpAddresses[i].Visible = true;
+                    view.DevicePictures[i].Visible = true;
+
+                    view.DevicePictures[i].Tag = network.Devices[i];
                 }
+
+                LoadedNetwork = network;
+                view.NetworkLoaded = true;
+                view.PanelViewNetwork.Invalidate();
             }
             catch (Exception e)
             {
