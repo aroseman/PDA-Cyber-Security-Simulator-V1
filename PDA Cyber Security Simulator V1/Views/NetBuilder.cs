@@ -124,40 +124,34 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         private void OnRootCrumbClick(object sender, EventArgs e)
         {
-            if (this.RootCrumbClick != null)
-                this.RootCrumbClick();
+            RootCrumbClick?.Invoke();
         }
 
         private void OnCanvasPaint(object sender, PaintEventArgs e)
         {
             this.PaintEventArgs = e;
-            if (this.CanvasPaint != null)
-                this.CanvasPaint();
+            CanvasPaint?.Invoke();
         }
 
         private void OnCanvasMouseDown(object sender, MouseEventArgs e)
         {
             this.MouseEventArgs = e;
-            if (this.CanvasMouseDown != null)
-                this.CanvasMouseDown();
+            CanvasMouseDown?.Invoke();
         }
 
         private void OnBtnSaveClick(object sender, EventArgs e)
         {
-            if (this.BtnSaveClick != null)
-                this.BtnSaveClick();
+            BtnSaveClick?.Invoke();
         }
 
         private void OnBtnClearNetworkClick(object sender, EventArgs e)
         {
-            if (this.BtnClearNetworkClick != null)
-                this.BtnClearNetworkClick();
+            BtnClearNetworkClick?.Invoke();
         }
 
         private void OnEnableLineDrawClick(object sender, EventArgs e)
         {
-            if (this.EnableLineDrawClick != null)
-                this.EnableLineDrawClick();
+            EnableLineDrawClick?.Invoke();
         }
 
         //Navigate back to Home screen

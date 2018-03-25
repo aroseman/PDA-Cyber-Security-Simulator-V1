@@ -11,7 +11,7 @@ namespace PDA_Cyber_Security_Simulator_DAL.Interfaces
     {
         void AddNetwork(Network newNetwork);
         void DeleteNetwork(int networkId);
-        Network GetNetwork();
+        List<string> GetAllNetworks();
         void UpdateNetwork(int id, Network updatedItem);
         void CreateTable();
         void DropTable();

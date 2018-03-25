@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
 using PDA_Cyber_Security_Simulator_V1.Interfaces;
@@ -13,17 +14,21 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
     {
         public event Action BtnLoadNetworkClick;
         public event Action FormPaint;
+        public event Action RootCrumbClick;
+        public event Action ComboViewNetworkClick;
+        public event Action BtnResetViewNetworkClick;
 
         public HomeView Home { get; }
-        public TextBox TxtNetworkName { get; }
         public List<Label> DeviceNames { get; set; }
         public List<Label> IpLabels { get; set; }
         public List<Label> IpAddresses { get; set; }
         public List<PictureBox> DevicePictures { get; set; }
+        public Button BtnResetViewNetwork { get; set; }
+        public Button BtnLoadNetwork { get; set; }
+        public ComboBox ComboNetworkNames { get; set; }
         public Panel PanelViewNetwork { get; set; }
-        public Pen Pen = new Pen(Color.Black);
+        public Pen Pen = new Pen(Color.Black, 3);
         public bool NetworkLoaded { get; set; }
-
 
         public PaintEventArgs PaintEventArgs { get; set; }
 
@@ -34,10 +39,15 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             NetworkLoaded = false;
             WindowState = System.Windows.Forms.FormWindowState.Maximized;
             Home = home;
-            TxtNetworkName = txtNetworkName;
+            ComboNetworkNames = comboNetworkNames;
             PanelViewNetwork = pnlViewNetwork;
+            BtnResetViewNetwork = btnResetViewNetwork;
+            BtnLoadNetwork = btnLoadNetwork;
             btnLoadNetwork.Click += OnBtnLoadNetworkClick;
-            this.pnlViewNetwork.Paint += OnFormPaint;
+            pnlViewNetwork.Paint += OnFormPaint;
+            rootCrumb.Click += OnRootCrumbClick;
+            comboNetworkNames.Click += OnComboViewNetworkClick;
+            btnResetViewNetwork.Click += OnBtnResetViewNetworkClick;
         }
 
         private void InitializeLists()
@@ -83,6 +93,11 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             }
         }
 
+        private void OnRootCrumbClick(object sender, EventArgs e)
+        {
+            RootCrumbClick?.Invoke();
+        }
+
         private void OnFormPaint(object sender, PaintEventArgs e)
         {
             PaintEventArgs = e;
@@ -92,6 +107,23 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
         private void OnBtnLoadNetworkClick(object sender, EventArgs e)
         {
             BtnLoadNetworkClick?.Invoke();
+        }
+
+        private void OnComboViewNetworkClick(object sender, EventArgs e)
+        {
+            ComboViewNetworkClick?.Invoke();
+        }
+
+        private void OnBtnResetViewNetworkClick(object sender, EventArgs e)
+        {
+            BtnResetViewNetworkClick?.Invoke();
+        }
+
+        public void ShowHomeView()
+        {
+            Home.ViewNetwork = this;
+            Home.Show();
+            this.Hide();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

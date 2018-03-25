@@ -35,9 +35,22 @@ namespace PDA_Cyber_Security_Simulator_DAL.Services
             DbCommand.ExecuteNonQuery();
         }
 
-        public Network GetNetwork()
+        public List<string> GetAllNetworks()
         {
-            throw new NotImplementedException();
+            DbCommand.CommandText = "SELECT name FROM Network;";
+            using (SQLiteDataReader networkReader = DbCommand.ExecuteReader())
+            {
+                List<string> networkNames = new List<string>();
+
+                while (networkReader.Read())
+                {
+                    var name = networkReader.GetString(0);
+
+                    networkNames.Add(name);
+                }
+
+                return networkNames;
+            }
         }
 
         public void UpdateNetwork(int id, Network updatedItem)

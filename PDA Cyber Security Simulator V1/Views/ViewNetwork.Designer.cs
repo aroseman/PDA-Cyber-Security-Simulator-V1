@@ -1,4 +1,6 @@
-﻿namespace PDA_Cyber_Security_Simulator_V1.Views
+﻿using System.Windows.Forms;
+
+namespace PDA_Cyber_Security_Simulator_V1.Views
 {
     partial class ViewNetwork
     {
@@ -30,7 +32,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewNetwork));
             this.btnLoadNetwork = new System.Windows.Forms.Button();
-            this.txtNetworkName = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.breadCrumbsPanel = new System.Windows.Forms.Panel();
@@ -39,6 +40,7 @@
             this.pnlViewNetworkTitle = new System.Windows.Forms.Panel();
             this.lblViewNetworkTitle = new System.Windows.Forms.Label();
             this.pnlViewNetwork = new System.Windows.Forms.Panel();
+            this.comboNetworkNames = new System.Windows.Forms.ComboBox();
             this.lblNetworkName = new System.Windows.Forms.Label();
             this.lblAddressL = new System.Windows.Forms.Label();
             this.lblIpL = new System.Windows.Forms.Label();
@@ -88,6 +90,7 @@
             this.picDeviceG = new System.Windows.Forms.PictureBox();
             this.picDeviceD = new System.Windows.Forms.PictureBox();
             this.picDeviceB = new System.Windows.Forms.PictureBox();
+            this.btnResetViewNetwork = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.breadCrumbsPanel.SuspendLayout();
@@ -116,14 +119,6 @@
             this.btnLoadNetwork.TabIndex = 0;
             this.btnLoadNetwork.Text = "Load Network";
             this.btnLoadNetwork.UseVisualStyleBackColor = true;
-            // 
-            // txtNetworkName
-            // 
-            this.txtNetworkName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNetworkName.Location = new System.Drawing.Point(47, 55);
-            this.txtNetworkName.Name = "txtNetworkName";
-            this.txtNetworkName.Size = new System.Drawing.Size(280, 44);
-            this.txtNetworkName.TabIndex = 1;
             // 
             // tableLayoutPanel1
             // 
@@ -224,8 +219,8 @@
             // 
             this.pnlViewNetwork.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.SetColumnSpan(this.pnlViewNetwork, 2);
+            this.pnlViewNetwork.Controls.Add(this.comboNetworkNames);
             this.pnlViewNetwork.Controls.Add(this.lblNetworkName);
-            this.pnlViewNetwork.Controls.Add(this.txtNetworkName);
             this.pnlViewNetwork.Controls.Add(this.lblAddressL);
             this.pnlViewNetwork.Controls.Add(this.btnLoadNetwork);
             this.pnlViewNetwork.Controls.Add(this.lblIpL);
@@ -275,12 +270,26 @@
             this.pnlViewNetwork.Controls.Add(this.picDeviceG);
             this.pnlViewNetwork.Controls.Add(this.picDeviceD);
             this.pnlViewNetwork.Controls.Add(this.picDeviceB);
+            this.pnlViewNetwork.Controls.Add(this.btnResetViewNetwork);
             this.pnlViewNetwork.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlViewNetwork.Location = new System.Drawing.Point(4, 196);
             this.pnlViewNetwork.Margin = new System.Windows.Forms.Padding(4);
             this.pnlViewNetwork.Name = "pnlViewNetwork";
             this.pnlViewNetwork.Size = new System.Drawing.Size(2156, 1359);
             this.pnlViewNetwork.TabIndex = 6;
+            // 
+            // comboNetworkNames
+            // 
+            this.comboNetworkNames.BackColor = System.Drawing.SystemColors.Control;
+            this.comboNetworkNames.DropDownHeight = 200;
+            this.comboNetworkNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboNetworkNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboNetworkNames.FormattingEnabled = true;
+            this.comboNetworkNames.IntegralHeight = false;
+            this.comboNetworkNames.Location = new System.Drawing.Point(47, 55);
+            this.comboNetworkNames.Name = "comboNetworkNames";
+            this.comboNetworkNames.Size = new System.Drawing.Size(280, 45);
+            this.comboNetworkNames.TabIndex = 103;
             // 
             // lblNetworkName
             // 
@@ -808,6 +817,16 @@
             this.picDeviceB.TabIndex = 1;
             this.picDeviceB.TabStop = false;
             // 
+            // btnResetViewNetwork
+            // 
+            this.btnResetViewNetwork.Location = new System.Drawing.Point(90, 113);
+            this.btnResetViewNetwork.Name = "btnResetViewNetwork";
+            this.btnResetViewNetwork.Size = new System.Drawing.Size(195, 53);
+            this.btnResetViewNetwork.TabIndex = 102;
+            this.btnResetViewNetwork.Text = "Reset";
+            this.btnResetViewNetwork.UseVisualStyleBackColor = true;
+            this.btnResetViewNetwork.Visible = false;
+            // 
             // ViewNetwork
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -846,7 +865,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnLoadNetwork;
-        private System.Windows.Forms.TextBox txtNetworkName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel breadCrumbsPanel;
@@ -904,5 +922,7 @@
         private System.Windows.Forms.PictureBox picDeviceD;
         private System.Windows.Forms.PictureBox picDeviceB;
         private System.Windows.Forms.PictureBox picDeviceA;
+        private System.Windows.Forms.Button btnResetViewNetwork;
+        private System.Windows.Forms.ComboBox comboNetworkNames;
     }
 }

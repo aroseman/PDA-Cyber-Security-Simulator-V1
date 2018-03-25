@@ -20,13 +20,31 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
         public ViewNetworkPresenter(ViewNetwork newView)
         {
             view = newView;
+            view.ComboViewNetworkClick += OnComboViewNetworkClick;
             view.BtnLoadNetworkClick += OnBtnLoadNetworkClick;
             view.FormPaint += OnFormPaint;
+            view.RootCrumbClick += OnRootCrumbClick;
+            view.BtnResetViewNetworkClick += OnBtnResetViewNetworkClick;
+        }
+
+        public void OnRootCrumbClick()
+        {
+            view.ShowHomeView();
         }
 
         public void OnBtnLoadNetworkClick()
         {
             LoadNetworkClick();
+        }
+
+        public void OnComboViewNetworkClick()
+        {
+            ComboViewNetworkClick();
+        }
+
+        public void OnBtnResetViewNetworkClick()
+        {
+            ResetViewNetworkClick();
         }
 
         public void OnFormPaint()
@@ -56,6 +74,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
                             }
                         }
 
+                        view.PaintEventArgs.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                         view.PaintEventArgs.Graphics.DrawLine(view.Pen, deviceCenterX, deviceCenterY, neighborCenterX, neighborCenterY);
 
                     }
@@ -68,7 +87,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
             try
             {
                 //Load in the specified network
-                var network = unitOfWork.NetworkManager.GetNetworkByName(view.TxtNetworkName.Text);
+                var network = unitOfWork.NetworkManager.GetNetworkByName(view.ComboNetworkNames.Text);
                 var devices = unitOfWork.DeviceManager.GetDevicesByNetworkId(network.Id);
                 network.Devices = devices;
                 foreach (var t in network.Devices)
@@ -98,11 +117,41 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
                 LoadedNetwork = network;
                 view.NetworkLoaded = true;
                 view.PanelViewNetwork.Invalidate();
+                view.BtnLoadNetwork.Visible = false;
+                view.BtnResetViewNetwork.Visible = true;
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
+        }
+
+        public void ComboViewNetworkClick()
+        {
+            view.ComboNetworkNames.Items.Clear();
+
+            var networkNames = unitOfWork.NetworkManager.GetAllNetworks();
+
+            foreach (var name in networkNames)
+            {
+                view.ComboNetworkNames.Items.Add(name);
+            }
+        }
+
+        public void ResetViewNetworkClick()
+        {
+            view.NetworkLoaded = false;
+            view.PanelViewNetwork.Invalidate();
+
+            for (var i = 0; i < LoadedNetwork.Devices.Count; i++)
+            {
+                view.DevicePictures[i].Visible = false;
+                view.DeviceNames[i].Visible = false;
+                view.IpAddresses[i].Visible = false;
+                view.IpLabels[i].Visible = false;
+            }
+
+            view.BtnLoadNetwork.Visible = true;
         }
     }
 }
