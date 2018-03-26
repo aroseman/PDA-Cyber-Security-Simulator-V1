@@ -51,34 +51,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
         {
             if (view.NetworkLoaded)
             {
-                for (var j = 0; j < LoadedNetwork.Devices.Count; j++)
-                {
-                    var deviceCenterX = view.DevicePictures[j].Location.X + (view.DevicePictures[j].Width / 2);
-                    var deviceCenterY = view.DevicePictures[j].Location.Y + (view.DevicePictures[j].Height / 2);
-
-                    for (var k = 0; k < LoadedNetwork.Devices[j].Neighbors.Count; k++)
-                    {
-                        var neighborCenterX = 0;
-                        var neighborCenterY = 0;
-                        for (var l = 0; l < view.DevicePictures.Count; l++)
-                        {
-                            if (LoadedNetwork.Devices[j].Neighbors[k].Name == ((Device)view.DevicePictures[l].Tag).Name)
-                            {
-                                neighborCenterX = view.DevicePictures[l].Location.X +
-                                                  (view.DevicePictures[l].Width / 2);
-                                neighborCenterY = view.DevicePictures[l].Location.Y +
-                                                  (view.DevicePictures[l].Height / 2);
-
-                                //We have our location, break this loop, start next loop
-                                break;
-                            }
-                        }
-
-                        view.PaintEventArgs.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                        view.PaintEventArgs.Graphics.DrawLine(view.Pen, deviceCenterX, deviceCenterY, neighborCenterX, neighborCenterY);
-
-                    }
-                }
+                DrawLines(LoadedNetwork.Devices.Count);
             }
         }
 
@@ -101,18 +74,75 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
                     }
                 }
 
-                //Push device properties onto view
-                for (var i = 0;  i < network.Devices.Count; i++)
+                switch (network.Devices.Count)
                 {
-                    view.DeviceNames[i].Text = network.Devices[network.Devices.Count - i - 1].Name;
-                    view.IpAddresses[i].Text = network.Devices[network.Devices.Count - i - 1].IpAddress;
-                    view.DeviceNames[i].Visible = true;
-                    view.IpLabels[i].Visible = true;
-                    view.IpAddresses[i].Visible = true;
-                    view.DevicePictures[i].Visible = true;
+                    case 2:
+                        for (var i = 0; i < network.Devices.Count; i++)
+                        {
+                            view.DeviceNames[i * 6].Text = network.Devices[i].Name;
+                            view.IpAddresses[i * 6].Text = network.Devices[i].IpAddress;
+                            view.DeviceNames[i * 6].Visible = true;
+                            view.IpLabels[i * 6].Visible = true;
+                            view.IpAddresses[i * 6].Visible = true;
+                            view.DevicePictures[i * 6].Visible = true;
 
-                    view.DevicePictures[i].Tag = network.Devices[i];
+                            view.DevicePictures[i * 6].Tag = network.Devices[i];
+                        }
+                        break;
+                    case 3:
+                        for (var i = 0; i < network.Devices.Count; i++)
+                        {
+                            view.DeviceNames[i * 4].Text = network.Devices[i].Name;
+                            view.IpAddresses[i * 4].Text = network.Devices[i].IpAddress;
+                            view.DeviceNames[i * 4].Visible = true;
+                            view.IpLabels[i * 4].Visible = true;
+                            view.IpAddresses[i * 4].Visible = true;
+                            view.DevicePictures[i * 4].Visible = true;
+
+                            view.DevicePictures[i * 4].Tag = network.Devices[i];
+                        }
+                        break;
+                    case 4:
+                        for (var i = 0; i < network.Devices.Count; i++)
+                        {
+                            view.DeviceNames[i * 3].Text = network.Devices[i].Name;
+                            view.IpAddresses[i * 3].Text = network.Devices[i].IpAddress;
+                            view.DeviceNames[i * 3].Visible = true;
+                            view.IpLabels[i * 3].Visible = true;
+                            view.IpAddresses[i * 3].Visible = true;
+                            view.DevicePictures[i * 3].Visible = true;
+
+                            view.DevicePictures[i * 3].Tag = network.Devices[i];
+                        }
+                        break;
+                    case 5:
+                        for (var i = 0; i < network.Devices.Count; i++)
+                        {
+                            view.DeviceNames[i * 2].Text = network.Devices[i].Name;
+                            view.IpAddresses[i * 2].Text = network.Devices[i].IpAddress;
+                            view.DeviceNames[i * 2].Visible = true;
+                            view.IpLabels[i * 2].Visible = true;
+                            view.IpAddresses[i * 2].Visible = true;
+                            view.DevicePictures[i * 2].Visible = true;
+
+                            view.DevicePictures[i * 2].Tag = network.Devices[i];
+                        }
+                        break;
+                    default:
+                        for (var i = 0; i < network.Devices.Count; i++)
+                        {
+                            view.DeviceNames[i].Text = network.Devices[i].Name;
+                            view.IpAddresses[i].Text = network.Devices[i].IpAddress;
+                            view.DeviceNames[i].Visible = true;
+                            view.IpLabels[i].Visible = true;
+                            view.IpAddresses[i].Visible = true;
+                            view.DevicePictures[i].Visible = true;
+
+                            view.DevicePictures[i].Tag = network.Devices[i];
+                        }
+                        break;
                 }
+
 
                 LoadedNetwork = network;
                 view.NetworkLoaded = true;
@@ -143,15 +173,204 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
             view.NetworkLoaded = false;
             view.PanelViewNetwork.Invalidate();
 
-            for (var i = 0; i < LoadedNetwork.Devices.Count; i++)
+            switch (LoadedNetwork.Devices.Count)
             {
-                view.DevicePictures[i].Visible = false;
-                view.DeviceNames[i].Visible = false;
-                view.IpAddresses[i].Visible = false;
-                view.IpLabels[i].Visible = false;
-            }
+                case 2:
+                    for (var i = 0; i < LoadedNetwork.Devices.Count; i++)
+                    {
+                        view.DevicePictures[i * 6].Visible = false;
+                        view.DeviceNames[i * 6].Visible = false;
+                        view.IpAddresses[i * 6].Visible = false;
+                        view.IpLabels[i * 6].Visible = false;
+                    }
 
+                    break;
+                case 3:
+                    for (var i = 0; i < LoadedNetwork.Devices.Count; i++)
+                    {
+                        view.DevicePictures[i * 4].Visible = false;
+                        view.DeviceNames[i * 4].Visible = false;
+                        view.IpAddresses[i * 4].Visible = false;
+                        view.IpLabels[i * 4].Visible = false;
+                    }
+                    break;
+                case 4:
+                    for (var i = 0; i < LoadedNetwork.Devices.Count; i++)
+                    {
+                        view.DevicePictures[i * 3].Visible = false;
+                        view.DeviceNames[i * 3].Visible = false;
+                        view.IpAddresses[i * 3].Visible = false;
+                        view.IpLabels[i * 3].Visible = false;
+                    }
+                    break;
+                case 5:
+                    for (var i = 0; i < LoadedNetwork.Devices.Count; i++)
+                    {
+                        view.DevicePictures[i * 2].Visible = false;
+                        view.DeviceNames[i * 2].Visible = false;
+                        view.IpAddresses[i * 2].Visible = false;
+                        view.IpLabels[i * 2].Visible = false;
+                    }
+                    break;
+                default:
+                    for (var i = 0; i < LoadedNetwork.Devices.Count; i++)
+                    {
+                        view.DevicePictures[i].Visible = false;
+                        view.DeviceNames[i].Visible = false;
+                        view.IpAddresses[i].Visible = false;
+                        view.IpLabels[i].Visible = false;
+                    }
+                    break;
+            }
+            
             view.BtnLoadNetwork.Visible = true;
+        }
+
+        private void DrawLines(int deviceCount)
+        {
+            switch (deviceCount)
+            {
+                case 2:
+                    for (var j = 0; j < deviceCount; j++)
+                    {
+                        var deviceCenterX = view.DevicePictures[j * 6].Location.X + (view.DevicePictures[j * 6].Width / 2);
+                        var deviceCenterY = view.DevicePictures[j * 6].Location.Y + (view.DevicePictures[j * 6].Height / 2);
+
+                        for (var k = 0; k < LoadedNetwork.Devices[j].Neighbors.Count; k++)
+                        {
+                            var neighborCenterX = 0;
+                            var neighborCenterY = 0;
+                            for (var l = 0; l < view.DevicePictures.Count; l++)
+                            {
+                                if (view.DevicePictures[l].Tag != null && LoadedNetwork.Devices[j].Neighbors[k].Name == ((Device)view.DevicePictures[l].Tag).Name)
+                                {
+                                    neighborCenterX = view.DevicePictures[l].Location.X +
+                                                      (view.DevicePictures[l].Width / 2);
+                                    neighborCenterY = view.DevicePictures[l].Location.Y +
+                                                      (view.DevicePictures[l].Height / 2);
+
+                                    //We have our location, break this loop, start next loop
+                                    break;
+                                }
+                            }
+                            view.PaintEventArgs.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                            view.PaintEventArgs.Graphics.DrawLine(view.Pen, deviceCenterX, deviceCenterY, neighborCenterX, neighborCenterY);
+                        }
+                    }
+                    break;
+                case 3:
+                    for (var j = 0; j < deviceCount; j++)
+                    {
+                        var deviceCenterX = view.DevicePictures[j * 4].Location.X + (view.DevicePictures[j * 4].Width / 2);
+                        var deviceCenterY = view.DevicePictures[j * 4].Location.Y + (view.DevicePictures[j * 4].Height / 2);
+
+                        for (var k = 0; k < LoadedNetwork.Devices[j].Neighbors.Count; k++)
+                        {
+                            var neighborCenterX = 0;
+                            var neighborCenterY = 0;
+                            for (var l = 0; l < view.DevicePictures.Count; l++)
+                            {
+                                if (view.DevicePictures[l].Tag != null && LoadedNetwork.Devices[j].Neighbors[k].Name == ((Device)view.DevicePictures[l].Tag).Name)
+                                {
+                                    neighborCenterX = view.DevicePictures[l].Location.X +
+                                                      (view.DevicePictures[l].Width / 2);
+                                    neighborCenterY = view.DevicePictures[l].Location.Y +
+                                                      (view.DevicePictures[l].Height / 2);
+
+                                    //We have our location, break this loop, start next loop
+                                    break;
+                                }
+                            }
+                            view.PaintEventArgs.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                            view.PaintEventArgs.Graphics.DrawLine(view.Pen, deviceCenterX, deviceCenterY, neighborCenterX, neighborCenterY);
+                        }
+                    }
+                    break;
+                case 4:
+                    for (var j = 0; j < deviceCount; j++)
+                    {
+                        var deviceCenterX = view.DevicePictures[j * 3].Location.X + (view.DevicePictures[j * 3].Width / 2);
+                        var deviceCenterY = view.DevicePictures[j * 3].Location.Y + (view.DevicePictures[j * 3].Height / 2);
+
+                        for (var k = 0; k < LoadedNetwork.Devices[j].Neighbors.Count; k++)
+                        {
+                            var neighborCenterX = 0;
+                            var neighborCenterY = 0;
+                            for (var l = 0; l < view.DevicePictures.Count; l++)
+                            {
+                                if (view.DevicePictures[l].Tag != null && LoadedNetwork.Devices[j].Neighbors[k].Name == ((Device)view.DevicePictures[l].Tag).Name)
+                                {
+                                    neighborCenterX = view.DevicePictures[l].Location.X +
+                                                      (view.DevicePictures[l].Width / 2);
+                                    neighborCenterY = view.DevicePictures[l].Location.Y +
+                                                      (view.DevicePictures[l].Height / 2);
+
+                                    //We have our location, break this loop, start next loop
+                                    break;
+                                }
+                            }
+                            view.PaintEventArgs.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                            view.PaintEventArgs.Graphics.DrawLine(view.Pen, deviceCenterX, deviceCenterY, neighborCenterX, neighborCenterY);
+                        }
+                    }
+                    break;
+                case 5:
+                    for (var j = 0; j < deviceCount; j++)
+                    {
+                        var deviceCenterX = view.DevicePictures[j * 2].Location.X + (view.DevicePictures[j * 2].Width / 2);
+                        var deviceCenterY = view.DevicePictures[j * 2].Location.Y + (view.DevicePictures[j * 2].Height / 2);
+
+                        for (var k = 0; k < LoadedNetwork.Devices[j].Neighbors.Count; k++)
+                        {
+                            var neighborCenterX = 0;
+                            var neighborCenterY = 0;
+                            for (var l = 0; l < view.DevicePictures.Count; l++)
+                            {
+                                if (view.DevicePictures[l].Tag != null && LoadedNetwork.Devices[j].Neighbors[k].Name == ((Device)view.DevicePictures[l].Tag).Name)
+                                {
+                                    neighborCenterX = view.DevicePictures[l].Location.X +
+                                                      (view.DevicePictures[l].Width / 2);
+                                    neighborCenterY = view.DevicePictures[l].Location.Y +
+                                                      (view.DevicePictures[l].Height / 2);
+
+                                    //We have our location, break this loop, start next loop
+                                    break;
+                                }
+                            }
+                            view.PaintEventArgs.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                            view.PaintEventArgs.Graphics.DrawLine(view.Pen, deviceCenterX, deviceCenterY, neighborCenterX, neighborCenterY);
+                        }
+                    }
+                    break;
+                default:
+                    for (var j = 0; j < deviceCount; j++)
+                    {
+                        var deviceCenterX = view.DevicePictures[j].Location.X + (view.DevicePictures[j].Width / 2);
+                        var deviceCenterY = view.DevicePictures[j].Location.Y + (view.DevicePictures[j].Height / 2);
+
+                        for (var k = 0; k < LoadedNetwork.Devices[j].Neighbors.Count; k++)
+                        {
+                            var neighborCenterX = 0;
+                            var neighborCenterY = 0;
+                            for (var l = 0; l < view.DevicePictures.Count; l++)
+                            {
+                                if (LoadedNetwork.Devices[j].Neighbors[k].Name == ((Device)view.DevicePictures[l].Tag).Name)
+                                {
+                                    neighborCenterX = view.DevicePictures[l].Location.X +
+                                                      (view.DevicePictures[l].Width / 2);
+                                    neighborCenterY = view.DevicePictures[l].Location.Y +
+                                                      (view.DevicePictures[l].Height / 2);
+
+                                    //We have our location, break this loop, start next loop
+                                    break;
+                                }
+                            }
+                            view.PaintEventArgs.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                            view.PaintEventArgs.Graphics.DrawLine(view.Pen, deviceCenterX, deviceCenterY, neighborCenterX, neighborCenterY);
+                        }
+                    }
+                    break;
+            }
         }
     }
 }
