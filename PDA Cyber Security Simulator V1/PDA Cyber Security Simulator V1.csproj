@@ -102,7 +102,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attack.cs" />
+    <Compile Include="IAttack.cs" />
+    <Compile Include="AttackFactory.cs" />
     <Compile Include="Controls\CirclePanelGreen.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -118,7 +119,7 @@
     </Compile>
     <Compile Include="Interfaces\IViewNetwork.cs" />
     <Compile Include="Presenters\ViewNetworkPresenter.cs" />
-    <Compile Include="SynFlood.cs" />
+    <Compile Include="SynFloodAttack.cs" />
     <Compile Include="Views\HomeView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,8 +129,6 @@
     <Compile Include="Interfaces\IHomeView.cs" />
     <Compile Include="Presenters\HomeViewPresenter.cs" />
     <Compile Include="Language.cs" />
-    <Compile Include="Layer2Attack.cs" />
-    <Compile Include="Layer3Attack.cs" />
     <Compile Include="Views\NetBuilder.cs">
       <SubType>Form</SubType>
     </Compile>
