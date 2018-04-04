@@ -19,6 +19,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 
             this.view.RootCrumbClick += OnRootCrumbClick;
             this.view.NetworkSelected += OnNetworkSelected;
+            view.ComboBoxClick += OnNetworkComboClicked;
             //this.view.LoadNetworkNames(Network.getNetworkNames());
             //this.view.LoadDevices(Device.getDevices());
         }
@@ -30,6 +31,19 @@ namespace PDA_Cyber_Security_Simulator_V1
             this.view.Hide();
         }
 
+        public void OnNetworkComboClicked()
+        {
+
+            
+            List<string> netwWorkNames = unitOfWork.NetworkManager.GetAllNetworks();
+            foreach (var networkName in netwWorkNames)
+            {
+                if (view.NetworkDataSource != null) view.NetworkDataSource.Add(new Language(networkName, networkName));
+                else Console.Error.WriteLine("Network Data Source not initialized.");
+            }
+
+            view.TestNetworkComboBox1.DataSource = view.NetworkDataSource;
+        }
         public void OnNetworkSelected()
         {
             String name = this.view.SelectedNetwork;
@@ -46,6 +60,13 @@ namespace PDA_Cyber_Security_Simulator_V1
         public void HideView()
         {
             this.view.HideView();
+        }
+
+        public void NetworkListClick()
+        {
+            
+            
+
         }
     }
 }

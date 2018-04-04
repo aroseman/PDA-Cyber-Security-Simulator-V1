@@ -11,7 +11,7 @@ namespace PDA_Cyber_Security_Simulator_V1
     {
         event Action NetworkSelected;
         event Action RootCrumbClick;
-
+        event Action ComboBoxClick;
         List<String> NetworkNames { get; }
         String SelectedNetwork { get; } 
         List<int> NetworkIDs { get; }
@@ -27,5 +27,6 @@ namespace PDA_Cyber_Security_Simulator_V1
         void LoadDevices(List<Device> devices);
         void ShowView();
         void HideView();
+        
     }
 }

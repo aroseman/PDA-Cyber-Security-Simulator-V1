@@ -21,24 +21,27 @@ namespace PDA_Cyber_Security_Simulator_V1
         #endregion
         public event Action NetworkSelected;
         public event Action RootCrumbClick;
+        public event Action ComboBoxClick;
         public HomeView Form1 { get; }
         public HomeViewPresenter Form1Presenter { get; }
         public List<String> NetworkNames { get { return this.testNetworkComboBox1.DataSource as List<String>; } }
         public String SelectedNetwork { get { return this.testNetworkComboBox1.Text as String; } }
         public List<int> NetworkIDs { get; set; }
         public List<Device> Devices { get { return this.testNetworkListBox1.DataSource as List<Device>;} }
-        public List<Language> NetworkDataSource { get; }
+        public List<Language> NetworkDataSource { get; set; }
         public List<Language> DeviceDataSource { get; }
         public NetworkTester NT { get; }
-
+        public ComboBox TestNetworkComboBox1 { get; set; }
+        
         public TestNetworkView(HomeView form1)
         {
             Form1 = form1;
             NT = new NetworkTester();
-            
+            NetworkDataSource = new List<Language>();
             InitializeComponent();
             InitializeGraphics();
             BindComponents();
+            TestNetworkComboBox1 = testNetworkComboBox1;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
@@ -50,6 +53,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             InitializeComponent();
             InitializeGraphics();
             BindComponents();
+            TestNetworkComboBox1 = testNetworkComboBox1;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
@@ -91,8 +95,9 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         private void BindComponents()
         {
-            this.testNetworkComboBox1.SelectedValueChanged += testNetworkComboBoxOnClick;
+            this.testNetworkComboBox1.SelectedValueChanged += TestNetworkComboBoxOnClick;
             this.rootCrumb.Click += OnRootCrumbClick;
+            this.testNetworkComboBox1.Click += OnComboBoxClick;
         }
 
         private void InitializeGraphics()
@@ -194,6 +199,11 @@ namespace PDA_Cyber_Security_Simulator_V1
                 this.RootCrumbClick();
         }
 
+        private void OnComboBoxClick(object sender, EventArgs e)
+        {
+            if (ComboBoxClick != null)
+                ComboBoxClick();
+        }
         //Form closing
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
@@ -245,7 +255,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         }
 
 
-        private void testNetworkComboBoxOnClick(object sender, EventArgs e)
+        private void TestNetworkComboBoxOnClick(object sender, EventArgs e)
         {
                 //testNetworkListBox1.Items.Clear();
 

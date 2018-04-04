@@ -213,60 +213,15 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         public void Load_Home()
         {
-            networkConfigurationPanel.Visible = false;
-            testNetworkTableLayoutPanel.Visible = false;
-            simulateAttackTableLayoutPanel.Visible = false;
+           
             homeScreen.Visible = true;
             breadCrumbFlowLayoutPanel.BackColor = Color.FromName("Control");
             imagePanel.BackColor = Color.FromName("Control");
         }
 
-        private void configurationOnIndexChange(object sender, EventArgs e)
-        {
-            /*
-             * Controls the rendering of various containers on index change.
-             * 
-             * Networks:
-             * 
-             * Devices:
-             * 
-             * */
-            if (configComboBox.SelectedItem.Equals("Networks"))
-            {
-                deviceFormTableLayoutPanel.Visible = false;
-                configLabel.Text = "Networks";
 
-            }
-            else
-            {
-                deviceFormTableLayoutPanel.Visible = true;
-                configLabel.Text = "Devices";
-            }
-        }
 
-        private void AddNewOnClick(object sender, EventArgs e)
-        {
-            /*
-             * Creates a new Device or Network Object, pushes it on to the appropriate list, and writes it to file.             
-             * */
-
-            
-            if (configComboBox.SelectedItem.Equals("Networks"))
-            {
-
-            }
-            else
-            {
-                string name = textBox1.Text;
-                string ipAddress = textBox2.Text;
-                string macAddress = textBox3.Text;
-                string notes = textBox4.Text;
-                string[] lines = { name, ipAddress, macAddress, notes};
-                // Device device = new Device(name, ipAddress, macAddress, notes);
-                Device device = new Device();
-                System.IO.File.WriteAllLines(@"C:\Users\Public\TestFolder\Devices.txt", lines);
-            }
-        }
+     
 
         private void label7_Click(object sender, EventArgs e)
         {
