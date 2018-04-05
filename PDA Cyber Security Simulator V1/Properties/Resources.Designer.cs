@@ -63,6 +63,16 @@ namespace PDA_Cyber_Security_Simulator_V1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap atm_router {
+            get {
+                object obj = ResourceManager.GetObject("atm router", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pda {
             get {
                 object obj = ResourceManager.GetObject("pda", resourceCulture);

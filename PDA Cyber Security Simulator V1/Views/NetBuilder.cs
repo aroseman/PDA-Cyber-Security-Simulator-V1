@@ -895,6 +895,9 @@ namespace PDA_Cyber_Security_Simulator_V1
                 {
                     drawable = false
                 };
+                //Relink the presenter
+                Form1.NetBuilder = clearNet;
+                Form1.NetBuilderPresenter = new NetBuilderPresenter(clearNet);
                 beingCleared = true;
                 //Show the new form and close the existing form
                 clearNet.Show();

