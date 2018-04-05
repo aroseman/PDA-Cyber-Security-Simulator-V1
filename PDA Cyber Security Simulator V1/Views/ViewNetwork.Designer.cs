@@ -845,7 +845,6 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2164, 1574);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.MaximumSize = new System.Drawing.Size(2190, 1645);
             this.Name = "ViewNetwork";
             this.Text = "View Network";
             this.tableLayoutPanel1.ResumeLayout(false);

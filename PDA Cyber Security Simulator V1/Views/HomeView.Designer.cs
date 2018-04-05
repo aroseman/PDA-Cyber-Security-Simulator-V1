@@ -75,7 +75,8 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1087, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(12, 4, 0, 4);
+            this.menuStrip1.Size = new System.Drawing.Size(2164, 44);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -88,32 +89,32 @@
             this.simulateAttackToolStripMenuItem,
             this.testNetworkToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(64, 36);
             this.toolStripMenuItem1.Text = "File";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // newNetworkToolStripMenuItem
             // 
             this.newNetworkToolStripMenuItem.Name = "newNetworkToolStripMenuItem";
-            this.newNetworkToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.newNetworkToolStripMenuItem.Size = new System.Drawing.Size(280, 38);
             this.newNetworkToolStripMenuItem.Text = "New Network";
             // 
             // selectNetworkToolStripMenuItem
             // 
             this.selectNetworkToolStripMenuItem.Name = "selectNetworkToolStripMenuItem";
-            this.selectNetworkToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.selectNetworkToolStripMenuItem.Size = new System.Drawing.Size(280, 38);
             this.selectNetworkToolStripMenuItem.Text = "Select Network";
             // 
             // simulateAttackToolStripMenuItem
             // 
             this.simulateAttackToolStripMenuItem.Name = "simulateAttackToolStripMenuItem";
-            this.simulateAttackToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.simulateAttackToolStripMenuItem.Size = new System.Drawing.Size(280, 38);
             this.simulateAttackToolStripMenuItem.Text = "Simulate Attack";
             // 
             // testNetworkToolStripMenuItem
             // 
             this.testNetworkToolStripMenuItem.Name = "testNetworkToolStripMenuItem";
-            this.testNetworkToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.testNetworkToolStripMenuItem.Size = new System.Drawing.Size(280, 38);
             this.testNetworkToolStripMenuItem.Text = "Test Network";
             // 
             // editToolStripMenuItem
@@ -121,13 +122,13 @@
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editNetworkToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(67, 36);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // editNetworkToolStripMenuItem
             // 
             this.editNetworkToolStripMenuItem.Name = "editNetworkToolStripMenuItem";
-            this.editNetworkToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.editNetworkToolStripMenuItem.Size = new System.Drawing.Size(251, 38);
             this.editNetworkToolStripMenuItem.Text = "Edit Network";
             // 
             // helpToolStripMenuItem
@@ -136,19 +137,19 @@
             this.viewNetworkToolStripMenuItem,
             this.labsToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(77, 36);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // viewNetworkToolStripMenuItem
             // 
             this.viewNetworkToolStripMenuItem.Name = "viewNetworkToolStripMenuItem";
-            this.viewNetworkToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.viewNetworkToolStripMenuItem.Size = new System.Drawing.Size(262, 38);
             this.viewNetworkToolStripMenuItem.Text = "View Network";
             // 
             // labsToolStripMenuItem
             // 
             this.labsToolStripMenuItem.Name = "labsToolStripMenuItem";
-            this.labsToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.labsToolStripMenuItem.Size = new System.Drawing.Size(262, 38);
             this.labsToolStripMenuItem.Text = "Labs";
             // 
             // homeScreen
@@ -160,12 +161,13 @@
             this.homeScreen.Controls.Add(this.simulateAttack, 1, 1);
             this.homeScreen.Controls.Add(this.viewNetwork, 1, 0);
             this.homeScreen.Controls.Add(this.testNetwork, 0, 1);
-            this.homeScreen.Location = new System.Drawing.Point(44, 133);
+            this.homeScreen.Location = new System.Drawing.Point(88, 256);
+            this.homeScreen.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.homeScreen.Name = "homeScreen";
             this.homeScreen.RowCount = 2;
             this.homeScreen.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.homeScreen.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.homeScreen.Size = new System.Drawing.Size(792, 344);
+            this.homeScreen.Size = new System.Drawing.Size(1584, 662);
             this.homeScreen.TabIndex = 1;
             // 
             // configureNetwork
@@ -173,9 +175,10 @@
             this.configureNetwork.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(144)))), ((int)(((byte)(24)))));
             this.configureNetwork.Controls.Add(this.configureNetworkLabel);
             this.configureNetwork.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.configureNetwork.Location = new System.Drawing.Point(3, 3);
+            this.configureNetwork.Location = new System.Drawing.Point(6, 6);
+            this.configureNetwork.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.configureNetwork.Name = "configureNetwork";
-            this.configureNetwork.Size = new System.Drawing.Size(390, 166);
+            this.configureNetwork.Size = new System.Drawing.Size(780, 319);
             this.configureNetwork.TabIndex = 4;
             // 
             // configureNetworkLabel
@@ -184,8 +187,9 @@
             this.configureNetworkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.configureNetworkLabel.ForeColor = System.Drawing.Color.White;
             this.configureNetworkLabel.Location = new System.Drawing.Point(0, 0);
+            this.configureNetworkLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.configureNetworkLabel.Name = "configureNetworkLabel";
-            this.configureNetworkLabel.Size = new System.Drawing.Size(390, 166);
+            this.configureNetworkLabel.Size = new System.Drawing.Size(780, 319);
             this.configureNetworkLabel.TabIndex = 0;
             this.configureNetworkLabel.Text = "Configure Network";
             this.configureNetworkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -195,9 +199,10 @@
             this.simulateAttack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(192)))));
             this.simulateAttack.Controls.Add(this.simulateAttackLabel);
             this.simulateAttack.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simulateAttack.Location = new System.Drawing.Point(399, 175);
+            this.simulateAttack.Location = new System.Drawing.Point(798, 337);
+            this.simulateAttack.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.simulateAttack.Name = "simulateAttack";
-            this.simulateAttack.Size = new System.Drawing.Size(390, 166);
+            this.simulateAttack.Size = new System.Drawing.Size(780, 319);
             this.simulateAttack.TabIndex = 7;
             // 
             // simulateAttackLabel
@@ -206,8 +211,9 @@
             this.simulateAttackLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simulateAttackLabel.ForeColor = System.Drawing.Color.White;
             this.simulateAttackLabel.Location = new System.Drawing.Point(0, 0);
+            this.simulateAttackLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.simulateAttackLabel.Name = "simulateAttackLabel";
-            this.simulateAttackLabel.Size = new System.Drawing.Size(390, 166);
+            this.simulateAttackLabel.Size = new System.Drawing.Size(780, 319);
             this.simulateAttackLabel.TabIndex = 3;
             this.simulateAttackLabel.Text = "Simulate Attack";
             this.simulateAttackLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -217,9 +223,10 @@
             this.viewNetwork.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(24)))), ((int)(((byte)(48)))));
             this.viewNetwork.Controls.Add(this.viewNetworkLabel);
             this.viewNetwork.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewNetwork.Location = new System.Drawing.Point(399, 3);
+            this.viewNetwork.Location = new System.Drawing.Point(798, 6);
+            this.viewNetwork.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.viewNetwork.Name = "viewNetwork";
-            this.viewNetwork.Size = new System.Drawing.Size(390, 166);
+            this.viewNetwork.Size = new System.Drawing.Size(780, 319);
             this.viewNetwork.TabIndex = 5;
             // 
             // viewNetworkLabel
@@ -228,8 +235,9 @@
             this.viewNetworkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewNetworkLabel.ForeColor = System.Drawing.Color.White;
             this.viewNetworkLabel.Location = new System.Drawing.Point(0, 0);
+            this.viewNetworkLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.viewNetworkLabel.Name = "viewNetworkLabel";
-            this.viewNetworkLabel.Size = new System.Drawing.Size(390, 166);
+            this.viewNetworkLabel.Size = new System.Drawing.Size(780, 319);
             this.viewNetworkLabel.TabIndex = 1;
             this.viewNetworkLabel.Text = "View Network";
             this.viewNetworkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -239,9 +247,10 @@
             this.testNetwork.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(120)))));
             this.testNetwork.Controls.Add(this.testNetworkLabel);
             this.testNetwork.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.testNetwork.Location = new System.Drawing.Point(3, 175);
+            this.testNetwork.Location = new System.Drawing.Point(6, 337);
+            this.testNetwork.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.testNetwork.Name = "testNetwork";
-            this.testNetwork.Size = new System.Drawing.Size(390, 166);
+            this.testNetwork.Size = new System.Drawing.Size(780, 319);
             this.testNetwork.TabIndex = 6;
             // 
             // testNetworkLabel
@@ -250,8 +259,9 @@
             this.testNetworkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.testNetworkLabel.ForeColor = System.Drawing.Color.White;
             this.testNetworkLabel.Location = new System.Drawing.Point(0, 0);
+            this.testNetworkLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.testNetworkLabel.Name = "testNetworkLabel";
-            this.testNetworkLabel.Size = new System.Drawing.Size(390, 166);
+            this.testNetworkLabel.Size = new System.Drawing.Size(780, 319);
             this.testNetworkLabel.TabIndex = 2;
             this.testNetworkLabel.Text = "Test Network";
             this.testNetworkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -261,18 +271,20 @@
             this.breadCrumbFlowLayoutPanel.BackColor = System.Drawing.Color.White;
             this.breadCrumbFlowLayoutPanel.Controls.Add(this.imagePanel);
             this.breadCrumbFlowLayoutPanel.Controls.Add(this.breadCrumbsPanel);
-            this.breadCrumbFlowLayoutPanel.Location = new System.Drawing.Point(0, 27);
+            this.breadCrumbFlowLayoutPanel.Location = new System.Drawing.Point(0, 52);
+            this.breadCrumbFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.breadCrumbFlowLayoutPanel.Name = "breadCrumbFlowLayoutPanel";
-            this.breadCrumbFlowLayoutPanel.Size = new System.Drawing.Size(882, 100);
+            this.breadCrumbFlowLayoutPanel.Size = new System.Drawing.Size(1764, 192);
             this.breadCrumbFlowLayoutPanel.TabIndex = 2;
             // 
             // imagePanel
             // 
             this.imagePanel.BackColor = System.Drawing.SystemColors.Control;
             this.imagePanel.Controls.Add(this.pictureBox1);
-            this.imagePanel.Location = new System.Drawing.Point(3, 3);
+            this.imagePanel.Location = new System.Drawing.Point(6, 6);
+            this.imagePanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.imagePanel.Name = "imagePanel";
-            this.imagePanel.Size = new System.Drawing.Size(262, 87);
+            this.imagePanel.Size = new System.Drawing.Size(524, 167);
             this.imagePanel.TabIndex = 3;
             // 
             // pictureBox1
@@ -281,17 +293,19 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(262, 87);
+            this.pictureBox1.Size = new System.Drawing.Size(524, 167);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // breadCrumbsPanel
             // 
             this.breadCrumbsPanel.Controls.Add(this.rootCrumb);
-            this.breadCrumbsPanel.Location = new System.Drawing.Point(271, 3);
+            this.breadCrumbsPanel.Location = new System.Drawing.Point(542, 6);
+            this.breadCrumbsPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.breadCrumbsPanel.Name = "breadCrumbsPanel";
-            this.breadCrumbsPanel.Size = new System.Drawing.Size(200, 87);
+            this.breadCrumbsPanel.Size = new System.Drawing.Size(400, 167);
             this.breadCrumbsPanel.TabIndex = 4;
             // 
             // rootCrumb
@@ -299,23 +313,24 @@
             this.rootCrumb.AutoSize = true;
             this.rootCrumb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rootCrumb.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rootCrumb.Location = new System.Drawing.Point(12, 27);
+            this.rootCrumb.Location = new System.Drawing.Point(24, 52);
+            this.rootCrumb.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.rootCrumb.Name = "rootCrumb";
-            this.rootCrumb.Size = new System.Drawing.Size(88, 33);
+            this.rootCrumb.Size = new System.Drawing.Size(173, 65);
             this.rootCrumb.TabIndex = 0;
             this.rootCrumb.Text = "Home";
             // 
             // HomeView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1087, 552);
+            this.ClientSize = new System.Drawing.Size(2164, 1062);
             this.Controls.Add(this.breadCrumbFlowLayoutPanel);
             this.Controls.Add(this.homeScreen);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(1108, 900);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "HomeView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PDA Cyber Security Simulator";
