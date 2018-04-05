@@ -33,7 +33,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         public void OnTestNetworkClicked()
         {
-            List<string> selectedDevices = new List<string>();
+           // List<string> selectedDevices = new List<string>();
             for (int i = 0; i < view.DeviceDataSource.Count; i++)
             {
                 if (view.TestNetworkListBox1.GetSelected(i))
@@ -72,9 +72,9 @@ namespace PDA_Cyber_Security_Simulator_V1
             foreach (var device in dlist) 
             {
                 view.DeviceDataSource.Add(new Language(device.Name, device.IpAddress));
-                view.TestNetworkListBox1.DataSource = view.DeviceDataSource;
             }
-           // this.view.LoadDevices(dlist);
+
+            view.TestNetworkListBox1.DataSource = view.DeviceDataSource;
         }
 
         public void ShowView()
