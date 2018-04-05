@@ -9,9 +9,11 @@ namespace PDA_Cyber_Security_Simulator_V1
 {
     public interface TestNetworkInterface
     {
-        event Action NetworkSelected;
+        event Action NetworkSelected;  
         event Action RootCrumbClick;
         event Action ComboBoxClick;
+        event Action TestNetworkClick;
+        
         List<String> NetworkNames { get; }
         String SelectedNetwork { get; } 
         List<int> NetworkIDs { get; }

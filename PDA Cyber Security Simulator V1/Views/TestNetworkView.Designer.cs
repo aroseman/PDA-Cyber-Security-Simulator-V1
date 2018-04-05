@@ -152,7 +152,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 711F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1077, 552);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1082, 724);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // panel2
@@ -166,7 +166,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1071, 94);
+            this.panel2.Size = new System.Drawing.Size(1076, 94);
             this.panel2.TabIndex = 2;
             // 
             // breadCrumbsPanel
@@ -189,7 +189,6 @@
             this.rootCrumb.Size = new System.Drawing.Size(88, 33);
             this.rootCrumb.TabIndex = 0;
             this.rootCrumb.Text = "Home";
-            //this.rootCrumb.Click += new System.EventHandler(this.rootCrumb_Click);
             // 
             // picProcessAndDataLogo
             // 
@@ -198,7 +197,7 @@
             this.picProcessAndDataLogo.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.picProcessAndDataLogo.Location = new System.Drawing.Point(0, 0);
             this.picProcessAndDataLogo.Name = "picProcessAndDataLogo";
-            this.picProcessAndDataLogo.Size = new System.Drawing.Size(1071, 94);
+            this.picProcessAndDataLogo.Size = new System.Drawing.Size(1076, 94);
             this.picProcessAndDataLogo.TabIndex = 1;
             this.picProcessAndDataLogo.TabStop = false;
             // 
@@ -209,9 +208,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(2, 813);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1073, 17);
+            this.panel1.Size = new System.Drawing.Size(1078, 17);
             this.panel1.TabIndex = 4;
             // 
             // label1
@@ -234,9 +233,9 @@
             this.flowLayoutPanel1.Controls.Add(this.testNetworkListBox1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 102);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(212, 707);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(213, 707);
             this.flowLayoutPanel1.TabIndex = 5;
             // 
             // lblNetwork
@@ -258,7 +257,6 @@
             this.testNetworkComboBox1.Name = "testNetworkComboBox1";
             this.testNetworkComboBox1.Size = new System.Drawing.Size(152, 21);
             this.testNetworkComboBox1.TabIndex = 1;
-            //this.testNetworkComboBox1.SelectedValueChanged += new System.EventHandler(this.testNetworkComboBoxOnClick);
             // 
             // lblDevices
             // 
@@ -370,10 +368,10 @@
             this.pnlTestStatus.Controls.Add(this.button1);
             this.pnlTestStatus.Controls.Add(this.circlePanel1);
             this.pnlTestStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTestStatus.Location = new System.Drawing.Point(218, 102);
-            this.pnlTestStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlTestStatus.Location = new System.Drawing.Point(219, 102);
+            this.pnlTestStatus.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTestStatus.Name = "pnlTestStatus";
-            this.pnlTestStatus.Size = new System.Drawing.Size(857, 707);
+            this.pnlTestStatus.Size = new System.Drawing.Size(861, 707);
             this.pnlTestStatus.TabIndex = 6;
             // 
             // lblAddressL
@@ -599,7 +597,7 @@
             // circlePanelRed9
             // 
             this.circlePanelRed9.Location = new System.Drawing.Point(547, 329);
-            this.circlePanelRed9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelRed9.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelRed9.Name = "circlePanelRed9";
             this.circlePanelRed9.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed9.TabIndex = 80;
@@ -607,7 +605,7 @@
             // circlePanelRed10
             // 
             this.circlePanelRed10.Location = new System.Drawing.Point(547, 138);
-            this.circlePanelRed10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelRed10.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelRed10.Name = "circlePanelRed10";
             this.circlePanelRed10.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed10.TabIndex = 76;
@@ -616,7 +614,7 @@
             // 
             this.circlePanelGreen8.BackColor = System.Drawing.Color.Transparent;
             this.circlePanelGreen8.Location = new System.Drawing.Point(547, 329);
-            this.circlePanelGreen8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelGreen8.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelGreen8.Name = "circlePanelGreen8";
             this.circlePanelGreen8.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen8.TabIndex = 79;
@@ -625,7 +623,7 @@
             // 
             this.circlePanelGreen9.BackColor = System.Drawing.Color.Transparent;
             this.circlePanelGreen9.Location = new System.Drawing.Point(547, 138);
-            this.circlePanelGreen9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelGreen9.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelGreen9.Name = "circlePanelGreen9";
             this.circlePanelGreen9.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen9.TabIndex = 75;
@@ -633,7 +631,7 @@
             // circlePanelRed11
             // 
             this.circlePanelRed11.Location = new System.Drawing.Point(547, 233);
-            this.circlePanelRed11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelRed11.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelRed11.Name = "circlePanelRed11";
             this.circlePanelRed11.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed11.TabIndex = 78;
@@ -642,7 +640,7 @@
             // 
             this.circlePanelGreen10.BackColor = System.Drawing.Color.Transparent;
             this.circlePanelGreen10.Location = new System.Drawing.Point(547, 233);
-            this.circlePanelGreen10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelGreen10.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelGreen10.Name = "circlePanelGreen10";
             this.circlePanelGreen10.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen10.TabIndex = 77;
@@ -650,7 +648,7 @@
             // circlePanelRed12
             // 
             this.circlePanelRed12.Location = new System.Drawing.Point(547, 42);
-            this.circlePanelRed12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelRed12.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelRed12.Name = "circlePanelRed12";
             this.circlePanelRed12.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed12.TabIndex = 74;
@@ -659,7 +657,7 @@
             // 
             this.circlePanelGreen11.BackColor = System.Drawing.Color.Transparent;
             this.circlePanelGreen11.Location = new System.Drawing.Point(547, 42);
-            this.circlePanelGreen11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelGreen11.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelGreen11.Name = "circlePanelGreen11";
             this.circlePanelGreen11.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen11.TabIndex = 73;
@@ -884,70 +882,70 @@
             this.lblDeviceE.TabIndex = 53;
             this.lblDeviceE.Text = "Device E";
             // 
-            // lblAddressD
+            // circlePanelRed5
             // 
             this.circlePanelRed5.Location = new System.Drawing.Point(308, 329);
-            this.circlePanelRed5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelRed5.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelRed5.Name = "circlePanelRed5";
             this.circlePanelRed5.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed5.TabIndex = 52;
             // 
-            // lblIpD
+            // circlePanelRed6
             // 
             this.circlePanelRed6.Location = new System.Drawing.Point(308, 138);
-            this.circlePanelRed6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelRed6.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelRed6.Name = "circlePanelRed6";
             this.circlePanelRed6.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed6.TabIndex = 48;
             // 
-            // lblPingTimeD
+            // circlePanelGreen4
             // 
             this.circlePanelGreen4.BackColor = System.Drawing.Color.Transparent;
             this.circlePanelGreen4.Location = new System.Drawing.Point(308, 329);
-            this.circlePanelGreen4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelGreen4.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelGreen4.Name = "circlePanelGreen4";
             this.circlePanelGreen4.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen4.TabIndex = 51;
             // 
-            // lblPingD
+            // circlePanelGreen5
             // 
             this.circlePanelGreen5.BackColor = System.Drawing.Color.Transparent;
             this.circlePanelGreen5.Location = new System.Drawing.Point(308, 138);
-            this.circlePanelGreen5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelGreen5.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelGreen5.Name = "circlePanelGreen5";
             this.circlePanelGreen5.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen5.TabIndex = 47;
             // 
-            // lblDeviceD
+            // circlePanelRed7
             // 
             this.circlePanelRed7.Location = new System.Drawing.Point(308, 233);
-            this.circlePanelRed7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelRed7.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelRed7.Name = "circlePanelRed7";
             this.circlePanelRed7.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed7.TabIndex = 50;
             // 
-            // lblAddressC
+            // circlePanelGreen6
             // 
             this.circlePanelGreen6.BackColor = System.Drawing.Color.Transparent;
             this.circlePanelGreen6.Location = new System.Drawing.Point(308, 233);
-            this.circlePanelGreen6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelGreen6.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelGreen6.Name = "circlePanelGreen6";
             this.circlePanelGreen6.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen6.TabIndex = 49;
             // 
-            // lblIpC
+            // circlePanelRed8
             // 
             this.circlePanelRed8.Location = new System.Drawing.Point(308, 42);
-            this.circlePanelRed8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelRed8.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelRed8.Name = "circlePanelRed8";
             this.circlePanelRed8.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed8.TabIndex = 46;
             // 
-            // lblPingTimeC
+            // circlePanelGreen7
             // 
             this.circlePanelGreen7.BackColor = System.Drawing.Color.Transparent;
             this.circlePanelGreen7.Location = new System.Drawing.Point(308, 42);
-            this.circlePanelGreen7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelGreen7.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelGreen7.Name = "circlePanelGreen7";
             this.circlePanelGreen7.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen7.TabIndex = 45;
@@ -1175,7 +1173,7 @@
             // circlePanelRed3
             // 
             this.circlePanelRed3.Location = new System.Drawing.Point(68, 329);
-            this.circlePanelRed3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelRed3.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelRed3.Name = "circlePanelRed3";
             this.circlePanelRed3.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed3.TabIndex = 8;
@@ -1183,7 +1181,7 @@
             // circlePanelRed2
             // 
             this.circlePanelRed2.Location = new System.Drawing.Point(68, 138);
-            this.circlePanelRed2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelRed2.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelRed2.Name = "circlePanelRed2";
             this.circlePanelRed2.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed2.TabIndex = 4;
@@ -1192,7 +1190,7 @@
             // 
             this.circlePanelGreen2.BackColor = System.Drawing.Color.Transparent;
             this.circlePanelGreen2.Location = new System.Drawing.Point(68, 329);
-            this.circlePanelGreen2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelGreen2.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelGreen2.Name = "circlePanelGreen2";
             this.circlePanelGreen2.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen2.TabIndex = 7;
@@ -1201,7 +1199,7 @@
             // 
             this.circlePanelGreen1.BackColor = System.Drawing.Color.Transparent;
             this.circlePanelGreen1.Location = new System.Drawing.Point(68, 138);
-            this.circlePanelGreen1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelGreen1.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelGreen1.Name = "circlePanelGreen1";
             this.circlePanelGreen1.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen1.TabIndex = 3;
@@ -1209,7 +1207,7 @@
             // circlePanelRed4
             // 
             this.circlePanelRed4.Location = new System.Drawing.Point(68, 233);
-            this.circlePanelRed4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelRed4.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelRed4.Name = "circlePanelRed4";
             this.circlePanelRed4.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed4.TabIndex = 6;
@@ -1218,7 +1216,7 @@
             // 
             this.circlePanelGreen3.BackColor = System.Drawing.Color.Transparent;
             this.circlePanelGreen3.Location = new System.Drawing.Point(68, 233);
-            this.circlePanelGreen3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelGreen3.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelGreen3.Name = "circlePanelGreen3";
             this.circlePanelGreen3.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen3.TabIndex = 5;
@@ -1226,7 +1224,7 @@
             // circlePanelRed1
             // 
             this.circlePanelRed1.Location = new System.Drawing.Point(68, 42);
-            this.circlePanelRed1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanelRed1.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanelRed1.Name = "circlePanelRed1";
             this.circlePanelRed1.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed1.TabIndex = 2;
@@ -1234,33 +1232,33 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(755, 658);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 37);
             this.button1.TabIndex = 1;
             this.button1.Text = "Test";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            
             // 
             // circlePanel1
             // 
             this.circlePanel1.BackColor = System.Drawing.Color.Transparent;
             this.circlePanel1.Location = new System.Drawing.Point(68, 42);
-            this.circlePanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circlePanel1.Margin = new System.Windows.Forms.Padding(2);
             this.circlePanel1.Name = "circlePanel1";
             this.circlePanel1.Size = new System.Drawing.Size(34, 34);
             this.circlePanel1.TabIndex = 0;
             // 
-            // TestNetwork
+            // TestNetworkView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1077, 552);
+            this.ClientSize = new System.Drawing.Size(1082, 724);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(1098, 874);
             this.MinimumSize = new System.Drawing.Size(962, 564);
-            this.Name = "TestNetwork";
+            this.Name = "TestNetworkView";
             this.Text = "Test Network";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
