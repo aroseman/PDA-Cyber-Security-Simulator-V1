@@ -1,4 +1,4 @@
-﻿namespace PDA_Cyber_Security_Simulator_V1
+﻿namespace PDA_Cyber_Security_Simulator_V1.Views
 {
     partial class SimulateAttackView
     {

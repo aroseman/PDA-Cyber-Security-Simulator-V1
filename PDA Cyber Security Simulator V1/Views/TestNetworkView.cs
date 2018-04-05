@@ -1,24 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using PDA_Cyber_Security_Simulator_V1.Controls;
 using PDA_Cyber_Security_Simulator_Domain;
-using static System.Windows.Forms.ListBox;
+using PDA_Cyber_Security_Simulator_V1.Interfaces;
+using PDA_Cyber_Security_Simulator_V1.Presenters;
 
-namespace PDA_Cyber_Security_Simulator_V1
+namespace PDA_Cyber_Security_Simulator_V1.Views
 {
-    public partial class TestNetworkView : Form, TestNetworkInterface
+    public partial class TestNetworkView : Form, ITestNetworkInterface
     {
         #region Attributes
         private bool test = false;
-        private List<Label> DeviceNames;
-        private List<Label> PingLabels;
-        private List<Label> PingTime;
-        private List<Label> IpLabels;
-        private List<Label> DeviceIp;
-        private List<CirclePanelRed> RedDots;
-        private List<CirclePanelGreen> GreenDots;
-        #endregion
+
+        public List<Label> DeviceNames;
+        public List<Label> PingLabels;
+        public List<Label> PingTime;
+        public List<Label> IpLabels;
+        public List<Label> DeviceIp;
+        public List<CirclePanelRed> RedDots;
+        public List<CirclePanelGreen> GreenDots;
         public event Action NetworkSelected;
         public event Action RootCrumbClick;
         public event Action ComboBoxClick;
@@ -35,6 +37,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         public NetworkTester NT { get; }
         public ComboBox TestNetworkComboBox1 { get; set; }
         public ListBox TestNetworkListBox1 { get; set; }
+        #endregion
 
 
         public TestNetworkView(HomeView form1)
@@ -77,47 +80,55 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         private void InitializeGraphics()
         {
-            DeviceNames = new List<Label>();
-            PingLabels = new List<Label>();
-            PingTime = new List<Label>();
-            IpLabels = new List<Label>();
-            DeviceIp = new List<Label>();
-            RedDots = new List<CirclePanelRed>();
-            GreenDots = new List<CirclePanelGreen>();
+            var unsortedDeviceNames = new List<Label>();
+            var unsortedPingLabels = new List<Label>();
+            var unsortedPingTime = new List<Label>();
+            var unsortedIpLabels = new List<Label>();
+            var unsortedDeviceIp = new List<Label>();
+            var unsortedRedDots = new List<CirclePanelRed>();
+            var unsortedGreenDots = new List<CirclePanelGreen>();
 
             foreach(Control c in pnlTestStatus.Controls)
             {
                 if(c is Label && c.Name.Contains("lblDevice"))
                 {
-                    DeviceNames.Add((Label)c);
+                    unsortedDeviceNames.Add((Label)c);
                 }
                 else if(c is Label && c.Name.Contains("lblPingTime"))
                 {
-                    PingTime.Add((Label)c);
+                    unsortedPingTime.Add((Label)c);
                 }
                 else if(c is Label && c.Name.Contains("lblPing"))
                 {
-                    PingLabels.Add((Label)c);
+                    unsortedPingLabels.Add((Label)c);
                 }
                 else if(c is Label && c.Name.Contains("lblIp"))
                 {
-                    IpLabels.Add((Label)c);
+                    unsortedIpLabels.Add((Label)c);
                 }
                 else if(c is Label && c.Name.Contains("lblAddress"))
                 {
-                    DeviceIp.Add((Label)c);
+                    unsortedDeviceIp.Add((Label)c);
                 }
                 else if(c is CirclePanelGreen)
                 {
-                    GreenDots.Add((CirclePanelGreen)c);
+                    unsortedGreenDots.Add((CirclePanelGreen)c);
                 }
                 else if(c is CirclePanelRed)
                 {
-                    RedDots.Add((CirclePanelRed)c);
+                    unsortedRedDots.Add((CirclePanelRed)c);
                 }
             }
 
-            for(int i = 0; i < RedDots.Count; i++)
+            GreenDots = unsortedGreenDots.OrderBy(o => o.Name).ToList();
+            RedDots = unsortedRedDots.OrderBy(o => o.Name).ToList();
+            DeviceIp = unsortedDeviceIp.OrderBy(o => o.Name).ToList();
+            DeviceNames = unsortedDeviceNames.OrderBy(o => o.Name).ToList();
+            IpLabels = unsortedIpLabels.OrderBy(o => o.Name).ToList();
+            PingLabels = unsortedPingLabels.OrderBy(o => o.Name).ToList();
+            PingTime = unsortedPingTime.OrderBy(o => o.Name).ToList();
+
+            for (int i = 0; i < RedDots.Count; i++)
             {
                 RedDots[i].Hide();
                 GreenDots[i].Hide();

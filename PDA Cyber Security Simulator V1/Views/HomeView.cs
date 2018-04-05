@@ -1,12 +1,10 @@
-﻿using PDA_Cyber_Security_Simulator_Domain;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using PDA_Cyber_Security_Simulator_V1.Interfaces;
 using PDA_Cyber_Security_Simulator_V1.Presenters;
-using PDA_Cyber_Security_Simulator_V1.Views;
 
-namespace PDA_Cyber_Security_Simulator_V1
+namespace PDA_Cyber_Security_Simulator_V1.Views
 {
     public partial class HomeView : Form, HomeViewInterface
     {

@@ -3,8 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using PDA_Cyber_Security_Simulator_V1.Interfaces;
+using PDA_Cyber_Security_Simulator_V1.Presenters;
 
-namespace PDA_Cyber_Security_Simulator_V1
+namespace PDA_Cyber_Security_Simulator_V1.Views
 {
     public partial class NetBuilder : Form, NetBuilderInterface
     {

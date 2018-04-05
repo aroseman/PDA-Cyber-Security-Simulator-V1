@@ -2,11 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using PDA_Cyber_Security_Simulator_DAL.Common;
+using PDA_Cyber_Security_Simulator_V1.Views;
 
-namespace PDA_Cyber_Security_Simulator_V1
+namespace PDA_Cyber_Security_Simulator_V1.Presenters
 {
     public class TestNetworkPresenter
     {
@@ -39,12 +41,32 @@ namespace PDA_Cyber_Security_Simulator_V1
                 if (view.TestNetworkListBox1.GetSelected(i))
                 {
                     PingTool.TestDevice(view.Devices[i].IpAddress);
+                    if (PingTool.PingResult.Status == IPStatus.Success)
+                    {
+                        view.DeviceNames[i].Text = view.Devices[i].Name;
+                        view.DeviceNames[i].Show();
+                        view.GreenDots[i].Show();
+                        view.RedDots[i].Hide();
+                        view.IpLabels[i].Show();
+                        view.DeviceIp[i].Text = view.Devices[i].IpAddress;
+                        view.DeviceIp[i].Show();
+                        view.PingLabels[i].Show();
+                        view.PingTime[i].Text = PingTool.PingResult.RoundtripTime.ToString();
+                        view.PingTime[i].Show();
+                    }
+                    else
+                    {
+                        view.DeviceNames[i].Text = view.Devices[i].Name;
+                        view.DeviceNames[i].Show();
+                        view.RedDots[i].Show();
+                        view.GreenDots[i].Hide();
+                        view.IpLabels[i].Show();
+                        view.DeviceIp[i].Text = view.Devices[i].IpAddress;
+                        view.DeviceIp[i].Show();
+                        view.PingLabels[i].Show();
+                    }
                 }
-                    
-                    
             }
-
-            
         }
 
         public void OnNetworkComboClicked()
