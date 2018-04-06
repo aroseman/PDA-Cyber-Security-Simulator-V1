@@ -21,6 +21,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
         public SimulateAttackPresenter SimulateAttackPresenter { get; set; }
         public ViewNetwork ViewNetwork { get; set; }
         public ViewNetworkPresenter ViewNetworkPresenter { get; set; }
+        public Rectangle ScreenSize { get; set; }
 
         public HomeView()
         {
@@ -43,7 +44,8 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             SimulateAttackPresenter = new SimulateAttackPresenter(this.SimulateAttackView);
             ViewNetwork = new ViewNetwork(this);
             ViewNetworkPresenter = new ViewNetworkPresenter(ViewNetwork);
-            
+            var screen = Screen.FromControl(this);
+            ScreenSize = screen.WorkingArea;
         }
 
         private void OnTestNetworkButtonClicked(object sender, EventArgs e)

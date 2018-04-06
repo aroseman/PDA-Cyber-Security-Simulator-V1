@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using PDA_Cyber_Security_Simulator_V1.Controls;
@@ -136,6 +137,8 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
                 PingLabels[i].Hide();
                 PingTime[i].Hide();
             }
+
+            button1.Location = new Point(20, button1.Location.Y);
         }
 
 

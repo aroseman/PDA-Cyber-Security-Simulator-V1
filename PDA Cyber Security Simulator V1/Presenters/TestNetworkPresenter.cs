@@ -51,7 +51,14 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
                         view.DeviceIp[i].Text = view.Devices[i].IpAddress;
                         view.DeviceIp[i].Show();
                         view.PingLabels[i].Show();
-                        view.PingTime[i].Text = PingTool.PingResult.RoundtripTime.ToString();
+                        if (PingTool.PingResult.RoundtripTime == 0)
+                        {
+                            view.PingTime[i].Text = "< 1 ms";
+                        }
+                        else
+                        {
+                            view.PingTime[i].Text = PingTool.PingResult.RoundtripTime + " ms";
+                        }
                         view.PingTime[i].Show();
                     }
                     else
