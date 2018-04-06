@@ -28,7 +28,6 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
         public HomeView Form1 { get; }
         public HomeViewPresenter Form1Presenter { get; }
         public List<String> NetworkNames { get { return this.testNetworkComboBox1.DataSource as List<String>; } }
-        public String SelectedNetwork { get { return this.testNetworkComboBox1.Text as String; } }
         public List<int> NetworkIDs { get; set; }
         //public List<Device> Devices { get { return this.testNetworkListBox1.DataSource as List<Device>;}
         public List<Device> Devices { get; set; }
@@ -71,10 +70,9 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
 
         private void BindComponents()
         {
-            //this.testNetworkComboBox1.SelectedValueChanged += TestNetworkComboBoxOnClick;
             this.rootCrumb.Click += OnRootCrumbClick;
-            this.testNetworkComboBox1.SelectedValueChanged += OnNetworkSelect;
-            this.testNetworkComboBox1.Click += OnComboBoxClick;
+            this.testNetworkComboBox1.DropDown += OnComboBoxClick;
+            //this.testNetworkComboBox1.SelectionChangeCommitted += OnNetworkSelect; //( SelectionChangeCommitted += OnNetworkSelect);
             this.button1.Click += OnTestNetworkClick;
         }
 
@@ -217,9 +215,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
 
         private void OnNetworkSelect(object sender, EventArgs e)
         {
-
             this.NetworkSelected?.Invoke();
-
         }
     }
 }

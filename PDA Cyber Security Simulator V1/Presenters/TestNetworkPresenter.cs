@@ -71,24 +71,26 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
 
         public void OnNetworkComboClicked()
         {
-
-            
+            view.NetworkDataSource?.Clear();
             var netwWorkNames = unitOfWork.NetworkManager.GetAllNetworks();
-            
+
             foreach (var networkName in netwWorkNames)
             {
                 if (view.NetworkDataSource != null) view.NetworkDataSource.Add(new Language(networkName, networkName));
                 else Console.Error.WriteLine("Network Data Source not initialized.");
             }
 
+            view.TestNetworkComboBox1.DataSource = null;
             view.TestNetworkComboBox1.DataSource = view.NetworkDataSource;
         }
 
         public void OnNetworkSelected()
         {
-            String name = this.view.SelectedNetwork;
-            int netid = unitOfWork.NetworkManager.GetNetworkIdByName(name);
-            List<Device> dlist = unitOfWork.DeviceManager.GetDevicesByNetworkId(netid);
+            var name = view.TestNetworkComboBox1.GetItemText(view.TestNetworkComboBox1.SelectedItem);
+            var netid = unitOfWork.NetworkManager.GetNetworkIdByName(name);
+            var dlist = unitOfWork.DeviceManager.GetDevicesByNetworkId(netid);
+            view.Devices?.Clear();
+
             view.Devices = dlist;
             view.DeviceDataSource.Clear();
             foreach (var device in dlist) 
@@ -96,6 +98,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
                 view.DeviceDataSource.Add(new Language(device.Name, device.IpAddress));
             }
 
+            view.TestNetworkListBox1.DataSource = null;
             view.TestNetworkListBox1.DataSource = view.DeviceDataSource;
         }
 

@@ -17,7 +17,6 @@ namespace PDA_Cyber_Security_Simulator_V1.Interfaces
         event Action TestNetworkClick;
         
         List<String> NetworkNames { get; }
-        String SelectedNetwork { get; } 
         List<int> NetworkIDs { get; }
         List<Device> Devices { get; }
         List<Language> NetworkDataSource { get; }
