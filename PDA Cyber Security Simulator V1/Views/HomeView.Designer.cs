@@ -162,7 +162,7 @@
             this.homeScreen.Controls.Add(this.viewNetwork, 1, 0);
             this.homeScreen.Controls.Add(this.testNetwork, 0, 1);
             this.homeScreen.Location = new System.Drawing.Point(88, 256);
-            this.homeScreen.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.homeScreen.Margin = new System.Windows.Forms.Padding(6);
             this.homeScreen.Name = "homeScreen";
             this.homeScreen.RowCount = 2;
             this.homeScreen.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -176,7 +176,7 @@
             this.configureNetwork.Controls.Add(this.configureNetworkLabel);
             this.configureNetwork.Dock = System.Windows.Forms.DockStyle.Fill;
             this.configureNetwork.Location = new System.Drawing.Point(6, 6);
-            this.configureNetwork.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.configureNetwork.Margin = new System.Windows.Forms.Padding(6);
             this.configureNetwork.Name = "configureNetwork";
             this.configureNetwork.Size = new System.Drawing.Size(780, 319);
             this.configureNetwork.TabIndex = 4;
@@ -191,7 +191,7 @@
             this.configureNetworkLabel.Name = "configureNetworkLabel";
             this.configureNetworkLabel.Size = new System.Drawing.Size(780, 319);
             this.configureNetworkLabel.TabIndex = 0;
-            this.configureNetworkLabel.Text = "Configure Network";
+            this.configureNetworkLabel.Text = "Create Network";
             this.configureNetworkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // simulateAttack
@@ -200,7 +200,7 @@
             this.simulateAttack.Controls.Add(this.simulateAttackLabel);
             this.simulateAttack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.simulateAttack.Location = new System.Drawing.Point(798, 337);
-            this.simulateAttack.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simulateAttack.Margin = new System.Windows.Forms.Padding(6);
             this.simulateAttack.Name = "simulateAttack";
             this.simulateAttack.Size = new System.Drawing.Size(780, 319);
             this.simulateAttack.TabIndex = 7;
@@ -224,7 +224,7 @@
             this.viewNetwork.Controls.Add(this.viewNetworkLabel);
             this.viewNetwork.Dock = System.Windows.Forms.DockStyle.Fill;
             this.viewNetwork.Location = new System.Drawing.Point(798, 6);
-            this.viewNetwork.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.viewNetwork.Margin = new System.Windows.Forms.Padding(6);
             this.viewNetwork.Name = "viewNetwork";
             this.viewNetwork.Size = new System.Drawing.Size(780, 319);
             this.viewNetwork.TabIndex = 5;
@@ -239,7 +239,7 @@
             this.viewNetworkLabel.Name = "viewNetworkLabel";
             this.viewNetworkLabel.Size = new System.Drawing.Size(780, 319);
             this.viewNetworkLabel.TabIndex = 1;
-            this.viewNetworkLabel.Text = "View Network";
+            this.viewNetworkLabel.Text = "View/Edit Network";
             this.viewNetworkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // testNetwork
@@ -248,7 +248,7 @@
             this.testNetwork.Controls.Add(this.testNetworkLabel);
             this.testNetwork.Dock = System.Windows.Forms.DockStyle.Fill;
             this.testNetwork.Location = new System.Drawing.Point(6, 337);
-            this.testNetwork.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.testNetwork.Margin = new System.Windows.Forms.Padding(6);
             this.testNetwork.Name = "testNetwork";
             this.testNetwork.Size = new System.Drawing.Size(780, 319);
             this.testNetwork.TabIndex = 6;
@@ -272,7 +272,7 @@
             this.breadCrumbFlowLayoutPanel.Controls.Add(this.imagePanel);
             this.breadCrumbFlowLayoutPanel.Controls.Add(this.breadCrumbsPanel);
             this.breadCrumbFlowLayoutPanel.Location = new System.Drawing.Point(0, 52);
-            this.breadCrumbFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.breadCrumbFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(6);
             this.breadCrumbFlowLayoutPanel.Name = "breadCrumbFlowLayoutPanel";
             this.breadCrumbFlowLayoutPanel.Size = new System.Drawing.Size(1764, 192);
             this.breadCrumbFlowLayoutPanel.TabIndex = 2;
@@ -282,7 +282,7 @@
             this.imagePanel.BackColor = System.Drawing.SystemColors.Control;
             this.imagePanel.Controls.Add(this.pictureBox1);
             this.imagePanel.Location = new System.Drawing.Point(6, 6);
-            this.imagePanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.imagePanel.Margin = new System.Windows.Forms.Padding(6);
             this.imagePanel.Name = "imagePanel";
             this.imagePanel.Size = new System.Drawing.Size(524, 167);
             this.imagePanel.TabIndex = 3;
@@ -293,7 +293,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(524, 167);
             this.pictureBox1.TabIndex = 0;
@@ -303,7 +303,7 @@
             // 
             this.breadCrumbsPanel.Controls.Add(this.rootCrumb);
             this.breadCrumbsPanel.Location = new System.Drawing.Point(542, 6);
-            this.breadCrumbsPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.breadCrumbsPanel.Margin = new System.Windows.Forms.Padding(6);
             this.breadCrumbsPanel.Name = "breadCrumbsPanel";
             this.breadCrumbsPanel.Size = new System.Drawing.Size(400, 167);
             this.breadCrumbsPanel.TabIndex = 4;
@@ -330,7 +330,7 @@
             this.Controls.Add(this.homeScreen);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "HomeView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PDA Cyber Security Simulator";

@@ -25,11 +25,37 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
             view.FormPaint += OnFormPaint;
             view.RootCrumbClick += OnRootCrumbClick;
             view.BtnResetViewNetworkClick += OnBtnResetViewNetworkClick;
+            view.DeviceDoubleClick += OnDeviceDoubleClick;
         }
 
         public void OnRootCrumbClick()
         {
             view.ShowHomeView();
+        }
+
+        public void OnDeviceDoubleClick()
+        {
+            DeviceProperties deviceProperties = new DeviceProperties((Device)view.CurrentDevice.Tag);
+            DialogResult dialogResult = deviceProperties.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+            {
+                unitOfWork.DeviceManager.UpdateDevice(deviceProperties.Device);
+                for (var i = 0; i < view.DevicePictures.Count; i++)
+                {
+                    if ((Device) view.DevicePictures[i].Tag != null && ((Device) view.DevicePictures[i].Tag).Id == deviceProperties.Device.Id)
+                    {
+                        view.DeviceNames[i].Text = deviceProperties.Device.Name;
+                        view.IpAddresses[i].Text = deviceProperties.Device.IpAddress;
+                    }
+                }
+                view.CurrentDevice.Tag = deviceProperties.Device;
+                deviceProperties.Dispose();
+            }
+            else if (dialogResult == DialogResult.Cancel)
+            {
+                deviceProperties.Dispose();
+            }
         }
 
         public void OnBtnLoadNetworkClick()
@@ -66,6 +92,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
                 foreach (var t in network.Devices)
                 {
                     var neighbors = unitOfWork.NeighborManager.GetNeighbors(t.Id);
+                    t.Configured = true;
 
                     foreach (var t1 in neighbors)
                     {

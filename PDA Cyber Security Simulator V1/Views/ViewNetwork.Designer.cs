@@ -134,10 +134,9 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 192F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1367F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(2164, 1574);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
@@ -153,7 +152,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             this.panel2.Location = new System.Drawing.Point(6, 6);
             this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(2152, 180);
+            this.panel2.Size = new System.Drawing.Size(2152, 176);
             this.panel2.TabIndex = 2;
             // 
             // breadCrumbsPanel
@@ -187,7 +186,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             this.picProcessAndDataLogo.Location = new System.Drawing.Point(0, 0);
             this.picProcessAndDataLogo.Margin = new System.Windows.Forms.Padding(6);
             this.picProcessAndDataLogo.Name = "picProcessAndDataLogo";
-            this.picProcessAndDataLogo.Size = new System.Drawing.Size(2152, 180);
+            this.picProcessAndDataLogo.Size = new System.Drawing.Size(2152, 176);
             this.picProcessAndDataLogo.TabIndex = 1;
             this.picProcessAndDataLogo.TabStop = false;
             // 
@@ -197,18 +196,19 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             this.tableLayoutPanel1.SetColumnSpan(this.pnlViewNetworkTitle, 2);
             this.pnlViewNetworkTitle.Controls.Add(this.lblViewNetworkTitle);
             this.pnlViewNetworkTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlViewNetworkTitle.Location = new System.Drawing.Point(4, 1563);
+            this.pnlViewNetworkTitle.Location = new System.Drawing.Point(4, 1529);
             this.pnlViewNetworkTitle.Margin = new System.Windows.Forms.Padding(4);
             this.pnlViewNetworkTitle.Name = "pnlViewNetworkTitle";
-            this.pnlViewNetworkTitle.Size = new System.Drawing.Size(2156, 32);
+            this.pnlViewNetworkTitle.Size = new System.Drawing.Size(2156, 41);
             this.pnlViewNetworkTitle.TabIndex = 4;
             // 
             // lblViewNetworkTitle
             // 
             this.lblViewNetworkTitle.AutoSize = true;
+            this.lblViewNetworkTitle.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblViewNetworkTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblViewNetworkTitle.ForeColor = System.Drawing.Color.White;
-            this.lblViewNetworkTitle.Location = new System.Drawing.Point(1940, 4);
+            this.lblViewNetworkTitle.Location = new System.Drawing.Point(1963, 0);
             this.lblViewNetworkTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblViewNetworkTitle.Name = "lblViewNetworkTitle";
             this.lblViewNetworkTitle.Size = new System.Drawing.Size(193, 31);
@@ -272,10 +272,10 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             this.pnlViewNetwork.Controls.Add(this.picDeviceB);
             this.pnlViewNetwork.Controls.Add(this.btnResetViewNetwork);
             this.pnlViewNetwork.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlViewNetwork.Location = new System.Drawing.Point(4, 196);
+            this.pnlViewNetwork.Location = new System.Drawing.Point(4, 192);
             this.pnlViewNetwork.Margin = new System.Windows.Forms.Padding(4);
             this.pnlViewNetwork.Name = "pnlViewNetwork";
-            this.pnlViewNetwork.Size = new System.Drawing.Size(2156, 1359);
+            this.pnlViewNetwork.Size = new System.Drawing.Size(2156, 1329);
             this.pnlViewNetwork.TabIndex = 6;
             // 
             // comboNetworkNames

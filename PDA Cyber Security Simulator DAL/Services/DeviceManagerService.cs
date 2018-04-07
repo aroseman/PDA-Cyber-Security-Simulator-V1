@@ -196,5 +196,18 @@ namespace PDA_Cyber_Security_Simulator_DAL.Interfaces
                 return device;
             }
         }
+
+        public void UpdateDevice(Device device)
+        {
+            DbCommand.CommandText =
+                "UPDATE Device SET ip = @parameter1, name = @parameter2, mac = @parameter3, description = @parameter4, notes = @parameter5 WHERE id = @parameter6;";
+            DbCommand.Parameters.Add(new SQLiteParameter("@parameter1", device.IpAddress));
+            DbCommand.Parameters.Add(new SQLiteParameter("@parameter2", device.Name));
+            DbCommand.Parameters.Add(new SQLiteParameter("@parameter3", device.MacAddress));
+            DbCommand.Parameters.Add(new SQLiteParameter("@parameter4", device.Description));
+            DbCommand.Parameters.Add(new SQLiteParameter("@parameter5", device.Notes));
+            DbCommand.Parameters.Add(new SQLiteParameter("@parameter6", device.Id));
+            DbCommand.ExecuteNonQuery();
+        }
     }
 }

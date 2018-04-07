@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows.Forms;
 using PDA_Cyber_Security_Simulator_V1.Interfaces;
 using PDA_Cyber_Security_Simulator_V1.Presenters;
+using PDA_Cyber_Security_Simulator_Domain;
 
 
 namespace PDA_Cyber_Security_Simulator_V1.Views
@@ -17,6 +18,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
         public event Action RootCrumbClick;
         public event Action ComboViewNetworkClick;
         public event Action BtnResetViewNetworkClick;
+        public event Action DeviceDoubleClick;
 
         public HomeView Home { get; }
         public List<Label> DeviceNames { get; set; }
@@ -28,6 +30,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
         public ComboBox ComboNetworkNames { get; set; }
         public Panel PanelViewNetwork { get; set; }
         public Pen Pen = new Pen(Color.Black, 3);
+        public PictureBox CurrentDevice { get; set; }
         public bool NetworkLoaded { get; set; }
 
         public PaintEventArgs PaintEventArgs { get; set; }
@@ -48,6 +51,10 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             rootCrumb.Click += OnRootCrumbClick;
             comboNetworkNames.Click += OnComboViewNetworkClick;
             btnResetViewNetwork.Click += OnBtnResetViewNetworkClick;
+            foreach(var pictureBox in DevicePictures)
+            {
+                pictureBox.DoubleClick += OnDeviceDoubleClick;
+            }
         }
 
         private void InitializeLists()
@@ -96,6 +103,12 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
         private void OnRootCrumbClick(object sender, EventArgs e)
         {
             RootCrumbClick?.Invoke();
+        }
+
+        private void OnDeviceDoubleClick(object sender, EventArgs e)
+        {
+            CurrentDevice = (PictureBox) sender;
+            DeviceDoubleClick?.Invoke();
         }
 
         private void OnFormPaint(object sender, PaintEventArgs e)

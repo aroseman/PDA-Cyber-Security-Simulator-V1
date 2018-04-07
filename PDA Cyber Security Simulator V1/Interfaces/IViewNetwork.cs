@@ -16,5 +16,6 @@ namespace PDA_Cyber_Security_Simulator_V1.Interfaces
         event Action RootCrumbClick;
         event Action ComboViewNetworkClick;
         event Action BtnResetViewNetworkClick;
+        event Action DeviceDoubleClick;
     }
 }
