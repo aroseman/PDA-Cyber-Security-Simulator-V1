@@ -257,6 +257,7 @@
             // 
             // testNetworkComboBox1
             // 
+            this.testNetworkComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.testNetworkComboBox1.FormattingEnabled = true;
             this.testNetworkComboBox1.Location = new System.Drawing.Point(6, 43);
             this.testNetworkComboBox1.Margin = new System.Windows.Forms.Padding(6, 6, 150, 6);
@@ -271,7 +272,7 @@
             this.lblDevices.AutoSize = true;
             this.lblDevices.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDevices.Location = new System.Drawing.Point(0, 157);
-            this.lblDevices.Margin = new System.Windows.Forms.Padding(0, 75, 190, 0);
+            this.lblDevices.Margin = new System.Windows.Forms.Padding(0, 75, 1000, 0);
             this.lblDevices.Name = "lblDevices";
             this.lblDevices.Size = new System.Drawing.Size(128, 31);
             this.lblDevices.TabIndex = 3;

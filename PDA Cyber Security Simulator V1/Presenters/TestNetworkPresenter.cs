@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using PDA_Cyber_Security_Simulator_DAL.Common;
 using PDA_Cyber_Security_Simulator_V1.Views;
 
@@ -15,6 +16,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
         private TestNetworkView view;
         private UnitOfWork unitOfWork = new UnitOfWork();
         private NetworkTester PingTool = new NetworkTester();
+        private int ExceptionIndex;
         public TestNetworkPresenter(TestNetworkView newView)
         {
             this.view = newView;
@@ -35,45 +37,60 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
 
         public void OnTestNetworkClicked()
         {
-           // List<string> selectedDevices = new List<string>();
-            for (int i = 0; i < view.DeviceDataSource.Count; i++)
+            try
             {
-                if (view.TestNetworkListBox1.GetSelected(i))
+                for (int i = 0; i < view.DeviceDataSource.Count; i++)
                 {
-                    PingTool.TestDevice(view.Devices[i].IpAddress);
-                    if (PingTool.PingResult.Status == IPStatus.Success)
+                    if (view.TestNetworkListBox1.GetSelected(i))
                     {
-                        view.DeviceNames[i].Text = view.Devices[i].Name;
-                        view.DeviceNames[i].Show();
-                        view.GreenDots[i].Show();
-                        view.RedDots[i].Hide();
-                        view.IpLabels[i].Show();
-                        view.DeviceIp[i].Text = view.Devices[i].IpAddress;
-                        view.DeviceIp[i].Show();
-                        view.PingLabels[i].Show();
-                        if (PingTool.PingResult.RoundtripTime == 0)
+                        ExceptionIndex = i;
+                        PingTool.TestDevice(view.Devices[i].IpAddress);
+                        if (PingTool.PingResult.Status == IPStatus.Success)
                         {
-                            view.PingTime[i].Text = "< 1 ms";
+                            view.DeviceNames[i].Text = view.Devices[i].Name;
+                            view.DeviceNames[i].Show();
+                            view.GreenDots[i].Show();
+                            view.RedDots[i].Hide();
+                            view.IpLabels[i].Show();
+                            view.DeviceIp[i].Text = view.Devices[i].IpAddress;
+                            view.DeviceIp[i].Show();
+                            view.PingLabels[i].Show();
+                            if (PingTool.PingResult.RoundtripTime == 0)
+                            {
+                                view.PingTime[i].Text = "< 1 ms";
+                            }
+                            else
+                            {
+                                view.PingTime[i].Text = PingTool.PingResult.RoundtripTime + " ms";
+                            }
+                            view.PingTime[i].Show();
                         }
                         else
                         {
-                            view.PingTime[i].Text = PingTool.PingResult.RoundtripTime + " ms";
+                            view.DeviceNames[i].Text = view.Devices[i].Name;
+                            view.DeviceNames[i].Show();
+                            view.RedDots[i].Show();
+                            view.GreenDots[i].Hide();
+                            view.IpLabels[i].Show();
+                            view.DeviceIp[i].Text = view.Devices[i].IpAddress;
+                            view.DeviceIp[i].Show();
+                            view.PingLabels[i].Show();
                         }
-                        view.PingTime[i].Show();
-                    }
-                    else
-                    {
-                        view.DeviceNames[i].Text = view.Devices[i].Name;
-                        view.DeviceNames[i].Show();
-                        view.RedDots[i].Show();
-                        view.GreenDots[i].Hide();
-                        view.IpLabels[i].Show();
-                        view.DeviceIp[i].Text = view.Devices[i].IpAddress;
-                        view.DeviceIp[i].Show();
-                        view.PingLabels[i].Show();
                     }
                 }
             }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                view.DeviceNames[ExceptionIndex].Text = view.Devices[ExceptionIndex].Name;
+                view.DeviceNames[ExceptionIndex].Show();
+                view.RedDots[ExceptionIndex].Show();
+                view.GreenDots[ExceptionIndex].Hide();
+                view.IpLabels[ExceptionIndex].Show();
+                view.DeviceIp[ExceptionIndex].Text = view.Devices[ExceptionIndex].IpAddress;
+                view.DeviceIp[ExceptionIndex].Show();
+                view.PingLabels[ExceptionIndex].Show();
+            }            
         }
 
         public void OnNetworkComboClicked()

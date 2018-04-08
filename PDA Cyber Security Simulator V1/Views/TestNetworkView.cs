@@ -14,6 +14,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
     {
         #region Attributes
         private bool test = false;
+        private bool IsThinClient = false;
 
         public List<Label> DeviceNames;
         public List<Label> PingLabels;
@@ -47,11 +48,11 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             NetworkDataSource = new List<Language>();
             DeviceDataSource = new List<Language>();
             InitializeComponent();
-            InitializeGraphics();
             BindComponents();
             TestNetworkComboBox1 = testNetworkComboBox1;
             TestNetworkListBox1 = testNetworkListBox1;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            InitializeGraphics();
         }
 
         public TestNetworkView(HomeViewPresenter form1Presenter)
@@ -60,14 +61,14 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             NT = new NetworkTester();
 
             InitializeComponent();
-            InitializeGraphics();
             BindComponents();
             TestNetworkComboBox1 = testNetworkComboBox1;
             TestNetworkListBox1 = testNetworkListBox1;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            InitializeGraphics();
         }
 
-  
+
 
         private void BindComponents()
         {
@@ -138,7 +139,16 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
                 PingTime[i].Hide();
             }
 
-            button1.Location = new Point(20, button1.Location.Y);
+            if (IsThinClient)
+            {
+                var bottom = tableLayoutPanel1.GetRowHeights();
+                button1.Location = new Point(20, bottom[1] + bottom[0] + 100);
+            }
+            else
+            {
+                var bottom = tableLayoutPanel1.GetRowHeights();
+                button1.Location = new Point(20, bottom[1] + bottom[0] - button1.Height - 15);
+            }
         }
 
 
