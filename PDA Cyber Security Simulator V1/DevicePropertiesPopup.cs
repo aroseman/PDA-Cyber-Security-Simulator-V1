@@ -16,7 +16,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         {
             InitializeComponent();
             InitializeDeviceProperties(device);
-            this.ControlBox = false;
+            ControlBox = false;
             btnSaveDeviceProperties.DialogResult = DialogResult.OK;
             btnCancelPopup.DialogResult = DialogResult.Cancel;
             Device = device;
@@ -34,7 +34,7 @@ namespace PDA_Cyber_Security_Simulator_V1
         private void DeviceProperties_Load(object sender, EventArgs e)
         {
             txtDeviceMac.ValidatingType = typeof(PhysicalAddress);
-            txtDeviceMac.TypeValidationCompleted += new TypeValidationEventHandler(txtDeviceMac_TypeValidationCompleted);
+            txtDeviceMac.TypeValidationCompleted += txtDeviceMac_TypeValidationCompleted;
         }
 
         private void btnSaveDeviceProperties_Click(object sender, EventArgs e)
@@ -145,6 +145,12 @@ namespace PDA_Cyber_Security_Simulator_V1
                     MessageBox.Show("Error! Invalid MAC address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void txtDeviceMac_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtDeviceMac.Text = txtDeviceMac.Text.ToUpper();
+            txtDeviceMac.SelectionStart = txtDeviceMac.TextLength;
         }
     }
 }

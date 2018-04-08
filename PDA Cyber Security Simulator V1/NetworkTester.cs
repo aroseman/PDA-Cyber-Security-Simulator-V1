@@ -5,27 +5,28 @@ namespace PDA_Cyber_Security_Simulator_V1
 {
     public class NetworkTester
     {
+        public PingReply PingResult { get; set; }
 
        public void TestDevice(string ipAddress)
         {
             Boolean status = false;
             Ping pingSender = new Ping();
-            PingReply reply = pingSender.Send(ipAddress);
+            PingResult = pingSender.Send(ipAddress);
 
-            if (reply.Status == IPStatus.Success)
+            if (PingResult.Status == IPStatus.Success)
             {
                 status = true;
 
-                Console.WriteLine("Address: " + reply.Address.ToString() + "\n");
-                Console.WriteLine("RoundTrip time: " + reply.RoundtripTime + "\n");
-                Console.WriteLine("Time to live: " + reply.Options.Ttl + "\n");
-                Console.WriteLine("Don't fragment: " + reply.Options.DontFragment + "\n");
-                Console.WriteLine("Buffer size: " + reply.Buffer.Length + "\n");
+                Console.WriteLine("Address: " + PingResult.Address.ToString() + "\n");
+                Console.WriteLine("RoundTrip time: " + PingResult.RoundtripTime + "\n");
+                Console.WriteLine("Time to live: " + PingResult.Options.Ttl + "\n");
+                Console.WriteLine("Don't fragment: " + PingResult.Options.DontFragment + "\n");
+                Console.WriteLine("Buffer size: " + PingResult.Buffer.Length + "\n");
                 Console.WriteLine("Device is available!" + "\n");
             }
             else
             {
-                Console.WriteLine(reply.Status);
+                Console.WriteLine(PingResult.Status);
             }
 
            

@@ -59,10 +59,10 @@
             // btnCancelPopup
             // 
             this.btnCancelPopup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelPopup.Location = new System.Drawing.Point(346, 559);
-            this.btnCancelPopup.Margin = new System.Windows.Forms.Padding(188, 20, 4, 4);
+            this.btnCancelPopup.Location = new System.Drawing.Point(316, 559);
+            this.btnCancelPopup.Margin = new System.Windows.Forms.Padding(158, 20, 4, 4);
             this.btnCancelPopup.Name = "btnCancelPopup";
-            this.btnCancelPopup.Size = new System.Drawing.Size(96, 46);
+            this.btnCancelPopup.Size = new System.Drawing.Size(120, 46);
             this.btnCancelPopup.TabIndex = 1;
             this.btnCancelPopup.Text = "Cancel";
             this.btnCancelPopup.UseVisualStyleBackColor = true;
@@ -108,7 +108,7 @@
             this.txtDeviceName.Margin = new System.Windows.Forms.Padding(40, 6, 500, 6);
             this.txtDeviceName.MaxLength = 50;
             this.txtDeviceName.Name = "txtDeviceName";
-            this.txtDeviceName.Size = new System.Drawing.Size(293, 44);
+            this.txtDeviceName.Size = new System.Drawing.Size(396, 44);
             this.txtDeviceName.TabIndex = 2;
             // 
             // lblDeviceIP
@@ -130,7 +130,7 @@
             this.txtDeviceIP.Margin = new System.Windows.Forms.Padding(40, 6, 600, 6);
             this.txtDeviceIP.MaxLength = 15;
             this.txtDeviceIP.Name = "txtDeviceIP";
-            this.txtDeviceIP.Size = new System.Drawing.Size(293, 44);
+            this.txtDeviceIP.Size = new System.Drawing.Size(396, 44);
             this.txtDeviceIP.TabIndex = 3;
             // 
             // lblDeviceMac
@@ -151,8 +151,9 @@
             this.txtDeviceMac.Location = new System.Drawing.Point(40, 244);
             this.txtDeviceMac.Margin = new System.Windows.Forms.Padding(40, 3, 250, 3);
             this.txtDeviceMac.Name = "txtDeviceMac";
-            this.txtDeviceMac.Size = new System.Drawing.Size(293, 44);
+            this.txtDeviceMac.Size = new System.Drawing.Size(396, 44);
             this.txtDeviceMac.TabIndex = 12;
+            this.txtDeviceMac.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDeviceMac_KeyPress);
             // 
             // lblDeviceDescription
             // 

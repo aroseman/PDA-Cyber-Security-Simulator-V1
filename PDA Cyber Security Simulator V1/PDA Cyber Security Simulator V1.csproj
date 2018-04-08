@@ -102,7 +102,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attack.cs" />
+    <Compile Include="IAttack.cs" />
+    <Compile Include="AttackFactory.cs" />
     <Compile Include="Controls\CirclePanelGreen.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -118,7 +119,7 @@
     </Compile>
     <Compile Include="Interfaces\IViewNetwork.cs" />
     <Compile Include="Presenters\ViewNetworkPresenter.cs" />
-    <Compile Include="SynFlood.cs" />
+    <Compile Include="SynFloodAttack.cs" />
     <Compile Include="Views\HomeView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,8 +129,6 @@
     <Compile Include="Interfaces\IHomeView.cs" />
     <Compile Include="Presenters\HomeViewPresenter.cs" />
     <Compile Include="Language.cs" />
-    <Compile Include="Layer2Attack.cs" />
-    <Compile Include="Layer3Attack.cs" />
     <Compile Include="Views\NetBuilder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +223,9 @@
       <Project>{25523B06-7B43-4887-AF33-464E2FD36B60}</Project>
       <Name>PDA Cyber Security Simulator Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atm router.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets')" />

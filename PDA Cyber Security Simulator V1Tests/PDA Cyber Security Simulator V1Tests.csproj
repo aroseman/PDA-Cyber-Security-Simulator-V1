@@ -103,8 +103,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Layer3AttackTest.cs" />
-    <Compile Include="Layer2AttackTest.cs" />
     <Compile Include="DeviceTest.cs" />
     <Compile Include="NetworkTest.cs" />
     <Compile Include="NeighborsTest.cs" />

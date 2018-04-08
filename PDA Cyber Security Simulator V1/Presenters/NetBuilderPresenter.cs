@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PDA_Cyber_Security_Simulator_V1.Views;
 
-namespace PDA_Cyber_Security_Simulator_V1
+namespace PDA_Cyber_Security_Simulator_V1.Presenters
 {
     public class NetBuilderPresenter
     {
@@ -17,28 +18,28 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         public NetBuilderPresenter(NetBuilder newView)
         {
-            this.view = newView;
-            this.view.RootCrumbClick += ShowHomeView;
-            this.view.CanvasPaint += OnCanvasPaintClick;
-            this.view.CanvasMouseDown += OnCanvasMouseDown;
-            this.view.EnableLineDrawClick += OnEnableLineDrawClick;
-            this.view.BtnSaveClick += OnBtnSaveClick;
-            this.view.BtnClearNetworkClick += OnBtnClearNetworkClick;
+            view = newView;
+            view.RootCrumbClick += ShowHomeView;
+            view.CanvasPaint += OnCanvasPaintClick;
+            view.CanvasMouseDown += OnCanvasMouseDown;
+            view.EnableLineDrawClick += OnEnableLineDrawClick;
+            view.BtnSaveClick += OnBtnSaveClick;
+            view.BtnClearNetworkClick += OnBtnClearNetworkClick;
         }
 
         public void OnCanvasPaintClick()
         {
-            this.view.canvas_Paint(this.view.PaintEventArgs);
+            view.canvas_Paint(view.PaintEventArgs);
         }
 
         public void OnCanvasMouseDown()
         {
-            this.view.canvas_MouseDown(this.view.MouseEventArgs);
+            view.canvas_MouseDown(view.MouseEventArgs);
         }
 
         public void OnEnableLineDrawClick()
         {
-            this.view.enableLineDraw_MouseClick();
+            view.enableLineDraw_MouseClick();
         }
 
         public void OnBtnSaveClick()
@@ -48,44 +49,44 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         public void OnBtnClearNetworkClick()
         {
-            this.view.btnClearNetwork_Click();
+            view.btnClearNetwork_Click();
         }
 
         public void ShowHomeView()
         {
-            this.view.ShowHomeView();
+            view.ShowHomeView();
         }
 
         public void btnSave_Click()
         {
-            var netName = this.view.NetName;
-            Network network = this.view.Network;
-            Panel canvas = this.view.Canvas;
+            var netName = view.NetName;
+            Network network = view.Network;
+            Panel canvas = view.Canvas;
 
             if (string.IsNullOrWhiteSpace(netName))
             {
-                MessageBox.Show(this.view, "ERROR: Empty Network Name");
+                MessageBox.Show(view, "ERROR: Empty Network Name");
             }
             else
             {
-                MessageBox.Show(this.view, "Saved");
+                MessageBox.Show(view, "Saved");
                 //Algorithm for neighbor checking
-                for (int i = 0; i < this.view.ActiveDevices.Count; i++)
+                for (int i = 0; i < view.ActiveDevices.Count; i++)
                 {
-                    for (int j = 0; j < this.view.Pt1.Count; j++)
+                    for (int j = 0; j < view.Pt1.Count; j++)
                     {
-                        if (InBounds(this.view.ActiveDevices[i], this.view.Pt1[j]))
+                        if (InBounds(view.ActiveDevices[i], view.Pt1[j]))
                         {
-                            for (int k = 0; k < this.view.ActiveDevices.Count; k++)
+                            for (int k = 0; k < view.ActiveDevices.Count; k++)
                             {
-                                if (InBounds(this.view.ActiveDevices[k], this.view.Pt2[j]))
+                                if (InBounds(view.ActiveDevices[k], view.Pt2[j]))
                                 {
-                                    Device d1 = (Device)this.view.ActiveDevices[k].Tag;
-                                    Device d2 = (Device)this.view.ActiveDevices[i].Tag;
+                                    Device d1 = (Device)view.ActiveDevices[k].Tag;
+                                    Device d2 = (Device)view.ActiveDevices[i].Tag;
                                     d1.Neighbors.Add(d2);
                                     d2.Neighbors.Add(d1);
-                                    this.view.ActiveDevices[k].Tag = d1;
-                                    this.view.ActiveDevices[i].Tag = d2;
+                                    view.ActiveDevices[k].Tag = d1;
+                                    view.ActiveDevices[i].Tag = d2;
                                 }
                             }
                         }

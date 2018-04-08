@@ -3,8 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using PDA_Cyber_Security_Simulator_V1.Interfaces;
+using PDA_Cyber_Security_Simulator_V1.Presenters;
 
-namespace PDA_Cyber_Security_Simulator_V1
+namespace PDA_Cyber_Security_Simulator_V1.Views
 {
     public partial class NetBuilder : Form, NetBuilderInterface
     {
@@ -23,6 +25,8 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         //Clear flag
         private bool beingCleared = false;
+
+        private bool IsThinClient = false;
 
         // The "size" of an object for mouse over purposes.
         private const int object_radius = 3;
@@ -78,6 +82,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             InitializeDragDrop();
             InitializePopup();
+            InitializeGraphics();
             lblDrawEnabled.Visible = false;
             this.rootCrumb.Click += OnRootCrumbClick;
             this.canvas.Paint += OnCanvasPaint;
@@ -100,6 +105,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             InitializeDragDrop();
             InitializePopup();
+            InitializeGraphics();
             lblDrawEnabled.Visible = false;
             this.rootCrumb.Click += OnRootCrumbClick;
             this.rootCrumb.Click += OnRootCrumbClick;
@@ -124,40 +130,34 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         private void OnRootCrumbClick(object sender, EventArgs e)
         {
-            if (this.RootCrumbClick != null)
-                this.RootCrumbClick();
+            RootCrumbClick?.Invoke();
         }
 
         private void OnCanvasPaint(object sender, PaintEventArgs e)
         {
             this.PaintEventArgs = e;
-            if (this.CanvasPaint != null)
-                this.CanvasPaint();
+            CanvasPaint?.Invoke();
         }
 
         private void OnCanvasMouseDown(object sender, MouseEventArgs e)
         {
             this.MouseEventArgs = e;
-            if (this.CanvasMouseDown != null)
-                this.CanvasMouseDown();
+            CanvasMouseDown?.Invoke();
         }
 
         private void OnBtnSaveClick(object sender, EventArgs e)
         {
-            if (this.BtnSaveClick != null)
-                this.BtnSaveClick();
+            BtnSaveClick?.Invoke();
         }
 
         private void OnBtnClearNetworkClick(object sender, EventArgs e)
         {
-            if (this.BtnClearNetworkClick != null)
-                this.BtnClearNetworkClick();
+            BtnClearNetworkClick?.Invoke();
         }
 
         private void OnEnableLineDrawClick(object sender, EventArgs e)
         {
-            if (this.EnableLineDrawClick != null)
-                this.EnableLineDrawClick();
+            EnableLineDrawClick?.Invoke();
         }
 
         //Navigate back to Home screen
@@ -167,6 +167,20 @@ namespace PDA_Cyber_Security_Simulator_V1
             Form1.NetBuilder = this;
             Form1.Show();
             this.Hide();
+        }
+
+        private void InitializeGraphics()
+        {
+            if (IsThinClient)
+            {
+                var bottom = tableLayoutPanel1.GetRowHeights();
+                txtNetworkName.Location = new Point(20, bottom[1] + bottom[0] + 290);
+                lblNetworkName.Location = new Point(20, bottom[1] + bottom[0] + 290 - lblNetworkName.Height);
+                picTrashCan.Location = new Point(picTrashCan.Location.X + 50, bottom[1] + bottom[0] + 40);
+                btnSaveNetwork.Location = new Point(btnSaveNetwork.Location.X + 50, btnSaveNetwork.Location.Y);
+                btnClearNetwork.Location = new Point(btnClearNetwork.Location.X + 50, btnClearNetwork.Location.Y);
+                enableLineDraw.Location = new Point(enableLineDraw.Location.X + 50, enableLineDraw.Location.Y);
+            }
         }
 
         // The mouse is currently up. See whether we're over an end point or segment.
@@ -765,7 +779,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             }
             //This is to check to see if the picture is out of bounds
             //If it is, reset its location
-            if (((PictureBox)sender).Location.X < 0 || ((PictureBox)sender).Location.Y < 0 || ((PictureBox)sender).Location.X > 1125 || ((PictureBox)sender).Location.Y > 700)
+            if (((PictureBox)sender).Location.X < 0 || ((PictureBox)sender).Location.Y < 0 || ((PictureBox)sender).Location.X > picTrashCan.Location.X + 50 || ((PictureBox)sender).Location.Y > picTrashCan.Location.Y + picTrashCan.Height)
             {
                 ((PictureBox)sender).Location = new Point(0, 0);
             }
@@ -901,6 +915,9 @@ namespace PDA_Cyber_Security_Simulator_V1
                 {
                     drawable = false
                 };
+                //Relink the presenter
+                Form1.NetBuilder = clearNet;
+                Form1.NetBuilderPresenter = new NetBuilderPresenter(clearNet);
                 beingCleared = true;
                 //Show the new form and close the existing form
                 clearNet.Show();

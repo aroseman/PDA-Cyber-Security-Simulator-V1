@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
+using PDA_Cyber_Security_Simulator_V1.Interfaces;
+using PDA_Cyber_Security_Simulator_V1.Presenters;
 
-namespace PDA_Cyber_Security_Simulator_V1
+namespace PDA_Cyber_Security_Simulator_V1.Views
 {
     public partial class SimulateAttackView : Form, SimulateAttackInterface
     {

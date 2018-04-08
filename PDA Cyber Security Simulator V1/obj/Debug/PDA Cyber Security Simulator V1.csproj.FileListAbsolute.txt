@@ -14,11 +14,7 @@ C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-S
 C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\System.Data.SQLite.dll.config
 C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.csprojResolveAssemblyReference.cache
 C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.DeviceProperties.resources
-C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.HomeView.resources
-C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.NetBuilder.resources
 C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.Properties.Resources.resources
-C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.SimulateAttackView.resources
-C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.TestNetworkView.resources
 C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.csproj.GenerateResource.Cache
 C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.csproj.CoreCompileInputs.cache
 C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.exe
@@ -86,3 +82,7 @@ C:\Users\whois\Documents\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Securit
 C:\Users\whois\Documents\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.csproj.CoreCompileInputs.cache
 C:\Users\whois\Documents\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.exe
 C:\Users\whois\Documents\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA Cyber Security Simulator V1.pdb
+C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.Views.HomeView.resources
+C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.Views.NetBuilder.resources
+C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.Views.SimulateAttackView.resources
+C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.Views.TestNetworkView.resources

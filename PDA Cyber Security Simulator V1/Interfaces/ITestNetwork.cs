@@ -4,16 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PDA_Cyber_Security_Simulator_Domain;
+using PDA_Cyber_Security_Simulator_V1.Presenters;
+using PDA_Cyber_Security_Simulator_V1.Views;
 
-namespace PDA_Cyber_Security_Simulator_V1
+namespace PDA_Cyber_Security_Simulator_V1.Interfaces
 {
-    public interface TestNetworkInterface
+    public interface ITestNetworkInterface
     {
-        event Action NetworkSelected;
+        event Action NetworkSelected;  
         event Action RootCrumbClick;
-
+        event Action ComboBoxClick;
+        event Action TestNetworkClick;
+        
         List<String> NetworkNames { get; }
-        String SelectedNetwork { get; } 
         List<int> NetworkIDs { get; }
         List<Device> Devices { get; }
         List<Language> NetworkDataSource { get; }
@@ -27,5 +30,6 @@ namespace PDA_Cyber_Security_Simulator_V1
         void LoadDevices(List<Device> devices);
         void ShowView();
         void HideView();
+        
     }
 }

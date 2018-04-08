@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using PDA_Cyber_Security_Simulator_V1.Presenters;
 using PDA_Cyber_Security_Simulator_V1.Views;
 
-namespace PDA_Cyber_Security_Simulator_V1
+namespace PDA_Cyber_Security_Simulator_V1.Interfaces
 {
     public interface HomeViewInterface
     {

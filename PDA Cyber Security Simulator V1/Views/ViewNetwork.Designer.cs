@@ -1,4 +1,6 @@
-﻿namespace PDA_Cyber_Security_Simulator_V1.Views
+﻿using System.Windows.Forms;
+
+namespace PDA_Cyber_Security_Simulator_V1.Views
 {
     partial class ViewNetwork
     {
@@ -30,7 +32,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewNetwork));
             this.btnLoadNetwork = new System.Windows.Forms.Button();
-            this.txtNetworkName = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.breadCrumbsPanel = new System.Windows.Forms.Panel();
@@ -39,6 +40,7 @@
             this.pnlViewNetworkTitle = new System.Windows.Forms.Panel();
             this.lblViewNetworkTitle = new System.Windows.Forms.Label();
             this.pnlViewNetwork = new System.Windows.Forms.Panel();
+            this.comboNetworkNames = new System.Windows.Forms.ComboBox();
             this.lblNetworkName = new System.Windows.Forms.Label();
             this.lblAddressL = new System.Windows.Forms.Label();
             this.lblIpL = new System.Windows.Forms.Label();
@@ -88,6 +90,7 @@
             this.picDeviceG = new System.Windows.Forms.PictureBox();
             this.picDeviceD = new System.Windows.Forms.PictureBox();
             this.picDeviceB = new System.Windows.Forms.PictureBox();
+            this.btnResetViewNetwork = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.breadCrumbsPanel.SuspendLayout();
@@ -117,14 +120,6 @@
             this.btnLoadNetwork.Text = "Load Network";
             this.btnLoadNetwork.UseVisualStyleBackColor = true;
             // 
-            // txtNetworkName
-            // 
-            this.txtNetworkName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNetworkName.Location = new System.Drawing.Point(47, 55);
-            this.txtNetworkName.Name = "txtNetworkName";
-            this.txtNetworkName.Size = new System.Drawing.Size(280, 44);
-            this.txtNetworkName.TabIndex = 1;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
@@ -139,10 +134,9 @@
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 192F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1367F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(2164, 1574);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
@@ -158,7 +152,7 @@
             this.panel2.Location = new System.Drawing.Point(6, 6);
             this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(2152, 180);
+            this.panel2.Size = new System.Drawing.Size(2152, 176);
             this.panel2.TabIndex = 2;
             // 
             // breadCrumbsPanel
@@ -192,7 +186,7 @@
             this.picProcessAndDataLogo.Location = new System.Drawing.Point(0, 0);
             this.picProcessAndDataLogo.Margin = new System.Windows.Forms.Padding(6);
             this.picProcessAndDataLogo.Name = "picProcessAndDataLogo";
-            this.picProcessAndDataLogo.Size = new System.Drawing.Size(2152, 180);
+            this.picProcessAndDataLogo.Size = new System.Drawing.Size(2152, 176);
             this.picProcessAndDataLogo.TabIndex = 1;
             this.picProcessAndDataLogo.TabStop = false;
             // 
@@ -202,18 +196,19 @@
             this.tableLayoutPanel1.SetColumnSpan(this.pnlViewNetworkTitle, 2);
             this.pnlViewNetworkTitle.Controls.Add(this.lblViewNetworkTitle);
             this.pnlViewNetworkTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlViewNetworkTitle.Location = new System.Drawing.Point(4, 1563);
+            this.pnlViewNetworkTitle.Location = new System.Drawing.Point(4, 1529);
             this.pnlViewNetworkTitle.Margin = new System.Windows.Forms.Padding(4);
             this.pnlViewNetworkTitle.Name = "pnlViewNetworkTitle";
-            this.pnlViewNetworkTitle.Size = new System.Drawing.Size(2156, 32);
+            this.pnlViewNetworkTitle.Size = new System.Drawing.Size(2156, 41);
             this.pnlViewNetworkTitle.TabIndex = 4;
             // 
             // lblViewNetworkTitle
             // 
             this.lblViewNetworkTitle.AutoSize = true;
+            this.lblViewNetworkTitle.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblViewNetworkTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblViewNetworkTitle.ForeColor = System.Drawing.Color.White;
-            this.lblViewNetworkTitle.Location = new System.Drawing.Point(1940, 4);
+            this.lblViewNetworkTitle.Location = new System.Drawing.Point(1963, 0);
             this.lblViewNetworkTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblViewNetworkTitle.Name = "lblViewNetworkTitle";
             this.lblViewNetworkTitle.Size = new System.Drawing.Size(193, 31);
@@ -224,8 +219,8 @@
             // 
             this.pnlViewNetwork.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.SetColumnSpan(this.pnlViewNetwork, 2);
+            this.pnlViewNetwork.Controls.Add(this.comboNetworkNames);
             this.pnlViewNetwork.Controls.Add(this.lblNetworkName);
-            this.pnlViewNetwork.Controls.Add(this.txtNetworkName);
             this.pnlViewNetwork.Controls.Add(this.lblAddressL);
             this.pnlViewNetwork.Controls.Add(this.btnLoadNetwork);
             this.pnlViewNetwork.Controls.Add(this.lblIpL);
@@ -275,12 +270,26 @@
             this.pnlViewNetwork.Controls.Add(this.picDeviceG);
             this.pnlViewNetwork.Controls.Add(this.picDeviceD);
             this.pnlViewNetwork.Controls.Add(this.picDeviceB);
+            this.pnlViewNetwork.Controls.Add(this.btnResetViewNetwork);
             this.pnlViewNetwork.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlViewNetwork.Location = new System.Drawing.Point(4, 196);
+            this.pnlViewNetwork.Location = new System.Drawing.Point(4, 192);
             this.pnlViewNetwork.Margin = new System.Windows.Forms.Padding(4);
             this.pnlViewNetwork.Name = "pnlViewNetwork";
-            this.pnlViewNetwork.Size = new System.Drawing.Size(2156, 1359);
+            this.pnlViewNetwork.Size = new System.Drawing.Size(2156, 1329);
             this.pnlViewNetwork.TabIndex = 6;
+            // 
+            // comboNetworkNames
+            // 
+            this.comboNetworkNames.BackColor = System.Drawing.SystemColors.Control;
+            this.comboNetworkNames.DropDownHeight = 200;
+            this.comboNetworkNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboNetworkNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboNetworkNames.FormattingEnabled = true;
+            this.comboNetworkNames.IntegralHeight = false;
+            this.comboNetworkNames.Location = new System.Drawing.Point(47, 55);
+            this.comboNetworkNames.Name = "comboNetworkNames";
+            this.comboNetworkNames.Size = new System.Drawing.Size(280, 45);
+            this.comboNetworkNames.TabIndex = 103;
             // 
             // lblNetworkName
             // 
@@ -690,123 +699,145 @@
             // 
             // picDeviceA
             // 
-            this.picDeviceA.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceA.Image")));
-            this.picDeviceA.InitialImage = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
+            this.picDeviceA.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
+            this.picDeviceA.InitialImage = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.picDeviceA.Location = new System.Drawing.Point(1038, 28);
             this.picDeviceA.Name = "picDeviceA";
             this.picDeviceA.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDeviceA.TabIndex = 0;
             this.picDeviceA.TabStop = false;
             // 
             // picDeviceL
             // 
-            this.picDeviceL.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceL.Image")));
+            this.picDeviceL.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.picDeviceL.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceL.InitialImage")));
             this.picDeviceL.Location = new System.Drawing.Point(709, 136);
             this.picDeviceL.Name = "picDeviceL";
             this.picDeviceL.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDeviceL.TabIndex = 11;
             this.picDeviceL.TabStop = false;
             // 
             // picDeviceI
             // 
-            this.picDeviceI.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceI.Image")));
+            this.picDeviceI.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.picDeviceI.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceI.InitialImage")));
             this.picDeviceI.Location = new System.Drawing.Point(514, 947);
             this.picDeviceI.Name = "picDeviceI";
             this.picDeviceI.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDeviceI.TabIndex = 10;
             this.picDeviceI.TabStop = false;
             // 
             // picDeviceF
             // 
-            this.picDeviceF.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceF.Image")));
+            this.picDeviceF.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.picDeviceF.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceF.InitialImage")));
             this.picDeviceF.Location = new System.Drawing.Point(1359, 1149);
             this.picDeviceF.Name = "picDeviceF";
             this.picDeviceF.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDeviceF.TabIndex = 9;
             this.picDeviceF.TabStop = false;
             // 
             // picDeviceC
             // 
-            this.picDeviceC.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceC.Image")));
-            this.picDeviceC.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceC.InitialImage")));
+            this.picDeviceC.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
+            this.picDeviceC.InitialImage = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.picDeviceC.Location = new System.Drawing.Point(1576, 356);
             this.picDeviceC.Name = "picDeviceC";
             this.picDeviceC.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDeviceC.TabIndex = 8;
             this.picDeviceC.TabStop = false;
             // 
             // picDeviceK
             // 
-            this.picDeviceK.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceK.Image")));
+            this.picDeviceK.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.picDeviceK.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceK.InitialImage")));
             this.picDeviceK.Location = new System.Drawing.Point(514, 356);
             this.picDeviceK.Name = "picDeviceK";
             this.picDeviceK.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDeviceK.TabIndex = 7;
             this.picDeviceK.TabStop = false;
             // 
             // picDeviceH
             // 
-            this.picDeviceH.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceH.Image")));
+            this.picDeviceH.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.picDeviceH.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceH.InitialImage")));
             this.picDeviceH.Location = new System.Drawing.Point(709, 1149);
             this.picDeviceH.Name = "picDeviceH";
             this.picDeviceH.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDeviceH.TabIndex = 6;
             this.picDeviceH.TabStop = false;
             // 
             // picDeviceE
             // 
-            this.picDeviceE.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceE.Image")));
-            this.picDeviceE.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceE.InitialImage")));
+            this.picDeviceE.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
+            this.picDeviceE.InitialImage = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.picDeviceE.Location = new System.Drawing.Point(1576, 947);
             this.picDeviceE.Name = "picDeviceE";
             this.picDeviceE.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDeviceE.TabIndex = 5;
             this.picDeviceE.TabStop = false;
             // 
             // picDeviceJ
             // 
-            this.picDeviceJ.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceJ.Image")));
+            this.picDeviceJ.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.picDeviceJ.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceJ.InitialImage")));
             this.picDeviceJ.Location = new System.Drawing.Point(441, 639);
             this.picDeviceJ.Name = "picDeviceJ";
             this.picDeviceJ.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceJ.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDeviceJ.TabIndex = 4;
             this.picDeviceJ.TabStop = false;
             // 
             // picDeviceG
             // 
-            this.picDeviceG.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceG.Image")));
+            this.picDeviceG.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.picDeviceG.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceG.InitialImage")));
             this.picDeviceG.Location = new System.Drawing.Point(1038, 1248);
             this.picDeviceG.Name = "picDeviceG";
             this.picDeviceG.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDeviceG.TabIndex = 3;
             this.picDeviceG.TabStop = false;
             // 
             // picDeviceD
             // 
-            this.picDeviceD.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceD.Image")));
-            this.picDeviceD.InitialImage = ((System.Drawing.Image)(resources.GetObject("picDeviceD.InitialImage")));
+            this.picDeviceD.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
+            this.picDeviceD.InitialImage = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.picDeviceD.Location = new System.Drawing.Point(1650, 639);
             this.picDeviceD.Name = "picDeviceD";
             this.picDeviceD.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDeviceD.TabIndex = 2;
             this.picDeviceD.TabStop = false;
             // 
             // picDeviceB
             // 
-            this.picDeviceB.Image = ((System.Drawing.Image)(resources.GetObject("picDeviceB.Image")));
-            this.picDeviceB.InitialImage = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
+            this.picDeviceB.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
+            this.picDeviceB.InitialImage = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.picDeviceB.Location = new System.Drawing.Point(1359, 136);
             this.picDeviceB.Name = "picDeviceB";
             this.picDeviceB.Size = new System.Drawing.Size(131, 108);
+            this.picDeviceB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDeviceB.TabIndex = 1;
             this.picDeviceB.TabStop = false;
+            // 
+            // btnResetViewNetwork
+            // 
+            this.btnResetViewNetwork.Location = new System.Drawing.Point(90, 113);
+            this.btnResetViewNetwork.Name = "btnResetViewNetwork";
+            this.btnResetViewNetwork.Size = new System.Drawing.Size(195, 53);
+            this.btnResetViewNetwork.TabIndex = 102;
+            this.btnResetViewNetwork.Text = "Reset";
+            this.btnResetViewNetwork.UseVisualStyleBackColor = true;
+            this.btnResetViewNetwork.Visible = false;
             // 
             // ViewNetwork
             // 
@@ -814,7 +845,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2164, 1574);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.MaximumSize = new System.Drawing.Size(2190, 1645);
             this.Name = "ViewNetwork";
             this.Text = "View Network";
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -846,7 +876,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnLoadNetwork;
-        private System.Windows.Forms.TextBox txtNetworkName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel breadCrumbsPanel;
@@ -904,5 +933,7 @@
         private System.Windows.Forms.PictureBox picDeviceD;
         private System.Windows.Forms.PictureBox picDeviceB;
         private System.Windows.Forms.PictureBox picDeviceA;
+        private System.Windows.Forms.Button btnResetViewNetwork;
+        private System.Windows.Forms.ComboBox comboNetworkNames;
     }
 }

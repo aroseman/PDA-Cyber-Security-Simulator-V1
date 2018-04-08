@@ -1,45 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using PDA_Cyber_Security_Simulator_V1.Controls;
 using PDA_Cyber_Security_Simulator_Domain;
-using static System.Windows.Forms.ListBox;
+using PDA_Cyber_Security_Simulator_V1.Interfaces;
+using PDA_Cyber_Security_Simulator_V1.Presenters;
 
-namespace PDA_Cyber_Security_Simulator_V1
+namespace PDA_Cyber_Security_Simulator_V1.Views
 {
-    public partial class TestNetworkView : Form, TestNetworkInterface
+    public partial class TestNetworkView : Form, ITestNetworkInterface
     {
         #region Attributes
         private bool test = false;
-        private List<Label> DeviceNames;
-        private List<Label> PingLabels;
-        private List<Label> PingTime;
-        private List<Label> IpLabels;
-        private List<Label> DeviceIp;
-        private List<CirclePanelRed> RedDots;
-        private List<CirclePanelGreen> GreenDots;
-        #endregion
+        private bool IsThinClient = false;
+
+        public List<Label> DeviceNames;
+        public List<Label> PingLabels;
+        public List<Label> PingTime;
+        public List<Label> IpLabels;
+        public List<Label> DeviceIp;
+        public List<CirclePanelRed> RedDots;
+        public List<CirclePanelGreen> GreenDots;
         public event Action NetworkSelected;
         public event Action RootCrumbClick;
+        public event Action ComboBoxClick;
+        public event Action TestNetworkClick;
         public HomeView Form1 { get; }
         public HomeViewPresenter Form1Presenter { get; }
         public List<String> NetworkNames { get { return this.testNetworkComboBox1.DataSource as List<String>; } }
-        public String SelectedNetwork { get { return this.testNetworkComboBox1.Text as String; } }
         public List<int> NetworkIDs { get; set; }
-        public List<Device> Devices { get { return this.testNetworkListBox1.DataSource as List<Device>;} }
-        public List<Language> NetworkDataSource { get; }
-        public List<Language> DeviceDataSource { get; }
+        //public List<Device> Devices { get { return this.testNetworkListBox1.DataSource as List<Device>;}
+        public List<Device> Devices { get; set; }
+        public List<Language> NetworkDataSource { get; set; }
+        public List<Language> DeviceDataSource { get; set; }
         public NetworkTester NT { get; }
+        public ComboBox TestNetworkComboBox1 { get; set; }
+        public ListBox TestNetworkListBox1 { get; set; }
+        #endregion
+
 
         public TestNetworkView(HomeView form1)
         {
             Form1 = form1;
             NT = new NetworkTester();
-            
+            NetworkDataSource = new List<Language>();
+            DeviceDataSource = new List<Language>();
             InitializeComponent();
-            InitializeGraphics();
             BindComponents();
+            TestNetworkComboBox1 = testNetworkComboBox1;
+            TestNetworkListBox1 = testNetworkListBox1;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            InitializeGraphics();
         }
 
         public TestNetworkView(HomeViewPresenter form1Presenter)
@@ -48,96 +61,74 @@ namespace PDA_Cyber_Security_Simulator_V1
             NT = new NetworkTester();
 
             InitializeComponent();
-            InitializeGraphics();
             BindComponents();
+            TestNetworkComboBox1 = testNetworkComboBox1;
+            TestNetworkListBox1 = testNetworkListBox1;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-        }
-
-        /*private void InitializeNetworkNames()
-        {
-            NetworkNames = new List<string>();
-            NetworkNames = Network.getNetworkNames();
-        }
-        private void InitializeNetworkDataSource()
-        {
-            NetworkDataSource = new List<Language>();
-            for(int i = 0; i < NetworkNames.Count; i++)
-            {
-                NetworkDataSource.Add(new Language() { Name = NetworkNames[i], Value = NetworkIDs[i].ToString() });
-            }
-        }
-        private void InitializeDevices(int netId)
-        {
-            Devices = new List<Device>();
-            Devices = Network.getDevices(netId);
-        }
-        private void InitializeDeviceDataSource()
-        {
-            DeviceDataSource = new List<Language>();
-            for(int i = 0; i < Devices.Count; i++)
-            {
-                DeviceDataSource.Add(new Language { Name = Devices[i].Name, Value = Devices[i].IpAddress });
-            }
+            InitializeGraphics();
         }
 
 
-        private void InitializeNetworkIDs()
-        {
-            NetworkIDs = new List<int>();
-            foreach (String name in NetworkNames){
-                NetworkIDs.Add(Network.getNetworkIdByName(name));
-            }
-        }*/
 
         private void BindComponents()
         {
-            this.testNetworkComboBox1.SelectedValueChanged += testNetworkComboBoxOnClick;
             this.rootCrumb.Click += OnRootCrumbClick;
+            this.testNetworkComboBox1.DropDown += OnComboBoxClick;
+            //this.testNetworkComboBox1.SelectionChangeCommitted += OnNetworkSelect; //( SelectionChangeCommitted += OnNetworkSelect);
+            this.button1.Click += OnTestNetworkClick;
         }
 
         private void InitializeGraphics()
         {
-            DeviceNames = new List<Label>();
-            PingLabels = new List<Label>();
-            PingTime = new List<Label>();
-            IpLabels = new List<Label>();
-            DeviceIp = new List<Label>();
-            RedDots = new List<CirclePanelRed>();
-            GreenDots = new List<CirclePanelGreen>();
+            var unsortedDeviceNames = new List<Label>();
+            var unsortedPingLabels = new List<Label>();
+            var unsortedPingTime = new List<Label>();
+            var unsortedIpLabels = new List<Label>();
+            var unsortedDeviceIp = new List<Label>();
+            var unsortedRedDots = new List<CirclePanelRed>();
+            var unsortedGreenDots = new List<CirclePanelGreen>();
 
             foreach(Control c in pnlTestStatus.Controls)
             {
                 if(c is Label && c.Name.Contains("lblDevice"))
                 {
-                    DeviceNames.Add((Label)c);
+                    unsortedDeviceNames.Add((Label)c);
                 }
                 else if(c is Label && c.Name.Contains("lblPingTime"))
                 {
-                    PingTime.Add((Label)c);
+                    unsortedPingTime.Add((Label)c);
                 }
                 else if(c is Label && c.Name.Contains("lblPing"))
                 {
-                    PingLabels.Add((Label)c);
+                    unsortedPingLabels.Add((Label)c);
                 }
                 else if(c is Label && c.Name.Contains("lblIp"))
                 {
-                    IpLabels.Add((Label)c);
+                    unsortedIpLabels.Add((Label)c);
                 }
                 else if(c is Label && c.Name.Contains("lblAddress"))
                 {
-                    DeviceIp.Add((Label)c);
+                    unsortedDeviceIp.Add((Label)c);
                 }
                 else if(c is CirclePanelGreen)
                 {
-                    GreenDots.Add((CirclePanelGreen)c);
+                    unsortedGreenDots.Add((CirclePanelGreen)c);
                 }
                 else if(c is CirclePanelRed)
                 {
-                    RedDots.Add((CirclePanelRed)c);
+                    unsortedRedDots.Add((CirclePanelRed)c);
                 }
             }
 
-            for(int i = 0; i < RedDots.Count; i++)
+            GreenDots = unsortedGreenDots.OrderBy(o => o.Name).ToList();
+            RedDots = unsortedRedDots.OrderBy(o => o.Name).ToList();
+            DeviceIp = unsortedDeviceIp.OrderBy(o => o.Name).ToList();
+            DeviceNames = unsortedDeviceNames.OrderBy(o => o.Name).ToList();
+            IpLabels = unsortedIpLabels.OrderBy(o => o.Name).ToList();
+            PingLabels = unsortedPingLabels.OrderBy(o => o.Name).ToList();
+            PingTime = unsortedPingTime.OrderBy(o => o.Name).ToList();
+
+            for (int i = 0; i < RedDots.Count; i++)
             {
                 RedDots[i].Hide();
                 GreenDots[i].Hide();
@@ -146,6 +137,17 @@ namespace PDA_Cyber_Security_Simulator_V1
                 IpLabels[i].Hide();
                 PingLabels[i].Hide();
                 PingTime[i].Hide();
+            }
+
+            if (IsThinClient)
+            {
+                var bottom = tableLayoutPanel1.GetRowHeights();
+                button1.Location = new Point(20, bottom[1] + bottom[0] + 100);
+            }
+            else
+            {
+                var bottom = tableLayoutPanel1.GetRowHeights();
+                button1.Location = new Point(20, bottom[1] + bottom[0] - button1.Height - 15);
             }
         }
 
@@ -164,9 +166,9 @@ namespace PDA_Cyber_Security_Simulator_V1
         {
             testNetworkListBox1.DataSource = null;
             testNetworkListBox1.Items.Clear();
-            for (int i = 0; i < devices.Count; i++)
+            foreach (var t in devices)
             {
-                testNetworkListBox1.Items.Add(devices[i]);
+                testNetworkListBox1.Items.Add(t);
             }
             testNetworkListBox1.DataSource = devices;
         }
@@ -190,10 +192,18 @@ namespace PDA_Cyber_Security_Simulator_V1
         private void OnRootCrumbClick(object sender, EventArgs e)
         {
             //Need to relink this page to the home form (this needs to happen if the form has been cleared)
-            if (this.RootCrumbClick != null)
-                this.RootCrumbClick();
+            RootCrumbClick?.Invoke();
         }
 
+        private void OnTestNetworkClick(object send, EventArgs e)
+        {
+            TestNetworkClick?.Invoke();
+        }
+
+        private void OnComboBoxClick(object sender, EventArgs e)
+        {
+            ComboBoxClick?.Invoke();
+        }
         //Form closing
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
@@ -216,53 +226,9 @@ namespace PDA_Cyber_Security_Simulator_V1
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void OnNetworkSelect(object sender, EventArgs e)
         {
-            SelectedIndexCollection selectedDevices = testNetworkListBox1.SelectedIndices;
-
-            for(int i = 0; i < selectedDevices.Count; i++)
-            {
-                int index = selectedDevices.IndexOf(i);
-                NT.TestDevice(Devices[index].IpAddress);
-                Console.WriteLine(index);
-            }
-            foreach (Control c in pnlTestStatus.Controls)
-            {
-                if (c is CirclePanelRed)
-                {
-                    if (!test)
-                    {
-                        c.Hide();
-                    }
-                    else
-                    {
-                        c.Show();
-                    }
-                }
-            }
-
-            test = !test;
-        }
-
-
-        private void testNetworkComboBoxOnClick(object sender, EventArgs e)
-        {
-                //testNetworkListBox1.Items.Clear();
-
-                //List<Device> dList = Network.getDevices(testNetworkComboBox1.SelectedIndex);
-                //for (int i = 0; i < dList.Count; i++)
-                //{
-                //    if (!String.IsNullOrEmpty(dList[i].Name))
-                //        testNetworkListBox1.Items.Add(dList[i].Name);
-                //}
-
-                // InitializeDevices(Int32.Parse(testNetworkComboBox1.SelectedValue.ToString()));
-                /*InitializeDevices(Int32.Parse(NetworkDataSource[testNetworkComboBox1.SelectedIndex].Value));
-                InitializeDeviceDataSource();
-                PopulateDeviceList();*/
-                if (this.NetworkSelected != null)
-                    this.NetworkSelected();
-
+            this.NetworkSelected?.Invoke();
         }
     }
 }
