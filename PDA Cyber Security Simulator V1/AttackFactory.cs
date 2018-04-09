@@ -14,11 +14,13 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         }
 
-        public IAttack SynFlood(Network victimNetwork)
+        public IAttack GetAttack(string attackName)
         {
-            SynFloodAttack synFlood = new SynFloodAttack(victimNetwork);
-
-            return synFlood;
+            switch (attackName)
+            {
+                case "SynFlood": return new SynFloodAttack();
+                default: throw new Exception();
+            }
         }
     }
 }

@@ -23,7 +23,10 @@ namespace PDA_Cyber_Security_Simulator_V1
     */
     class SynFloodAttack : IAttack
     {
-        private Network Victim { get; }
+        public Network Victim { get; set; }
+
+        public SynFloodAttack()
+        { }
 
         public SynFloodAttack(Network vict)
         {
@@ -40,29 +43,6 @@ namespace PDA_Cyber_Security_Simulator_V1
                 Console.WriteLine("No interfaces found! Make sure WinPcap is installed.");
                 return;
             }
-
-            // Print the list
-            /*for (int i = 0; i != allDevices.Count; ++i)
-            {
-                LivePacketDevice device = allDevices[i];
-                Console.Write((i + 1) + ". " + device.Name);
-                if (device.Description != null)
-                    Console.WriteLine(" (" + device.Description + ")");
-                else
-                    Console.WriteLine(" (No description available)");
-            }
-
-            int deviceIndex = 0;
-            do
-            {
-                Console.WriteLine("Enter the interface number (1-" + allDevices.Count + "):");
-                string deviceIndexString = Console.ReadLine();
-                if (!int.TryParse(deviceIndexString, out deviceIndex) ||
-                    deviceIndex < 1 || deviceIndex > allDevices.Count)
-                {
-                    deviceIndex = 0;
-                }
-            } while (deviceIndex == 0);*/
 
             // Take the selected adapter
             PacketDevice selectedDevice = allDevices[0];
@@ -132,9 +112,12 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         public void StartAttack()
         {
-            for (int i = 0; i < Victim.Devices.Count; i++)
+            if (this.Victim != null)
             {
-                SynFloodAttack.MainSynFlood(Victim.Devices[i].IpAddress, Victim.Devices[i].MacAddress);
+                for (int i = 0; i < Victim.Devices.Count; i++)
+                {
+                    SynFloodAttack.MainSynFlood(Victim.Devices[i].IpAddress, Victim.Devices[i].MacAddress);
+                }
             }
         }
     }
