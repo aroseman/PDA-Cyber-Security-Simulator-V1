@@ -33,7 +33,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             Victim = vict;
         }
 
-        static void MainSynFlood(string victimIpAddress, string victimMacAddress)
+        public void AttackDevice(string victimIpAddress, string victimMacAddress)
         {
             Random rand = new Random((int)DateTime.Now.Ticks);
             IList<LivePacketDevice> allDevices = LivePacketDevice.AllLocalMachine;
@@ -110,13 +110,13 @@ namespace PDA_Cyber_Security_Simulator_V1
 
         }
 
-        public void StartAttack()
+        public void AttackNetwork()
         {
             if (this.Victim != null)
             {
                 for (int i = 0; i < Victim.Devices.Count; i++)
                 {
-                    SynFloodAttack.MainSynFlood(Victim.Devices[i].IpAddress, Victim.Devices[i].MacAddress);
+                    this.AttackDevice(Victim.Devices[i].IpAddress, Victim.Devices[i].MacAddress);
                 }
             }
         }

@@ -16,6 +16,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
         private SimulateAttackView view;
         private UnitOfWork unitOfWork = new UnitOfWork();
         private NetworkTester PingTool = new NetworkTester();
+        private AttackFactory attackFactory = new AttackFactory();
         private int ExceptionIndex;
 
         public SimulateAttackPresenter(SimulateAttackView newView)
@@ -47,12 +48,16 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
         {
             try
             {
+                IAttack attack = attackFactory.GetAttack("SynFlood");
+
                 for (int i = 0; i < view.DeviceDataSource.Count; i++)
                 {
                     if (view.AttackNetworkListBox1.GetSelected(i))
                     {
                         ExceptionIndex = i;
-                        PingTool.TestDevice(view.Devices[i].IpAddress);
+                        //PingTool.TestDevice(view.Devices[i].IpAddress);
+                        attack.AttackDevice(view.Devices[i].IpAddress, view.Devices[i].MacAddress);
+
                         if (PingTool.PingResult.Status == IPStatus.Success)
                         {
                             view.DeviceNames[i].Text = view.Devices[i].Name;

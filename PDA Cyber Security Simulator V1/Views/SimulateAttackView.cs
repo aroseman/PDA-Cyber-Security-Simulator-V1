@@ -272,8 +272,12 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
 
         private void NetworkComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            this.NetworkSelected?.Invoke();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
 
         }
-        
     }
 }
