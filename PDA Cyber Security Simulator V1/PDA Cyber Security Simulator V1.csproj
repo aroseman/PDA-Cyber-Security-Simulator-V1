@@ -102,6 +102,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArpFloodAttack.cs" />
     <Compile Include="IAttack.cs" />
     <Compile Include="AttackFactory.cs" />
     <Compile Include="Controls\CirclePanelGreen.cs">
