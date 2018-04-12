@@ -119,6 +119,7 @@
       <DependentUpon>DevicePropertiesPopup.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IViewNetwork.cs" />
+    <Compile Include="MacFloodAttack.cs" />
     <Compile Include="Presenters\ViewNetworkPresenter.cs" />
     <Compile Include="SynFloodAttack.cs" />
     <Compile Include="Views\HomeView.cs">

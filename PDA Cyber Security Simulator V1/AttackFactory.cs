@@ -20,6 +20,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             {
                 case "SynFlood": return new SynFloodAttack();
                 case "ArpFlood": return new ArpFloodAttack();
+                case "MacFlood": return new MacFloodAttack();
                 default: throw new Exception();
             }
         }
