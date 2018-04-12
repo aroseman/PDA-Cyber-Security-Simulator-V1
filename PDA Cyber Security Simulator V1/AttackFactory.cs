@@ -19,6 +19,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             switch (attackName)
             {
                 case "SynFlood": return new SynFloodAttack();
+                case "ArpFlood": return new ArpFloodAttack();
                 default: throw new Exception();
             }
         }
