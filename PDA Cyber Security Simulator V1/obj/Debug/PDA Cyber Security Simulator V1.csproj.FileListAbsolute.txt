@@ -86,3 +86,10 @@ C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-S
 C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.Views.NetBuilder.resources
 C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.Views.SimulateAttackView.resources
 C:\Users\Matt\Documents\SeniorDesign\PDA-Cyber-Security-Simulator-V2\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\obj\Debug\PDA_Cyber_Security_Simulator_V1.Views.TestNetworkView.resources
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\PDA Cyber Security Simulator V1.exe
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\PcapDotNet.Base.dll
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\PcapDotNet.Core.dll
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\PcapDotNet.Packets.dll
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\PDA Cyber Security Simulator DAL.dll
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\PDA Cyber Security Simulator Domain.dll
+C:\Users\Shawn\Source\Repos\PDA-Cyber-Security-Simulator-V1\PDA Cyber Security Simulator V1\bin\Debug\System.Data.SQLite.dll

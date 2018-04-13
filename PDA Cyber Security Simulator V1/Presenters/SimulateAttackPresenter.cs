@@ -27,6 +27,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
             this.view.NetworkSelected += OnNetworkSelected;
             this.view.ComboBoxClick += OnNetworkComboClicked;
             this.view.AttackNetworkClick += OnAttackNetworkClicked;
+            this.view.AttackComboBoxClick += OnAttackComboBoxClicked;
 
             //this.view.BreadCrumbClick += OnBreadCrumbClick;
         }
@@ -48,7 +49,9 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
         {
             try
             {
-                IAttack attack = attackFactory.GetAttack("SynFlood");
+                int input = this.view.AttacksComboBox1.SelectedIndex;
+                string str = this.view.AttackDataSource[input].Value;
+                IAttack attack = attackFactory.GetAttack(str);
 
                 for (int i = 0; i < view.DeviceDataSource.Count; i++)
                 {
@@ -137,6 +140,14 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
 
             view.AttackNetworkListBox1.DataSource = null;
             view.AttackNetworkListBox1.DataSource = view.DeviceDataSource;
+        }
+
+        public void OnAttackComboBoxClicked()
+        {
+            view.AttackDataSource.Add(new Language("Syn Flood", "SynFlood"));
+            view.AttackDataSource.Add(new Language("ARP Flood", "ArpFlood"));
+            view.AttackDataSource.Add(new Language("MAC Flood", "MacFlood"));
+            view.AttacksComboBox1.DataSource = view.AttackDataSource;
         }
 
         public void ShowView()

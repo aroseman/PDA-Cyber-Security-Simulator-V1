@@ -30,6 +30,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
         //public event Action BreadCrumbClick;
         public event Action ComboBoxClick;
         public event Action AttackNetworkClick;
+        public event Action AttackComboBoxClick;
 
         
         public HomeView Form1 { get; }
@@ -42,9 +43,11 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
 
         public List<Language> NetworkDataSource { get; set; }
         public List<Language> DeviceDataSource { get; set; }
+        public List<Language> AttackDataSource { get; set; }
         public NetworkTester NT { get; }
         public ComboBox AttackNetworkComboBox1 { get; set; }
         public ListBox AttackNetworkListBox1 { get; set; }
+        public ComboBox AttacksComboBox1 { get; set; }
         #endregion
 
 
@@ -54,10 +57,12 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             NT = new NetworkTester();
             NetworkDataSource = new List<Language>();
             DeviceDataSource = new List<Language>();
+            AttackDataSource = new List<Language>();
             InitializeComponent();
             BindComponents();
             AttackNetworkComboBox1 = attackNetworkComboBox1;
             AttackNetworkListBox1 = attackNetworkListBox1;
+            AttacksComboBox1 = AttacksComboBox;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             InitializeGraphics();
         }
@@ -66,11 +71,14 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
         {
             Form1Presenter = form1Presenter;
             NT = new NetworkTester();
-
+            NetworkDataSource = new List<Language>();
+            DeviceDataSource = new List<Language>();
+            AttackDataSource = new List<Language>();
             InitializeComponent();
             BindComponents();
             AttackNetworkComboBox1 = attackNetworkComboBox1;
             AttackNetworkListBox1 = attackNetworkListBox1;
+            AttacksComboBox1 = AttacksComboBox;
             //this.Form1Presenter = form1Presenter;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             InitializeGraphics();
@@ -82,6 +90,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             this.attackNetworkComboBox1.DropDown += OnComboBoxClick;
             //this.testNetworkComboBox1.SelectionChangeCommitted += OnNetworkSelect; //( SelectionChangeCommitted += OnNetworkSelect);
             this.button1.Click += OnAttackNetworkClick;
+            this.AttacksComboBox.Click += OnAttackClick;
         }
 
         private void InitializeGraphics()
@@ -205,6 +214,11 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             AttackNetworkClick?.Invoke();
         }
 
+        private void OnAttackClick(object send, EventArgs e)
+        {
+            AttackComboBoxClick?.Invoke();
+        }
+
         private void OnComboBoxClick(object sender, EventArgs e)
         {
             ComboBoxClick?.Invoke();
@@ -276,6 +290,11 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
