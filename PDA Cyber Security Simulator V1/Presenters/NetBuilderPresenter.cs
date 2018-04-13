@@ -62,14 +62,42 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
             var netName = view.NetName;
             Network network = view.Network;
             Panel canvas = view.Canvas;
+            var networkAlreadyExists = false;
+            var allConfigured = true;
+
+            var existingNetworks = unitOfWork.NetworkManager.GetAllNetworks();
+            foreach (var existingNetwork in existingNetworks)
+            {
+                if (existingNetwork == netName)
+                {
+                    networkAlreadyExists = true;
+                    break;
+                }
+            }
+
+            foreach (var activeDevice in view.ActiveDevices)
+            {
+                if (!((Device) activeDevice.Tag).Configured)
+                {
+                    allConfigured = false;
+                    break;
+                }
+            }
 
             if (string.IsNullOrWhiteSpace(netName))
             {
                 MessageBox.Show(view, "ERROR: Empty Network Name");
             }
+            else if (networkAlreadyExists)
+            {
+                MessageBox.Show(view, "ERROR: Network Already Exists. Rename Network");
+            }
+            else if (!allConfigured)
+            {
+                MessageBox.Show(view, "ERROR: Not All Devices Are Configured");
+            }
             else
             {
-                MessageBox.Show(view, "Saved");
                 //Algorithm for neighbor checking
                 for (int i = 0; i < view.ActiveDevices.Count; i++)
                 {
@@ -144,6 +172,8 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
                         unitOfWork.NeighborManager.AddNeighbor(network.Devices[l].Id, network.Devices[l].Neighbors[m].Id);
                     }
                 }
+
+                MessageBox.Show(view, "Saved");
             }
         }
 

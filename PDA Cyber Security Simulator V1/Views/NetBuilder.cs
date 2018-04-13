@@ -872,9 +872,30 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
                 //Result handlers
                 if (dialogResult == DialogResult.OK)
                 {
-                    //Re-link the picture box with the newly filled device
-                    ((PictureBox)sender).Tag = devicePropertiesPopup.Device;
-                    devicePropertiesPopup.Dispose();
+                    var deviceAlreadyExists = false;
+                    foreach (var activeDevice in ActiveDevices)
+                    {
+                        if (((Device) activeDevice.Tag).Name == devicePropertiesPopup.Device.Name || string.IsNullOrWhiteSpace(devicePropertiesPopup.Device.Name))
+                        {
+                            deviceAlreadyExists = true;
+                            devicePropertiesPopup.Device.Configured = false;
+                            break;
+                        }
+                    }
+
+                    if (!deviceAlreadyExists)
+                    {
+                        //Re-link the picture box with the newly filled device
+                        ((PictureBox)sender).Tag = devicePropertiesPopup.Device;
+                        devicePropertiesPopup.Dispose();
+                    }
+                    else
+                    {
+                        if(string.IsNullOrWhiteSpace(devicePropertiesPopup.Device.Name))
+                            MessageBox.Show(this, "ERROR, Device Name Empty");
+                        else
+                            MessageBox.Show(this, "ERROR, Device Already Exists in Network! Rename Device");
+                    }
                 }
                 else if (dialogResult == DialogResult.Cancel)
                 {

@@ -20,6 +20,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             btnSaveDeviceProperties.DialogResult = DialogResult.OK;
             btnCancelPopup.DialogResult = DialogResult.Cancel;
             Device = device;
+            txtDeviceMac.KeyUp += TxtDeviceMac_KeyUp;
         }
 
         private void InitializeDeviceProperties(Device device)
@@ -147,7 +148,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             }
         }
 
-        private void txtDeviceMac_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtDeviceMac_KeyUp(object sender, KeyEventArgs e)
         {
             txtDeviceMac.Text = txtDeviceMac.Text.ToUpper();
             txtDeviceMac.SelectionStart = txtDeviceMac.TextLength;

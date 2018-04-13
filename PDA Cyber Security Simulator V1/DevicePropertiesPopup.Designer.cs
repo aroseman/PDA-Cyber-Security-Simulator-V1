@@ -153,7 +153,6 @@
             this.txtDeviceMac.Name = "txtDeviceMac";
             this.txtDeviceMac.Size = new System.Drawing.Size(396, 44);
             this.txtDeviceMac.TabIndex = 12;
-            this.txtDeviceMac.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDeviceMac_KeyPress);
             // 
             // lblDeviceDescription
             // 
