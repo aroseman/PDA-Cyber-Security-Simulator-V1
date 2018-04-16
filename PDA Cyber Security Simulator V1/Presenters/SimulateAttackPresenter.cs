@@ -58,8 +58,12 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
                     if (view.AttackNetworkListBox1.GetSelected(i))
                     {
                         ExceptionIndex = i;
-                        PingTool.TestDevice(view.Devices[i].IpAddress);
+                        
                         attack.AttackDevice(view.Devices[i].IpAddress, view.Devices[i].MacAddress);
+
+                        Console.WriteLine("attacked");
+
+                        PingTool.TestDevice(view.Devices[i].IpAddress);
 
                         if (PingTool.PingResult.Status == IPStatus.Success)
                         {

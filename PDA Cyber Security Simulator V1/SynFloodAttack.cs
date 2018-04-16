@@ -46,6 +46,7 @@ namespace PDA_Cyber_Security_Simulator_V1
             }
 
             // Take the selected adapter
+            // YOU NEED TO CHANGE THIS IF TESTING LOCALLY TO GET YOUR RIGHT ADAPTER
             PacketDevice selectedDevice = allDevices[0];
 
             // Open the output device
@@ -88,7 +89,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                 PacketBuilder builder = new PacketBuilder(ethernetLayer, ipV4Layer, tcpLayer);
 
                 // Send 100 Pings to different destination with different parameters
-                for (int i = 0; i != 100000; ++i)
+                for (int i = 0; i != 10000; ++i)
                 {
                     randMac = "4C:0C:BD:" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString() + ":" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString() + ":" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString();
                     ethernetLayer.Source = new MacAddress(randMac);
