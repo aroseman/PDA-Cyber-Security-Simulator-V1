@@ -89,7 +89,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                 PacketBuilder builder = new PacketBuilder(ethernetLayer, ipV4Layer, tcpLayer);
 
                 // Send 100 Pings to different destination with different parameters
-                for (int i = 0; i != 10000; ++i)
+                for (int i = 0; i != 100000; ++i)
                 {
                     randMac = "4C:0C:BD:" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString() + ":" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString() + ":" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString();
                     ethernetLayer.Source = new MacAddress(randMac);

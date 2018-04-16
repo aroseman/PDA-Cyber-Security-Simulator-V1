@@ -34,7 +34,7 @@ namespace PDA_Cyber_Security_Simulator_V1
 
             using (PacketCommunicator communicator = selectedDevice.Open(100, PacketDeviceOpenAttributes.Promiscuous, 1000))
             {
-                for (int i = 0; i != 10000; ++i)
+                for (int i = 0; i != 100000; ++i)
                 {
                     // Supposing to be on ethernet, set mac source to 01:01:01:01:01:01
                     string randMac = "4C:0C:BD:" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString() + ":" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString() + ":" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString();
@@ -44,8 +44,8 @@ namespace PDA_Cyber_Security_Simulator_V1
                         new EthernetLayer
                         {
                             Source = new MacAddress(randMac),
-                            Destination = new MacAddress(victimMacAddress),
-                            EtherType = EthernetType.None, // Will be filled automatically.
+                            Destination = new MacAddress(victimMacAddress.Replace('-', ':')),
+                            EtherType = EthernetType.IpV4, // Will be filled automatically.
                         };
 
                     PacketBuilder builder = new PacketBuilder(ethernetLayer);

