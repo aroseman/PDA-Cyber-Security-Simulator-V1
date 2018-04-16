@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using PcapDotNet.Core;
 using PcapDotNet.Packets;
 using PcapDotNet.Packets.Ethernet;
@@ -57,7 +58,7 @@ namespace PDA_Cyber_Security_Simulator_V1
                 MacAddress source = new MacAddress(randMac);
 
                 // set mac destination to 02:02:02:02:02:02
-                MacAddress destination = new MacAddress(victimMacAddress);
+                MacAddress destination = new MacAddress(victimMacAddress.Replace('-', ':'));
 
                 // Create the packets layers
 
