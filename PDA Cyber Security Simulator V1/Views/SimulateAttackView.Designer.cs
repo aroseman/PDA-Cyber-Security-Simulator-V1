@@ -150,6 +150,10 @@
             this.tableLayoutPanel1.Controls.Add(this.pnlTestStatus, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+<<<<<<< Updated upstream
+=======
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
+>>>>>>> Stashed changes
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
@@ -167,7 +171,12 @@
             this.panel2.Controls.Add(this.breadCrumbsPanel);
             this.panel2.Controls.Add(this.picProcessAndDataLogo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< Updated upstream
             this.panel2.Location = new System.Drawing.Point(3, 3);
+=======
+            this.panel2.Location = new System.Drawing.Point(6, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
+>>>>>>> Stashed changes
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1431, 97);
             this.panel2.TabIndex = 2;
@@ -176,7 +185,12 @@
             // 
             this.breadCrumbsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
             this.breadCrumbsPanel.Controls.Add(this.rootCrumb);
+<<<<<<< Updated upstream
             this.breadCrumbsPanel.Location = new System.Drawing.Point(271, 3);
+=======
+            this.breadCrumbsPanel.Location = new System.Drawing.Point(542, 6);
+            this.breadCrumbsPanel.Margin = new System.Windows.Forms.Padding(6);
+>>>>>>> Stashed changes
             this.breadCrumbsPanel.Name = "breadCrumbsPanel";
             this.breadCrumbsPanel.Size = new System.Drawing.Size(200, 87);
             this.breadCrumbsPanel.TabIndex = 5;
@@ -199,6 +213,10 @@
             this.picProcessAndDataLogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picProcessAndDataLogo.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.picProcessAndDataLogo.Location = new System.Drawing.Point(0, 0);
+<<<<<<< Updated upstream
+=======
+            this.picProcessAndDataLogo.Margin = new System.Windows.Forms.Padding(6);
+>>>>>>> Stashed changes
             this.picProcessAndDataLogo.Name = "picProcessAndDataLogo";
             this.picProcessAndDataLogo.Size = new System.Drawing.Size(1431, 97);
             this.picProcessAndDataLogo.TabIndex = 1;
@@ -210,8 +228,13 @@
             this.tableLayoutPanel1.SetColumnSpan(this.panel1, 2);
             this.panel1.Controls.Add(this.lbSimulateAttack);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< Updated upstream
             this.panel1.Location = new System.Drawing.Point(2, 837);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.panel1.Location = new System.Drawing.Point(4, 1371);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1433, 23);
             this.panel1.TabIndex = 4;
@@ -241,8 +264,13 @@
             this.flowLayoutPanel1.Controls.Add(this.bnSimulateAttack);
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< Updated upstream
             this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 105);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 173);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(285, 728);
             this.flowLayoutPanel1.TabIndex = 5;
@@ -317,7 +345,12 @@
             // 
             // bnSimulateAttack
             // 
+<<<<<<< Updated upstream
             this.bnSimulateAttack.Location = new System.Drawing.Point(3, 329);
+=======
+            this.bnSimulateAttack.Location = new System.Drawing.Point(6, 611);
+            this.bnSimulateAttack.Margin = new System.Windows.Forms.Padding(6);
+>>>>>>> Stashed changes
             this.bnSimulateAttack.Name = "bnSimulateAttack";
             this.bnSimulateAttack.Size = new System.Drawing.Size(152, 23);
             this.bnSimulateAttack.TabIndex = 5;
@@ -327,8 +360,13 @@
             // 
             // button1
             // 
+<<<<<<< Updated upstream
             this.button1.Location = new System.Drawing.Point(160, 328);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.button1.Location = new System.Drawing.Point(4, 665);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 37);
             this.button1.TabIndex = 101;
@@ -424,8 +462,13 @@
             this.pnlTestStatus.Controls.Add(this.circlePanelRed1);
             this.pnlTestStatus.Controls.Add(this.circlePanel1);
             this.pnlTestStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< Updated upstream
             this.pnlTestStatus.Location = new System.Drawing.Point(291, 105);
             this.pnlTestStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.pnlTestStatus.Location = new System.Drawing.Point(413, 173);
+            this.pnlTestStatus.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.pnlTestStatus.Name = "pnlTestStatus";
             this.pnlTestStatus.Size = new System.Drawing.Size(1144, 728);
             this.pnlTestStatus.TabIndex = 6;
@@ -652,16 +695,26 @@
             // 
             // circlePanelRed9
             // 
+<<<<<<< Updated upstream
             this.circlePanelRed9.Location = new System.Drawing.Point(547, 329);
             this.circlePanelRed9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelRed9.Location = new System.Drawing.Point(1094, 633);
+            this.circlePanelRed9.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelRed9.Name = "circlePanelRed9";
             this.circlePanelRed9.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed9.TabIndex = 80;
             // 
             // circlePanelRed10
             // 
+<<<<<<< Updated upstream
             this.circlePanelRed10.Location = new System.Drawing.Point(547, 138);
             this.circlePanelRed10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelRed10.Location = new System.Drawing.Point(1094, 265);
+            this.circlePanelRed10.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelRed10.Name = "circlePanelRed10";
             this.circlePanelRed10.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed10.TabIndex = 76;
@@ -669,8 +722,13 @@
             // circlePanelGreen8
             // 
             this.circlePanelGreen8.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.circlePanelGreen8.Location = new System.Drawing.Point(547, 329);
             this.circlePanelGreen8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelGreen8.Location = new System.Drawing.Point(1094, 633);
+            this.circlePanelGreen8.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelGreen8.Name = "circlePanelGreen8";
             this.circlePanelGreen8.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen8.TabIndex = 79;
@@ -678,16 +736,26 @@
             // circlePanelGreen9
             // 
             this.circlePanelGreen9.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.circlePanelGreen9.Location = new System.Drawing.Point(547, 138);
             this.circlePanelGreen9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelGreen9.Location = new System.Drawing.Point(1094, 265);
+            this.circlePanelGreen9.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelGreen9.Name = "circlePanelGreen9";
             this.circlePanelGreen9.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen9.TabIndex = 75;
             // 
             // circlePanelRed11
             // 
+<<<<<<< Updated upstream
             this.circlePanelRed11.Location = new System.Drawing.Point(547, 233);
             this.circlePanelRed11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelRed11.Location = new System.Drawing.Point(1094, 448);
+            this.circlePanelRed11.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelRed11.Name = "circlePanelRed11";
             this.circlePanelRed11.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed11.TabIndex = 78;
@@ -695,16 +763,26 @@
             // circlePanelGreen10
             // 
             this.circlePanelGreen10.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.circlePanelGreen10.Location = new System.Drawing.Point(547, 233);
             this.circlePanelGreen10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelGreen10.Location = new System.Drawing.Point(1094, 448);
+            this.circlePanelGreen10.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelGreen10.Name = "circlePanelGreen10";
             this.circlePanelGreen10.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen10.TabIndex = 77;
             // 
             // circlePanelRed12
             // 
+<<<<<<< Updated upstream
             this.circlePanelRed12.Location = new System.Drawing.Point(547, 42);
             this.circlePanelRed12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelRed12.Location = new System.Drawing.Point(1094, 81);
+            this.circlePanelRed12.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelRed12.Name = "circlePanelRed12";
             this.circlePanelRed12.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed12.TabIndex = 74;
@@ -712,8 +790,13 @@
             // circlePanelGreen11
             // 
             this.circlePanelGreen11.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.circlePanelGreen11.Location = new System.Drawing.Point(547, 42);
             this.circlePanelGreen11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelGreen11.Location = new System.Drawing.Point(1094, 81);
+            this.circlePanelGreen11.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelGreen11.Name = "circlePanelGreen11";
             this.circlePanelGreen11.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen11.TabIndex = 73;
@@ -940,16 +1023,26 @@
             // 
             // circlePanelRed5
             // 
+<<<<<<< Updated upstream
             this.circlePanelRed5.Location = new System.Drawing.Point(308, 329);
             this.circlePanelRed5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelRed5.Location = new System.Drawing.Point(616, 633);
+            this.circlePanelRed5.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelRed5.Name = "circlePanelRed5";
             this.circlePanelRed5.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed5.TabIndex = 52;
             // 
             // circlePanelRed6
             // 
+<<<<<<< Updated upstream
             this.circlePanelRed6.Location = new System.Drawing.Point(308, 138);
             this.circlePanelRed6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelRed6.Location = new System.Drawing.Point(616, 265);
+            this.circlePanelRed6.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelRed6.Name = "circlePanelRed6";
             this.circlePanelRed6.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed6.TabIndex = 48;
@@ -957,8 +1050,13 @@
             // circlePanelGreen4
             // 
             this.circlePanelGreen4.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.circlePanelGreen4.Location = new System.Drawing.Point(308, 329);
             this.circlePanelGreen4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelGreen4.Location = new System.Drawing.Point(616, 633);
+            this.circlePanelGreen4.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelGreen4.Name = "circlePanelGreen4";
             this.circlePanelGreen4.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen4.TabIndex = 51;
@@ -966,16 +1064,26 @@
             // circlePanelGreen5
             // 
             this.circlePanelGreen5.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.circlePanelGreen5.Location = new System.Drawing.Point(308, 138);
             this.circlePanelGreen5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelGreen5.Location = new System.Drawing.Point(616, 265);
+            this.circlePanelGreen5.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelGreen5.Name = "circlePanelGreen5";
             this.circlePanelGreen5.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen5.TabIndex = 47;
             // 
             // circlePanelRed7
             // 
+<<<<<<< Updated upstream
             this.circlePanelRed7.Location = new System.Drawing.Point(308, 233);
             this.circlePanelRed7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelRed7.Location = new System.Drawing.Point(616, 448);
+            this.circlePanelRed7.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelRed7.Name = "circlePanelRed7";
             this.circlePanelRed7.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed7.TabIndex = 50;
@@ -983,16 +1091,26 @@
             // circlePanelGreen6
             // 
             this.circlePanelGreen6.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.circlePanelGreen6.Location = new System.Drawing.Point(308, 233);
             this.circlePanelGreen6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelGreen6.Location = new System.Drawing.Point(616, 448);
+            this.circlePanelGreen6.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelGreen6.Name = "circlePanelGreen6";
             this.circlePanelGreen6.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen6.TabIndex = 49;
             // 
             // circlePanelRed8
             // 
+<<<<<<< Updated upstream
             this.circlePanelRed8.Location = new System.Drawing.Point(308, 42);
             this.circlePanelRed8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelRed8.Location = new System.Drawing.Point(616, 81);
+            this.circlePanelRed8.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelRed8.Name = "circlePanelRed8";
             this.circlePanelRed8.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed8.TabIndex = 46;
@@ -1000,8 +1118,13 @@
             // circlePanelGreen7
             // 
             this.circlePanelGreen7.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.circlePanelGreen7.Location = new System.Drawing.Point(308, 42);
             this.circlePanelGreen7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelGreen7.Location = new System.Drawing.Point(616, 81);
+            this.circlePanelGreen7.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelGreen7.Name = "circlePanelGreen7";
             this.circlePanelGreen7.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen7.TabIndex = 45;
@@ -1228,16 +1351,26 @@
             // 
             // circlePanelRed3
             // 
+<<<<<<< Updated upstream
             this.circlePanelRed3.Location = new System.Drawing.Point(68, 329);
             this.circlePanelRed3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelRed3.Location = new System.Drawing.Point(136, 633);
+            this.circlePanelRed3.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelRed3.Name = "circlePanelRed3";
             this.circlePanelRed3.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed3.TabIndex = 8;
             // 
             // circlePanelRed2
             // 
+<<<<<<< Updated upstream
             this.circlePanelRed2.Location = new System.Drawing.Point(68, 138);
             this.circlePanelRed2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelRed2.Location = new System.Drawing.Point(136, 265);
+            this.circlePanelRed2.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelRed2.Name = "circlePanelRed2";
             this.circlePanelRed2.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed2.TabIndex = 4;
@@ -1245,8 +1378,13 @@
             // circlePanelGreen2
             // 
             this.circlePanelGreen2.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.circlePanelGreen2.Location = new System.Drawing.Point(68, 329);
             this.circlePanelGreen2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelGreen2.Location = new System.Drawing.Point(136, 633);
+            this.circlePanelGreen2.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelGreen2.Name = "circlePanelGreen2";
             this.circlePanelGreen2.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen2.TabIndex = 7;
@@ -1254,16 +1392,26 @@
             // circlePanelGreen1
             // 
             this.circlePanelGreen1.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.circlePanelGreen1.Location = new System.Drawing.Point(68, 138);
             this.circlePanelGreen1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelGreen1.Location = new System.Drawing.Point(136, 265);
+            this.circlePanelGreen1.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelGreen1.Name = "circlePanelGreen1";
             this.circlePanelGreen1.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen1.TabIndex = 3;
             // 
             // circlePanelRed4
             // 
+<<<<<<< Updated upstream
             this.circlePanelRed4.Location = new System.Drawing.Point(68, 233);
             this.circlePanelRed4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelRed4.Location = new System.Drawing.Point(136, 448);
+            this.circlePanelRed4.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelRed4.Name = "circlePanelRed4";
             this.circlePanelRed4.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed4.TabIndex = 6;
@@ -1271,16 +1419,26 @@
             // circlePanelGreen3
             // 
             this.circlePanelGreen3.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.circlePanelGreen3.Location = new System.Drawing.Point(68, 233);
             this.circlePanelGreen3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelGreen3.Location = new System.Drawing.Point(136, 448);
+            this.circlePanelGreen3.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelGreen3.Name = "circlePanelGreen3";
             this.circlePanelGreen3.Size = new System.Drawing.Size(34, 34);
             this.circlePanelGreen3.TabIndex = 5;
             // 
             // circlePanelRed1
             // 
+<<<<<<< Updated upstream
             this.circlePanelRed1.Location = new System.Drawing.Point(68, 42);
             this.circlePanelRed1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanelRed1.Location = new System.Drawing.Point(136, 81);
+            this.circlePanelRed1.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanelRed1.Name = "circlePanelRed1";
             this.circlePanelRed1.Size = new System.Drawing.Size(34, 34);
             this.circlePanelRed1.TabIndex = 2;
@@ -1288,8 +1446,13 @@
             // circlePanel1
             // 
             this.circlePanel1.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.circlePanel1.Location = new System.Drawing.Point(68, 42);
             this.circlePanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.circlePanel1.Location = new System.Drawing.Point(136, 81);
+            this.circlePanel1.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> Stashed changes
             this.circlePanel1.Name = "circlePanel1";
             this.circlePanel1.Size = new System.Drawing.Size(34, 34);
             this.circlePanel1.TabIndex = 0;
@@ -1300,8 +1463,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1437, 862);
             this.Controls.Add(this.tableLayoutPanel1);
+<<<<<<< Updated upstream
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MinimumSize = new System.Drawing.Size(797, 449);
+=======
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1578, 829);
+>>>>>>> Stashed changes
             this.Name = "SimulateAttackView";
             this.Text = "Simulate Attack";
             this.tableLayoutPanel1.ResumeLayout(false);
