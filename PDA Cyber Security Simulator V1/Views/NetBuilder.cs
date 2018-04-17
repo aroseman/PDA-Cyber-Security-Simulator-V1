@@ -454,13 +454,21 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             canvas.Invalidate();
         }
 
-        // Stop moving the segment.
-        private void canvas_MouseUp_MovingSegment(object sender, MouseEventArgs e)
+        // Stop moving the segment and check if it needs deleted.
+        private void canvas_MouseUp_MovingSegment(object sender, MouseEventArgs e) 
         {
             // Reset the event handlers.
             canvas.MouseMove += canvas_MouseMove_NotDown;
             canvas.MouseMove -= canvas_MouseMove_MovingSegment;
             canvas.MouseUp -= canvas_MouseUp_MovingSegment;
+
+            if (OverTrashCan(Pt1[MovingSegment], Pt2[MovingSegment]))
+            {
+                Pt1.RemoveAt(MovingSegment);
+                Pt2.RemoveAt(MovingSegment);
+            }
+                
+            
 
             // Redraw.
             canvas.Invalidate();
@@ -832,11 +840,14 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
 
             //if ((x.X < box.Location.X || x.X > (box.Width + box.Location.X)) && (x.Y < box.Location.Y || x.Y > (box.Height + box.Location.Y)))
             //    inBounds = false;
-            bool inBounds = false;
+            bool inBounds = x.X > box.Location.X && x.X < (box.Location.X + box.Width) && x.Y > box.Location.Y && x.Y < (box.Location.Y + box.Height);
 
-            if (x.X > box.Location.X && x.X < (box.Location.X + box.Width) && x.Y > box.Location.Y && x.Y < (box.Location.Y + box.Height))
-                inBounds = true;
+            return inBounds;
+        }
 
+        private bool OverTrashCan(Point x, Point y)
+        {
+            bool inBounds = (x.X > picTrashCan.Location.X && x.X < (picTrashCan.Location.X + picTrashCan.Width) && x.Y > picTrashCan.Location.Y && x.Y < (picTrashCan.Location.Y + picTrashCan.Height)) || (y.X > picTrashCan.Location.X && y.X < (picTrashCan.Location.X + picTrashCan.Width) && y.Y > picTrashCan.Location.Y && y.Y < (picTrashCan.Location.Y + picTrashCan.Height));
             return inBounds;
         }
 
