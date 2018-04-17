@@ -41,19 +41,19 @@ namespace PDA_Cyber_Security_Simulator_V1Tests
         {
             unitOfWork.NetworkManager.AddNetwork(new Network("Test2"));
 
+            int netid = unitOfWork.NetworkManager.GetNetworkIdByName("Test2");
+
             Device testDevice = new Device();
             testDevice.Name = "CiscoRouter";
             testDevice.IpAddress = "192.168.1.5";
-            testDevice.Id = 1;
+            testDevice.NetworkId = netid;
             unitOfWork.DeviceManager.AddDevice(testDevice);
 
             Device testDevice2 = new Device();
             testDevice2.Name = "CiscoFirewall";
             testDevice2.IpAddress = "192.168.1.6";
-            testDevice2.Id = 1;
+            testDevice2.NetworkId = netid;
             unitOfWork.DeviceManager.AddDevice(testDevice2);
-
-            int netid = unitOfWork.NetworkManager.GetNetworkIdByName("Test");
 
             List<Device> devices = unitOfWork.NetworkManager.GetDeviceByNetworkId(netid);
 
