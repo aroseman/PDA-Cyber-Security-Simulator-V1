@@ -1,6 +1,7 @@
 ﻿using PcapDotNet.Core;
 using PcapDotNet.Packets;
 using PcapDotNet.Packets.Ethernet;
+using PcapDotNet.Packets.IpV4;
 using PDA_Cyber_Security_Simulator_Domain;
 using System;
 using System.Collections.Generic;
@@ -48,7 +49,10 @@ namespace PDA_Cyber_Security_Simulator_V1
                             EtherType = EthernetType.IpV4, // Will be filled automatically.
                         };
 
-                    PacketBuilder builder = new PacketBuilder(ethernetLayer);
+                    PayloadLayer payload = new PayloadLayer();
+                    payload.Data = new Datagram(new byte[] { 3, 5, 2 });
+
+                    PacketBuilder builder = new PacketBuilder(ethernetLayer, payload);
 
                     communicator.SendPacket(builder.Build(DateTime.Now));
                 }

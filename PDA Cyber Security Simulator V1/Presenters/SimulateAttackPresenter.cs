@@ -51,11 +51,15 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
             {
                 int input = this.view.AttacksComboBox1.SelectedIndex;
                 string str = this.view.AttackDataSource[input].Value;
-                IAttack attack = attackFactory.GetAttack(str);
+                IAttack attack = null;
+                if (str.Length > 1)
+                {
+                    attack = attackFactory.GetAttack(str);
+                }
 
                 for (int i = 0; i < view.DeviceDataSource.Count; i++)
                 {
-                    if (view.AttackNetworkListBox1.GetSelected(i))
+                    if (view.AttackNetworkListBox1.GetSelected(i) && !attack.Equals(null))
                     {
                         ExceptionIndex = i;
                         
@@ -102,6 +106,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
+                MessageBox.Show(e.TargetSite.ToString());
                 view.DeviceNames[ExceptionIndex].Text = view.Devices[ExceptionIndex].Name;
                 view.DeviceNames[ExceptionIndex].Show();
                 view.RedDots[ExceptionIndex].Show();
