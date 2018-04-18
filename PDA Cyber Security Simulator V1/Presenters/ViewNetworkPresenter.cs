@@ -35,7 +35,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
 
         public void OnDeviceDoubleClick()
         {
-            DeviceProperties deviceProperties = new DeviceProperties((Device)view.CurrentDevice.Tag);
+            DeviceProperties deviceProperties = new DeviceProperties((Device) view.CurrentDevice.Tag, true);
             DialogResult dialogResult = deviceProperties.ShowDialog();
 
             if (dialogResult == DialogResult.OK)

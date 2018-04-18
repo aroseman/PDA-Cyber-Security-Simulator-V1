@@ -96,7 +96,7 @@
             this.canvas.Controls.Add(this.picTrashCan);
             this.canvas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.canvas.Location = new System.Drawing.Point(481, 164);
-            this.canvas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.canvas.Margin = new System.Windows.Forms.Padding(6);
             this.canvas.Name = "canvas";
             this.canvas.Size = new System.Drawing.Size(1871, 1109);
             this.canvas.TabIndex = 0;
@@ -118,7 +118,7 @@
             this.txtNetworkName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNetworkName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNetworkName.Location = new System.Drawing.Point(24, 1296);
-            this.txtNetworkName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNetworkName.Margin = new System.Windows.Forms.Padding(4);
             this.txtNetworkName.MaxLength = 50;
             this.txtNetworkName.Name = "txtNetworkName";
             this.txtNetworkName.Size = new System.Drawing.Size(282, 44);
@@ -162,7 +162,7 @@
             this.enableLineDraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.enableLineDraw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enableLineDraw.Location = new System.Drawing.Point(1640, 19);
-            this.enableLineDraw.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.enableLineDraw.Margin = new System.Windows.Forms.Padding(2);
             this.enableLineDraw.Name = "enableLineDraw";
             this.enableLineDraw.Size = new System.Drawing.Size(62, 50);
             this.enableLineDraw.TabIndex = 0;
@@ -175,7 +175,7 @@
             this.picTrashCan.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.trash_can1;
             this.picTrashCan.ImageLocation = "";
             this.picTrashCan.Location = new System.Drawing.Point(1649, 1066);
-            this.picTrashCan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picTrashCan.Margin = new System.Windows.Forms.Padding(2);
             this.picTrashCan.MaximumSize = new System.Drawing.Size(136, 167);
             this.picTrashCan.Name = "picTrashCan";
             this.picTrashCan.Size = new System.Drawing.Size(136, 167);
@@ -202,7 +202,7 @@
             this.flowLayoutPanel1.Controls.Add(this.pictureBox14);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 164);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(463, 1109);
             this.flowLayoutPanel1.TabIndex = 3;
@@ -212,7 +212,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.pictureBox1.Location = new System.Drawing.Point(6, 6);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 162);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -224,7 +224,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.pictureBox2.Location = new System.Drawing.Point(218, 6);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(200, 162);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -236,7 +236,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.pictureBox3.Location = new System.Drawing.Point(6, 180);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(200, 162);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -248,7 +248,7 @@
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.pictureBox4.Location = new System.Drawing.Point(218, 180);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(200, 162);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -260,7 +260,7 @@
             this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.pictureBox5.Location = new System.Drawing.Point(6, 354);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(200, 162);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -272,7 +272,7 @@
             this.pictureBox6.BackColor = System.Drawing.Color.White;
             this.pictureBox6.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.pictureBox6.Location = new System.Drawing.Point(218, 354);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(200, 162);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -284,7 +284,7 @@
             this.pictureBox7.BackColor = System.Drawing.Color.White;
             this.pictureBox7.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.pictureBox7.Location = new System.Drawing.Point(6, 528);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(200, 162);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -296,7 +296,7 @@
             this.pictureBox8.BackColor = System.Drawing.Color.White;
             this.pictureBox8.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.pictureBox8.Location = new System.Drawing.Point(218, 528);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(200, 162);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -308,7 +308,7 @@
             this.pictureBox9.BackColor = System.Drawing.Color.White;
             this.pictureBox9.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.pictureBox9.Location = new System.Drawing.Point(6, 702);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(200, 162);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -320,7 +320,7 @@
             this.pictureBox10.BackColor = System.Drawing.Color.White;
             this.pictureBox10.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.pictureBox10.Location = new System.Drawing.Point(218, 702);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(200, 162);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -332,7 +332,7 @@
             this.pictureBox11.BackColor = System.Drawing.Color.White;
             this.pictureBox11.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.pictureBox11.Location = new System.Drawing.Point(6, 876);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(200, 162);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -344,7 +344,7 @@
             this.pictureBox12.BackColor = System.Drawing.Color.White;
             this.pictureBox12.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.pictureBox12.Location = new System.Drawing.Point(218, 876);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(200, 162);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -356,7 +356,7 @@
             this.pictureBox13.BackColor = System.Drawing.Color.White;
             this.pictureBox13.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.pictureBox13.Location = new System.Drawing.Point(6, 1050);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(200, 162);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -368,7 +368,7 @@
             this.pictureBox14.BackColor = System.Drawing.Color.White;
             this.pictureBox14.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.atm_router;
             this.pictureBox14.Location = new System.Drawing.Point(218, 1050);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(200, 162);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -387,7 +387,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
@@ -406,7 +406,7 @@
             this.panel2.Controls.Add(this.pictureBox15);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(6, 6);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(2346, 146);
             this.panel2.TabIndex = 2;
@@ -416,7 +416,7 @@
             this.breadCrumbsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
             this.breadCrumbsPanel.Controls.Add(this.rootCrumb);
             this.breadCrumbsPanel.Location = new System.Drawing.Point(542, 6);
-            this.breadCrumbsPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.breadCrumbsPanel.Margin = new System.Windows.Forms.Padding(6);
             this.breadCrumbsPanel.Name = "breadCrumbsPanel";
             this.breadCrumbsPanel.Size = new System.Drawing.Size(400, 167);
             this.breadCrumbsPanel.TabIndex = 5;
@@ -440,7 +440,7 @@
             this.pictureBox15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox15.Image = global::PDA_Cyber_Security_Simulator_V1.Properties.Resources.pda;
             this.pictureBox15.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(2346, 146);
             this.pictureBox15.TabIndex = 1;
@@ -453,7 +453,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(4, 1283);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2350, 32);
             this.panel1.TabIndex = 4;
@@ -486,7 +486,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2358, 1319);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "NetBuilder";
             this.Text = "Create Network";
             this.canvas.ResumeLayout(false);

@@ -23,6 +23,21 @@ namespace PDA_Cyber_Security_Simulator_V1
             txtDeviceMac.KeyUp += TxtDeviceMac_KeyUp;
         }
 
+        public DeviceProperties(Device device, bool fromNetworkView)
+        {
+            InitializeComponent();
+            InitializeDeviceProperties(device);
+            ControlBox = false;
+            btnSaveDeviceProperties.DialogResult = DialogResult.OK;
+            btnCancelPopup.DialogResult = DialogResult.Cancel;
+            Device = device;
+            txtDeviceMac.KeyUp += TxtDeviceMac_KeyUp;
+            if (fromNetworkView)
+            {
+                txtDeviceName.Enabled = false;
+            }
+        }
+
         private void InitializeDeviceProperties(Device device)
         {
             txtDeviceName.Text = device.Name;
@@ -43,7 +58,6 @@ namespace PDA_Cyber_Security_Simulator_V1
             if (Device.Configured != true)
             {
                 Device = new Device(txtDeviceName.Text, txtDeviceIP.Text, txtDeviceMac.Text, txtDeviceDescription.Text, txtDeviceNotes.Text);
-                Device.Configured = true;
             }
 
             else

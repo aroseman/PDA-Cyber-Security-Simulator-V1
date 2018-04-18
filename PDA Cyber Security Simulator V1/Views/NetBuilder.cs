@@ -885,19 +885,23 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
                 if (dialogResult == DialogResult.OK)
                 {
                     var deviceAlreadyExists = false;
-                    foreach (var activeDevice in ActiveDevices)
+                    if (!devicePropertiesPopup.Device.Configured)
                     {
-                        if (((Device) activeDevice.Tag).Name == devicePropertiesPopup.Device.Name || string.IsNullOrWhiteSpace(devicePropertiesPopup.Device.Name))
+                        foreach (var activeDevice in ActiveDevices)
                         {
-                            deviceAlreadyExists = true;
-                            devicePropertiesPopup.Device.Configured = false;
-                            break;
+                            if (((Device)activeDevice.Tag).Name == devicePropertiesPopup.Device.Name || string.IsNullOrWhiteSpace(devicePropertiesPopup.Device.Name))
+                            {
+                                deviceAlreadyExists = true;
+                                devicePropertiesPopup.Device.Configured = false;
+                                break;
+                            }
                         }
                     }
-
+                    
                     if (!deviceAlreadyExists)
                     {
                         //Re-link the picture box with the newly filled device
+                        devicePropertiesPopup.Device.Configured = true;
                         ((PictureBox)sender).Tag = devicePropertiesPopup.Device;
                         devicePropertiesPopup.Dispose();
                     }
