@@ -154,6 +154,7 @@
             // 
             // homeScreen
             // 
+            this.homeScreen.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.homeScreen.ColumnCount = 2;
             this.homeScreen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.homeScreen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -167,7 +168,7 @@
             this.homeScreen.RowCount = 2;
             this.homeScreen.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.homeScreen.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.homeScreen.Size = new System.Drawing.Size(1584, 662);
+            this.homeScreen.Size = new System.Drawing.Size(3168, 1324);
             this.homeScreen.TabIndex = 1;
             // 
             // configureNetwork
@@ -178,18 +179,18 @@
             this.configureNetwork.Location = new System.Drawing.Point(6, 6);
             this.configureNetwork.Margin = new System.Windows.Forms.Padding(6);
             this.configureNetwork.Name = "configureNetwork";
-            this.configureNetwork.Size = new System.Drawing.Size(780, 319);
+            this.configureNetwork.Size = new System.Drawing.Size(1572, 650);
             this.configureNetwork.TabIndex = 4;
             // 
             // configureNetworkLabel
             // 
             this.configureNetworkLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.configureNetworkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.configureNetworkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.configureNetworkLabel.ForeColor = System.Drawing.Color.White;
             this.configureNetworkLabel.Location = new System.Drawing.Point(0, 0);
             this.configureNetworkLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.configureNetworkLabel.Name = "configureNetworkLabel";
-            this.configureNetworkLabel.Size = new System.Drawing.Size(780, 319);
+            this.configureNetworkLabel.Size = new System.Drawing.Size(1572, 650);
             this.configureNetworkLabel.TabIndex = 0;
             this.configureNetworkLabel.Text = "Create Network";
             this.configureNetworkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -199,21 +200,21 @@
             this.simulateAttack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(192)))));
             this.simulateAttack.Controls.Add(this.simulateAttackLabel);
             this.simulateAttack.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simulateAttack.Location = new System.Drawing.Point(798, 337);
+            this.simulateAttack.Location = new System.Drawing.Point(1590, 668);
             this.simulateAttack.Margin = new System.Windows.Forms.Padding(6);
             this.simulateAttack.Name = "simulateAttack";
-            this.simulateAttack.Size = new System.Drawing.Size(780, 319);
+            this.simulateAttack.Size = new System.Drawing.Size(1572, 650);
             this.simulateAttack.TabIndex = 7;
             // 
             // simulateAttackLabel
             // 
             this.simulateAttackLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simulateAttackLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simulateAttackLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simulateAttackLabel.ForeColor = System.Drawing.Color.White;
             this.simulateAttackLabel.Location = new System.Drawing.Point(0, 0);
             this.simulateAttackLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.simulateAttackLabel.Name = "simulateAttackLabel";
-            this.simulateAttackLabel.Size = new System.Drawing.Size(780, 319);
+            this.simulateAttackLabel.Size = new System.Drawing.Size(1572, 650);
             this.simulateAttackLabel.TabIndex = 3;
             this.simulateAttackLabel.Text = "Simulate Attack";
             this.simulateAttackLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -223,21 +224,21 @@
             this.viewNetwork.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(24)))), ((int)(((byte)(48)))));
             this.viewNetwork.Controls.Add(this.viewNetworkLabel);
             this.viewNetwork.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewNetwork.Location = new System.Drawing.Point(798, 6);
+            this.viewNetwork.Location = new System.Drawing.Point(1590, 6);
             this.viewNetwork.Margin = new System.Windows.Forms.Padding(6);
             this.viewNetwork.Name = "viewNetwork";
-            this.viewNetwork.Size = new System.Drawing.Size(780, 319);
+            this.viewNetwork.Size = new System.Drawing.Size(1572, 650);
             this.viewNetwork.TabIndex = 5;
             // 
             // viewNetworkLabel
             // 
             this.viewNetworkLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewNetworkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewNetworkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewNetworkLabel.ForeColor = System.Drawing.Color.White;
             this.viewNetworkLabel.Location = new System.Drawing.Point(0, 0);
             this.viewNetworkLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.viewNetworkLabel.Name = "viewNetworkLabel";
-            this.viewNetworkLabel.Size = new System.Drawing.Size(780, 319);
+            this.viewNetworkLabel.Size = new System.Drawing.Size(1572, 650);
             this.viewNetworkLabel.TabIndex = 1;
             this.viewNetworkLabel.Text = "View/Edit Network";
             this.viewNetworkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -247,21 +248,21 @@
             this.testNetwork.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(120)))));
             this.testNetwork.Controls.Add(this.testNetworkLabel);
             this.testNetwork.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.testNetwork.Location = new System.Drawing.Point(6, 337);
+            this.testNetwork.Location = new System.Drawing.Point(6, 668);
             this.testNetwork.Margin = new System.Windows.Forms.Padding(6);
             this.testNetwork.Name = "testNetwork";
-            this.testNetwork.Size = new System.Drawing.Size(780, 319);
+            this.testNetwork.Size = new System.Drawing.Size(1572, 650);
             this.testNetwork.TabIndex = 6;
             // 
             // testNetworkLabel
             // 
             this.testNetworkLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.testNetworkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testNetworkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.testNetworkLabel.ForeColor = System.Drawing.Color.White;
             this.testNetworkLabel.Location = new System.Drawing.Point(0, 0);
             this.testNetworkLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.testNetworkLabel.Name = "testNetworkLabel";
-            this.testNetworkLabel.Size = new System.Drawing.Size(780, 319);
+            this.testNetworkLabel.Size = new System.Drawing.Size(1572, 650);
             this.testNetworkLabel.TabIndex = 2;
             this.testNetworkLabel.Text = "Test Network";
             this.testNetworkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

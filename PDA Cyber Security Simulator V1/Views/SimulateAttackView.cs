@@ -14,7 +14,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
     {
         #region Attributes
         private bool test = false;
-        private bool IsThinClient = false;
+        private bool IsThinClient = true;
 
         public List<Label> DeviceNames;
         public List<Label> PingLabels;

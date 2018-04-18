@@ -14,7 +14,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
     {
         #region Attributes
         private bool test = false;
-        private bool IsThinClient = false;
+        private bool IsThinClient = true;
 
         public List<Label> DeviceNames;
         public List<Label> PingLabels;
@@ -142,7 +142,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             if (IsThinClient)
             {
                 var bottom = tableLayoutPanel1.GetRowHeights();
-                button1.Location = new Point(20, bottom[1] + bottom[0] + 100);
+                button1.Location = new Point(20, bottom[1] + bottom[0] + 250);
             }
             else
             {

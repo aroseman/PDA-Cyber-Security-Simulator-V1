@@ -46,6 +46,7 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             ViewNetworkPresenter = new ViewNetworkPresenter(ViewNetwork);
             var screen = Screen.FromControl(this);
             ScreenSize = screen.WorkingArea;
+            homeScreen.Location = new Point(Width / 2 - homeScreen.Width / 2, Height / 2 - homeScreen.Height / 2);
         }
 
         private void OnTestNetworkButtonClicked(object sender, EventArgs e)
