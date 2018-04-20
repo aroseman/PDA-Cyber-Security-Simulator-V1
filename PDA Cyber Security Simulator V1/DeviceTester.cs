@@ -24,7 +24,13 @@ namespace PDA_Cyber_Security_Simulator_V1
             Ping pinger = new Ping();
             foreach (Device dev in network.Devices)
             {
-                PingReply reply = pinger.Send(dev.IpAddress);
+                PingReply reply = null;
+                for (int i = 0; i < 4; i++)
+                {
+                     reply = pinger.Send(dev.IpAddress);
+
+                }
+                
                 if(reply.Status == IPStatus.Success)
                 {
                     dev.Status = true;
