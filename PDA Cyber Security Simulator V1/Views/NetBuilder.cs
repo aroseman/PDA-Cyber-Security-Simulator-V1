@@ -174,13 +174,13 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             if (IsThinClient)
             {
                 var bottom = tableLayoutPanel1.GetRowHeights();
-                txtNetworkName.Location = new Point(20, bottom[1] + bottom[0] + 150);
-                lblNetworkName.Location = new Point(20, bottom[1] + bottom[0] + 150 - lblNetworkName.Height);
-                picTrashCan.Location = new Point(picTrashCan.Location.X + 50, bottom[1] + bottom[0] - 50);
+                txtNetworkName.Location = new Point(20, bottom[1] + bottom[0] + 280);
+                lblNetworkName.Location = new Point(20, bottom[1] + bottom[0] + 280 - lblNetworkName.Height);
+                picTrashCan.Location = new Point(picTrashCan.Location.X + 50, bottom[1] + bottom[0] + 40);
                 btnSaveNetwork.Location = new Point(btnSaveNetwork.Location.X + 50, btnSaveNetwork.Location.Y);
                 btnClearNetwork.Location = new Point(btnClearNetwork.Location.X + 50, btnClearNetwork.Location.Y);
                 enableLineDraw.Location = new Point(enableLineDraw.Location.X + 50, enableLineDraw.Location.Y);
-                lblDrawEnabled.Location = new Point(lblDrawEnabled.Location.X + 50, bottom[1] + bottom[0] + 150);
+                lblDrawEnabled.Location = new Point(lblDrawEnabled.Location.X + 50, bottom[1] + bottom[0] + 280);
             }
         }
 

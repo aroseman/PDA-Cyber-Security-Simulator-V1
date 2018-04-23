@@ -11,7 +11,11 @@ namespace PDA_Cyber_Security_Simulator_V1
         {
             Boolean status = false;
             Ping pingSender = new Ping();
-            PingResult = pingSender.Send(ipAddress);
+
+            for (int i = 0; i < 4; i++)
+            {
+                PingResult = pingSender.Send(ipAddress);
+            }
 
             if (PingResult.Status == IPStatus.Success)
             {
