@@ -39,6 +39,8 @@ namespace PDA_Cyber_Security_Simulator_V1.Presenters
         {
             try
             {
+                view.ResetVisibility();
+
                 for (int i = 0; i < view.DeviceDataSource.Count; i++)
                 {
                     if (view.TestNetworkListBox1.GetSelected(i))

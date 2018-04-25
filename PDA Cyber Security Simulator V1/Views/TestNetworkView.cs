@@ -128,17 +128,8 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             PingLabels = unsortedPingLabels.OrderBy(o => o.Name).ToList();
             PingTime = unsortedPingTime.OrderBy(o => o.Name).ToList();
 
-            for (int i = 0; i < RedDots.Count; i++)
-            {
-                RedDots[i].Hide();
-                GreenDots[i].Hide();
-                DeviceNames[i].Hide();
-                DeviceIp[i].Hide();
-                IpLabels[i].Hide();
-                PingLabels[i].Hide();
-                PingTime[i].Hide();
-            }
-
+            ResetVisibility();
+    
             if (IsThinClient)
             {
                 var bottom = tableLayoutPanel1.GetRowHeights();
@@ -151,6 +142,19 @@ namespace PDA_Cyber_Security_Simulator_V1.Views
             }
         }
 
+        public void ResetVisibility()
+        {
+            for (int i = 0; i < RedDots.Count; i++)
+            {
+                RedDots[i].Hide();
+                GreenDots[i].Hide();
+                DeviceNames[i].Hide();
+                DeviceIp[i].Hide();
+                IpLabels[i].Hide();
+                PingLabels[i].Hide();
+                PingTime[i].Hide();
+            }
+        }
 
         /**
          * Populates testNetworkComboBox1 with all available networks.
